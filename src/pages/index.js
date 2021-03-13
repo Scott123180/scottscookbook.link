@@ -8,7 +8,7 @@ import FeaturedBlog from "../components/FeaturedBlog"
 const IndexPage = ({ data }) => {
   return(
     <Layout>
-      <SEO title="Amelie" />
+      <SEO title="EatWell" />
       <FeaturedBlog data={data.blog}/>
       <BlogCards data={data.blog}/>
     </Layout>
@@ -22,7 +22,7 @@ export const query = graphql`
 {
   blog: allMarkdownRemark(
     sort: {fields: [frontmatter___date], order: DESC} 
-    filter: { fileAbsolutePath: { regex: "/blogs/"}}
+    filter: { fileAbsolutePath: { regex: "/recipes/"}}
     ) {
     edges {
       node {
@@ -33,7 +33,7 @@ export const query = graphql`
         frontmatter {
           title
           date
-          read
+          totalTime
           topic
           image {
             childImageSharp{
