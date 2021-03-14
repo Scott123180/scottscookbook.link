@@ -15,7 +15,7 @@ class Nav extends React.Component  {
   }
   
   componentDidMount() {
-    if(window.location.href.includes("blogs")) {
+    if(window.location.href.includes("resources")) {
       this.setState({ 
         home_active: false,
         about_active: false,
@@ -41,12 +41,16 @@ class Nav extends React.Component  {
     const { home_classname, about_classname, post_nav_container } = this.state; 
     return(
       <div className={post_nav_container} id="nav-bar">
-        <Link to="/" className="nav-brand">EatWell</Link>
+        <Link to="/" className="nav-brand"><strong>E</strong>at<strong>W</strong>ell</Link>
         <ul className="nav-item-container">
           <li className={home_classname} id="nav-home">
             <Link to="/">Home</Link>
             <div className="underline"></div>
           </li>
+          {/* <li className={resources_classname} id="nav-home">
+            <Link to="/">Home</Link>
+            <div className="underline"></div>
+          </li> */}
           <li className={about_classname}>
             <Link to="/about">About</Link>
             <div className="underline"></div>

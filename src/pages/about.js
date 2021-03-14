@@ -38,7 +38,7 @@ const AboutPage = () => (
         This website is based on nutrition eating guidelines set by the USDA (United States Department of Agriculture). 
         These guidelines are updated and revised every 5 years. The current revision are the 2020-2025 guidelines. 
         For more information on these, please visit 
-        &nbsp;<a href="http://myplate.gov" target="_blank">MyPlate.gov</a>.
+        &nbsp;<a href="http://myplate.gov" target="_blank" rel="noreferrer">MyPlate.gov</a>.
       </p>
 
       <p>
@@ -54,7 +54,7 @@ const AboutPage = () => (
       </p>
 
       <p>
-        Patreon support: <a href="https://www.patreon.com/scotthansen" target="_blank">https://www.patreon.com/scotthansen</a>
+        Patreon support: <a href="https://www.patreon.com/scotthansen" target="_blank" rel="noreferrer">https://www.patreon.com/scotthansen</a>
       </p>
 
     </div>

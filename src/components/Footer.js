@@ -12,10 +12,10 @@ const Footer = () => {
           <Link to="/" style={{ textDecoration: "none", color: "black"}}>EatWell</Link>
         </div>
         <div className="social-icons-container">
-          <a href="https://www.scotthansen.io/" target="_blank">
+          <a href="https://www.scotthansen.io/" target="_blank" rel="noreferrer">
             <PersonalWebsiteSVG />
           </a>
-          <a href="https://www.patreon.com/scotthansen" target="_blank">
+          <a href="https://www.patreon.com/scotthansen" target="_blank" rel="noreferrer">
             <PatreonSVG />
           </a>
         </div>
