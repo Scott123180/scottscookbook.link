@@ -10,17 +10,47 @@ const AboutPage = () => (
     <div className = "bio-container">
       <img className="bio-image" src={ppl} alt='' />
       <div className="containy">
-        <h1 className="name">Hi I'm Julia</h1> 
-        <h1 className="short-bio">An entrepenuer, blogger, foodie, and life-style guru dedicated to helping you become the best person you can be.</h1> 
+        <h1 className="name">EatWell</h1> 
+        <h1 className="short-bio">A Healthy Eating Website</h1> 
       </div>
     </div>
     
     <div className="biography-container">
-      <p><span>L</span> orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Varius sit amet mattis vulputate enim nulla. Ullamcorper sit amet risus nullam eget felis. Volutpat blandit aliquam etiam erat velit scelerisque in dictum. Nibh praesent tristique magna sit amet purus. Malesuada pellentesque elit eget gravida cum. Felis imperdiet proin fermentum leo vel orci porta. Diam quam nulla porttitor massa id neque. Porta non pulvinar neque laoreet suspendisse interdum consectetur. Odio euismod lacinia at quis risus sed. Ut enim blandit volutpat maecenas. Non diam phasellus vestibulum lorem sed risus ultricies tristique nulla. Feugiat vivamus at augue eget arcu dictum varius duis. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui. Sed egestas egestas fringilla phasellus faucibus scelerisque. Aliquam eleifend mi in nulla posuere. Fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque. Aliquet eget sit amet tellus. Vivamus arcu felis bibendum ut tristique et egestas quis.</p>
+      <p><span>W</span>elcome to EatWell! 
+        The goal of this website is to provide the nutritional tools people need
+        to live a happy and fulfilling life. Eating well is the foundation of long lasting health.
+      </p>
 
-      <p>Nulla porttitor massa id neque aliquam. Ut aliquam purus sit amet luctus. Elit duis tristique sollicitudin nibh sit amet. Leo vel orci porta non pulvinar neque. Ut sem nulla pharetra diam. Laoreet non curabitur gravida arcu ac tortor dignissim convallis. Purus faucibus ornare suspendisse sed nisi lacus. Lacus sed viverra tellus in hac habitasse. In nulla posuere sollicitudin aliquam ultrices. Magna etiam tempor orci eu. Eu ultrices vitae auctor eu augue ut. Sit amet mauris commodo quis imperdiet. Convallis aenean et tortor at risus viverra. Ac tortor dignissim convallis aenean et tortor at. Neque gravida in fermentum et sollicitudin ac orci phasellus egestas. Massa tincidunt dui ut ornare lectus. Massa tincidunt dui ut ornare lectus sit amet est placerat.</p>
+      <p>
+        This website is ad free and will always be ad free. Why? They get in the way of the content.
+        Imagine browsing healthy recipes and getting an advertisement for pizza or donuts? Or imagine
+        getting advertisements for weight loss pills. The health industry is dubious at best and outright
+        snake-oil at the worst.
+      </p>
       
-      <p>Nibh ipsum consequat nisl vel pretium lectus quam id. Arcu ac tortor dignissim convallis aenean et tortor. Vitae justo eget magna fermentum iaculis eu non diam phasellus. Et ultrices neque ornare aenean euismod elementum nisi quis eleifend. Pulvinar elementum integer enim neque. Nisi scelerisque eu ultrices vitae auctor eu augue ut lectus. Nisl pretium fusce id velit ut tortor. Fermentum et sollicitudin ac orci phasellus. Quam adipiscing vitae proin sagittis nisl rhoncus. Blandit libero volutpat sed cras ornare. Id faucibus nisl tincidunt eget. Sed viverra ipsum nunc aliquet. Et ligula ullamcorper malesuada proin libero nunc consequat. Adipiscing bibendum est ultricies integer quis auctor elit sed vulputate. Blandit aliquam etiam erat velit. Nisi lacus sed viverra tellus in hac habitasse platea dictumst. Semper eget duis at tellus at urna condimentum mattis pellentesque. Magna fringilla urna porttitor rhoncus dolor purus non enim praesent. Scelerisque varius morbi enim nunc faucibus a. Vulputate dignissim suspendisse in est ante.</p>
+      <p>
+        My name is Scott Hansen, and I created this website as a part of my journey to better myself.
+        There are very few resources out there for eating well. I couldn't
+        find a way to promote healthy eating and had the features I wanted. So, I decided to make my own website!
+      </p>
+
+      <p>
+        This website is based on nutrition eating guidelines set by the USDA (United States Department of Agriculture). 
+        These guidelines are updated and revised every 5 years. The current revision are the 2020-2025 guidelines. 
+        For more information on these, please visit 
+        &nbsp;<a href="http://myplate.gov" target="_blank">MyPlate.gov</a>.
+      </p>
+
+      <p>
+        This website is 100% funded by we the people. If you like the content and are able to support
+        what I do, please support me on patreon. The more support I get, the more features I'll add to this
+        website. Thank you again for visiting this site. Enjoy!
+      </p>
+
+      <p>
+        Patreon support: <a href="https://www.patreon.com/scotthansen" target="_blank">https://www.patreon.com/scotthansen</a>
+      </p>
+
     </div>
   </div>
 )
