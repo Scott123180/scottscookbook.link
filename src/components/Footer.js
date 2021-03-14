@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
-import InstagramSVG from "../Icons/InstagramSVG"
-import LinkedInSVG from "../Icons/LinkedInSVG"
-import MediumSVG from "../Icons/MediumSVG"
-import TwitterSVG from "../Icons/TwitterSVG"
+import PatreonSVG from "../Icons/PatreonSVG"
+import PersonalWebsiteSVG from "../Icons/PersonalWebsiteSVG"
 
 const Footer = () => {
   return (
@@ -14,17 +12,11 @@ const Footer = () => {
           <Link to="/" style={{ textDecoration: "none", color: "black"}}>EatWell</Link>
         </div>
         <div className="social-icons-container">
-          <a href="https://twitter.com/">
-            <TwitterSVG />
+          <a href="https://www.scotthansen.io/" target="_blank">
+            <PersonalWebsiteSVG />
           </a>
-          <a href="https://medium.com/">
-            <MediumSVG />
-          </a>
-          <a href="https://www.linkedin.com/">
-            <LinkedInSVG />
-          </a>
-          <a href="https://www.instagram.com/">
-            <InstagramSVG />
+          <a href="https://www.patreon.com/scotthansen" target="_blank">
+            <PatreonSVG />
           </a>
         </div>
       </div>

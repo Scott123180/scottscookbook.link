@@ -243,6 +243,7 @@
   font-family: Roboto;
   text-transform: uppercase;
   margin: 0px;
+  background-color: #000000;
 }
 
 .short-bio {
@@ -250,6 +251,7 @@
   font-family: Lora;
   width: 90%;
   margin: 0px;
+  background-color: #000000;
 }
 
 

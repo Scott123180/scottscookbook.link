@@ -1,14 +1,14 @@
 import React from "react"
 import SEO from "../components/Seo"
 import Nav from "../components/Nav"
-import ppl from "../images/woman.jpg"
+import about from "../images/about_page_photo.jpg"
 
 const AboutPage = () => (
   <div>
     <SEO title="About" />
     <Nav />
     <div className = "bio-container">
-      <img className="bio-image" src={ppl} alt='' />
+      <img className="bio-image" src={about} alt='' />
       <div className="containy">
         <h1 className="name">EatWell</h1> 
         <h1 className="short-bio">A Healthy Eating Website</h1> 
@@ -39,6 +39,12 @@ const AboutPage = () => (
         These guidelines are updated and revised every 5 years. The current revision are the 2020-2025 guidelines. 
         For more information on these, please visit 
         &nbsp;<a href="http://myplate.gov" target="_blank">MyPlate.gov</a>.
+      </p>
+
+      <p>
+        Disclaimer: as with any dietary changes, please work with your doctor to adjust your eating habits and preferences.
+        Some people may have dietary restrictions that may impact the recipes they try from this website. I.e. Alergies, dietary
+        fiber restrictions, etc.
       </p>
 
       <p>
