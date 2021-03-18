@@ -1,0 +1,31 @@
+{
+  "name": "Apple",
+  "fullName": "APPLES,RAW,WITH SKIN",
+  "NBD_No": "09003",
+  "unit": "g",
+  "foodGroup": "fruit",
+  "myPlateServingSize": 125,
+  "servingSizes": {
+    "1 medium" : 182
+  },
+  "substitutions": {},
+  "nutrition" : {
+    "weight1": 125,
+    "weight2": 109,
+    "Kcal": 52,
+    "fat": {
+      "sat": "",
+      "poly": "",
+      "mono": ""
+    },
+    "cholesterol": "",
+    "sodium": "",
+    "potasium": "",
+    "carb": {
+      "fiber": "",
+      "sugar": ""
+    },
+    "protein": 0.26,
+    "vitamins": {}
+  }
+}
