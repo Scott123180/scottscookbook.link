@@ -1,10 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import Nav from "../components/Nav"
 
-export default ({ data }) => {
+const Post = ({ data }) => {
   const post = data.markdownRemark;
+  const image = getImage(post.frontmatter.image)
   
   return (
     <div>
@@ -12,7 +13,7 @@ export default ({ data }) => {
         <div className="post-page-container">
           <div className="post-page-flex-container">
             <div className="post-image-container">
-              <Img className="post-image" sizes={post.frontmatter.image.childImageSharp.sizes} />
+              <GatsbyImage className="post-image" image={image} alt="could not load" />
             </div>
             
             <div className="post-content-container">
@@ -27,6 +28,8 @@ export default ({ data }) => {
     </div>
   );
 };
+
+export default Post;
 
 export const query = graphql`query PostQuery($slug: String!) {
   markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -45,9 +48,7 @@ export const query = graphql`query PostQuery($slug: String!) {
       }
       image {
         childImageSharp{
-            sizes(maxWidth: 630) {
-                ...GatsbyImageSharpSizes
-            }
+          gatsbyImageData(width: 630)
         }
     }
     }

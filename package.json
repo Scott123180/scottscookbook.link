@@ -5,25 +5,25 @@
   "version": "0.1.0",
   "author": "Toby Au, Jessica Adjei",
   "dependencies": {
-    "gatsby": "^2.16.1",
-    "gatsby-image": "^2.2.29",
-    "gatsby-plugin-manifest": "^2.2.23",
-    "gatsby-plugin-offline": "^3.0.21",
-    "gatsby-plugin-react-helmet": "^3.1.13",
-    "gatsby-plugin-sharp": "^2.3.2",
-    "gatsby-remark-copy-linked-files": "^2.1.30",
-    "gatsby-remark-images": "^3.1.32",
-    "gatsby-remark-relative-images": "^0.2.3",
-    "gatsby-source-filesystem": "^2.1.33",
-    "gatsby-transformer-remark": "^2.6.35",
-    "gatsby-transformer-sharp": "^2.3.5",
+    "gatsby": "^3.1.1",
+    "gatsby-plugin-image": "^1.1.1",
+    "gatsby-plugin-manifest": "^3.1.0",
+    "gatsby-plugin-offline": "^4.1.0",
+    "gatsby-plugin-react-helmet": "^4.1.0",
+    "gatsby-plugin-sharp": "^3.1.1",
+    "gatsby-remark-copy-linked-files": "^3.1.0",
+    "gatsby-remark-images": "^4.1.0",
+    "gatsby-remark-relative-images": "^2.0.2",
+    "gatsby-source-filesystem": "^3.1.0",
+    "gatsby-transformer-remark": "^3.1.0",
+    "gatsby-transformer-sharp": "^3.1.0",
     "prop-types": "^15.7.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "^2.2.1"
   },
   "keywords": [
     "gatsby"

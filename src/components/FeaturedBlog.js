@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Img from "gatsby-image"
+import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
 const FeaturedBlog = ({ data }) => {
   return (
@@ -9,7 +9,7 @@ const FeaturedBlog = ({ data }) => {
         ({node}) => (
           <Link key={node.id} to={node.fields.slug} style={{ textDecoration: 'none', color: 'inherit'}}>
             <div className="featured-blog-card">
-              <Img className="featured-blog-thumbnail" sizes={node.frontmatter.image.childImageSharp.sizes} />
+              <GatsbyImage className="featured-blog-thumbnail" image={getImage(data.frontmatter.image)} />
               <div className="featured-blog-description">
                 <h3 className="featured-blog-title">{node.frontmatter.title}</h3>
                 <p className="featured-blog-excerpt">{node.excerpt}</p> 
