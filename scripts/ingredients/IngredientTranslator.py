@@ -12,7 +12,7 @@ def main():
   nameOfIngredient = str(input("short name:"))
   foodGroup = str(input("myfood group:"))
   foodCategory = str(input("food category beef/fish/legumes/poultry/etc:") or "")
-  myPlateServingSize = int(input("my plate serving size:"))
+  myPlateServingSize = input("my plate serving size:" or "")
 
   backupCurrentFile()
 
@@ -25,10 +25,18 @@ def insertIngredient(nbdNo, ingredient, nameOfIngredient, foodGroup, foodCategor
   contents = f.readlines()
   f.close()
 
-  ingredient = ingredient.strip("\n")
-  insertLine = "\n" + str(ingredient) + "," + str(nameOfIngredient) + "," + str(foodGroup) +  "," + str(foodCategory) + "," + str(myPlateServingSize) 
-
   i = findNewIndex(contents, nbdNo)
+  ingredient = ingredient.strip("\n")
+
+  insertLine = "" 
+  if(i == len(contents)) :
+    insertLine = "\n"
+
+  insertLine += str(ingredient) + "," + str(nameOfIngredient) + "," + str(foodGroup) +  "," + str(foodCategory) + "," + str(myPlateServingSize) 
+
+  if(i < len(contents)):
+    insertLine += "\n"
+
   contents.insert(i, insertLine)
 
   f = open( (file_prefix + "out/current.csv"), "w")
@@ -40,16 +48,20 @@ def insertIngredient(nbdNo, ingredient, nameOfIngredient, foodGroup, foodCategor
 
 
 def findNewIndex(lines, newNbdNo):
+  count = 2
+
   for i in range(1,len(lines)):
     line = lines[i]
     curNbdNo = int((line.split(",", 1))[0])
     if newNbdNo < curNbdNo:
+      count += 1
       continue
     elif curNbdNo == newNbdNo:
       raise Exception("item already in condensed db")
     else:
-      return i
+      return count
 
+  return count
 
 def backupCurrentFile():
   currentFileName = file_prefix + "out/current.csv"
