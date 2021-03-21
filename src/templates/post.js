@@ -48,7 +48,7 @@ export const query = graphql`query PostQuery($slug: String!) {
       }
       image {
         childImageSharp{
-          gatsbyImageData(width: 630)
+          gatsbyImageData
         }
     }
     }
