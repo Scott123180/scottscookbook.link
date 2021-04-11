@@ -3,8 +3,10 @@ import { graphql } from "gatsby"
 
 const Ingredient = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
 
+const foodId = "";
+
 export const query = graphql`
-  {
+  query Ingredient ($foodId: String) {
     currentCsv(ndbNo: {eq: $foodId}) {
       ndbNo
       shrtDesc
