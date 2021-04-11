@@ -7,7 +7,7 @@ const Post = ({ data }) => {
   const post = data.markdownRemark;
   const image = getImage(post.frontmatter.image)
 
-  const ingredientList = data.frontmatter.ingredients;
+  const ingredientList = post.frontmatter.ingredients;
   const ingredients = (
     <ul>
       {
@@ -15,15 +15,30 @@ const Post = ({ data }) => {
           return React.createElement(
             "li",
             {className:"ingredient"},
-            i.name
+            i.amount + " " + i.unit + " " + i.name
           );
         })
       }
 
-      <li>fart</li>
     </ul>
-
   );
+
+  const directionList = post.frontmatter.directions;
+  const directions = (
+    <ol>
+      {
+        directionList.map((i) => {
+          return React.createElement(
+            "li",
+            {className:"direction"},
+            i
+          );
+        })
+      }
+
+    </ol>
+  );
+
   
   return (
     <div>
@@ -40,6 +55,9 @@ const Post = ({ data }) => {
               
               <h4>Ingredients</h4>
               {ingredients}
+
+              <h4>Directions</h4>
+              {directions}
 
               <div dangerouslySetInnerHTML = {{ __html: post.html }}/>
               <p><a href={post.frontmatter.originalLink} target="_blank" rel="noreferrer">Original Recipe</a></p>
@@ -68,6 +86,7 @@ export const query = graphql`query PostQuery($slug: String!) {
         amount
         unit
       }
+      directions
       image {
         childImageSharp{
           gatsbyImageData

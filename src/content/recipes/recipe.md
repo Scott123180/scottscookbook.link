@@ -46,7 +46,3 @@ directions: [
 ]
 
 ---
-
-oops, you caught me working on the website :)
-
-We'll be up and running shortly. Hold for good content and more functionality
