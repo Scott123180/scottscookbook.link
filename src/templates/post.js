@@ -6,6 +6,24 @@ import Nav from "../components/Nav"
 const Post = ({ data }) => {
   const post = data.markdownRemark;
   const image = getImage(post.frontmatter.image)
+
+  const ingredientList = data.frontmatter.ingredients;
+  const ingredients = (
+    <ul>
+      {
+        ingredientList.map((i) => {
+          return React.createElement(
+            "li",
+            {className:"ingredient"},
+            i.name
+          );
+        })
+      }
+
+      <li>fart</li>
+    </ul>
+
+  );
   
   return (
     <div>
@@ -19,8 +37,12 @@ const Post = ({ data }) => {
             <div className="post-content-container">
               <h1>{post.frontmatter.title}</h1>
               <h4 style={{color: 'rgb(165, 164, 164)', fontSize: '0.8em'}}>{post.frontmatter.date} - {post.frontmatter.totalTime}</h4>
+              
+              <h4>Ingredients</h4>
+              {ingredients}
+
               <div dangerouslySetInnerHTML = {{ __html: post.html }}/>
-              <p><a href="{post.frontmatter.originalLink}">Source</a></p>
+              <p><a href={post.frontmatter.originalLink} target="_blank" rel="noreferrer">Original Recipe</a></p>
             </div>
           </div>
           
