@@ -7,9 +7,11 @@ totalTime: "10 min"
 topic: "Salad"
 image: "../../images/Apple_And_Chicken_Salad_12.jpg"
 originalLink: "https://www.myplate.gov/recipes/myplate-cnpp/apple-chicken-salad"
+scottRating: 2
 ingredients: [
   {
     name: Red Apple,
+    ndbNo: 09003,
     amount: 350,
     unit: g
   },
