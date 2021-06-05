@@ -45,3 +45,18 @@ https://amelie-blog.netlify.com/
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2a52f639-94f2-4399-990f-1c154b856b22/deploy-status)](https://app.netlify.com/sites/amelie-blog/deploys)
 
+
+## Todo Recipes
+- 3/5 https://www.eatingwell.com/recipe/261902/mexican-skillet-lasagna/
+- 4/5 https://www.eatingwell.com/recipe/262451/one-pot-pasta-with-tuna/ 
+- 4/5 https://www.allrecipes.com/recipe/14231/guacamole/
+- 3/5 https://cooking.nytimes.com/recipes/1014834-farro-pilaf-with-balsamic-cherries?action=click&module=Global%20Search%20Recipe%20Card&pgType=search&rank=14
+- 5/5 https://www.themediterraneandish.com/3-ingredient-mediterranean-salad/
+- https://cooking.nytimes.com/recipes/1015123-chickpea-and-fennel-ratatouille?action=click&module=Collection%20Page%20Recipe%20Card&region=Because%20the%20Dishwasher%20Is%20You%3A%20Delicious%20One-Pot%20(or%20Pan)%20Dinners&pgType=collection&rank=33
+- 5/5 https://diethood.com/instant-pot-pork-loin/
+- whole wheat sourdough
+- 5/5 https://cooking.nytimes.com/recipes/10447-chicken-enchiladas?algo=combo_cooking_rec4u_doc2vec_popularity_80_unique_random_filter_40&fellback=false&imp_id=396722128&req_id=840352095&surface=cooking-carousel_rec4u&variant=2_combo_cooking_rec4u_doc2vec_popularity_80_unique_random_filter_40_dedup&action=click&module=SaveRecap&pgType=front-page&region=Save%20Recap%20Suggestions&rank=0
+- 4/5 https://cooking.nytimes.com/recipes/1021485-one-pan-orzo-with-spinach-and-feta?action=click&module=Collection%20Page%20Recipe%20Card&region=Our%2050%20Most%20Popular%20Vegetarian%20Recipes%20of%202020&pgType=collection&rank=15
+- 5/5 https://cookieandkate.com/best-lentil-soup-recipe/
+- 5/5 https://cooking.nytimes.com/recipes/1020433-cowboy-caviar
+- 4/5 https://www.ambitiouskitchen.com/the-best-healthy-turkey-lasagna-youll-ever-eat/
