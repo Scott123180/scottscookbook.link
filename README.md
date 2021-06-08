@@ -47,8 +47,6 @@ https://amelie-blog.netlify.com/
 
 
 ## Todo Recipes
-- 3/5 https://www.eatingwell.com/recipe/261902/mexican-skillet-lasagna/
-- 4/5 https://www.eatingwell.com/recipe/262451/one-pot-pasta-with-tuna/ 
 - 4/5 https://www.allrecipes.com/recipe/14231/guacamole/
 - 3/5 https://cooking.nytimes.com/recipes/1014834-farro-pilaf-with-balsamic-cherries?action=click&module=Global%20Search%20Recipe%20Card&pgType=search&rank=14
 - 5/5 https://www.themediterraneandish.com/3-ingredient-mediterranean-salad/

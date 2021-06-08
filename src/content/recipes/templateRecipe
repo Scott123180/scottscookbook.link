@@ -1,0 +1,30 @@
+---
+title: ""
+date: "June 8, 2021"
+prepTime: " min" 
+cookingTime: " min"
+totalTime: " min"
+topic: ""
+image: "../../images/default.png"
+originalLink: ""
+scottRating: 
+ingredients: [
+  {
+    name: ,
+    amount: ,
+    unit: 
+  },
+  {
+    name: ,
+    amount: ,
+    metric: ,
+    unit: 
+  },
+]
+directions: [
+  "",
+  "",
+  ""
+]
+
+---
