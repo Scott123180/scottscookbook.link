@@ -47,7 +47,6 @@ https://amelie-blog.netlify.com/
 
 
 ## Todo Recipes
-- 4/5 https://www.allrecipes.com/recipe/14231/guacamole/
 - 3/5 https://cooking.nytimes.com/recipes/1014834-farro-pilaf-with-balsamic-cherries?action=click&module=Global%20Search%20Recipe%20Card&pgType=search&rank=14
 - 5/5 https://www.themediterraneandish.com/3-ingredient-mediterranean-salad/
 - https://cooking.nytimes.com/recipes/1015123-chickpea-and-fennel-ratatouille?action=click&module=Collection%20Page%20Recipe%20Card&region=Because%20the%20Dishwasher%20Is%20You%3A%20Delicious%20One-Pot%20(or%20Pan)%20Dinners&pgType=collection&rank=33
