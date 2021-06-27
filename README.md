@@ -47,8 +47,6 @@ https://amelie-blog.netlify.com/
 
 
 ## Todo Recipes
-- 5/5 https://www.themediterraneandish.com/3-ingredient-mediterranean-salad/
-- https://cooking.nytimes.com/recipes/1015123-chickpea-and-fennel-ratatouille?action=click&module=Collection%20Page%20Recipe%20Card&region=Because%20the%20Dishwasher%20Is%20You%3A%20Delicious%20One-Pot%20(or%20Pan)%20Dinners&pgType=collection&rank=33
 - 5/5 https://diethood.com/instant-pot-pork-loin/
 - whole wheat sourdough
 - 5/5 https://cooking.nytimes.com/recipes/10447-chicken-enchiladas?algo=combo_cooking_rec4u_doc2vec_popularity_80_unique_random_filter_40&fellback=false&imp_id=396722128&req_id=840352095&surface=cooking-carousel_rec4u&variant=2_combo_cooking_rec4u_doc2vec_popularity_80_unique_random_filter_40_dedup&action=click&module=SaveRecap&pgType=front-page&region=Save%20Recap%20Suggestions&rank=0
