@@ -60,7 +60,7 @@ const Post = ({ data }) => {
               {directions}
 
               <div dangerouslySetInnerHTML = {{ __html: post.html }}/>
-              <p><a href={post.frontmatter.originalLink} target="_blank" rel="noreferrer">Original Recipe</a></p>
+              <p><a href={post.frontmatter.originalLink} target="_blank" rel="noreferrer">Inspiring Recipe</a></p>
             </div>
           </div>
           
