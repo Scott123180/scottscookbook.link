@@ -30,7 +30,7 @@ ingredients: [
     unit: count
   },
   {
-    name: "yellow or ed bell peppers, sliced",
+    name: "yellow or red bell peppers, sliced",
     amount: 2,
     unit: count
   },
