@@ -47,10 +47,9 @@ https://amelie-blog.netlify.com/
 
 
 ## Todo Recipes
-- 5/5 https://diethood.com/instant-pot-pork-loin/
 - whole wheat sourdough
-- 5/5 https://cooking.nytimes.com/recipes/10447-chicken-enchiladas?algo=combo_cooking_rec4u_doc2vec_popularity_80_unique_random_filter_40&fellback=false&imp_id=396722128&req_id=840352095&surface=cooking-carousel_rec4u&variant=2_combo_cooking_rec4u_doc2vec_popularity_80_unique_random_filter_40_dedup&action=click&module=SaveRecap&pgType=front-page&region=Save%20Recap%20Suggestions&rank=0
-- 4/5 https://cooking.nytimes.com/recipes/1021485-one-pan-orzo-with-spinach-and-feta?action=click&module=Collection%20Page%20Recipe%20Card&region=Our%2050%20Most%20Popular%20Vegetarian%20Recipes%20of%202020&pgType=collection&rank=15
+- 5/5 https://cooking.nytimes.com/recipes/10447-chicken-enchiladas/
+- 4/5 https://cooking.nytimes.com/recipes/1021485-one-pan-orzo-with-spinach-and-feta
 - 5/5 https://cookieandkate.com/best-lentil-soup-recipe/
 - 5/5 https://cooking.nytimes.com/recipes/1020433-cowboy-caviar
 - 4/5 https://www.ambitiouskitchen.com/the-best-healthy-turkey-lasagna-youll-ever-eat/
