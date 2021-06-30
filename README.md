@@ -48,7 +48,6 @@ https://amelie-blog.netlify.com/
 
 ## Todo Recipes
 - whole wheat sourdough
-- 5/5 https://cooking.nytimes.com/recipes/10447-chicken-enchiladas/
 - 4/5 https://cooking.nytimes.com/recipes/1021485-one-pan-orzo-with-spinach-and-feta
 - 5/5 https://cookieandkate.com/best-lentil-soup-recipe/
 - 5/5 https://cooking.nytimes.com/recipes/1020433-cowboy-caviar
