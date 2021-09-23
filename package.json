@@ -1,9 +1,9 @@
 {
   "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simple starter blog template built with Gatsby",
-  "version": "0.1.0",
-  "author": "Toby Au, Jessica Adjei",
+  "description": "A simple recipe website",
+  "version": "0.0.1",
+  "author": "Scott Hansen",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
