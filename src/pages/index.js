@@ -31,6 +31,8 @@ export const query = graphql`
         id
         frontmatter {
           title
+          scottRating
+          prepTime
           date
           totalTime
           topic
