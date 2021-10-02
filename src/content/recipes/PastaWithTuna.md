@@ -5,7 +5,6 @@ prepTime: "10 min"
 cookingTime: "20 min"
 totalTime: "30 min"
 topic: "One-Pot"
-image: "../../images/default.png"
 originalLink: "https://www.eatingwell.com/recipe/262451/one-pot-pasta-with-tuna/"
 scottRating: 4
 ingredients: [

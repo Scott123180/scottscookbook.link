@@ -5,7 +5,6 @@ prepTime: "50 min"
 cookingTime: "25 min"
 totalTime: "75 min"
 topic: "Mexican"
-image: "../../images/default.png"
 originalLink: "https://cooking.nytimes.com/recipes/10447-chicken-enchiladas"
 scottRating: 5
 ingredients: [

@@ -5,7 +5,6 @@ prepTime: "15 min"
 cookingTime: "30 min"
 totalTime: "45 min"
 topic: "Tacos"
-image: "../../images/default.png"
 originalLink: "https://www.eatingwell.com/recipe/7891013/chipotle-tofu-tacos/"
 scottRating: 5
 ingredients: [

@@ -28,8 +28,10 @@ const RecipeList = ({ data }) => {
           <TableRow
             key={node.id}
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            component={Link}
+            to={node.fields.slug}
+            style={{ textDecoration: 'none', color: 'inherit'}}
           >
-            {/* https://mui.com/components/rating/ */}
             <TableCell><Rating value={node.frontmatter.scottRating} precision={0.5} readOnly/></TableCell>
             <TableCell component="th" scope="row">
               {node.frontmatter.title}

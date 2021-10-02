@@ -158,17 +158,13 @@
   flex-direction: row;  
 }
 
-.post-image-container {
-  width: 50%;
-}
-
 .post-image {
   height: 85vh;
   background-size: cover;
 }
 
 .post-content-container {
-  width: 50%;
+  width: 100%;
   padding: 0 3%;
   overflow: scroll;
   height: 85vh;
@@ -354,10 +350,6 @@
   
   .post-page-flex-container {
     flex-direction: column;  
-  }
-  
-  .post-image-container {
-    width: 100%;
   }
   
   .post-image {

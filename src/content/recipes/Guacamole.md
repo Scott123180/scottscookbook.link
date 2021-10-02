@@ -5,7 +5,6 @@ prepTime: "10 min"
 cookingTime: "0 min"
 totalTime: "10 min"
 topic: "Snack"
-image: "../../images/default.png"
 originalLink: "https://www.allrecipes.com/recipe/14231/guacamole/"
 scottRating: 4
 ingredients: [

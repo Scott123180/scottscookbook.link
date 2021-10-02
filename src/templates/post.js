@@ -1,11 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby"
-import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import Nav from "../components/Nav"
 
 const Post = ({ data }) => {
   const post = data.markdownRemark;
-  const image = getImage(post.frontmatter.image)
 
   const ingredientList = post.frontmatter.ingredients;
   const ingredients = (
@@ -45,10 +43,6 @@ const Post = ({ data }) => {
       <Nav post={true}/>
         <div className="post-page-container">
           <div className="post-page-flex-container">
-            <div className="post-image-container">
-              <GatsbyImage className="post-image" image={image} alt="could not load" />
-            </div>
-            
             <div className="post-content-container">
               <h1>{post.frontmatter.title}</h1>
               <h4 style={{color: 'rgb(165, 164, 164)', fontSize: '0.8em'}}>{post.frontmatter.date} - {post.frontmatter.totalTime}</h4>
@@ -87,11 +81,6 @@ export const query = graphql`query PostQuery($slug: String!) {
         unit
       }
       directions
-      image {
-        childImageSharp{
-          gatsbyImageData
-        }
-    }
     }
   }
 }`;

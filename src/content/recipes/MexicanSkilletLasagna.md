@@ -5,7 +5,6 @@ prepTime: "30 min"
 cookingTime: "10 min"
 totalTime: "40 min"
 topic: "One-Pot"
-image: "../../images/default.png"
 originalLink: "https://www.eatingwell.com/recipe/261902/mexican-skillet-lasagna/"
 scottRating: 3
 ingredients: [

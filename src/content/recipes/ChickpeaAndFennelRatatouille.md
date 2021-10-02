@@ -5,7 +5,6 @@ prepTime: "30 min"
 cookingTime: "60 min"
 totalTime: "90 min"
 topic: "Dinner"
-image: "../../images/default.png"
 originalLink: https://cooking.nytimes.com/recipes/1015123-chickpea-and-fennel-ratatouille
 scottRating: 4
 ingredients: [

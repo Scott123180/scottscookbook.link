@@ -3,13 +3,11 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import RecipeList from "../components/RecipeList"
-import FeaturedBlog from "../components/FeaturedBlog"
 
 const IndexPage = ({ data }) => {
   return(
     <Layout>
       <SEO title="EatWell" />
-      <FeaturedBlog data={data.blog}/>
       <RecipeList data={data.blog}/>
     </Layout>
   );

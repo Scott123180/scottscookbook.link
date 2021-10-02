@@ -5,7 +5,6 @@ prepTime: "10 min"
 cookingTime: "0 min"
 totalTime: "15 min"
 topic: "Salad"
-image: "../../images/default.png"
 originalLink: "https://www.themediterraneandish.com/3-ingredient-mediterranean-salad/"
 scottRating: 5
 ingredients: [

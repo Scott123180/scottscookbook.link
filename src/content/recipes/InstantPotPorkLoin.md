@@ -5,7 +5,6 @@ prepTime: "15 min"
 cookingTime: "35 min"
 totalTime: "50 min"
 topic: "Dinner"
-image: "../../images/default.png"
 originalLink: "https://diethood.com/instant-pot-pork-loin/"
 scottRating: 5
 ingredients: [
