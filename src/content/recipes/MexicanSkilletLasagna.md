@@ -14,7 +14,7 @@ ingredients: [
     unit: count
   },
   {
-    name: Olive Oil,
+    name: Vegetable Oil,
     amount: 1,
     unit: tbsp
   },

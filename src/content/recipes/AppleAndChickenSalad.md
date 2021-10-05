@@ -11,31 +11,36 @@ ingredients: [
   {
     name: Red Apple,
     ndbNo: 09003,
-    amount: 350,
-    unit: g
+    amount: 2,
+    metric: 350g,
+    unit: qty
   },
   {
-    name: Celery,
-    amount: 100,
-    unit: g
+    name: Celery Stalks (diced),
+    metric: 100g,
+    amount: 2,
+    unit: qty
   },
   {
     name: Chicken Breast,
-    amount: 350,
-    unit: g
+    amount: 2,
+    metric: 350g,
+    unit: qty
   },
   {
     name: Plain Non-Fat Greek Yogurt,
-    amount: 70,
-    unit: g,
+    amount: .25,
+    metric: 70g,
+    unit: cup,
   },
   {
     name: Black Pepper,
-    amount: 4,
-    unit: g,
+    amount: .125,
+    metric: 4g,
+    unit: tsp,
   },
   {
-    name: Lettuce Leaf (Bibb, Romaine, green, or red leaf),
+    name: "Lettuce Leaf (Bibb, Romaine, green, or red leaf)",
     amount: 16,
     unit: count
   }

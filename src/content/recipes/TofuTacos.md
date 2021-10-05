@@ -10,43 +10,51 @@ scottRating: 5
 ingredients: [
   {
     name: Lime Juice,
-    amount: 75,
-    unit: g
+    amount: 5,
+    metric: 75g,
+    unit: tbsp
   },
   {
     name: Cornstarch,
-    amount: 30,
-    unit: g
+    amount: .25,
+    metric: 30g,
+    unit: cup
   },
   {
-    name: Canola oil,
-    amount: 30,
-    unit: g
+    name: Canola oil or avocado oil,
+    amount: 2,
+    metric: 2,
+    unit: tbsp
   },
   {
-    name: Valentina Salsa Picante,
-    amount: 30,
-    unit: g
+    name: "Adobo Sauce, divided (from canned chipotles or sometimes sold separately)",
+    amount: 1.5,
+    metric: 30g,
+    unit: tbsp
   },
   {
     name: Garlic,
-    amount: 22,
-    unit: g,
+    amount: 4,
+    metric: 22g,
+    unit: cloves,
   },
   {
     name: Cumin,
-    amount: 6,
-    unit: g,
+    amount: 1,
+    metric: 6g,
+    unit: tbsp,
   },
   {
     name: Extra-firm tofu (ripped and torn into 1" pieces),
-    amount: 794,
-    unit: g
+    amount: 2,
+    metric: 794g,
+    unit: brick
   },
   {
     name: salt,
-    amount: 5,
-    unit: g
+    amount: 1,
+    metric: 5g,
+    unit: tsp
   },
   {
     name: Cabbage (shredded),
@@ -55,13 +63,15 @@ ingredients: [
   },
   {
     name: Light sour cream,
-    amount: 120,
-    unit: g
+    amount: .5,
+    metric: 120g,
+    unit: cups
   },
   {
     name: Fresh Cilantro, 
-    amount: 10,
-    unit: g,
+    amount: .25,
+    metric: 10g,
+    unit: cups,
   },
   {
     name: Whole Wheat Tortillas,
@@ -71,7 +81,7 @@ ingredients: [
 ]
 directions: [
   "Drain Tofu and press out excess water under weight and fresh towel",
-  "Preheat oven to 450",
+  "Preheat oven to 450f",
   "Coat large baking sheet with oil",
   "Whisk 2/5 lime juice, cornstarch, oil, 2/3 of adobo, 3/4 of garlic, cumin",
   "Unwrap tofu and pull apart to shred",

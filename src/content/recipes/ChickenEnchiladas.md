@@ -19,7 +19,7 @@ ingredients: [
     unit: lbs
   },
     {
-    name: vegetable oil,
+    name: olive oil,
     amount: 2,
     unit: tbsp
   },
@@ -43,18 +43,13 @@ ingredients: [
     amount: 12,
     unit: count
   },
-    {
-    name: ,
-    amount: ,
-    unit: 
-  },
-    {
+  {
     name: queso anejo or cotija (crumbled),
     amount: 8,
     unit: oz
   },
   {
-    name: mixican crema or creme fraiche (for serving),
+    name: mexican crema or creme fraiche (for serving),
     amount: 1,
     unit: count
   },
@@ -63,7 +58,7 @@ directions: [
   "Bring a pan of water to a simmer and add a bit of salt.",
   "Poach the chicken over low heat or until cooked through (about 9 minutes)",
   "Remove poached chicken from bowl, let it cool, then finely shred it.",
-  "Heat the vegetable oil in the skillet and when the oil is shimmering, add the chopped onion and jalepeno. Saute until the onion has softened just around the edges.",
+  "Heat the olive oil in the skillet and when the oil is shimmering, add the chopped onion and jalepeno. Saute until the onion has softened just around the edges.",
   "Cut tomatillos in half. Add the tomatillos and cook until wilted. Then turn off the heat and let cool for a period of a few minutes.",
   "Transfer to a food processor and blend until smooth, then add the cilantro and season to taste. Transfer the mixture to a bowl.",
   "Head the oven to 350F and grease a casserole pan, then spread a bit of sauce on the bottom of the pan.",
