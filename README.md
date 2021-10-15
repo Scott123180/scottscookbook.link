@@ -48,6 +48,5 @@ https://amelie-blog.netlify.com/
 
 ## Todo Recipes
 - whole wheat sourdough
-- 5/5 https://cookieandkate.com/best-lentil-soup-recipe/
 - 5/5 https://cooking.nytimes.com/recipes/1020433-cowboy-caviar
 - 4/5 https://www.ambitiouskitchen.com/the-best-healthy-turkey-lasagna-youll-ever-eat/
