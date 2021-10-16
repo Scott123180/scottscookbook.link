@@ -7,7 +7,7 @@ import RecipeList from "../components/RecipeList"
 const IndexPage = ({ data }) => {
   return(
     <Layout>
-      <SEO title="EatWell" />
+      <SEO title="Scott's Cookbook" />
       <RecipeList data={data.blog}/>
     </Layout>
   );

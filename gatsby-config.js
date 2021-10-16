@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `EatWell`,
+    title: `Scott's Cookbook`,
     description: `A minimal and mobile friendly recipe website`,
     author: `@gatsbyjs`,
   },

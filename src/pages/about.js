@@ -10,13 +10,13 @@ const AboutPage = () => (
     <div className = "bio-container">
       <img className="bio-image" src={about} alt='' />
       <div className="containy">
-        <h1 className="name">EatWell</h1> 
+        <h1 className="name">Scott's Cookbook</h1> 
         <h1 className="short-bio">A Healthy Eating Website</h1> 
       </div>
     </div>
     
     <div className="biography-container">
-      <p><span>W</span>elcome to EatWell! 
+      <p><span>W</span>elcome to Scott's Cookbook! 
         The goal of this website is to provide the nutritional tools people need
         to live a happy and fulfilling life. Eating well is the foundation of long lasting health.
       </p>
@@ -32,19 +32,7 @@ const AboutPage = () => (
         My name is Scott Hansen, and I created this website as a part of my journey to better myself.
         There are very few resources out there for eating well. I couldn't
         find a way to promote healthy eating and had the features I wanted. So, I decided to make my own website!
-      </p>
-
-      <p>
-        This website is based on nutrition eating guidelines set by the USDA (United States Department of Agriculture). 
-        These guidelines are updated and revised every 5 years. The current revision are the 2020-2025 guidelines. 
-        For more information on these, please visit 
-        &nbsp;<a href="http://myplate.gov" target="_blank" rel="noreferrer">MyPlate.gov</a>.
-      </p>
-
-      <p>
-        Disclaimer: as with any dietary changes, please work with your doctor to adjust your eating habits and preferences.
-        Some people may have dietary restrictions that may impact the recipes they try from this website. I.e. Alergies, dietary
-        fiber restrictions, etc.
+        It also serves as a great reference for myself if I want to make something to eat.
       </p>
 
       <p>

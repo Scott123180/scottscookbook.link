@@ -1,5 +1,5 @@
 <h1 align="center">
-  Eatwell - A healthy eating website
+  Scott's Cookbook - All my favorite recipes
 </h1>
 
 ## 🛠 Installation & Set Up
