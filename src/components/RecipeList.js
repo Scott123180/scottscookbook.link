@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Rating from '@mui/material/Rating';
+import '../styles/global.css';
 
 const RecipeList = ({ data }) => {
   return (
@@ -29,6 +30,7 @@ const RecipeList = ({ data }) => {
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             component={Link}
             to={node.fields.slug}
+            className='recipe-row'
             style={{ textDecoration: 'none', color: 'inherit'}}
           >
             <TableCell><Rating value={node.frontmatter.scottRating} precision={0.5} readOnly/></TableCell>

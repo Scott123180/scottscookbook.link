@@ -151,6 +151,9 @@
 }
 /* ========================================== */
 
+.recipe-row:hover {
+  background-color: #e0e0e0;
+}
 
 /* POSTPAGE - ============================= */
 .post-page-flex-container {
