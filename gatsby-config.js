@@ -61,6 +61,7 @@ module.exports = {
         path: `${__dirname}/src/content/`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-csv`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

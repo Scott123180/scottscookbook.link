@@ -3,11 +3,20 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import RecipeList from "../components/RecipeList"
+import { StaticImage } from "gatsby-plugin-image"
 
 const IndexPage = ({ data }) => {
   return(
     <Layout>
       <SEO title="ScottsCookbook" />
+      <StaticImage src="../images/default.png" 
+                   grayscale="true" 
+                   placeholder="blurred" 
+                   layout="fixed" 
+                   alt="" 
+                   loading="eager"
+                   layout="constrained" 
+                   style={{marginTop: "20px", marginBottom: "20px"}}/>
       <RecipeList data={data.blog}/>
     </Layout>
   );

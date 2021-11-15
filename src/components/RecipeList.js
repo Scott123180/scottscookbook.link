@@ -18,7 +18,6 @@ const RecipeList = ({ data }) => {
           <TableCell>Rating</TableCell>
           <TableCell>Recipe Name</TableCell>
           <TableCell>Active Time</TableCell>
-          <TableCell>Tags</TableCell>
         </TableRow>
       </TableHead>
       {/* https://mui.com/components/tables/ */}
@@ -37,7 +36,6 @@ const RecipeList = ({ data }) => {
               {node.frontmatter.title}
             </TableCell>
             <TableCell>{node.frontmatter.prepTime}</TableCell>
-            <TableCell>{node.carbs}</TableCell>
           </TableRow>
         ))}
       </TableBody>
