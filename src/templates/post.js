@@ -1,24 +1,43 @@
-import React from "react";
-import { graphql } from "gatsby"
-import Nav from "../components/Nav"
+import React from 'react';
+import { graphql } from 'gatsby';
+import Nav from '../components/Nav';
+import IngredientTable from '../components/IngredientTable';
+import Grid from '@mui/material/Grid';
 
 const Post = ({ data }) => {
   const post = data.markdownRemark;
 
   const ingredientList = post.frontmatter.ingredients;
-  const ingredients = (
-    <ul>
-      {
-        ingredientList.map((i) => {
-          return React.createElement(
-            "li",
-            {className:"ingredient"},
-            i.amount + " " + i.unit + " " + i.name
-          );
-        })
-      }
+  
+  const mapBySection = new Map();
 
-    </ul>
+  ingredientList.forEach((i) =>{
+    const key = i.section;
+    const value = mapBySection.get(key);
+    if(value === undefined){
+      mapBySection.set(key, [i]);
+    } else {
+      value.push(i);
+    }
+  });
+
+  const out = [];
+  mapBySection.forEach((key, value) => {
+    out.push(
+      <Grid container spacing = {2} className="ingredients">
+        <Grid item xs = {2} />
+        <Grid item xs = {8}>
+          <IngredientTable data={mapBySection.get(value)}/>
+        </Grid>
+        <Grid item xs = {2} />
+      </Grid>
+    )
+  });
+
+  const ingredients = (
+    <div>
+      {out}
+    </div>
   );
 
   const directionList = post.frontmatter.directions;
@@ -79,6 +98,7 @@ export const query = graphql`query PostQuery($slug: String!) {
         name
         amount
         unit
+        section
       }
       directions
     }
