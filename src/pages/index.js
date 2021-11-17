@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import SEO from "../components/Seo"
-import RecipeList from "../components/RecipeList"
-import { StaticImage } from "gatsby-plugin-image"
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import SEO from "../components/Seo";
+import RecipeList from "../components/RecipeList";
+import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = ({ data }) => {
   return(
@@ -12,7 +12,6 @@ const IndexPage = ({ data }) => {
       <StaticImage src="../images/default.png" 
                    grayscale="true" 
                    placeholder="blurred" 
-                   layout="fixed" 
                    alt="" 
                    loading="eager"
                    layout="constrained" 

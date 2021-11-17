@@ -1,14 +1,19 @@
 import React from "react"
-import SEO from "../components/Seo"
-import Nav from "../components/Nav"
-import about from "../images/about_page_photo.jpg"
+import SEO from "../components/Seo";
+import Nav from "../components/Nav";
+import { StaticImage } from "gatsby-plugin-image";
 
 const AboutPage = () => (
   <div>
     <SEO title="About" />
     <Nav />
     <div className = "bio-container">
-      <img className="bio-image" src={about} alt='' />
+      <StaticImage 
+        src="../images/about_page_photo.jpg"
+        placeholder="blurred"
+        className="bio-image"
+        loading="lazy"
+      />
       <div className="containy">
         <h1 className="name">Scott's Cookbook</h1> 
         <h1 className="short-bio">A Healthy Eating Website</h1> 
