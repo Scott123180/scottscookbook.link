@@ -16,19 +16,19 @@ const IngredientTable = ({data}) => {
           <caption>{section}</caption>
           <TableHead>
             <TableRow>
-              <TableCell>Ingredient Name</TableCell>
               <TableCell align="right">Amount</TableCell>
               <TableCell align="right">Unit</TableCell>
+              <TableCell>Ingredient Name</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {data.map((ingredient) => (
               <TableRow key={section + "." + ingredient.name}>
+                <TableCell align="right">{ingredient.amount}</TableCell>
+                <TableCell align="right">{ingredient.unit}</TableCell>
                 <TableCell component="th" scope="row">
                   {ingredient.name}
                 </TableCell>
-                <TableCell align="right">{ingredient.amount}</TableCell>
-                <TableCell align="right">{ingredient.unit}</TableCell>
               </TableRow>
             ))}
           </TableBody>

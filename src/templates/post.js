@@ -25,11 +25,11 @@ const Post = ({ data }) => {
   mapBySection.forEach((key, value) => {
     out.push(
       <Grid container spacing = {2} className="ingredients">
-        <Grid item xs = {2} />
-        <Grid item xs = {8}>
+        <Grid item xs = {1} md={2}/>
+        <Grid item xs = {10} md={8}>
           <IngredientTable data={mapBySection.get(value)}/>
         </Grid>
-        <Grid item xs = {2} />
+        <Grid item xs = {1} md={2} />
       </Grid>
     )
   });
