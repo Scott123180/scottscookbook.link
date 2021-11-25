@@ -16,9 +16,9 @@ const RecipeList = ({ data }) => {
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
       <TableHead>
         <TableRow>
-          <TableCell>Rating</TableCell>
-          <TableCell>Recipe Name</TableCell>
+          <TableCell style={{paddingLeft:'5%'}}>Recipe Name</TableCell>
           <TableCell>Active Time</TableCell>
+          <TableCell>Rating</TableCell>
         </TableRow>
       </TableHead>
       {/* https://mui.com/components/tables/ */}
@@ -33,11 +33,11 @@ const RecipeList = ({ data }) => {
             className='recipe-row'
             style={{ textDecoration: 'none', color: 'inherit'}}
           >
-            <TableCell><Rating value={node.frontmatter.scottRating} precision={0.5} readOnly/></TableCell>
-            <TableCell component="th" scope="row">
+            <TableCell component="th" scope="row" style={{paddingLeft: '5%'}}>
               {node.frontmatter.title}
             </TableCell>
             <TableCell>{node.frontmatter.prepTime}</TableCell>
+            <TableCell><Rating value={node.frontmatter.scottRating} precision={0.5} readOnly/></TableCell>
           </TableRow>
         ))}
       </TableBody>

@@ -1,12 +1,11 @@
 import React from "react"
 import SEO from "../components/Seo";
-import Nav from "../components/Nav";
 import { StaticImage } from "gatsby-plugin-image";
+import Layout from "../components/Layout";
 
 const AboutPage = () => (
-  <div>
+  <Layout>
     <SEO title="About" />
-    <Nav />
     <div className = "bio-container">
       <StaticImage 
         src="../images/about_page_photo.jpg"
@@ -48,7 +47,7 @@ const AboutPage = () => (
       </p>
 
     </div>
-  </div>
+  </Layout>
 )
 
 export default AboutPage
