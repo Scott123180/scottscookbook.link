@@ -5,21 +5,21 @@ import SEO from "../components/Seo";
 import RecipeList from "../components/RecipeList";
 import { StaticImage } from "gatsby-plugin-image";
 
-const IndexPage = ({ data }) => {
-  return(
+const IndexPage = ({ data }) => (
     <Layout>
-      <SEO title="ScottsCookbook" />
-      <StaticImage src="../images/default.png" 
-                   grayscale="true" 
-                   placeholder="blurred" 
-                   alt="" 
-                   loading="eager"
-                   layout="constrained" 
-                   style={{marginTop: "20px", marginBottom: "20px"}}/>
-      <RecipeList data={data.blog}/>
+      <div style={{marginLeft: "5%", marginRight:"5%"}}>
+        <SEO title="ScottsCookbook" />
+        <StaticImage src="../images/default.png" 
+                    grayscale="true" 
+                    placeholder="blurred" 
+                    alt="" 
+                    loading="eager"
+                    layout="constrained" 
+                    style={{marginTop: "20px", marginBottom: "20px"}}/>
+        <RecipeList data={data.blog}/>
+      </div>
     </Layout>
-  );
-}
+);
 
 export default IndexPage;
 

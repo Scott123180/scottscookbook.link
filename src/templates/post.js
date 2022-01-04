@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Nav from '../components/Nav';
 import IngredientTable from '../components/IngredientTable';
 import Grid from '@mui/material/Grid';
+import Layout from '../components/Layout';
 
 const Post = ({ data }) => {
   const post = data.markdownRemark;
@@ -25,11 +26,11 @@ const Post = ({ data }) => {
   mapBySection.forEach((key, value) => {
     out.push(
       <Grid container spacing = {2} className="ingredients">
-        <Grid item xs = {2} />
-        <Grid item xs = {8}>
+        <Grid item xs = {1} md={2}/>
+        <Grid item xs = {10} md={8}>
           <IngredientTable data={mapBySection.get(value)}/>
         </Grid>
-        <Grid item xs = {2} />
+        <Grid item xs = {1} md={2} />
       </Grid>
     )
   });
@@ -58,27 +59,26 @@ const Post = ({ data }) => {
 
   
   return (
-    <div>
-      <Nav post={true}/>
-        <div className="post-page-container">
-          <div className="post-page-flex-container">
-            <div className="post-content-container">
-              <h1>{post.frontmatter.title}</h1>
-              <h4 style={{color: 'rgb(165, 164, 164)', fontSize: '0.8em'}}>{post.frontmatter.date} - {post.frontmatter.totalTime}</h4>
-              
-              <h4>Ingredients</h4>
-              {ingredients}
+    <Layout>
+      <div className="post-page-container">
+        <div className="post-page-flex-container">
+          <div className="post-content-container">
+            <h1>{post.frontmatter.title}</h1>
+            <h4 style={{color: 'rgb(165, 164, 164)', fontSize: '0.8em'}}>{post.frontmatter.date} - {post.frontmatter.totalTime}</h4>
+            
+            <h4>Ingredients</h4>
+            {ingredients}
 
-              <h4>Directions</h4>
-              {directions}
+            <h4>Directions</h4>
+            {directions}
 
-              <div dangerouslySetInnerHTML = {{ __html: post.html }}/>
-              <p><a href={post.frontmatter.originalLink} target="_blank" rel="noreferrer">Inspiring Recipe</a></p>
-            </div>
+            <div dangerouslySetInnerHTML = {{ __html: post.html }}/>
+            <p><a href={post.frontmatter.originalLink} target="_blank" rel="noreferrer">Inspiring Recipe</a></p>
           </div>
-          
         </div>
-    </div>
+        
+      </div>
+    </Layout>
   );
 };
 
