@@ -13,6 +13,7 @@ const AboutPage = () => (
         placeholder="blurred"
         className="bio-image"
         loading="lazy"
+        
       />
       <div className="containy">
         <h1 className="name">Scott's Cookbook</h1> 

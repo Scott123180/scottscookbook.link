@@ -16,8 +16,8 @@ const RecipeList = ({ data }) => {
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
       <TableHead>
         <TableRow>
-          <TableCell>Rating</TableCell>
           <TableCell>Recipe Name</TableCell>
+          <TableCell>Rating</TableCell>
           <TableCell>Active Time</TableCell>
         </TableRow>
       </TableHead>
@@ -33,10 +33,10 @@ const RecipeList = ({ data }) => {
             className='recipe-row'
             style={{ textDecoration: 'none', color: 'inherit'}}
           >
-            <TableCell><Rating value={node.frontmatter.scottRating} precision={0.5} readOnly/></TableCell>
             <TableCell component="th" scope="row">
               {node.frontmatter.title}
             </TableCell>
+            <TableCell><Rating value={node.frontmatter.scottRating} precision={0.5} readOnly/></TableCell>
             <TableCell>{node.frontmatter.prepTime}</TableCell>
           </TableRow>
         ))}
