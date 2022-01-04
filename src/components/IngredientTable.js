@@ -9,16 +9,17 @@ import Paper from '@mui/material/Paper';
 const IngredientTable = ({data}) => {
 
     const section = data[0].section;
+
     return (
         <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="caption table">
+        <Table  aria-label="caption table">
           <caption style={{textAlign: 'center'}}>{section}</caption>
           <TableBody>
             {data.map((ingredient) => (
               <TableRow key={section + "." + ingredient.name}>
                 <TableCell align="left"
-                style={{paddingLeft: "5%"}}>
-                  {ingredient.amount}&nbsp; 
+                style={{paddingLeft: "5%", paddingRight: "5%"}}>
+                  <strong>{ingredient.amount}</strong> &nbsp; 
                   {ingredient.unit}&nbsp;
                   {ingredient.name}
                 </TableCell>
