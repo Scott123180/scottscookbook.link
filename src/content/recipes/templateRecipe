@@ -12,13 +12,15 @@ ingredients: [
   {
     name: ,
     amount: ,
-    unit: 
+    unit: ,
+    section: 
   },
   {
     name: ,
     amount: ,
     metric: ,
-    unit: 
+    unit: ,
+    section: 
   },
 ]
 directions: [
