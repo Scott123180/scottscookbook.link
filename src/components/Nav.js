@@ -34,7 +34,7 @@ class Nav extends React.Component  {
         about_classname: "nav-item active-link",
         post_nav_container: "post-nav-container",
       })
-    } else if(window.location.href.includes("bean-converter")){
+    } else if(window.location.href.includes("tools")){
       this.setState({ 
         tools_active: true,
         about_active: false,
