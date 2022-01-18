@@ -4,8 +4,10 @@ import SEO from "../components/Seo";
 
 const BeanConverter = ({ data }) => (
     <Layout>
-        <SEO title="Bean Converter" />
-        <p>can you see me?</p>
+      <div style={{marginLeft: "5%", marginRight:"5%"}}>
+            <SEO title="Bean Converter" />
+            <p>can you see me?</p>
+        </div>
     </Layout>
 );
 

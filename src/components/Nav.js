@@ -5,10 +5,10 @@ class Nav extends React.Component  {
   constructor() {
     super();
     this.state = {
-      home_active: true,
+      bean_converter_active: false,
       about_active: false,
       is_post: false,
-      home_classname: "nav-item active-link",
+      bean_converter_classname: "nav-item",
       about_classname: "nav-item",
       post_nav_container: "nav-container",
     }
@@ -17,40 +17,47 @@ class Nav extends React.Component  {
   componentDidMount() {
     if(window.location.href.includes("resources")) {
       this.setState({ 
-        home_active: false,
+        bean_converter_active: false,
         about_active: false,
         is_post: true,
-        home_classname: "nav-item",
+        bean_converter_classname: "nav-item",
         about_classname: "nav-item",
         post_nav_container: "post-nav-container",
       })
     }
     else if(window.location.href.includes("about")) {
       this.setState({ 
-        home_active: false,
+        bean_converter_active: false,
         about_active: true,
         is_post: false,
-        home_classname: "nav-item",
+        bean_converter_classname: "nav-item",
         about_classname: "nav-item active-link",
         post_nav_container: "post-nav-container",
       })
+    } else if(window.location.href.includes("bean-converter")){
+      this.setState({ 
+        bean_converter_active: true,
+        about_active: false,
+        is_post: false,
+        bean_converter_classname: "nav-item active-link",
+        about_classname: "nav-item",
+        post_nav_container: "post-nav-container",
+      })
+
     }
   }
   
   render() {
-    const { home_classname, about_classname, post_nav_container } = this.state; 
+    const { bean_converter_classname, about_classname, post_nav_container } = this.state; 
     return(
       <div className={post_nav_container} id="nav-bar" style={{marginLeft: "5%", marginRight: "5%"}} >
         <Link to="/" className="nav-brand"><strong>S</strong>cott's<strong> C</strong>ookbook</Link>
         <ul className="nav-item-container">
-          <li className={home_classname} id="nav-home">
-            <Link to="/">Home</Link>
+          <li className={bean_converter_classname}>
+            <Link to="/bean-converter">Bean Converter</Link>
             <div className="underline"></div>
           </li>
-          {/* <li className={resources_classname} id="nav-home">
-            <Link to="/">Home</Link>
-            <div className="underline"></div>
-          </li> */}
+          &nbsp; &nbsp;
           <li className={about_classname}>
             <Link to="/about">About</Link>
             <div className="underline"></div>
