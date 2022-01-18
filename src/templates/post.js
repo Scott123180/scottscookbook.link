@@ -5,6 +5,16 @@ import IngredientTable from '../components/IngredientTable';
 import Grid from '@mui/material/Grid';
 import Layout from '../components/Layout';
 
+const RecipeLinkElement = ({link}) =>{
+
+  if(link !== null && link !== "") {
+    return <p><a href={link} target="_blank" rel="noreferrer">Inspiring Recipe</a></p>
+  }
+
+  return <div></div>;
+
+}
+
 const Post = ({ data }) => {
   const post = data.markdownRemark;
 
@@ -57,6 +67,7 @@ const Post = ({ data }) => {
     </ol>
   );
 
+  const originalRecipeLink = post.frontmatter.originalLink;
   
   return (
     <Layout>
@@ -73,7 +84,7 @@ const Post = ({ data }) => {
             {directions}
 
             <div dangerouslySetInnerHTML = {{ __html: post.html }}/>
-            <p><a href={post.frontmatter.originalLink} target="_blank" rel="noreferrer">Inspiring Recipe</a></p>
+            <RecipeLinkElement link={post.frontmatter.originalLink} />
           </div>
         </div>
         
