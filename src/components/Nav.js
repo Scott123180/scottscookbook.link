@@ -5,10 +5,10 @@ class Nav extends React.Component  {
   constructor() {
     super();
     this.state = {
-      bean_converter_active: false,
+      tools_active: false,
       about_active: false,
       is_post: false,
-      bean_converter_classname: "nav-item",
+      tools_classname: "nav-item",
       about_classname: "nav-item",
       post_nav_container: "nav-container",
     }
@@ -17,17 +17,17 @@ class Nav extends React.Component  {
   componentDidMount() {
     if(window.location.href.includes("resources")) {
       this.setState({ 
-        bean_converter_active: false,
+        tools_active: false,
         about_active: false,
         is_post: true,
-        bean_converter_classname: "nav-item",
+        tools_classname: "nav-item",
         about_classname: "nav-item",
         post_nav_container: "post-nav-container",
       })
     }
     else if(window.location.href.includes("about")) {
       this.setState({ 
-        bean_converter_active: false,
+        tools_active: false,
         about_active: true,
         is_post: false,
         bean_converter_classname: "nav-item",
@@ -36,10 +36,10 @@ class Nav extends React.Component  {
       })
     } else if(window.location.href.includes("bean-converter")){
       this.setState({ 
-        bean_converter_active: true,
+        tools_active: true,
         about_active: false,
         is_post: false,
-        bean_converter_classname: "nav-item active-link",
+        tools_classname: "nav-item active-link",
         about_classname: "nav-item",
         post_nav_container: "post-nav-container",
       })
@@ -48,13 +48,13 @@ class Nav extends React.Component  {
   }
   
   render() {
-    const { bean_converter_classname, about_classname, post_nav_container } = this.state; 
+    const { tools_classname: tools_classname, about_classname, post_nav_container } = this.state; 
     return(
       <div className={post_nav_container} id="nav-bar" style={{marginLeft: "5%", marginRight: "5%"}} >
         <Link to="/" className="nav-brand"><strong>S</strong>cott's<strong> C</strong>ookbook</Link>
         <ul className="nav-item-container">
-          <li className={bean_converter_classname}>
-            <Link to="/bean-converter">Bean Converter</Link>
+          <li className={tools_classname}>
+            <Link to="/tools">Cooking Tools</Link>
             <div className="underline"></div>
           </li>
           &nbsp; &nbsp;
