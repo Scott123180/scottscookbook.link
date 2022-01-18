@@ -7,9 +7,12 @@ const options = [
     { label: 'Pinto', id: 3},
     { label: 'Kidney', id: 4},
     { label: 'Cannelli', id: 5},
+    { label: 'Lentil', id: 6},
 ];
 
 const BeanConverter = () => {
+
+    //extend this so that I can eventually convert it when in a recipe
 
     return (
         <div>
@@ -20,7 +23,7 @@ const BeanConverter = () => {
             id="bean-combo-box"
             options={options}
             sx={{ width: 300 }}
-            renderInput={(params) => <TextField {...params} label="Bean Type" />}
+            renderInput={(params) => <TextField {...params} label="Bean / Legume Type" />}
             />
 
             <p>qty</p>
