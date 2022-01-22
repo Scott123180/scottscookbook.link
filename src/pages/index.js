@@ -4,18 +4,26 @@ import Layout from "../components/Layout";
 import SEO from "../components/Seo";
 import RecipeList from "../components/RecipeList";
 import { StaticImage } from "gatsby-plugin-image";
+import { Grid } from "@mui/material";
 
 const IndexPage = ({ data }) => (
     <Layout>
-      <div style={{marginLeft: "5%", marginRight:"5%"}}>
         <SEO title="ScottsCookbook" />
-        <StaticImage src="../images/default.png" 
-                    grayscale="true" 
-                    placeholder="blurred" 
-                    alt="" 
-                    loading="eager"
-                    layout="constrained" 
-                    style={{marginTop: "20px", marginBottom: "20px"}}/>
+         <Grid container>
+            <Grid xs={0} md={1} lg={2}/>
+            <Grid xs={12} md={10} lg={8}>
+              <StaticImage src="../images/default.png" 
+                          placeholder="blurred" 
+                          alt="" 
+                          loading="eager"
+                          layout="constrained" 
+                          style={{marginTop: "20px", marginBottom: "20px"}}
+                          />
+            </Grid>
+            <Grid xs={0} md={1} lg={2}/>
+        </Grid> 
+
+      <div style={{marginLeft: "5%", marginRight:"5%"}}>
         <RecipeList data={data.blog}/>
       </div>
     </Layout>

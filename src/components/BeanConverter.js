@@ -6,7 +6,9 @@ import { Autocomplete,
     FormControlLabel, 
     FormControl,
     Button,
-    Switch } from '@mui/material';
+    Switch,
+    Stack, 
+    Typography } from '@mui/material';
 
 //todo: load from graphql query
 const beanOptions = [
@@ -36,19 +38,21 @@ const BeanSelector = (update) => {
 
 const BeanStyle = () => {
 
-    <div>
-        <p>Bean Style</p>
-        <RadioGroup
-            aria-labelledby="demo-radio-buttons-group-label"
-            defaultValue="dried"
-            name="radio-buttons-group"
-            row
-        >
-            <FormControlLabel value="dried" control={<Radio />} label="Dried" />
-            <FormControlLabel value="canned" control={<Radio />} label="Canned" />
-            <FormControlLabel value="cooked" control={<Radio />} label="Cooked" />
-        </RadioGroup>
-    </div>
+    return (
+        <div>
+            <p>Bean Style</p>
+            <RadioGroup
+                aria-labelledby="demo-radio-buttons-group-label"
+                defaultValue="dried"
+                name="radio-buttons-group"
+                row
+            >
+                <FormControlLabel value="dried" control={<Radio />} label="Dried" />
+                <FormControlLabel value="canned" control={<Radio />} label="Canned" />
+                <FormControlLabel value="cooked" control={<Radio />} label="Cooked" />
+            </RadioGroup>
+        </div>
+    );
 };
 
 const BeanQuantity = () => {
@@ -103,8 +107,16 @@ class BeanConverter extends React.Component {
         }
     }
 
-    updateState = (key,type) => {
-        this.setState({[[key]]: type});
+    updateState = (key,value) => {
+        this.setState({[[key]]: value});
+    }
+
+    updateMetricState = (value) => {
+        if(value === false){
+            this.updateState("systemOfUnits", "imperial");
+        } else {
+            this.updateState("systemOfUnits", "metric");
+        }
     }
 
     render() {
@@ -122,8 +134,13 @@ class BeanConverter extends React.Component {
                 <p></p>
                 <p>This part of the website is under development. Check back soon!</p>
                 <h1>Bean Converter</h1>
+
                 <FormControl>
-                    <Switch {...label} /> {/* On toggle switch between metric / imperial */}
+                    <Stack direction="row" spacing={1} alignItems="center">
+                        <Typography>Imperial</Typography>
+                            <Switch onChange={(event, value) => this.updateMetricState(value)} />
+                        <Typography>Metric</Typography>
+                    </Stack>
 
                     <p>Recipe Calls for</p>
 
@@ -143,6 +160,13 @@ class BeanConverter extends React.Component {
 
                 {/* dried, cooked, cans --- volume / weight */}
                 <p>results --- converted to other formats</p>
+
+                <p><strong>Your selections: </strong></p>
+                <p>System of units: {this.state.systemOfUnits}</p>
+                <p>Pulse (bean) type: {this.state.pulseType}</p>
+                <p>Quantity: {this.state.quantity}</p>
+                <p>MeasurementUnit: {this.state.measurementUnit}</p>
+
                 <p>include--substitutes (separate tool)</p>
 
             </div>

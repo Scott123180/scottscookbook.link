@@ -1,7 +1,8 @@
-import React from 'react'
-import { Link } from "gatsby"
-import PatreonSVG from "../Icons/PatreonSVG"
-import PersonalWebsiteSVG from "../Icons/PersonalWebsiteSVG"
+import React from "react";
+import { Link } from "gatsby";
+import PatreonSVG from "../Icons/PatreonSVG";
+import PersonalWebsiteSVG from "../Icons/PersonalWebsiteSVG";
+import GitHubSVG from "../Icons/GithubSVG";
 
 const Footer = () => {
   return (
@@ -14,6 +15,9 @@ const Footer = () => {
         <div className="social-icons-container">
           <a href="https://www.scotthansen.io/" target="_blank" rel="noreferrer">
             <PersonalWebsiteSVG />
+          </a>
+          <a href="https://github.com/Scott123180/eatwell.link" target="_blank" rel="noreferrer">
+            <GitHubSVG />
           </a>
           <a href="https://www.patreon.com/scotthansen" target="_blank" rel="noreferrer">
             <PatreonSVG />
