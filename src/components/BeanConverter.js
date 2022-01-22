@@ -101,8 +101,8 @@ class BeanConverter extends React.Component {
         
         this.state = {
             systemOfUnits: "imperial",
-            pulseType: "",
-            pulseStyle: "",
+            pulseType: undefined,
+            pulseStyle: undefined,
             quantity: "",
             measurementUnit: ""
         }
@@ -129,6 +129,7 @@ class BeanConverter extends React.Component {
             console.log("submitted it!");
             console.log(this.state.systemOfUnits);
             console.log(this.state.pulseType);
+            console.log(this.state.pulseStyle);
             console.log(this.state.quantity);
             console.log(this.state.measurementUnit);
         }
@@ -167,7 +168,8 @@ class BeanConverter extends React.Component {
 
                 <p><strong>Your selections: </strong></p>
                 <p>System of units: {this.state.systemOfUnits}</p>
-                <p>Pulse (bean) type: {this.state.pulseType}</p>
+                <p>Pulse (bean) type: {this.state.pulseType !== undefined ? beanMap.get(this.state.pulseType).name : ""}</p>
+                <p>Pulse (bean) style: {this.state.pulseStyle !== undefined ? beanMap.get(this.state.pulseStyle).name : ""}</p>
                 <p>Quantity: {this.state.quantity}</p>
                 <p>MeasurementUnit: {this.state.measurementUnit}</p>
 
