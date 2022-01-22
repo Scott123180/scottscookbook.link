@@ -25,7 +25,7 @@ const beanMap = new Map([
 
 const beanOptions = Array.from(beanMap, ([key, value]) => ({label: value.name, id: key}))
 
-const BeanSelector = (callBackUpdate) => {
+const BeanSelector = (callbackUpdate) => {
 
     return (
         <Autocomplete
@@ -33,14 +33,14 @@ const BeanSelector = (callBackUpdate) => {
         id="bean-combo-box"
         options={beanOptions}
         sx={{ width: 300 }}
-        onChange={(event, value) => callBackUpdate(value !== null ? value.id : undefined)}
+        onChange={(event, value) => callbackUpdate(value !== null ? value.id : undefined)}
         renderInput={(params) => 
             <TextField {...params} label="Bean / Legume Type" />}
         />
     );
 };
 
-const BeanStyle = () => {
+const BeanStyle = (callbackUpdate) => {
 
     return (
         <div>
@@ -48,7 +48,7 @@ const BeanStyle = () => {
             <RadioGroup
                 aria-labelledby="demo-radio-buttons-group-label"
                 name="radio-buttons-group"
-                onChange={(event, value) => console.log(value)}
+                onChange={(event, value) => callbackUpdate(value)}
                 row
             >
                 <FormControlLabel value="dried" control={<Radio />} label="Dried" />
@@ -59,7 +59,7 @@ const BeanStyle = () => {
     );
 };
 
-const BeanQuantity = () => {
+const BeanQuantity = (callbackUpdate) => {
 
     return (
         <div>
@@ -68,7 +68,7 @@ const BeanQuantity = () => {
             label="Quantity" 
             variant="standard" 
             type="number"
-            onChange={(event) => console.log(event.target.value)} />
+            onChange={(event) => callbackUpdate(event.target.value)} />
         </div>
     );
 
@@ -135,9 +135,6 @@ class BeanConverter extends React.Component {
     }
 
     updateState = (key,value) => {
-        console.log("updating state");
-        console.log("key: " + key);
-        console.log("value " + value);
         this.setState({[[key]]: value});
     }
 
@@ -201,7 +198,7 @@ class BeanConverter extends React.Component {
                 <p><strong>Your selections: </strong></p>
                 <p>System of units: {this.state.systemOfUnits}</p>
                 <p>Pulse (bean) type: {this.state.pulseType !== undefined ? beanMap.get(this.state.pulseType).name : ""}</p>
-                <p>Pulse (bean) style: {this.state.pulseStyle !== undefined ? beanMap.get(this.state.pulseStyle).name : ""}</p>
+                <p>Pulse (bean) style: {this.state.pulseStyle !== undefined ? this.state.pulseStyle : ""}</p>
                 <p>Quantity: {this.state.quantity}</p>
                 <p>MeasurementUnit: {this.state.measurementUnit}</p>
 
