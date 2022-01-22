@@ -10,6 +10,9 @@ import { Autocomplete,
     Stack, 
     Typography } from '@mui/material';
 
+const imperial = "imperial";
+const metric = "metric";
+
 const beanMap = new Map([
     [1,{name: 'Black'}],
     [2,{name: 'ChickPeas / Garbanzo'}],
@@ -44,7 +47,6 @@ const BeanStyle = () => {
             <p>Bean Style</p>
             <RadioGroup
                 aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="dried"
                 name="radio-buttons-group"
                 row
             >
@@ -67,8 +69,32 @@ const BeanQuantity = () => {
 
 };
 
+
+const metricOptions = () => {
+
+    return (
+        <div>
+            <FormControlLabel value="ml" control={<Radio />} label="ml" />
+            <FormControlLabel value="grams" control={<Radio />} label="grams" />
+        </div>
+    );
+
+}
+const imperialOptions = () => {
+    return (
+        <div>
+            <FormControlLabel value="cups" control={<Radio />} label="Cups" />
+            <FormControlLabel value="ounce" control={<Radio />} label="Ounce" />
+            <FormControlLabel value="fluidOunce" control={<Radio />} label="Fluid Ounce" />
+        </div>
+    );
+
+}
+
 //generate the options based off of the bean style
-const MeasurementUnit = () => {
+const MeasurementUnit = (systemOfUnits) => {
+
+    const formOptions = systemOfUnits === imperial ? imperialOptions() : metricOptions();
 
     return (
         <div>
@@ -76,13 +102,10 @@ const MeasurementUnit = () => {
             <p>Unit</p>
             <RadioGroup
                 aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="one"
                 name="radio-buttons-group"
                 row
             >
-                <FormControlLabel value="one" control={<Radio />} label="Cups" />
-                <FormControlLabel value="two" control={<Radio />} label="Ounce" />
-                <FormControlLabel value="three" control={<Radio />} label="Fluid Ounce" />
+                {formOptions}
             </RadioGroup>
         </div>
 
@@ -100,7 +123,7 @@ class BeanConverter extends React.Component {
         super();
         
         this.state = {
-            systemOfUnits: "imperial",
+            systemOfUnits: imperial,
             pulseType: undefined,
             pulseStyle: undefined,
             quantity: "",
@@ -117,9 +140,9 @@ class BeanConverter extends React.Component {
 
     updateMetricState = (value) => {
         if(value === false){
-            this.updateState("systemOfUnits", "imperial");
+            this.updateState("systemOfUnits", imperial);
         } else {
-            this.updateState("systemOfUnits", "metric");
+            this.updateState("systemOfUnits", metric);
         }
     }
 
@@ -152,7 +175,7 @@ class BeanConverter extends React.Component {
                     {BeanSelector((type) => this.updateState("pulseType", type))}
                     {BeanStyle()}
                     {BeanQuantity()}
-                    {MeasurementUnit()}
+                    {MeasurementUnit(this.state.systemOfUnits)}
 
                     <Button 
                         variant="contained" 
