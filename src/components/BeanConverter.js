@@ -4,10 +4,12 @@ import { Autocomplete,
     RadioGroup, 
     Radio, 
     FormControlLabel, 
+    FormControl,
     Button,
     Switch } from '@mui/material';
 
-const options = [
+//todo: load from graphql query
+const beanOptions = [
     { label: 'Black', id: 1 },
     { label: 'ChickPeas / Garbanzo', id: 2},
     { label: 'Pinto', id: 3},
@@ -17,17 +19,23 @@ const options = [
     { label: 'Jelly', id: 7},
 ];
 
-const BeanSelector = (
-    <Autocomplete
-    disablePortal
-    id="bean-combo-box"
-    options={options}
-    sx={{ width: 300 }}
-    renderInput={(params) => <TextField {...params} label="Bean / Legume Type" />}
-    />
-);
+const BeanSelector = (update) => {
 
-const BeanStyle = (
+    return (
+        <Autocomplete
+        disablePortal
+        id="bean-combo-box"
+        options={beanOptions}
+        sx={{ width: 300 }}
+        onChange={(event, value) => update(value)}
+        renderInput={(params) => 
+            <TextField {...params} label="Bean / Legume Type" />}
+        />
+    );
+};
+
+const BeanStyle = () => {
+
     <div>
         <p>Bean Style</p>
         <RadioGroup
@@ -41,65 +49,105 @@ const BeanStyle = (
             <FormControlLabel value="cooked" control={<Radio />} label="Cooked" />
         </RadioGroup>
     </div>
-);
+};
 
-const BeanQuantity = (
+const BeanQuantity = () => {
 
-    <div>
-        <p>qty</p>
-        <TextField id="standard-basic" label="Quantity" variant="standard" type="number" />
-    </div>
+    return (
+        <div>
+            <p>qty</p>
+            <TextField id="standard-basic" label="Quantity" variant="standard" type="number" />
+        </div>
+    );
 
-
-);
+};
 
 //generate the options based off of the bean style
-const MeasurementUnit = (
-    <div>
-        <p></p>
-        <p>Unit</p>
-        <RadioGroup
-            aria-labelledby="demo-radio-buttons-group-label"
-            defaultValue="one"
-            name="radio-buttons-group"
-            row
-        >
-            <FormControlLabel value="one" control={<Radio />} label="Cups" />
-            <FormControlLabel value="two" control={<Radio />} label="Ounce" />
-            <FormControlLabel value="three" control={<Radio />} label="Fluid Ounce" />
-        </RadioGroup>
-    </div>
-);
-
-const BeanConverter = () => {
-
-    //extend this so that I can eventually convert it when in a recipe
-    const label = { inputProps: { 'aria-label': 'Switch demo' } };
+const MeasurementUnit = () => {
 
     return (
         <div>
             <p></p>
-            <p>This part of the website is under development. Check back soon!</p>
-            <h1>Bean Converter</h1>
-            <Switch {...label} /> {/* On toggle switch between metric / imperial */}
-
-            <p>Recipe Calls for</p>
-
-            {BeanSelector}
-            {BeanStyle}
-            {BeanQuantity}
-            {MeasurementUnit}
-
-            <Button variant="contained">Calculate</Button>
-
-            {/* dried, cooked, cans --- volume / weight */}
-            <p>results --- converted to other formats</p>
-            <p>include--substitutes (separate tool)</p>
-
+            <p>Unit</p>
+            <RadioGroup
+                aria-labelledby="demo-radio-buttons-group-label"
+                defaultValue="one"
+                name="radio-buttons-group"
+                row
+            >
+                <FormControlLabel value="one" control={<Radio />} label="Cups" />
+                <FormControlLabel value="two" control={<Radio />} label="Ounce" />
+                <FormControlLabel value="three" control={<Radio />} label="Fluid Ounce" />
+            </RadioGroup>
         </div>
 
-
     );
+};
+
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
+
+const imperialUnits = ["cup", "ounce", "fluid ounce"];
+const metricUnits = ["ml", "grams"];
+
+class BeanConverter extends React.Component {
+
+    constructor() {
+        super();
+        
+        this.state = {
+            systemOfUnits: "imperial",
+            pulseType: "",
+            pulseStyle: "",
+            quantity: "",
+            measurementUnit: ""
+        }
+    }
+
+    updateState = (key,type) => {
+        this.setState({[[key]]: type});
+    }
+
+    render() {
+
+        const onSubmit = () => {
+            console.log("submitted it!");
+            console.log(this.state.systemOfUnits);
+            console.log(this.state.pulseType);
+            console.log(this.state.quantity);
+            console.log(this.state.measurementUnit);
+        }
+
+        return (
+            <div>
+                <p></p>
+                <p>This part of the website is under development. Check back soon!</p>
+                <h1>Bean Converter</h1>
+                <FormControl>
+                    <Switch {...label} /> {/* On toggle switch between metric / imperial */}
+
+                    <p>Recipe Calls for</p>
+
+                    {BeanSelector((type) => this.updateState("pulseType", type))}
+                    {BeanStyle()}
+                    {BeanQuantity()}
+                    {MeasurementUnit()}
+
+                    <Button 
+                        variant="contained" 
+                        type="submit"
+                        onClick={() => onSubmit()}
+                    >
+                        Calculate
+                    </Button>
+                </FormControl>
+
+                {/* dried, cooked, cans --- volume / weight */}
+                <p>results --- converted to other formats</p>
+                <p>include--substitutes (separate tool)</p>
+
+            </div>
+        );
+    }
 }
 
 export default BeanConverter;
