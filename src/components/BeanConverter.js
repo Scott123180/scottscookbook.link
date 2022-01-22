@@ -30,7 +30,7 @@ const BeanSelector = (callBackUpdate) => {
         id="bean-combo-box"
         options={beanOptions}
         sx={{ width: 300 }}
-        onChange={(event, value) => callBackUpdate(value.id)}
+        onChange={(event, value) => callBackUpdate(value !== null ? value.id : undefined)}
         renderInput={(params) => 
             <TextField {...params} label="Bean / Legume Type" />}
         />
