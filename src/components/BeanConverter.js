@@ -8,8 +8,7 @@ import { Autocomplete,
     Button,
     Switch,
     Stack, 
-    Typography, 
-    FormLabel} from '@mui/material';
+    Typography} from '@mui/material';
 
 const imperial = "imperial";
 const metric = "metric";
@@ -98,9 +97,9 @@ const imperialOptions = () => {
 }
 
 //generate the options based off of the bean style
-const MeasurementUnit = (systemOfUnits, callBackUpdate) => {
+const MeasurementUnit = (callBackUpdate, measurementUnit, systemOfUnits) => {
 
-    const formOptions = systemOfUnits === imperial ? imperialOptions() : metricOptions();
+    const formOptions = systemOfUnits === imperial ? imperialOptions(measurementUnit) : metricOptions();
 
     return (
         <div>
@@ -109,7 +108,9 @@ const MeasurementUnit = (systemOfUnits, callBackUpdate) => {
             <RadioGroup
                 aria-labelledby="demo-radio-buttons-group-label"
                 name="radio-buttons-group"
-                onChange={(event, value) => console.log(value)}
+                onChange={(event, value) => callBackUpdate(value)}
+                value={measurementUnit}
+                defaultChecked
                 row
             >
                 {formOptions}
@@ -118,11 +119,6 @@ const MeasurementUnit = (systemOfUnits, callBackUpdate) => {
 
     );
 };
-
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
-
-const imperialUnits = ["cup", "ounce", "fluid ounce"];
-const metricUnits = ["ml", "grams"];
 
 class BeanConverter extends React.Component {
 
@@ -133,7 +129,7 @@ class BeanConverter extends React.Component {
             systemOfUnits: imperial,
             pulseType: undefined,
             pulseStyle: undefined,
-            quantity: "",
+            quantity: undefined,
             measurementUnit: ""
         }
     }
@@ -147,9 +143,15 @@ class BeanConverter extends React.Component {
 
     updateMetricState = (value) => {
         if(value === false){
-            this.updateState("systemOfUnits", imperial);
+            this.setState(
+                {"systemOfUnits": imperial,
+                "measurementUnit": ""
+            });
         } else {
-            this.updateState("systemOfUnits", metric);
+            this.setState(
+                {"systemOfUnits": metric, 
+                "measurementUnit": ""
+            });
         }
     }
 
@@ -180,9 +182,9 @@ class BeanConverter extends React.Component {
                     <p>Recipe Calls for</p>
 
                     {BeanSelector((type) => this.updateState("pulseType", type))}
-                    {BeanStyle()}
-                    {BeanQuantity()}
-                    {MeasurementUnit(this.state.systemOfUnits)}
+                    {BeanStyle((style) => this.updateState("pulseStyle", style))}
+                    {BeanQuantity((quantity) => this.updateState("quantity", quantity))}
+                    {MeasurementUnit((unit) => this.updateState("measurementUnit", unit),this.state.measurementUnit,this.state.systemOfUnits)}
 
                     <Button 
                         variant="contained" 
