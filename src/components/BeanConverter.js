@@ -10,18 +10,19 @@ import { Autocomplete,
     Stack, 
     Typography } from '@mui/material';
 
-//todo: load from graphql query
-const beanOptions = [
-    { label: 'Black', id: 1 },
-    { label: 'ChickPeas / Garbanzo', id: 2},
-    { label: 'Pinto', id: 3},
-    { label: 'Kidney', id: 4},
-    { label: 'Cannelli', id: 5},
-    { label: 'Lentil', id: 6},
-    { label: 'Jelly', id: 7},
-];
+const beanMap = new Map([
+    [1,{name: 'Black'}],
+    [2,{name: 'ChickPeas / Garbanzo'}],
+    [3,{name: 'Pinto'}],
+    [4,{name: 'Kidney'}],
+    [5,{name: 'Cannelli'}],
+    [6,{name: 'Lentil'}],
+    [7,{name: 'Jelly'}],
+])
 
-const BeanSelector = (update) => {
+const beanOptions = Array.from(beanMap, ([key, value]) => ({label: value.name, id: key}))
+
+const BeanSelector = (callBackUpdate) => {
 
     return (
         <Autocomplete
@@ -29,7 +30,7 @@ const BeanSelector = (update) => {
         id="bean-combo-box"
         options={beanOptions}
         sx={{ width: 300 }}
-        onChange={(event, value) => update(value)}
+        onChange={(event, value) => callBackUpdate(value.id)}
         renderInput={(params) => 
             <TextField {...params} label="Bean / Legume Type" />}
         />
@@ -108,6 +109,9 @@ class BeanConverter extends React.Component {
     }
 
     updateState = (key,value) => {
+        console.log("updating state");
+        console.log("key: " + key);
+        console.log("value " + value);
         this.setState({[[key]]: value});
     }
 
