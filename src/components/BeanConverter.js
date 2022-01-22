@@ -8,7 +8,8 @@ import { Autocomplete,
     Button,
     Switch,
     Stack, 
-    Typography } from '@mui/material';
+    Typography, 
+    FormLabel} from '@mui/material';
 
 const imperial = "imperial";
 const metric = "metric";
@@ -48,6 +49,7 @@ const BeanStyle = () => {
             <RadioGroup
                 aria-labelledby="demo-radio-buttons-group-label"
                 name="radio-buttons-group"
+                onChange={(event, value) => console.log(value)}
                 row
             >
                 <FormControlLabel value="dried" control={<Radio />} label="Dried" />
@@ -62,8 +64,12 @@ const BeanQuantity = () => {
 
     return (
         <div>
-            <p>qty</p>
-            <TextField id="standard-basic" label="Quantity" variant="standard" type="number" />
+            <TextField 
+            id="standard-basic" 
+            label="Quantity" 
+            variant="standard" 
+            type="number"
+            onChange={(event) => console.log(event.target.value)} />
         </div>
     );
 
@@ -92,7 +98,7 @@ const imperialOptions = () => {
 }
 
 //generate the options based off of the bean style
-const MeasurementUnit = (systemOfUnits) => {
+const MeasurementUnit = (systemOfUnits, callBackUpdate) => {
 
     const formOptions = systemOfUnits === imperial ? imperialOptions() : metricOptions();
 
@@ -103,6 +109,7 @@ const MeasurementUnit = (systemOfUnits) => {
             <RadioGroup
                 aria-labelledby="demo-radio-buttons-group-label"
                 name="radio-buttons-group"
+                onChange={(event, value) => console.log(value)}
                 row
             >
                 {formOptions}
