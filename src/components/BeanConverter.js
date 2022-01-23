@@ -11,7 +11,6 @@ import { Autocomplete,
     Typography,
     TableContainer, 
     Paper, 
-    TableHead, 
     TableCell, 
     Table, 
     TableRow, 
@@ -21,13 +20,12 @@ const imperial = "imperial";
 const metric = "metric";
 
 const beanMap = new Map([
-    [1,{name: 'Black'}],
+    [1,{name: 'Black', cookedWeight: 1, cannedWeight: 1, dryWeight: 1, cookedVolume: 1, cannedVolume: 1, dryVolume: 1}],
     [2,{name: 'ChickPeas / Garbanzo'}],
     [3,{name: 'Pinto'}],
     [4,{name: 'Kidney'}],
     [5,{name: 'Cannelli'}],
     [6,{name: 'Lentil'}],
-    [7,{name: 'Jelly'}],
 ])
 
 const beanOptions = Array.from(beanMap, ([key, value]) => ({label: value.name, id: key}))
@@ -127,8 +125,42 @@ const MeasurementUnit = (callBackUpdate, measurementUnit, systemOfUnits) => {
     );
 };
 
-const ResultTable = (systemOfUnits) => {
-    const input = {
+function isValidInput(input){
+    return input !== undefined 
+        && input !== null
+        && input !== "";
+}
+
+function inputIsComplete(input){
+
+    return input !== undefined
+        && input !== null
+        && isValidInput(input.systemOfUnits)
+        && isValidInput(input.pulseType)
+        && isValidInput(input.pulseStyle)
+        && isValidInput(input.quantity)
+        && isValidInput(input.measurementUnit);
+}
+
+function convertInput(input){
+
+    // input.systemOfUnits;
+    // input.pulseType;
+    // input.pulseStyle;
+    // input.quantity
+    // input.measurementUnit
+
+    return;
+
+}
+
+const ResultTable = (input) => {
+
+    if(!inputIsComplete(input)) {
+        return <div></div>;
+    }
+
+    const tableOutput = {
         dried: {
             imperial: {
                 cup: 1,
@@ -215,15 +247,6 @@ class BeanConverter extends React.Component {
 
     render() {
 
-        const onSubmit = () => {
-            console.log("submitted it!");
-            console.log(this.state.systemOfUnits);
-            console.log(this.state.pulseType);
-            console.log(this.state.pulseStyle);
-            console.log(this.state.quantity);
-            console.log(this.state.measurementUnit);
-        }
-
         return (
             <div>
                 <p></p>
@@ -244,28 +267,10 @@ class BeanConverter extends React.Component {
                     {BeanQuantity((quantity) => this.updateState("quantity", quantity))}
                     {MeasurementUnit((unit) => this.updateState("measurementUnit", unit),this.state.measurementUnit,this.state.systemOfUnits)}
 
-                    <Button 
-                        variant="contained" 
-                        type="submit"
-                        onClick={() => onSubmit()}
-                    >
-                        Calculate
-                    </Button>
                 </FormControl>
 
-                {/* dried, cooked, cans --- volume / weight */}
-                <p>results --- converted to other formats</p>
+                {ResultTable(this.state)}
 
-                <p><strong>Your selections: </strong></p>
-                <p>System of units: {this.state.systemOfUnits}</p>
-                <p>Pulse (bean) type: {this.state.pulseType !== undefined ? beanMap.get(this.state.pulseType).name : ""}</p>
-                <p>Pulse (bean) style: {this.state.pulseStyle !== undefined ? this.state.pulseStyle : ""}</p>
-                <p>Quantity: {this.state.quantity}</p>
-                <p>MeasurementUnit: {this.state.measurementUnit}</p>
-
-                {ResultTable(this.state.measurementUnit)}
-
-                <p>include--substitutes (separate tool)</p>
             </div>
         );
     }
