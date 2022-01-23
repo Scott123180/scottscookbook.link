@@ -5,7 +5,6 @@ import { Autocomplete,
     Radio, 
     FormControlLabel, 
     FormControl,
-    Button,
     Switch,
     Stack, 
     Typography,
@@ -19,8 +18,13 @@ import { Autocomplete,
 const imperial = "imperial";
 const metric = "metric";
 
+//units in metrics
+//measurements below start with dry weight and then we figure out the rest
+//formula for cooked to canned g (assuming same density across all beans) --- cannedWeight = cookedWeight * 1 2/3
+//formula for cooked to canned ml (assuming same amount of bean juice across all cans --- 
+
 const beanMap = new Map([
-    [1,{name: 'Black', cookedWeight: 1, cannedWeight: 1, dryWeight: 1, cookedVolume: 1, cannedVolume: 1, dryVolume: 1}],
+    [1,{name: 'Black', cookedWeight: 1133.98, cannedWeight: 1889.96, dryWeight: 454, cookedVolume: 1656.12, cannedVolume: 1577.25, dryVolume: 610.29}],
     [2,{name: 'ChickPeas / Garbanzo'}],
     [3,{name: 'Pinto'}],
     [4,{name: 'Kidney'}],
