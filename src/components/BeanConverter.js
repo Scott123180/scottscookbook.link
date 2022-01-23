@@ -24,7 +24,7 @@ const metric = "metric";
 //formula for cooked to canned ml (assuming same amount of bean juice across all cans --- 
 
 const beanMap = new Map([
-    [1,{name: 'Black', cookedWeight: 1133.98, cannedWeight: 1889.96, dryWeight: 454, cookedVolume: 1656.12, cannedVolume: 1577.25, dryVolume: 610.29}],
+    [1,{name: 'Black', cookedG: 1133.98, cannedG: 1889.96, dryG: 454, cookedMl: 1656.12, dryMl: 610.29}],
     [2,{name: 'ChickPeas / Garbanzo'}],
     [3,{name: 'Pinto'}],
     [4,{name: 'Kidney'}],
