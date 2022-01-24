@@ -23,8 +23,9 @@ const metric = "metric";
 //formula for cooked to canned g (assuming same density across all beans) --- cannedWeight = cookedWeight * 1 2/3
 //formula for cooked to canned ml (assuming same amount of bean juice across all cans --- 
 
+//source will either be serious eats or it will be my own observation
 const beanMap = new Map([
-    [1,{name: 'Black', cookedG: 1133.98, cannedG: 1889.96, dryG: 454, cookedMl: 1656.12, dryMl: 610.29}],
+    [1,{name: 'Black', cookedG: 1048.93, cannedG: 1748.22, dryG: 454, cookedMl: 1656.12, dryMl: 610.29, source: "seriousEats"}],
     [2,{name: 'ChickPeas / Garbanzo'}],
     [3,{name: 'Pinto'}],
     [4,{name: 'Kidney'}],
