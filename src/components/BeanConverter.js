@@ -314,7 +314,7 @@ class BeanConverter extends React.Component {
     updateStyleState = (value) => {
         if(value === "canned"){
             this.setState({
-                "measurementUnit":  undefined,
+                "measurementUnit":  "",
                 "pulseStyle": value
             })
         } else {
