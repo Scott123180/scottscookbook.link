@@ -85,31 +85,37 @@ const BeanQuantity = (callbackUpdate) => {
 };
 
 
-const metricOptions = () => {
+const metricOptions = (pulseStyle) => {
+
+    const volumeOptionMl = pulseStyle !== "canned" ? <FormControlLabel value="ml" control={<Radio />} label="ml" /> : "";
 
     return (
         <div>
-            <FormControlLabel value="ml" control={<Radio />} label="ml" />
             <FormControlLabel value="grams" control={<Radio />} label="grams" />
+            {volumeOptionMl}
         </div>
     );
 
 }
-const imperialOptions = () => {
+const imperialOptions = (pulseStyle) => {
+
+    const volumeOptionCup = pulseStyle !== "canned" ? <FormControlLabel value="cups" control={<Radio />} label="Cups" /> : "";
+    const volumeOptionFl = pulseStyle !== "canned" ? <FormControlLabel value="fluidOunce" control={<Radio />} label="Fluid Ounce" /> : "";
+
     return (
         <div>
-            <FormControlLabel value="cups" control={<Radio />} label="Cups" />
             <FormControlLabel value="ounce" control={<Radio />} label="Ounce" />
-            <FormControlLabel value="fluidOunce" control={<Radio />} label="Fluid Ounce" />
+            {volumeOptionCup}
+            {volumeOptionFl}
         </div>
     );
 
 }
 
 //generate the options based off of the bean style
-const MeasurementUnit = (callBackUpdate, measurementUnit, systemOfUnits) => {
+const MeasurementUnit = (callBackUpdate, measurementUnit, systemOfUnits, pulseStyle) => {
 
-    const formOptions = systemOfUnits === imperial ? imperialOptions() : metricOptions();
+    const formOptions = systemOfUnits === imperial ? imperialOptions(pulseStyle) : metricOptions(pulseStyle);
 
     return (
         <div>
@@ -305,12 +311,23 @@ class BeanConverter extends React.Component {
         }
     }
 
+    updateStyleState = (value) => {
+        if(value === "canned"){
+            this.setState({
+                "measurementUnit":  undefined,
+                "pulseStyle": value
+            })
+        } else {
+            this.updateState("pulseStyle", value);
+        }
+
+    }
+
     render() {
 
         return (
             <div>
                 <p></p>
-                <p>This part of the website is in beta, if you have any issues, please click the github icon at the footer and create an issue.</p>
                 <h1>Bean Converter</h1>
 
                 <FormControl>
@@ -323,9 +340,9 @@ class BeanConverter extends React.Component {
                     <p>Recipe Calls for</p>
 
                     {BeanSelector((type) => this.updateState("pulseType", type))}
-                    {BeanStyle((style) => this.updateState("pulseStyle", style))}
+                    {BeanStyle((style) => this.updateStyleState(style))}
                     {BeanQuantity((quantity) => this.updateState("quantity", quantity))}
-                    {MeasurementUnit((unit) => this.updateState("measurementUnit", unit),this.state.measurementUnit,this.state.systemOfUnits)}
+                    {MeasurementUnit((unit) => this.updateState("measurementUnit", unit),this.state.measurementUnit,this.state.systemOfUnits,this.state.pulseStyle)}
 
                 </FormControl>
 
