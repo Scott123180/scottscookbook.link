@@ -251,54 +251,27 @@ const ResultTable = (input) => {
     const output = convertInput(input);
     console.log(output);
 
-    const tableOutput = {
-        dried: {
-            imperial: {
-                cup: 1,
-                ounce: 2,
-                fluidOz: 3
-            },
-            metric: {
-                grams: 11,
-                ml: 12
-            }
-        },
-        canned: {
-            imperial: {
-                ounce: 4
-            },
-            metric: {
-                grams: 5
-            }
-        },
-        cooked: {
-            imperial: {
-                cup: 6,
-                ounce: 7,
-                fluidOz: 8,
-            },
-            metric: {
-                grams: 9,
-                ml: 10
-            }
-        }
-    }
-
     return (
-        <TableContainer component={Paper}>
-          <Table aria-label="simple table">
-            <TableBody>
-                <TableRow key="one">
-                    <TableCell variant="head">head</TableCell>
-                    <TableCell>tailk</TableCell>
-                </TableRow>
-                <TableRow key="two">
-                    <TableCell variant="head">head</TableCell>
-                    <TableCell>tailk</TableCell>
-                </TableRow>
-            </TableBody>
-          </Table>
-        </TableContainer>
+
+        <div>
+            <p>{JSON.stringify(output)}</p>
+        </div>
+
+
+        // <TableContainer component={Paper}>
+        //   <Table aria-label="simple table">
+        //     <TableBody>
+        //         <TableRow key="one">
+        //             <TableCell variant="head">head</TableCell>
+        //             <TableCell>tailk</TableCell>
+        //         </TableRow>
+        //         <TableRow key="two">
+        //             <TableCell variant="head">head</TableCell>
+        //             <TableCell>tailk</TableCell>
+        //         </TableRow>
+        //     </TableBody>
+        //   </Table>
+        // </TableContainer>
       );
     
 
@@ -341,7 +314,7 @@ class BeanConverter extends React.Component {
         return (
             <div>
                 <p></p>
-                <p>This part of the website is in beta. If you notice an error, please click the github link at the footer and submit an issue.</p>
+                <p>This part of the website is under development and will be available for full functionality soon!</p>
                 <h1>Bean Converter</h1>
 
                 <FormControl>
