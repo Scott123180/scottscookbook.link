@@ -109,7 +109,7 @@ const imperialOptions = () => {
 //generate the options based off of the bean style
 const MeasurementUnit = (callBackUpdate, measurementUnit, systemOfUnits) => {
 
-    const formOptions = systemOfUnits === imperial ? imperialOptions(measurementUnit) : metricOptions();
+    const formOptions = systemOfUnits === imperial ? imperialOptions() : metricOptions();
 
     return (
         <div>
@@ -147,23 +147,109 @@ function inputIsComplete(input){
         && isValidInput(input.measurementUnit);
 }
 
+function fromCups(cups){return cups * 236.588;}
+function toCups(ml){return ml / 236.588;}
+function fromFlOz(floz){return fromCups(floz) / 8;}
+function toFlOz(ml){return toCups(ml) * 8;}
+function fromOz(oz){return oz * 28.3495;}
+function toOz(g){return g / 28.3495;}
+
 function convertInput(input){
 
-    // input.systemOfUnits;
-    // input.pulseType;
-    // input.pulseStyle;
-    // input.quantity
-    // input.measurementUnit
+    const pulseType = input.pulseType;
+    const mapEntry = beanMap.get(pulseType);
 
-    return;
+    const qty = input.quantity;
+    const pulseStyle = input.pulseStyle;
+    const measurementUnit = input.measurementUnit;
+
+    //convert to dried g
+    const driedWeight = convertToDriedBeansG(mapEntry, qty, pulseStyle, measurementUnit);
+
+    //convert to other units
+    return convertDriedBeansToAll(mapEntry, driedWeight);
+}
+
+function convertDriedBeansToAll(mapEntry, qty){
+
+    const ref = {name: 'Black', cookedG: 1048.93, cannedG: 1748.22, dryG: 454, cookedMl: 1656.12, dryMl: 610.29, source: "seriousEats"}
+    //cooked
+    const cookedG = (mapEntry.cookedG/mapEntry.dryG) * qty;
+    const cookedMl = (mapEntry.cookedMl/mapEntry.dryG) * qty;
+    const cookedCups = toCups(cookedMl);
+    const cookedOz = toOz(cookedG);
+    const cookedFlOz = toFlOz(cookedMl);
+
+    //dried
+    const driedG = qty;
+    const driedMl = (mapEntry.dryMl/mapEntry.dryG) * qty; 
+    const driedCups = toCups(driedMl);
+    const driedOz = toOz(driedG);
+    const driedFlOz = toFlOz(driedG);
+
+    //canned
+    const cannedG = (mapEntry.cannedG/mapEntry.dryG) * qty; 
+    const cannedOz = toOz(cannedG);
+
+    return {
+        "cookedG":cookedG,
+        "cookedMl":cookedMl,
+        "cookedCups":cookedCups,
+        "cookedOz":cookedOz,
+        "cookedFlOz":cookedFlOz,
+        "driedG":driedG,
+        "driedMl":driedMl,
+        "driedCups":driedCups,
+        "driedOz":driedOz,
+        "driedFlOz":driedFlOz,
+        "cannedG":cannedG,
+        "cannedOz":cannedOz,
+    }
 
 }
+
+function convertToDriedBeansG(mapEntry, qty, style, measurementUnit){
+    let fluidRatio;
+    let weightRatio;
+
+    if(style === "dried"){
+        fluidRatio = mapEntry.dryG / mapEntry.dryMl;
+        weightRatio = 1;
+
+    } else if (style === "cooked"){
+        fluidRatio = mapEntry.dryG / mapEntry.cookedML;
+        weightRatio = mapEntry.dryG / mapEntry.cookedG;
+
+    } else { //canned
+        fluidRatio = null;
+        weightRatio = mapEntry.dryG / mapEntry.cookedG;
+    }
+
+    if(measurementUnit === "cups"){
+        const qtyMl = fromCups(qty);
+        return qtyMl * fluidRatio;
+    } else if (measurementUnit === "oz"){
+        const qtyG = fromOz(qty);
+        return qtyG * weightRatio;
+    } else if (measurementUnit === "flOz"){
+        const qtyMl = fromFlOz(qty);
+        return qtyMl * fluidRatio;
+    } else if (measurementUnit === "ml"){
+        return qty * fluidRatio;
+    } else { //g
+        return weightRatio * qty;
+    }
+}
+
 
 const ResultTable = (input) => {
 
     if(!inputIsComplete(input)) {
         return <div></div>;
     }
+    
+    const output = convertInput(input);
+    console.log(output);
 
     const tableOutput = {
         dried: {
@@ -255,7 +341,7 @@ class BeanConverter extends React.Component {
         return (
             <div>
                 <p></p>
-                <p>This part of the website is under development. Check back soon!</p>
+                <p>This part of the website is in beta. If you notice an error, please click the github link at the footer and submit an issue.</p>
                 <h1>Bean Converter</h1>
 
                 <FormControl>
