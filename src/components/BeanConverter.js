@@ -25,12 +25,12 @@ const metric = "metric";
 
 //source will either be serious eats or it will be my own observation
 const beanMap = new Map([
-    [1,{name: 'Black', cookedG: 1048.93, cannedG: 1748.22, dryG: 454, cookedMl: 1656.12, dryMl: 610.29, source: "seriousEats"}],
-    [2,{name: 'ChickPeas / Garbanzo', driedG:  454.0, cookedG:  1474.175, cannedG:  2456.96324725, cookedMl:  1656.12, dryMl:  767.221864, source: "seriousEats"}],
-    [3,{name: 'Pinto', driedG:  454.0, cookedG:  1048.93236, cannedG:  1748.2240964412001, cookedMl: 1537.82, dryMl:  767.221864, source: "seriousEats"}],
-    [4,{name: 'Kidney', driedG:  454.0, cookedG:  1105.6314, cannedG:  1842.722685438, cookedMl:  1537.82, dryMl:  639.3515533333334, source: "seriousEats"}],
-    [5,{name: 'Cannellini', driedG:  454.0, cookedG:  1133.98, cannedG:  1889.9704466, cookedMl:  1537.82, dryMl: 706.6517168421052, source: "seriousEats"}],
-    [6,{name: 'Black-Eyed Peas', driedG:  454.0, cookedG:  1275.72854, cannedG:  2126.2184857618004, cookedMl:  1537.82, dryMl:  767.2218640000001, source: "seriousEats"}]
+    [1,{name: 'Black', cookedG: 1048.93, cannedG: 1748.22, dryG: 454.0, cookedMl: 1656.12, dryMl: 610.29, source: "seriousEats"}],
+    [2,{name: 'ChickPeas / Garbanzo', dryG:  454.0, cookedG:  1474.175, cannedG:  2456.96324725, cookedMl:  1656.12, dryMl:  767.221864, source: "seriousEats"}],
+    [3,{name: 'Pinto', dryG:  454.0, cookedG:  1048.93236, cannedG:  1748.2240964412001, cookedMl: 1537.82, dryMl:  767.221864, source: "seriousEats"}],
+    [4,{name: 'Kidney', dryG:  454.0, cookedG:  1105.6314, cannedG:  1842.722685438, cookedMl:  1537.82, dryMl:  639.3515533333334, source: "seriousEats"}],
+    [5,{name: 'Cannellini', dryG:  454.0, cookedG:  1133.98, cannedG:  1889.9704466, cookedMl:  1537.82, dryMl: 706.6517168421052, source: "seriousEats"}],
+    [6,{name: 'Black-Eyed Peas', dryG:  454.0, cookedG:  1275.72854, cannedG:  2126.2184857618004, cookedMl:  1537.82, dryMl:  767.2218640000001, source: "seriousEats"}]
 ])
 
 const beanOptions = Array.from(beanMap, ([key, value]) => ({label: value.name, id: key}))
@@ -172,7 +172,6 @@ function convertInput(input){
 
 function convertDriedBeansToAll(mapEntry, qty){
 
-    const ref = {name: 'Black', cookedG: 1048.93, cannedG: 1748.22, dryG: 454, cookedMl: 1656.12, dryMl: 610.29, source: "seriousEats"}
     //cooked
     const cookedG = (mapEntry.cookedG/mapEntry.dryG) * qty;
     const cookedMl = (mapEntry.cookedMl/mapEntry.dryG) * qty;
@@ -192,18 +191,18 @@ function convertDriedBeansToAll(mapEntry, qty){
     const cannedOz = toOz(cannedG);
 
     return {
-        "cookedG":cookedG,
-        "cookedMl":cookedMl,
-        "cookedCups":cookedCups,
-        "cookedOz":cookedOz,
-        "cookedFlOz":cookedFlOz,
-        "driedG":driedG,
-        "driedMl":driedMl,
-        "driedCups":driedCups,
-        "driedOz":driedOz,
-        "driedFlOz":driedFlOz,
-        "cannedG":cannedG,
-        "cannedOz":cannedOz,
+        "cooked (g)": Math.round(cookedG),
+        "cooked (ml)": Math.round(cookedMl),
+        "cooked (cups)": Math.round(cookedCups, 3),
+        "cooked (oz)": cookedOz.toFixed(3),
+        "cooked (fl)": cookedFlOz.toFixed(3),
+        "dried (g)": Math.round(driedG),
+        "dried (ml)": Math.round(driedMl),
+        "dried (cups)": driedCups.toFixed(3),
+        "dried (oz)": driedOz.toFixed(3),
+        "dried (fl)": driedFlOz.toFixed(3),
+        "canned (g)": Math.round(cannedG),
+        "canned (oz)": cannedOz.toFixed(3),
     }
 
 }
@@ -217,26 +216,26 @@ function convertToDriedBeansG(mapEntry, qty, style, measurementUnit){
         weightRatio = 1;
 
     } else if (style === "cooked"){
-        fluidRatio = mapEntry.dryG / mapEntry.cookedML;
+        fluidRatio = mapEntry.dryG / mapEntry.cookedMl;
         weightRatio = mapEntry.dryG / mapEntry.cookedG;
 
     } else { //canned
         fluidRatio = null;
-        weightRatio = mapEntry.dryG / mapEntry.cookedG;
+        weightRatio = mapEntry.dryG / mapEntry.cannedG;
     }
 
     if(measurementUnit === "cups"){
         const qtyMl = fromCups(qty);
         return qtyMl * fluidRatio;
-    } else if (measurementUnit === "oz"){
+    } else if (measurementUnit === "ounce"){
         const qtyG = fromOz(qty);
         return qtyG * weightRatio;
-    } else if (measurementUnit === "flOz"){
+    } else if (measurementUnit === "fluidOunce"){
         const qtyMl = fromFlOz(qty);
         return qtyMl * fluidRatio;
     } else if (measurementUnit === "ml"){
         return qty * fluidRatio;
-    } else { //g
+    } else { //grams
         return weightRatio * qty;
     }
 }
@@ -249,29 +248,26 @@ const ResultTable = (input) => {
     }
     
     const output = convertInput(input);
-    console.log(output);
 
     return (
 
-        <div>
-            <p>{JSON.stringify(output)}</p>
-        </div>
+        <TableContainer component={Paper}>
+          <Table aria-label="simple table">
+            <TableBody>
+                {
+                    Object.keys(output).map((key, objectIndex) => {
 
-
-        // <TableContainer component={Paper}>
-        //   <Table aria-label="simple table">
-        //     <TableBody>
-        //         <TableRow key="one">
-        //             <TableCell variant="head">head</TableCell>
-        //             <TableCell>tailk</TableCell>
-        //         </TableRow>
-        //         <TableRow key="two">
-        //             <TableCell variant="head">head</TableCell>
-        //             <TableCell>tailk</TableCell>
-        //         </TableRow>
-        //     </TableBody>
-        //   </Table>
-        // </TableContainer>
+                        return (
+                            <TableRow key={objectIndex}>
+                                <TableCell variant="head">{key}</TableCell>
+                                <TableCell variant="head">{output[key]}</TableCell>
+                            </TableRow>
+                        )
+                    })
+                }
+            </TableBody>
+          </Table>
+        </TableContainer>
       );
     
 
@@ -314,7 +310,7 @@ class BeanConverter extends React.Component {
         return (
             <div>
                 <p></p>
-                <p>This part of the website is under development and will be available for full functionality soon!</p>
+                <p>This part of the website is in beta, if you have any issues, please click the github icon at the footer and create an issue.</p>
                 <h1>Bean Converter</h1>
 
                 <FormControl>
