@@ -26,11 +26,11 @@ const metric = "metric";
 //source will either be serious eats or it will be my own observation
 const beanMap = new Map([
     [1,{name: 'Black', cookedG: 1048.93, cannedG: 1748.22, dryG: 454, cookedMl: 1656.12, dryMl: 610.29, source: "seriousEats"}],
-    [2,{name: 'ChickPeas / Garbanzo'}],
-    [3,{name: 'Pinto'}],
-    [4,{name: 'Kidney'}],
-    [5,{name: 'Cannelli'}],
-    [6,{name: 'Lentil'}],
+    [2,{name: 'ChickPeas / Garbanzo', driedG:  454.0, cookedG:  1474.175, cannedG:  2456.96324725, cookedMl:  1656.12, dryMl:  767.221864, source: "seriousEats"}],
+    [3,{name: 'Pinto', driedG:  454.0, cookedG:  1048.93236, cannedG:  1748.2240964412001, cookedMl: 1537.82, dryMl:  767.221864, source: "seriousEats"}],
+    [4,{name: 'Kidney', driedG:  454.0, cookedG:  1105.6314, cannedG:  1842.722685438, cookedMl:  1537.82, dryMl:  639.3515533333334, source: "seriousEats"}],
+    [5,{name: 'Cannellini', driedG:  454.0, cookedG:  1133.98, cannedG:  1889.9704466, cookedMl:  1537.82, dryMl: 706.6517168421052, source: "seriousEats"}],
+    [6,{name: 'Black-Eyed Peas', driedG:  454.0, cookedG:  1275.72854, cannedG:  2126.2184857618004, cookedMl:  1537.82, dryMl:  767.2218640000001, source: "seriousEats"}]
 ])
 
 const beanOptions = Array.from(beanMap, ([key, value]) => ({label: value.name, id: key}))
