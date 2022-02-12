@@ -34,7 +34,7 @@ export default IndexPage;
 export const query = graphql`
 {
   blog: allMarkdownRemark(
-    sort: {fields: [frontmatter___date], order: DESC} 
+    sort: {fields: [frontmatter___date], order: ASC} 
     filter: { fileAbsolutePath: { regex: "/recipes/"}}
     ) {
     edges {
@@ -51,7 +51,6 @@ export const query = graphql`
           totalTime
           topic
         }
-        excerpt(pruneLength: 200)
       }
     }
   }

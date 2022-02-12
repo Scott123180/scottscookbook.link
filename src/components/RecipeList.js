@@ -11,6 +11,7 @@ import Rating from '@mui/material/Rating';
 import '../styles/global.css';
 
 const RecipeList = ({ data }) => {
+  console.log(data); 
   return (
     <TableContainer component={Paper}>
     <Table  aria-label="simple table">
