@@ -199,7 +199,7 @@ function convertDriedBeansToAll(mapEntry, qty){
     return {
         "cooked (g)": Math.round(cookedG),
         "cooked (ml)": Math.round(cookedMl),
-        "cooked (cups)": Math.round(cookedCups, 3),
+        "cooked (cups)": cookedCups.toFixed(3),
         "cooked (oz)": cookedOz.toFixed(3),
         "cooked (fl)": cookedFlOz.toFixed(3),
         "dried (g)": Math.round(driedG),
