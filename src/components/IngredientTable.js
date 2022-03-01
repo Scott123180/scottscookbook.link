@@ -5,6 +5,23 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
+const LinkedShoppingCart = ({link}) => {
+
+  const url = "https://www.amazon.com/s?"
+  + "k=" + link.replace(/\s/g, "+") 
+  + "&i=amazonfresh";
+
+  return (
+    <div>
+        <a href={url} target="_blank" rel='noreferrer'>
+          <AddShoppingCartIcon />
+        </a>
+    </div>
+  );
+
+}
 
 const IngredientTable = ({data}) => {
 
@@ -17,6 +34,7 @@ const IngredientTable = ({data}) => {
           <TableBody>
             {data.map((ingredient) => (
               <TableRow key={section + "." + ingredient.name}>
+                <TableCell><LinkedShoppingCart link={ingredient.name} /></TableCell>
                 <TableCell align="left"
                 style={{paddingLeft: "5%", paddingRight: "5%"}}>
                   <strong>{ingredient.amount}</strong> &nbsp; 
