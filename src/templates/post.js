@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Nav from '../components/Nav';
 import IngredientTable from '../components/IngredientTable';
 import Grid from '@mui/material/Grid';
 import Layout from '../components/Layout';
