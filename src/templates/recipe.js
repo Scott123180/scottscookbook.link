@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import IngredientTable from '../components/IngredientTable';
 import Grid from '@mui/material/Grid';
 import Layout from '../components/Layout';
-import { FormGroup, FormControlLabel, Switch } from '@mui/material';
+import { FormGroup, Typography, Switch, Stack } from '@mui/material';
 
 const RecipeLinkElement = ({link}) =>{
 
@@ -25,6 +25,15 @@ class Recipe extends React.Component{
       shoppingProvider: 'Amazon Fresh'
     };
   }
+
+  updateShoppingState = (value) => {
+    this.updateState("shoppingModeToggled", value);
+  }
+  
+  updateState = (key,value) => {
+      this.setState({[[key]]: value});
+  }
+
 
   render(){
     const data = this.props.data;
@@ -90,7 +99,10 @@ class Recipe extends React.Component{
               <h4 style={{color: 'rgb(165, 164, 164)', fontSize: '0.8em'}}>Published: {post.frontmatter.date} | Total Time: {post.frontmatter.totalTime}</h4>
               
               <FormGroup>
-                <FormControlLabel control={<Switch />} label="Shopping Mode" />
+                <Stack direction="row" spacing={1} alignItems="center">
+                  <Typography>Shopping Mode</Typography>
+                  <Switch label="Shopping Mode" onChange={(event, value) => this.updateShoppingState(value)} />
+                </Stack>
               </FormGroup>
 
               <h4>Ingredients</h4>
