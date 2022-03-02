@@ -9,7 +9,7 @@ originalLink: "https://www.allrecipes.com/recipe/176650/greek-pasta-salad/"
 scottRating: 5
 ingredients: [
   {
-    name: Penne Pasta,
+    name: Whole Wheat Penne Pasta,
     amount: 16,
     unit: oz
   },

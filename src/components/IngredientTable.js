@@ -34,7 +34,9 @@ const IngredientTable = ({data}) => {
           <TableBody>
             {data.map((ingredient) => (
               <TableRow key={section + "." + ingredient.name}>
-                <TableCell><LinkedShoppingCart link={ingredient.name} /></TableCell>
+                <TableCell style={{width: "20px"}}>
+                  <LinkedShoppingCart link={ingredient.name} />
+                </TableCell>
                 <TableCell align="left"
                 style={{paddingLeft: "5%", paddingRight: "5%"}}>
                   <strong>{ingredient.amount}</strong> &nbsp; 
