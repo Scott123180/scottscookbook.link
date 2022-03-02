@@ -3,9 +3,9 @@ import { graphql } from 'gatsby';
 import IngredientTable from '../components/IngredientTable';
 import Grid from '@mui/material/Grid';
 import Layout from '../components/Layout';
-import { FormGroup, Typography, Switch, Stack } from '@mui/material';
+import { FormGroup, Typography, Switch, Stack, Select, MenuItem} from '@mui/material';
 
-const RecipeLinkElement = ({link}) =>{
+const RecipeLinkElement = ({link}) => {
 
   if(link !== null && link !== "") {
     return <p><a href={link} target="_blank" rel="noreferrer">Inspiring Recipe</a></p>
@@ -15,6 +15,24 @@ const RecipeLinkElement = ({link}) =>{
 
 }
 
+const ShoppingProvider = ({shoppingProvider, enabled, handleChange}) => {
+  if(!enabled) return <div />
+
+  return (
+    <Select
+      value={shoppingProvider}
+      onChange={(event) => handleChange(event.target.value)}
+    >
+      <MenuItem value={'AMAZON_FRESH'}>Amazon Fresh</MenuItem>
+      <MenuItem value={'AVO'}>Avo</MenuItem>
+      <MenuItem value={'INSTACART'}>Instacart</MenuItem>
+      <MenuItem value={'WALMART_GROCERY'}>Walmart Grocery</MenuItem>
+      <MenuItem value={'WHOLE_FOODS'}>Whole Foods</MenuItem>
+    </Select>
+
+  )
+}
+
 class Recipe extends React.Component{
 
   constructor() {
@@ -22,7 +40,7 @@ class Recipe extends React.Component{
 
     this.state = {
       shoppingModeToggled: false,
-      shoppingProvider: 'Amazon Fresh'
+      shoppingProvider: 'AMAZON_FRESH'
     };
   }
 
@@ -102,6 +120,10 @@ class Recipe extends React.Component{
                 <Stack direction="row" spacing={1} alignItems="center">
                   <Typography>Shopping Mode</Typography>
                   <Switch label="Shopping Mode" onChange={(event, value) => this.updateShoppingState(value)} />
+                  <ShoppingProvider 
+                    shoppingProvider={this.state.shoppingProvider} enabled={this.state.shoppingModeToggled} 
+                    handleChange={(value) => this.updateState("shoppingProvider", value)}
+                    /> 
                 </Stack>
               </FormGroup>
 

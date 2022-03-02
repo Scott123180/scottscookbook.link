@@ -7,11 +7,30 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-const LinkedShoppingCart = ({itemName, enabled}) => {
+const formQueryString = (s) => {
+  return s.replace(/\s/g, "+");
+}
 
-  const url = "https://www.amazon.com/s?"
-  + "k=" + itemName.replace(/\s/g, "+") 
-  + "&i=amazonfresh";
+const LinkedShoppingCart = ({itemName, enabled, provider}) => {
+  let url;
+
+  switch(provider){
+    case "AMAZON_FRESH":
+      url = "https://www.amazon.com/s?" + "k=" + formQueryString(itemName) + "&i=amazonfresh";
+      break;
+    case "AVO":
+      url = "https://www.avonow.com/search?q=" + itemName;
+      break;
+    case "INSTACART":
+      url = "https://www.instacart.com/store/search/" + itemName; 
+      break;
+    case "WALMART_GROCERY":
+      url = "https://www.walmart.com/search?q=" + itemName;
+      break;
+    case "WHOLE_FOODS":
+      url = "https://www.amazon.com/s?k=" + formQueryString(itemName) +"&i=wholefoods";
+      break;
+  }
 
   if(!enabled){
     return <div></div>;
@@ -37,7 +56,7 @@ const IngredientTable = ({data, shoppingModeToggled, shoppingProvider}) => {
           <TableBody>
             {data.map((ingredient) => (
               <TableRow key={section + "." + ingredient.name}>
-                <LinkedShoppingCart itemName={ingredient.name} enabled={shoppingModeToggled} />
+                <LinkedShoppingCart itemName={ingredient.name} enabled={shoppingModeToggled} provider={shoppingProvider} />
                 <TableCell align="left"
                 style={{paddingLeft: "5%", paddingRight: "5%"}}>
                   <strong>{ingredient.amount}</strong> &nbsp; 
