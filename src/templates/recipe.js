@@ -15,7 +15,7 @@ const RecipeLinkElement = ({link}) =>{
 
 }
 
-class Post extends React.Component{
+class Recipe extends React.Component{
 
   constructor() {
     super();
@@ -112,7 +112,7 @@ class Post extends React.Component{
 
 } 
 
-export default Post;
+export default Recipe;
 
 export const query = graphql`query PostQuery($slug: String!) {
   markdownRemark(fields: { slug: { eq: $slug } }) {
