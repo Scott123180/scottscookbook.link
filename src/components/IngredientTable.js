@@ -7,23 +7,26 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-const LinkedShoppingCart = ({link}) => {
+const LinkedShoppingCart = ({itemName, enabled}) => {
 
   const url = "https://www.amazon.com/s?"
-  + "k=" + link.replace(/\s/g, "+") 
+  + "k=" + itemName.replace(/\s/g, "+") 
   + "&i=amazonfresh";
 
+  if(!enabled){
+    return <div></div>;
+  }
+
   return (
-    <div>
+    <TableCell style={{width: "20px"}}>
         <a href={url} target="_blank" rel='noreferrer'>
           <AddShoppingCartIcon />
         </a>
-    </div>
+    </TableCell>
   );
-
 }
 
-const IngredientTable = ({data}) => {
+const IngredientTable = ({data, shoppingModeToggled, shoppingProvider}) => {
 
     const section = data[0].section;
 
@@ -34,9 +37,7 @@ const IngredientTable = ({data}) => {
           <TableBody>
             {data.map((ingredient) => (
               <TableRow key={section + "." + ingredient.name}>
-                <TableCell style={{width: "20px"}}>
-                  <LinkedShoppingCart link={ingredient.name} />
-                </TableCell>
+                <LinkedShoppingCart itemName={ingredient.name} enabled={shoppingModeToggled} />
                 <TableCell align="left"
                 style={{paddingLeft: "5%", paddingRight: "5%"}}>
                   <strong>{ingredient.amount}</strong> &nbsp; 

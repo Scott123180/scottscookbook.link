@@ -59,7 +59,7 @@ class Recipe extends React.Component{
         <Grid container spacing = {2} className="ingredients">
           <Grid item xs = {1} md={2}/>
           <Grid item xs = {10} md={8}>
-            <IngredientTable data={mapBySection.get(value)}/>
+            <IngredientTable data={mapBySection.get(value)} shoppingModeToggled={this.state.shoppingModeToggled} shoppingProvider={this.state.shoppingProvider} />
           </Grid>
           <Grid item xs = {1} md={2} />
         </Grid>
