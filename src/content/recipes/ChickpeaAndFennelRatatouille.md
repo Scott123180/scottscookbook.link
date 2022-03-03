@@ -9,37 +9,44 @@ originalLink: https://cooking.nytimes.com/recipes/1015123-chickpea-and-fennel-ra
 scottRating: 4
 ingredients: [
   {
-    name: "Eggplant (smaller side), cut into chunks",
+    name: "Eggplant",
+    preparation: ", cut into chunks",
     amount: 1,
-    unit: lb
+    unit: small
   },
   {
-    name: "Zucchini, cut into large chunks",
+    name: "Zucchini",
+    preparation: ", cut into large chunks",
     amount: .75,
     unit: lb
   },
   {
-    name: "Roma (plum) tomatoes, cored and chipped or 1 28 oz can drained",
+    name: "Roma tomatoes",
+    preparation: ", cored and chipped or 1 28 oz can drained",
     amount: 1,
     unit: lb
   },
   {
-    name: "onion, sliced",
+    name: "onion",
+    preparation: ", sliced",
     amount: 1,
     unit: count
   },
   {
-    name: "yellow or red bell peppers, sliced",
+    name: "yellow or red bell peppers",
+    preparation: ", sliced",
     amount: 2,
     unit: count
   },
   {
-    name: "Fennel bulb, cut into large chunks",
+    name: "Fennel bulb",
+    preparation: ", cut into large chunks",
     amount: 1,
     unit: lb 
   },
   {
-    name: "garlic cloves, halved",
+    name: "garlic cloves",
+    preparation: ", halved",
     amount: 5,
     unit: count
   },
@@ -54,7 +61,7 @@ ingredients: [
     unit: cup
   },
   {
-    name: "cooked chickpeas (or canned), drained ",
+    name: "cooked chickpeas",
     amount: 3,
     unit: cups
   },
@@ -64,7 +71,8 @@ ingredients: [
     unit: tablespoon
   },
   {
-    name: "chopped fresh basil or parsley (if not using fresh thyme or rosemary)",
+    name: "chopped fresh basil or parsley",
+    preparation: " (if not using fresh thyme or rosemary), chopped",
     amount: 0.5,
     unit: cup
   },

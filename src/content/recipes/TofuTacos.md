@@ -27,7 +27,8 @@ ingredients: [
     unit: tbsp
   },
   {
-    name: "Adobo Sauce, divided (from canned chipotles or sometimes sold separately)",
+    name: "Adobo Sauce",
+    preparation: ", divided (from canned chipotles or sometimes sold separately)",
     amount: 1.5,
     metric: 30g,
     unit: tbsp
@@ -45,7 +46,8 @@ ingredients: [
     unit: tbsp,
   },
   {
-    name: Extra-firm tofu (ripped and torn into 1" pieces),
+    name: Extra-firm tofu,
+    preparation: ", ripped and torn into 1" pieces",
     amount: 2,
     metric: 794g,
     unit: brick
@@ -57,7 +59,8 @@ ingredients: [
     unit: tsp
   },
   {
-    name: Cabbage (shredded),
+    name: Cabbage,
+    preparation: ", shredded",
     amount: 210,
     unit: g
   },

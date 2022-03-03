@@ -14,17 +14,20 @@ ingredients: [
     unit: cup
   },
   {
-    name: Sweet Onions (chopped),
+    name: Sweet Onions,
+    preparation: chopped, 
     amount: 2,
     unit: large
   },
   {
-    name: "Dried Lentils (any color)",
+    name: "Lentils",
+    preparation: " Dried, any color",
     amount: 1,
     unit: cup
   },
   {
-    name: Dried Brown Rice,
+    name: Brown Rice,
+    preparation: " Dried", 
     amount: 1,
     unit: cup
   },

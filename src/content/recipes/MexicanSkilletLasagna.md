@@ -9,9 +9,9 @@ originalLink: "https://www.eatingwell.com/recipe/261902/mexican-skillet-lasagna/
 scottRating: 3
 ingredients: [
   {
-    name: 8 Inch/ 20cm Whole Wheat Flour Tortillas,
+    name: Whole Wheat Flour Tortillas,
     amount: 4,
-    unit: count
+    unit: "8 Inch/ 20cm"
   },
   {
     name: Vegetable Oil,
@@ -19,7 +19,8 @@ ingredients: [
     unit: tbsp
   },
   {
-    name: Yellow Onion - finely chopped,
+    name: Yellow Onion,
+    preparation: ", finely chopped",
     amount: 1,
     unit: count
   },
@@ -60,7 +61,8 @@ ingredients: [
     unit: oz
   },
   {
-    name: "Shredded, sharp cheddar cheese",
+    name: "sharp cheddar cheese",
+    preparation: ", shredded",
     amount: 230,
     unit: g
   },
@@ -70,7 +72,8 @@ ingredients: [
     unit: tsp
   },
   {
-    name: Scallions (Optional),
+    name: Scallions,
+    preparation: " (Optional)",
     amount: 2,
     unit: count
   },

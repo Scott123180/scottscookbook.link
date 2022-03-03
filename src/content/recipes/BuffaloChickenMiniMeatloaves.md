@@ -15,19 +15,21 @@ ingredients: [
     section: Meatloaf
   },
   {
-    name: "Celery Stalks, finely chopped",
+    name: "Celery Stalks",
+    preparation: ", finely chopped",
     amount: 3,
     unit: qty,
     section: Meatloaf
   },
   {
-    name: "Shallots, minced (or equivalent volume of onion)",
+    name: "Shallots",
     amount: 3,
     unit: large,
     section: Meatloaf
   },
   {
-    name: "Scallions, sliced",
+    name: "Scallions",
+    preparation: ", sliced",
     amount: 2,
     unit: qty,
     section: Meatloaf
@@ -51,7 +53,7 @@ ingredients: [
     section: Meatloaf
   },
   {
-    name: "Plain, Non-fat Greek Yogurt",
+    name: "Plain Non-fat Greek Yogurt",
     amount: 0.75,
     unit: cups,
     section: Meatloaf

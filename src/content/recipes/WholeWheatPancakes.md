@@ -30,7 +30,8 @@ ingredients: [
     unit: tsp
   },
   {
-    name: Cinnamon (ground),
+    name: Cinnamon,
+    preparation: ", ground",
     amount: 0.25,
     unit: tsp
   },
@@ -40,7 +41,8 @@ ingredients: [
     unit: count,
   },
   {
-    name: I Can't Believe It's Not Butter (melted),
+    name: butter substitute, 
+    preparation: ", melted",
     amount: 2,
     unit: tbsp,
   },

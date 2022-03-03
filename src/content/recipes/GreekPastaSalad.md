@@ -24,7 +24,8 @@ ingredients: [
     unit: tbsp
   },
   {
-    name: Garlic Cloves (crushed),
+    name: Garlic Cloves,
+    preparation: ", crushed",
     amount: 6,
     unit: count
   },
@@ -39,27 +40,32 @@ ingredients: [
     unit: cup
   },
   {
-    name: Cherry or Grape Tomatoes (halved),
+    name: Cherry or Grape Tomatoes,
+    preparation: ", halved",
     amount: 1,
     unit: pint
   },
   {
-    name: Medium Red Onion (cut in half and then sliced lengthwise),
+    name: Medium Red Onion,
+    preparation: ", cut in half and then sliced lengthwise", 
     amount: 1,
     unit: count
   },
   {
-    name: Green Bell Pepper (chopped),
+    name: Green Bell Pepper,
+    preparation: ", chopped", 
     amount: 1,
     unit: count
   },
   {
-    name: Red Bell Pepper (chopped),
+    name: Red Bell Pepper,
+    preparation: ", chopped",
     amount: 1,
     unit: count
   },
   {
-    name: Medium Cucumber (chopped),
+    name: Medium Cucumber,
+    preparation: ", chopped",
     amount: 1,
     unit: count
   },
@@ -69,12 +75,18 @@ ingredients: [
     unit: cup
   },
   {
-    name: Feta Cheese (crumbled),
+    name: Feta Cheese,
+    preparation: ", crumbled", 
     amount: 7,
     unit: oz
   },
   {
-    name: Salt and Pepper,
+    name: Salt,
+    amount: 1,
+    unit: to taste
+  },
+  {
+    name: Pepper,
     amount: 1,
     unit: to taste
   },

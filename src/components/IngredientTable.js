@@ -62,6 +62,7 @@ const IngredientTable = ({data, shoppingModeToggled, shoppingProvider}) => {
                   <strong>{ingredient.amount}</strong> &nbsp; 
                   {ingredient.unit}&nbsp;
                   {ingredient.name}
+                  {ingredient.preparation}
                 </TableCell>
               </TableRow>
             ))}

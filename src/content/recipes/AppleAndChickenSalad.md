@@ -16,7 +16,8 @@ ingredients: [
     unit: qty
   },
   {
-    name: Celery Stalks (diced),
+    name: Celery Stalks,
+    preparation: ", diced",
     metric: 100g,
     amount: 2,
     unit: qty
@@ -40,7 +41,8 @@ ingredients: [
     unit: tsp,
   },
   {
-    name: "Lettuce Leaf (Bibb, Romaine, green, or red leaf)",
+    name: "Lettuce",
+    preparation: ", Bibb, Romaine, green, or red leaf",
     amount: 16,
     unit: count
   }

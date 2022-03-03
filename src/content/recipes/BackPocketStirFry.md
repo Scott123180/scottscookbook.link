@@ -27,13 +27,15 @@ ingredients: [
     section: Stir Fry
   },
   {
-    name: Chopped Stir Fry Vegetables (easiest is frozen stir fry mix),
+    name: Chopped Stir Fry Vegetables,
+    preparation: " (easiest is frozen stir fry mix)",
     amount: 4,
     unit: cups,
     section: Stir Fry
   },
   {
-    name: Minced Garlic,
+    name: Garlic,
+    preparation: ", Minced",
     amount: 2,
     unit: cloves,
     section: Stir Fry

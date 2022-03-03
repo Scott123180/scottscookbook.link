@@ -15,7 +15,8 @@ ingredients: [
     section: Gravy
   },
   {
-    name: "Onion, chopped",
+    name: "Onion",
+    preparation: ", chopped",
     amount: 1,
     unit: medium,
     section: Gravy

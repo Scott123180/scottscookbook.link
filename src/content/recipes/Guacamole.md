@@ -9,17 +9,20 @@ originalLink: "https://www.allrecipes.com/recipe/14231/guacamole/"
 scottRating: 4
 ingredients: [
   {
-    name: "avacados, peeled and pitted",
+    name: "avacados",
+    preparation: ", peeled and pitted", 
     amount: 3,
     unit: count
   },
   {
-    name: "lime, juiced",
+    name: "lime",
+    preparation: ", juiced",
     amount: 1,
     unit: count
   },
   {
-    name: "red onion, diced",
+    name: "red onion",
+    preparation: ", diced",
     amount: .5,
     unit: cup
   },
@@ -29,17 +32,20 @@ ingredients: [
     unit: tablespoons
   },
   {
-    name: "roma tomatoes (plum), diced",
+    name: "roma tomatoes",
+    preparation: ", diced", 
     amount: 2,
     unit: count
   },
   {
-    name: "minced garlic",
+    name: "garlic",
+    preparation: ", minced",
     amount: 1,
     unit: tsp
   },
   {
-    name: "ground cayenne pepper (optional)",
+    name: "cayenne pepper",
+    preparation: ", ground ", 
     amount: 1,
     unit: pinch
   },

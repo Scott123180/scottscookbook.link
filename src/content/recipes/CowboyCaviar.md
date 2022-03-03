@@ -40,42 +40,49 @@ ingredients: [
     unit: count
   },
   {
-    name: "Red Onion, finely diced)",
+    name: "Red Onion",
+    preparation: ", finely diced",
     amount: 0.5,
     unit: count
   },
   {
-    name: "Canned Black Beans, rinsed",
+    name: "Canned Black Beans",
+    preparation: ", rinsed",
     amount: 15,
     unit: oz
   },
   {
-    name: "Canned Black-eyed Peas, rinsed",
+    name: "Canned Black-eyed Peas",
+    preparation: ", rinsed",
     amount: 15,
     unit: oz
   },
   {
-    name: Corn Kernals,
+    name: Corn Kernels,
     amount: 1.5,
     unit: cups
   },
   {
-    name: "Red, green, or yellow bell pepper (finely diced and seeded)",
+    name: "Red, green, or yellow bell pepper",
+    preparation: ", finely diced and seeded",
     amount: 1,
     unit: count
   },
   {
-    name: "Jalapeno (seeded and diced)",
+    name: "Jalapeno",
+    preparation: ", seeded and diced",
     amount: 1,
     unit: count
   },
   {
-    name: Fresh Chopped Cilantro Leaves and stems,
+    name: Cilantro ,
+    preparation: ", Fresh Chopped Leaves and stems",
     amount: 0.5,
     unit: cups
   },
   {
-    name: "Scallion, white and green spots for garnish",
+    name: "Scallion",
+    preparation: ", white and green spots for garnish",
     amount: 1,
     unit: count
   }

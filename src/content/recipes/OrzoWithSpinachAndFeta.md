@@ -10,22 +10,25 @@ originalLink: "https://cooking.nytimes.com/recipes/1021485-one-pan-orzo-with-spi
 scottRating: 4
 ingredients: [
   {
-    name: Healthier Butter Substitute,
+    name: Butter Substitute,
     amount: 4,
     unit: tbsp
   },
   {
-    name: "Scallions sliced thin and trimmed",
+    name: "Scallions",
+    preparation: ", sliced thin and trimmed", 
     amount: 7,
     unit: large
   },
   {
-    name: Minced Garlic Cloves,
+    name: Garlic Cloves,
+    preparation: ", Minced", 
     amount: 4,
     unit: large
   },
   {
-    name: Lightly Chopped Baby Spinach,
+    name: Baby Spinach,
+    preparation: ", Lightly Chopped",
     amount: 16,
     unit: oz
   },
@@ -45,12 +48,14 @@ ingredients: [
     unit: oz
   },
   {
-    name: Frozed Peas (thawed),
+    name: Frozed Peas,
+    preparation: ", thawed",
     amount: 1,
     unit: cup
   },
   {
-    name: "Chopped Fresh Dill (Parsley or Cilantro as a substitute)" ,
+    name: "Chopped Fresh Dill",
+    preparation: " (Parsley or Cilantro as a substitute)",
     amount: 2,
     unit: cups
   },

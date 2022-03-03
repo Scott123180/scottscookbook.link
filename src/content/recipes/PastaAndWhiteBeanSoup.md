@@ -57,19 +57,21 @@ ingredients: [
     section: Soup
   },
   {
-    name: "Canned Cannellini Beans (15 oz) or Kidney Beans, drained and rinced",
-    amount: 2,
-    unit: count,
+    name: "Canned Cannellini Beans",
+    preparation: ", drained and rinced",
+    amount: 30,
+    unit: oz,
     section: Soup
   },
   {
-    name: Frozen, cut-leaf spinach,
+    name: Frozen cut-leaf spinach,
     amount: 3,
     unit: cups,
     section: Soup
   },
   {
-    name: Grated Parmesan Cheese,
+    name: Parmesan Cheese,
+    preparation: ", Grated", 
     amount: 1,
     unit: To Taste,
     section: Garnish

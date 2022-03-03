@@ -15,7 +15,8 @@ ingredients: [
     unit: cups
   },
   {
-    name: "Yellow or White Onion, Chopped",
+    name: "Yellow or White Onion",
+    preparation: ", Chopped",
     amount: 1,
     unit: medium
   },
@@ -25,7 +26,8 @@ ingredients: [
     unit: count
   },
   {
-    name: "Garlic Cloves, pressed or minced",
+    name: "Garlic Cloves",
+    preparation: ", pressed or minced",
     amount: 4,
     unit: count
   },
@@ -45,12 +47,14 @@ ingredients: [
     unit: tsp
   },
   {
-    name: "Can Diced Tomatoes, lightly drained",
+    name: "Can Diced Tomatoes",
+    preparation: ", lightly drained", 
     amount: 28,
     unit: oz
   },
   {
-    name: "Green or Brown Lentils, rinsed and sorted",
+    name: "Green or Brown Lentils",
+    preparation: ", rinsed and sorted", 
     amount: 1,
     unit: cup
   },
@@ -80,7 +84,8 @@ ingredients: [
     unit: to taste
   },
   {
-    name: "Fresh collard greens or kale, rinced thoroughly and tough ribs removed, chopped",
+    name: "Fresh collard greens or kale",
+    preparation: ", rinced thoroughly and tough ribs removed, chopped",
     amount: 1,
     unit: cup
   },

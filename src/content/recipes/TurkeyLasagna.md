@@ -19,12 +19,14 @@ ingredients: [
     unit: lb
   },
   {
-    name: "White Onion, finely diced",
+    name: "White Onion",
+    preparation: ", finely diced",
     amount: 1,
     unit: count
   },
   {
-    name: "Garlic cloved, minced",
+    name: "Garlic cloves",
+    preparation: ", minced",
     amount: 3,
     unit: count
   },
@@ -109,7 +111,8 @@ ingredients: [
     unit: count
   },
   {
-    name: "Fresh Basil, diced",
+    name: "Fresh Basil",
+    preparation: ", diced",
     amount: 0.25,
     unit: cups
   },
@@ -119,7 +122,8 @@ ingredients: [
     unit: tsp
   },
   {
-    name: Ground Black Pepper,
+    name: Black Pepper,
+    preparation: ", Ground"
     amount: 0.5,
     unit: tsp
   },
@@ -129,17 +133,20 @@ ingredients: [
     unit: cup
   },
   {
-    name: "Fresh Mozzarella, sliced thinly",
+    name: "Fresh Mozzarella",
+    preparation: ", sliced thinly",
     amount: 16,
     unit: oz 
   },
   {
-    name: "Parmesan Cheese, Grated",
+    name: "Parmesan Cheese",
+    preparation: ", Grated",
     amount: 0.5,
     unit: cups
   },
   {
-    name: "Parmesan Cheese, Grated",
+    name: "Parmesan Cheese",
+    preparation: ", Grated",
     amount: 0.25,
     unit: cups
   },
@@ -154,7 +161,7 @@ directions: [
   "Cook the noodles: cook until just short of al dente. It'll cook more when it is baked. Drain and rinse in cold water so it stops soaking.",
   "Make the ricotta mixture: mix the rocotta, egg, basil, salt, and pepper in a medium bowl.",
   "Preheat oven to 400F and grease a 9 x 13 baking pan or casserole dish with nonstick cooking spray.",
-  "Assemble the lasagna: spread 1.5 cups of the turkey meat sauce over the botom of the baking dish. Place a layer of noodles on top (should be around 5). Spread half f the ricotta cheese mixture, 2 tablespoons of diced basil and 0.33 of the mozzarella slices. Addd 1.5 cups of meat sauce on top, sprinkle with 0.25 cups of parmesan cheese. REpeat layers again. Top with remaining mozzarella sauce.",
+  "Assemble the lasagna: spread 1.5 cups of the turkey meat sauce over the botom of the baking dish. Place a layer of noodles on top (should be around 5). Spread half of the ricotta cheese mixture, 2 tablespoons of diced basil and 0.33 of the mozzarella slices. Addd 1.5 cups of meat sauce on top, sprinkle with 0.25 cups of parmesan cheese. REpeat layers again. Top with remaining mozzarella sauce.",
   "Cover with foil and bake for 25 minutes and then remove the foil and bake for another 20 minutes. You can also broil as a last step for extra crispyness if your cookware supports it. Garnish with 0.25 cups of parmesan and extra basil. Let it cool for 15 to 20 minutes before serving."
 ]
 

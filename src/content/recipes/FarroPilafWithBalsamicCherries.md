@@ -34,7 +34,8 @@ ingredients: [
     unit: cup
   },
   {
-    name: fresh thyme leaves,
+    name: fresh thyme,
+    preparation: " leaves",
     amount: 2,
     unit: teaspoons
   },

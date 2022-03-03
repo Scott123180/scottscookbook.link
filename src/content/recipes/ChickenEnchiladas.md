@@ -14,7 +14,8 @@ ingredients: [
     unit: lbs
   },
     {
-    name: tomatillos (papery skin removed),
+    name: tomatillos,
+    preparation: ", papery skin removed",
     amount: 2,
     unit: lbs
   },
@@ -24,17 +25,20 @@ ingredients: [
     unit: tbsp
   },
     {
-    name: "white onion (peeled, half chopped, the other half sliced into rings)",
+    name: "white onion",
+    preparation: ", peeled, half chopped, the other half sliced into rings",
     amount: 1,
     unit: large
   },
     {
-    name: minced jalapeno,
+    name: jalapeno,
+    preparation: ", minced ",
     amount: 2,
     unit: tbsp
   },
     {
-    name: cilantro (chopped),
+    name: cilantro,
+    preparation: ", chopped",
     amount: 3,
     unit: tbsp
   },
@@ -44,12 +48,14 @@ ingredients: [
     unit: count
   },
   {
-    name: queso anejo or cotija (crumbled),
+    name: queso anejo or cotija,
+    preparation: crumbled,
     amount: 8,
     unit: oz
   },
   {
-    name: mexican crema or creme fraiche (for serving),
+    name: mexican crema or creme fraiche,
+    preparation: ", for serving",
     amount: 1,
     unit: count
   },

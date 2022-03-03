@@ -10,13 +10,15 @@ originalLink: "https://books.google.com/books/about/Taste_of_Home_Mediterranean_
 scottRating: 5
 ingredients: [
   {
-    name: "Brown Lentils, rinsed",
+    name: "Brown Lentils",
+    preparation: ", rinsed", 
     amount: 0.75,
     unit: cup,
     section: Loaf
   },
   {
-    name: Broth (chicken or vegetable),
+    name: Broth,
+    preparation: "(chicken or vegetable)", 
     amount: 14.5,
     unit: oz,
     section: Loaf
@@ -28,51 +30,58 @@ ingredients: [
     section: Loaf
   },
   {
-    name: Shredded carrots,
+    name: carrots,
+    preparation: ", Shredded" , 
     amount: 1.75,
     unit: cups,
     section: Loaf
   },
   {
-    name: "Onion, finely chopped",
+    name: "Onion",
+    preparation: ", finely chopped",
     amount: 1,
     unit: cup,
     section: Loaf
   },
   {
-    name: "Mushrooms, finely chopped",
+    name: "Mushrooms",
+    preparation: ", finely chopped",
     amount: 1,
     unit: cup,
     section: Loaf
   },
   {
-    name: "Fresh Parsley, minced",
+    name: "Fresh Parsley",
+    preparation: ", minced",
     amount: 1,
     unit: tbsp,
     section: Loaf
   },
   {
-    name: Shredded Part Skim Mozerella Cheese,
+    name: Part Skim Mozerella Cheese,
+    preparation: ", Shredded",
     amount: 1,
     unit: cup,
     section: Loaf
   },
   {
-    name: Cooked Brown Rice,
+    name: Brown Rice,
+    preparation: ", cooked", 
     amount: 0.5,
     unit: cup,
     section: Loaf
   },
   {
-    name: Large Egg,
+    name: Egg,
     amount: 1,
-    unit: count,
+    unit: Large,
     section: Loaf
   },
   {
-    name: Large Egg White,
+    name: Egg ,
+    preparation: " White", 
     amount: 1,
-    unit: count,
+    unit: Large,
     section: Loaf
   },
   {
@@ -100,7 +109,8 @@ ingredients: [
     section: Glaze
   },
   {
-    name: Water (if using tomato paste),
+    name: Water,
+    preparation: " (if using tomato paste)", 
     amount: 2,
     unit: tbsp,
     section: Glaze

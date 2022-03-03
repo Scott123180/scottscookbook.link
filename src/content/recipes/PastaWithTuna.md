@@ -15,12 +15,14 @@ ingredients: [
     unit: oz
   },
   {
-    name: Castelvetrano olives (pitted/sliced),
+    name: Castelvetrano olives,
+    preparation: ", pitted and sliced", 
     amount: 0.5,
     unit: cup
   },
   {
-    name: Lemon Zest,
+    name: Lemon,
+    preparation: " Zest", 
     amount: 2,
     unit: tsp
   },
@@ -35,17 +37,18 @@ ingredients: [
     unit: tsp
   },
   {
-    name: "Canned, Unsalted Tuna in Water",
+    name: "Canned Tuna in Water",
     amount: 10,
     unit: oz
   },
   {
-    name: Fresh Dill (chopped),
+    name: Fresh Dill,
+    preparation: ", chopped", 
     amount: 3,
     unit: tbsp 
   },
   {
-    name: Extra-virgin olive oil,
+    name: Extra virgin olive oil,
     amount: 2,
     unit: tbsp
   },

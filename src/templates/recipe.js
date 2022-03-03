@@ -160,6 +160,7 @@ export const query = graphql`query PostQuery($slug: String!) {
       originalLink
       ingredients {
         name
+        preparation
         amount
         unit
         section

@@ -9,12 +9,14 @@ originalLink: "https://www.themediterraneandish.com/3-ingredient-mediterranean-s
 scottRating: 5
 ingredients: [
   {
-    name: Roma tomatoes (diced),
+    name: Roma tomatoes,
+    preparation: ", diced",
     amount: 6,
     unit: count
   },
   {
-    name: English Cucumber (large),
+    name: English Cucumber,
+    preparation: ", large", 
     amount: 1,
     unit: count
   },
@@ -34,12 +36,14 @@ ingredients: [
     unit: tbsp
   },
   {
-    name: Lemon Juice (from lemon),
+    name: Lemon,
+    preparation: " Juice, squeezed from lemon",
     amount: 2,
     unit: tsp
   },
   {
-    name: Lemon Zest,
+    name: Lemon,
+    preparation: "Zest", 
     amount: 1,
     unit: tsp
   },

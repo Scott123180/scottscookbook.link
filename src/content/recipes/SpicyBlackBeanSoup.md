@@ -15,19 +15,22 @@ ingredients: [
     section: Soup
   },
   {
-    name: "Medium Yellow Onions, Chopped",
+    name: "Medium Yellow Onions",
+    preparation: ", Chopped",
     amount: 2,
     unit: count,
     section: Soup
   },
   {
-    name: "Celery Ribs, Finely Chopped",
+    name: "Celery Ribs",
+    preparation: ", Finely Chopped",
     amount: 3,
     unit: count,
     section: Soup
   },
   {
-    name: "Large Carrot, Peeled and sliced into thin rounds",
+    name: "Large Carrot",
+    preparation: ", Peeled and sliced into thin rounds",
     amount: 1,
     unit: count,
     section: Soup
@@ -51,13 +54,15 @@ ingredients: [
     section: Soup 
   },
   {
-    name: Broth (vegetable or chicken),
+    name: Broth,
+    preparation: " (vegetable or chicken)",
     amount: 4,
     unit: cups,
     section: Soup
   },
   {
-    name: Ground Pepper,
+    name: Pepper,
+    preparation: ", Ground",
     amount: 1,
     unit: to taste,
     section: Soup
@@ -87,19 +92,22 @@ ingredients: [
     section: Optional
   },
   {
-    name: Diced Avocado,
+    name: Avocado,
+    preparation: ", Diced", 
     amount: 1,
     unit: to taste,
     section: Optional Garnishes
   },
   {
-    name: Extra Cilantro,
+    name: Cilantro,
+    preparation: ", Extra", 
     amount: 1,
     unit: to taste,
     section: Optional Garnishes
   },
   {
-    name: Thinly Sliced Radishes,
+    name: Radishes,
+    preparation: ", Thinly Sliced", 
     amount: 1,
     unit: to taste,
     section: Optional Garnishes
