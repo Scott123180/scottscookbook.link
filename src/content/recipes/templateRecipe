@@ -11,12 +11,14 @@ scottRating:
 ingredients: [
   {
     name: ,
+    preparation: ,
     amount: ,
     unit: ,
     section: 
   },
   {
     name: ,
+    preparation: ,
     amount: ,
     metric: ,
     unit: ,
