@@ -106,8 +106,6 @@ class Recipe extends React.Component{
       </ol>
     );
 
-    const originalRecipeLink = post.frontmatter.originalLink;
-
     return (
       <Layout>
         <div className="post-page-container">

@@ -11,7 +11,6 @@ import Rating from '@mui/material/Rating';
 import '../styles/global.css';
 
 const RecipeList = ({ data }) => {
-  console.log(data); 
   return (
     <TableContainer component={Paper}>
     <Table  aria-label="simple table">
@@ -33,7 +32,7 @@ const RecipeList = ({ data }) => {
             className='recipe-row'
             style={{ textDecoration: 'none', color: 'inherit'}}
           >
-            <TableCell component="th" scope="row" style={{paddingLeft: '5%'}}>
+            <TableCell style={{paddingLeft: '5%'}}>
               {node.frontmatter.title}
             </TableCell>
             <TableCell>

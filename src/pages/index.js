@@ -10,8 +10,8 @@ const IndexPage = ({ data }) => (
     <Layout>
         <SEO title="ScottsCookbook" />
          <Grid container>
-            <Grid xs={0} md={1} lg={2}/>
-            <Grid xs={12} md={10} lg={8}>
+            <Grid item xs={0} md={1} lg={2}/>
+            <Grid item xs={12} md={10} lg={8}>
               <StaticImage src="../images/default.png" 
                           placeholder="blurred" 
                           alt="" 
@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => (
                           style={{marginTop: "20px", marginBottom: "20px"}}
                           />
             </Grid>
-            <Grid xs={0} md={1} lg={2}/>
+            <Grid item xs={0} md={1} lg={2}/>
         </Grid> 
 
       <div style={{marginLeft: "5%", marginRight:"5%"}}>
