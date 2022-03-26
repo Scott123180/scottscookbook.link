@@ -53,12 +53,12 @@ class Nav extends React.Component  {
       <div className={post_nav_container} id="nav-bar" style={{marginLeft: "5%", marginRight: "5%"}} >
         <Link to="/" className="nav-brand"><strong>S</strong>cott's<strong> C</strong>ookbook</Link>
         <ul className="nav-item-container">
-          <li className={tools_classname}>
+          <li className={tools_classname} id="tools">
             <Link to="/tools">Cooking Tools</Link>
             <div className="underline"></div>
           </li>
           &nbsp; &nbsp;
-          <li className={about_classname}>
+          <li className={about_classname} id="about">
             <Link to="/about">About</Link>
             <div className="underline"></div>
           </li>

@@ -10,7 +10,6 @@ import Paper from '@mui/material/Paper';
 import Rating from '@mui/material/Rating';
 import '../styles/global.css';
 import { Autocomplete, TextField } from '@mui/material';
-import { ThreeDRotation } from '@mui/icons-material';
 
 class RecipeList extends React.Component {
 
@@ -25,41 +24,37 @@ class RecipeList extends React.Component {
   }
   
   updateState = (key,value) => {
-    console.log(key);
-    console.log(value);
 
     this.setState({[[key]]: value});
   }
 
   render() {
     const allRecipes = this.state.data.edges.map(({node}) => node.frontmatter.title);
-    console.log(this.state.searchInput);
 
     return (
       <div>
-        <Autocomplete
-          disablePortal
-          id="combo-box-demo"
-          options={allRecipes}
-          onChange={(event, value) => this.updateState("searchInput", value)}
-          sx={{ width: 300 }}
-          renderInput={(params) => <TextField {...params} label="Recipe Search" />}
+        <TextField 
+        id="standard-basic" 
+        label="Recipe Search" 
+        variant="standard" 
+        onChange={(event) => this.updateState("searchInput", event.target.value)}
+        style={{paddingBottom: "10px"}}
         />
+
 
         <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell style={{paddingLeft:'5%'}}>Recipe Name</TableCell>
-              <TableCell>Rating</TableCell>
+              <TableCell style={{paddingLeft:'5%', fontWeight: 'bold'}}>Recipe Name</TableCell>
+              <TableCell style={{fontWeight: 'bold'}}>Scott's Rating</TableCell>
             </TableRow>
           </TableHead>
-          {/* https://mui.com/components/tables/ */}
           <TableBody>
             {this.state.data.edges.map(
-              ({node}) => {
-                if(this.state.searchInput != null && this.state.searchInput != node.frontmatter.title){
 
+              ({node}) => {
+                if(this.state.searchInput && !node.frontmatter.title.includes(this.state.searchInput)){
                   return <div/>
                 }
 
