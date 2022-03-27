@@ -54,7 +54,7 @@ class RecipeList extends React.Component {
             {this.state.data.edges.map(
 
               ({node}) => {
-                if(this.state.searchInput && !node.frontmatter.title.includes(this.state.searchInput)){
+                if(this.state.searchInput && !node.frontmatter.title.toLowerCase().includes((this.state.searchInput).toLowerCase())){
                   return <div/>
                 }
 
