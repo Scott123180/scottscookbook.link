@@ -47,7 +47,7 @@ ingredients: [
   },
   {
     name: Extra-firm tofu,
-    preparation: ", ripped and torn into 1" pieces",
+    preparation: ", ripped and torn into 1\" pieces",
     amount: 2,
     metric: 794g,
     unit: brick

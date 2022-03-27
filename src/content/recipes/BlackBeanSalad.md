@@ -79,16 +79,7 @@ ingredients: [
     amount: 0.5,
     unit: tsp,
     section: Salad
-  },  {
-    name: ,
-    preparation: ,
-    amount: ,
-    unit: ,
-    section: 
-  },
-    unit: to taste,
-    section: Optional Garnishes 
-  },
+  },  
   {
     name: Feta,
     preparation: Crumbled,

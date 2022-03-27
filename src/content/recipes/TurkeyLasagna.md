@@ -123,7 +123,7 @@ ingredients: [
   },
   {
     name: Black Pepper,
-    preparation: ", Ground"
+    preparation: ", Ground",
     amount: 0.5,
     unit: tsp
   },

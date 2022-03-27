@@ -24,7 +24,6 @@ module.exports = {
             {
               resolve: `gatsby-plugin-manifest`,
               options: {
-                maxWidth: 300,
                 name: `gatsby-starter-default`,
                 short_name: `starter`,
                 start_url: `/`,
