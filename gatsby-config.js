@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Scott's Cookbook`,
     description: `A minimal and mobile friendly recipe website`,
-    author: `@gatsbyjs`,
+    author: `Scott Hansen`,
   },
   plugins: [
     `gatsby-transformer-remark`,
