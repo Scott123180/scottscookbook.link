@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Rating from '@mui/material/Rating';
 import '../styles/global.css';
-import { Autocomplete, TextField } from '@mui/material';
+import { TextField } from '@mui/material';
 
 class RecipeList extends React.Component {
 
