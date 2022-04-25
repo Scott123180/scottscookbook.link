@@ -37,7 +37,7 @@ const HowTo = () => {
                     <li>Go to <a href="https://fdc.nal.usda.gov/api-key-signup.html" target="_blank" rel="noreferrer">USDA Food Central API Key Signup</a></li>
                     <li>Enter your API key into the form. (this is used to query the food database)</li>
                     <li>Enter in your recipe details.</li>
-                    <li>Export your recipe. I'm not taking many recipe requests, but if I make it and like it, raise a PR on Github&nbsp;
+                    <li>Export your recipe. I'm not taking many recipe requests, but if I make it and like it, I'll merge the PR on Github&nbsp;
                         <a href="https://github.com/Scott123180/scottscookbook.link/pulls" target="_blank" rel="noreferrer">here</a>
                     </li>
                 </ol>
