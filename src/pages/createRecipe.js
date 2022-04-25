@@ -1,13 +1,32 @@
-import React from "react";
-import Layout from "../components/Layout";
-import SEO from "../components/Seo";
+import React from 'react';
+import Layout from '../components/Layout';
+import SEO from '../components/Seo';
 
-import TextField from '@mui/material/TextField';
-import { Button } from "@mui/material";
 
-import HowTo from "../components/HowToCreateRecipe";
+import HowTo from '../components/recipeCreator/HowToCreateRecipe';
+import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
 
 class Create extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            "apiKey": undefined
+        }
+    }
+
+    updateAPIKey = (value) => {
+        this.setState({"apiKey" : value});
+
+    }
+
+    updateState = (key,value) => {
+
+        this.setState({[[key]]: value});
+    }
+
+
     render (){
         return (
             <Layout>
@@ -17,8 +36,9 @@ class Create extends React.Component {
                         <HowTo />
                         <br />
 
-                        <TextField id="standard-basic" label="API Key" variant="standard" />
-                        <Button variant="contained">Check Validity</Button>
+                        <UsdaApiKey callback={() => this.updateAPIKey} />
+                        
+
                 </div>
             </Layout>
         );
