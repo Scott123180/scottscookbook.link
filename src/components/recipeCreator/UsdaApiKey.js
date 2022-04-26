@@ -15,34 +15,39 @@ class UsdaApiKey extends React.Component {
     }
 
     updateState = (key,value) => {
+        console.log(value);
 
         this.setState({[[key]]: value});
     }
 
     checkKeyValidity = () => {
 
-        /*
-        1. make rest call
-        2. if successful
-            set valid key true
-            disable inputs
-            trigger callback
-        if not successful
-            display error
-
-        */
+        fetch('https://api.nal.usda.gov/fdc/v1/food/1104067?format=abridged&nutrients=203&nutrients=204&nutrients=205&api_key=' + this.state.keyTextInput)
+        .then(response => {
+            if(response.ok) {
+                this.updateState('validKey', true);
+            }
+            else(alert("Invalid Key: " + response.status + " " + response.statusText))
+        })
         
     }
-
+    
     render() {
 
         return (
             <div>
-                <TextField id="standard-basic" label="API Key" variant="standard" />
-                <Button variant="contained">Check Validity</Button>
+                <TextField id="standard-basic" label="API Key" variant="standard" onChange={event => this.updateState('keyTextInput', event.target.value)} />
+                <Button 
+                    variant="contained" 
+                    onClick={this.checkKeyValidity}
+                    disabled={this.state.validKey}
+                    >
+                    {this.state.validKey ? "Valid Key" : "Save Key"}
+                </Button>
             </div>
         );
 
     }
 }
 
+export default UsdaApiKey;
