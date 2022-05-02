@@ -36,7 +36,9 @@ class Create extends React.Component {
                         <HowTo />
                         <br />
 
-                        <UsdaApiKey callback={() => this.updateAPIKey} />
+                        <UsdaApiKey callback={(value) => this.updateAPIKey(value)} />
+
+                        <p>{this.state.apiKey}</p>
                         
 
                 </div>
