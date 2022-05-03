@@ -6,13 +6,15 @@ import SEO from '../components/Seo';
 import HowTo from '../components/recipeCreator/HowToCreateRecipe';
 import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
 
+import foodSearch from '../components/recipeCreator/APIQueries';
+
 class Create extends React.Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            "apiKey": undefined
+            "apiKey": ""
         }
     }
 
@@ -26,8 +28,10 @@ class Create extends React.Component {
         this.setState({[[key]]: value});
     }
 
-
     render (){
+
+        const result = JSON.stringify(foodSearch(this.state.apiKey));
+
         return (
             <Layout>
                 <div style={{marginLeft: "5%", marginRight:"5%"}}>
@@ -39,6 +43,8 @@ class Create extends React.Component {
                         <UsdaApiKey callback={(value) => this.updateAPIKey(value)} />
 
                         <p>{this.state.apiKey}</p>
+
+                        <p>{result}</p>
                         
 
                 </div>

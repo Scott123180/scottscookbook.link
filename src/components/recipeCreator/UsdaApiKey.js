@@ -24,7 +24,6 @@ class UsdaApiKey extends React.Component {
         fetch('https://api.nal.usda.gov/fdc/v1/food/1104067?format=abridged&nutrients=203&nutrients=204&nutrients=205&api_key=' + this.state.keyTextInput)
         .then(response => {
             if(response.ok) {
-                console.log(this.props);
                 this.props.callback(this.state.keyTextInput);
                 this.updateState('validKey', true);
             }
