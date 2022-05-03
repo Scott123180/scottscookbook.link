@@ -14,13 +14,21 @@ class Create extends React.Component {
         super(props);
 
         this.state = {
-            "apiKey": ""
+            "apiKey": "",
+            "content" : {}
         }
     }
 
     updateAPIKey = (value) => {
         this.setState({"apiKey" : value});
 
+        //TODO: remove comment - I'm a n00b so it's helpful now but will remove in the future
+        //async callback so component can update when promise is resolved
+        foodSearch(value, (cb) => this.updateContent(cb))
+    }
+
+    updateContent = (value) => {
+        this.setState({"content" : value});
     }
 
     updateState = (key,value) => {
@@ -29,8 +37,6 @@ class Create extends React.Component {
     }
 
     render (){
-
-        const result = JSON.stringify(foodSearch(this.state.apiKey));
 
         return (
             <Layout>
@@ -44,8 +50,7 @@ class Create extends React.Component {
 
                         <p>{this.state.apiKey}</p>
 
-                        <p>{result}</p>
-                        
+                        <p>{JSON.stringify(this.state.content)}</p>
 
                 </div>
             </Layout>
