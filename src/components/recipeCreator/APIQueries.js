@@ -1,12 +1,9 @@
-const foodSearch = (params, callback) => {
+const foodSearch = (apiKey, query, callback) => {
 
-    if(params === "") return {};
-
-    //const query = params.query;
-    const key = params;
+    if(query === "" || apiKey === "") return {};
 
     const requestBody = {
-        "query": 'cheddar cheese', 
+        "query": query, 
         "pageSize": 2, 
         "pageNumber": 1, 
         "dataType": [
@@ -23,9 +20,7 @@ const foodSearch = (params, callback) => {
         body: JSON.stringify(requestBody)
     };
 
-    const url = 'https://api.nal.usda.gov/fdc/v1/foods/search?api_key=' + key;
-
-    let content = {"empty" : "socks"};
+    const url = 'https://api.nal.usda.gov/fdc/v1/foods/search?api_key=' + apiKey;
 
     fetch(url, requestOptions)
     .then(r => {

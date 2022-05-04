@@ -6,7 +6,11 @@ import SEO from '../components/Seo';
 import HowTo from '../components/recipeCreator/HowToCreateRecipe';
 import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
 
+
+
 import foodSearch from '../components/recipeCreator/APIQueries';
+
+import {TextField, Button} from '@mui/material'
 
 class Create extends React.Component {
 
@@ -15,6 +19,7 @@ class Create extends React.Component {
 
         this.state = {
             "apiKey": "",
+            "searchQuery" : "",
             "content" : {}
         }
     }
@@ -22,9 +27,6 @@ class Create extends React.Component {
     updateAPIKey = (value) => {
         this.setState({"apiKey" : value});
 
-        //TODO: remove comment - I'm a n00b so it's helpful now but will remove in the future
-        //async callback so component can update when promise is resolved
-        foodSearch(value, (cb) => this.updateContent(cb))
     }
 
     updateContent = (value) => {
@@ -34,6 +36,12 @@ class Create extends React.Component {
     updateState = (key,value) => {
 
         this.setState({[[key]]: value});
+    }
+
+    search = () => {
+        //TODO: remove comment - I'm a n00b so it's helpful now but will remove in the future
+        //async callback so component can update when promise is resolved
+        foodSearch(this.state.apiKey, this.state.searchQuery, (cb) => this.updateContent(cb))
     }
 
     render (){
@@ -48,7 +56,13 @@ class Create extends React.Component {
 
                         <UsdaApiKey callback={(value) => this.updateAPIKey(value)} />
 
+                        <br/>
+                        <TextField id="standard-basic" label="Food Search" variant="standard" onChange={event => this.updateState('searchQuery', event.target.value)} />
+                        <Button variant="contained" onClick={() => this.search()}>Search</Button>
+
+
                         <p>{this.state.apiKey}</p>
+
 
                         <p>{JSON.stringify(this.state.content)}</p>
 
