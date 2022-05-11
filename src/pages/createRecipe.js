@@ -6,13 +6,10 @@ import SEO from '../components/Seo';
 import HowTo from '../components/recipeCreator/HowToCreateRecipe';
 import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
 
-
-
 import foodSearch from '../components/recipeCreator/APIQueries';
 
-import {TextField, Button} from '@mui/material'
+import { TextField, Button } from '@mui/material'
 import QueryResults from '../components/recipeCreator/QueryResults';
-import { number } from 'prop-types';
 
 class Create extends React.Component {
 
@@ -21,22 +18,39 @@ class Create extends React.Component {
 
         this.state = {
             "apiKey": "",
-            "searchQuery" : "",
-            "content" : {}
+            "searchQuery": "",
+            "content": {}
         }
     }
 
     updateAPIKey = (value) => {
-        this.setState({"apiKey" : value});
+        this.setState({ "apiKey": value });
     }
 
     updateContent = (value) => {
-        this.setState({"content" : value});
+        this.setState({ "content": value });
     }
 
-    updateState = (key,value) => {
+    updateState = (key, value) => {
 
-        this.setState({[[key]]: value});
+        this.setState({ [[key]]: value });
+    }
+
+    addIngredient = (fdcId) => {
+
+        //TODO
+
+    }
+
+    saveRecipe = () => {
+
+        //TODO
+
+    }
+
+    resetForm = () => {
+
+        //TODO
     }
 
     search = (pageNumber) => {
@@ -45,31 +59,39 @@ class Create extends React.Component {
         foodSearch(this.state.apiKey, this.state.searchQuery, pageNumber, (cb) => this.updateContent(cb))
     }
 
-    render (){
+    render() {
 
         const numberOfResults = Object.keys(this.state.content).length == 0 ? 0 : this.state.content.totalHits;
 
         return (
             <Layout>
-                <div style={{marginLeft: "5%", marginRight:"5%"}}>
-                        <SEO title="Create Recipe" />
-                        <h1>Under Construction!</h1>
-                        <HowTo />
-                        <br />
+                <div style={{ marginLeft: "5%", marginRight: "5%" }}>
+                    <SEO title="Create Recipe" />
+                    <h1>Under Construction!</h1>
+                    <HowTo />
+                    <br />
 
-                        <UsdaApiKey callback={(value) => this.updateAPIKey(value)} />
+                    <UsdaApiKey callback={(value) => this.updateAPIKey(value)} />
 
-                        <br/>
-                        <TextField id="standard-basic" label="Food Search" variant="standard" onChange={event => this.updateState('searchQuery', event.target.value)} />
-                        <Button variant="contained" onClick={() => this.search(1)}>Search</Button>
+                    <br />
+                    <TextField id="standard-basic" label="Food Search" variant="standard" onChange={event => this.updateState('searchQuery', event.target.value)} />
+                    <Button variant="contained" onClick={() => this.search(1)}>Search</Button>
 
 
-                        <p>{this.state.apiKey}</p>
-                        <p>Number of results: {numberOfResults}</p>
+                    <p>{this.state.apiKey}</p>
+                    <p>Number of results: {numberOfResults}</p>
 
-                        <QueryResults data={this.state.content} updatePageCallBack={(pageNumber) => this.search(pageNumber)}/>
+                    <QueryResults
+                        data={this.state.content}
+                        updatePageCallBack={(pageNumber) => this.search(pageNumber)}
+                        addIngredientCallBack={(fdcId) => this.addIngredient(fdcId)}
 
-                        <p>{JSON.stringify(this.state.content)}</p>
+                    />
+
+                    <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button>
+
+
+                    <p>{JSON.stringify(this.state.content)}</p>
                 </div>
             </Layout>
         );
