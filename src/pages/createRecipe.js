@@ -10,9 +10,9 @@ import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
 
 import foodSearch from '../components/recipeCreator/APIQueries';
 
-import { NutritionLabel } from 'react-fda-nutrition-facts';
-
 import {TextField, Button} from '@mui/material'
+import QueryResults from '../components/recipeCreator/QueryResults';
+import { number } from 'prop-types';
 
 class Create extends React.Component {
 
@@ -48,6 +48,8 @@ class Create extends React.Component {
 
     render (){
 
+        const numberOfResults = Object.keys(this.state.content).length == 0 ? 0 : this.state.content.foodSearchCriteria.pageSize * this.state.content.totalPages;
+
         return (
             <Layout>
                 <div style={{marginLeft: "5%", marginRight:"5%"}}>
@@ -64,27 +66,15 @@ class Create extends React.Component {
 
 
                         <p>{this.state.apiKey}</p>
-                        <NutritionLabel
-                            servingSize={'1 cup (228g)'}
-                            servingsPerContainer={2}
-                            calories={260}
-                            totalFat={13}
-                            saturatedFat={5}
-                            transFat={2}
-                            cholesterol={30}
-                            sodium={660}
-                            totalCarbs={31}
-                            dietaryFiber={0}
-                            sugars={5}
-                            protein={5}
-                            vitaminA={4}
-                            vitaminC={2}
-                            calcium={15}
-                            iron={4}
-                        />
+                        <p>Number of results ~{numberOfResults}</p>
 
+                        <QueryResults data={this.state.content} />
 
                         <p>{JSON.stringify(this.state.content)}</p>
+
+
+
+                        
                         
 
                 </div>
