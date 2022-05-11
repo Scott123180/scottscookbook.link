@@ -2,7 +2,7 @@
   "name": "scotts-cookbook",
   "private": true,
   "description": "A simple recipe website",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Scott Hansen",
   "dependencies": {
     "@emotion/react": "^11.9.0",
