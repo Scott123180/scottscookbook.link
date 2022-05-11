@@ -4,11 +4,10 @@ const foodSearch = (apiKey, query, callback) => {
 
     const requestBody = {
         "query": query, 
-        "pageSize": 2, 
+        "pageSize": 10, 
         "pageNumber": 1, 
         "dataType": [
-            "Foundation",
-            "SR Legacy"
+            "Survey (FNDDS)"
         ],
         "sortBy": "dataType.keyword",
         "sortOrder": "asc"

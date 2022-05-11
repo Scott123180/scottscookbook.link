@@ -24,7 +24,7 @@ class QueryResults extends React.Component {
             <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                 <TableHead>
                 <TableRow>
-                    <TableCell><strong>Description</strong></TableCell>
+                    <TableCell><strong>&nbsp;Description</strong></TableCell>
                     <TableCell><strong>Source</strong></TableCell>
                 </TableRow>
                 </TableHead>

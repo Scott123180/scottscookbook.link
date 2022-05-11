@@ -48,7 +48,7 @@ class Create extends React.Component {
 
     render (){
 
-        const numberOfResults = Object.keys(this.state.content).length == 0 ? 0 : this.state.content.foodSearchCriteria.pageSize * this.state.content.totalPages;
+        const numberOfResults = Object.keys(this.state.content).length == 0 ? 0 : this.state.content.totalHits;
 
         return (
             <Layout>
@@ -66,17 +66,11 @@ class Create extends React.Component {
 
 
                         <p>{this.state.apiKey}</p>
-                        <p>Number of results ~{numberOfResults}</p>
+                        <p>Number of results: {numberOfResults}</p>
 
                         <QueryResults data={this.state.content} />
 
                         <p>{JSON.stringify(this.state.content)}</p>
-
-
-
-                        
-                        
-
                 </div>
             </Layout>
         );
