@@ -28,7 +28,6 @@ class Create extends React.Component {
 
     updateAPIKey = (value) => {
         this.setState({"apiKey" : value});
-
     }
 
     updateContent = (value) => {
@@ -40,10 +39,10 @@ class Create extends React.Component {
         this.setState({[[key]]: value});
     }
 
-    search = () => {
+    search = (pageNumber) => {
         //TODO: remove comment - I'm a n00b so it's helpful now but will remove in the future
         //async callback so component can update when promise is resolved
-        foodSearch(this.state.apiKey, this.state.searchQuery, (cb) => this.updateContent(cb))
+        foodSearch(this.state.apiKey, this.state.searchQuery, pageNumber, (cb) => this.updateContent(cb))
     }
 
     render (){
@@ -62,13 +61,13 @@ class Create extends React.Component {
 
                         <br/>
                         <TextField id="standard-basic" label="Food Search" variant="standard" onChange={event => this.updateState('searchQuery', event.target.value)} />
-                        <Button variant="contained" onClick={() => this.search()}>Search</Button>
+                        <Button variant="contained" onClick={() => this.search(1)}>Search</Button>
 
 
                         <p>{this.state.apiKey}</p>
                         <p>Number of results: {numberOfResults}</p>
 
-                        <QueryResults data={this.state.content} />
+                        <QueryResults data={this.state.content} updatePageCallBack={(pageNumber) => this.search(pageNumber)}/>
 
                         <p>{JSON.stringify(this.state.content)}</p>
                 </div>

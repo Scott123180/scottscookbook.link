@@ -1,11 +1,11 @@
-const foodSearch = (apiKey, query, callback) => {
+const foodSearch = (apiKey, query, pageNumber, callback) => {
 
     if(query === "" || apiKey === "") return {};
 
     const requestBody = {
         "query": query, 
         "pageSize": 10, 
-        "pageNumber": 1, 
+        "pageNumber": pageNumber, 
         "dataType": [
             "Survey (FNDDS)"
         ],

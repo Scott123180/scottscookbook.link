@@ -14,7 +14,14 @@ class QueryResults extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {currentPage : 1};
     }
+
+    handleChange = (event, value) => {
+        this.props.updatePageCallBack(value);
+
+        this.setState({currentPage : value})
+    };
 
     render() {
         if(Object.keys(this.props.data).length == 0) return <div>poopy</div>
@@ -49,7 +56,7 @@ class QueryResults extends React.Component {
                 </Table>
                 </TableContainer>
                 <Stack>
-                    <Pagination count={this.props.data.pageList.length} color="primary" />
+                    <Pagination count={this.props.data.pageList.length} color="primary" page={this.state.currentPage} onChange={this.handleChange}/>
                 </Stack>
 
             </div>
