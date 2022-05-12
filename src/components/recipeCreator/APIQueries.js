@@ -23,9 +23,6 @@ const foodSearch = (apiKey, query, pageNumber, callback) => {
 
     fetch(url, requestOptions)
     .then(r => {
-        console.log(r.ok)
-        console.log(r.statusText)
-
         return r.json();
     })
     .then(r => {

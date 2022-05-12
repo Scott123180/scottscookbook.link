@@ -5,11 +5,13 @@ import SEO from '../components/Seo';
 
 import HowTo from '../components/recipeCreator/HowToCreateRecipe';
 import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
+import IngredientCard from '../components/recipeCreator/IngredientCard';
 
 import foodSearch from '../components/recipeCreator/APIQueries';
 
 import { TextField, Button } from '@mui/material'
 import QueryResults from '../components/recipeCreator/QueryResults';
+
 
 class Create extends React.Component {
 
@@ -19,7 +21,8 @@ class Create extends React.Component {
         this.state = {
             "apiKey": "",
             "searchQuery": "",
-            "content": {}
+            "content": {},
+            "ingredients": []
         }
     }
 
@@ -38,8 +41,9 @@ class Create extends React.Component {
 
     addIngredient = (fdcId) => {
 
-        //TODO
+        this.setState({ingredients: [...this.state.ingredients, fdcId]});
 
+        //TODO
     }
 
     saveRecipe = () => {
@@ -63,6 +67,11 @@ class Create extends React.Component {
 
         const numberOfResults = Object.keys(this.state.content).length == 0 ? 0 : this.state.content.totalHits;
 
+        const cards = this.state.ingredients.map((i) => (
+            <IngredientCard fdcId={i}/>
+
+        ));
+
         return (
             <Layout>
                 <div style={{ marginLeft: "5%", marginRight: "5%" }}>
@@ -80,6 +89,7 @@ class Create extends React.Component {
 
                     <p>{this.state.apiKey}</p>
                     <p>Number of results: {numberOfResults}</p>
+                    {cards}
 
                     <QueryResults
                         data={this.state.content}

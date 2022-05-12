@@ -25,7 +25,7 @@ class QueryResults extends React.Component {
     };
     
     addIngredient = (fdcId) => {
-        console.log(fdcId);
+        this.props.addIngredientCallBack(fdcId);
     }
 
     render() {
