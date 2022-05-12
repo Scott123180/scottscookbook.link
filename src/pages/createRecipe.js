@@ -41,7 +41,7 @@ class Create extends React.Component {
 
     addIngredient = (fdcId) => {
 
-        this.setState({ingredients: [...this.state.ingredients, fdcId]});
+        this.setState({ingredients: [...this.state.ingredients, {fdcId: fdcId}]});
 
         //TODO
     }
@@ -65,10 +65,10 @@ class Create extends React.Component {
 
     render() {
 
-        const numberOfResults = Object.keys(this.state.content).length == 0 ? 0 : this.state.content.totalHits;
+        const numberOfResults = Object.keys(this.state.content).length === 0 ? 0 : this.state.content.totalHits;
 
-        const cards = this.state.ingredients.map((i) => (
-            <IngredientCard fdcId={i}/>
+        const cards = this.state.ingredients.map((ingredient) => (
+            <IngredientCard fdcId={ingredient.fdcId}/>
 
         ));
 
