@@ -22,7 +22,8 @@ class Create extends React.Component {
             "apiKey": "",
             "searchQuery": "",
             "content": {},
-            "ingredients": []
+            "ingredients": [],
+            "ingredientIncrementor": 0
         }
     }
 
@@ -41,14 +42,35 @@ class Create extends React.Component {
 
     addIngredient = (fdcId) => {
 
-        this.setState({ingredients: [...this.state.ingredients, {fdcId: fdcId}]});
+        this.setState({ ingredients: [...this.state.ingredients, { ingredientIncrementorNumber: this.state.ingredientIncrementor++, fdcId: fdcId }] });
 
         //TODO
     }
 
+    removeIngredientCallBack = (ingredientIncrementorNumber) => {
+        //TODO: we'll set the object to null - this way we can still quickly index all the other elements
+
+    }
+
+
+    //TODO: optimize this
+    //https://stackoverflow.com/questions/29537299/react-how-to-update-state-item1-in-state-using-setstate
+    updateIngredientCallBack = (ingredientIncrementorNumber, key, value) => {
+
+        const ingredients = [...this.state.ingredients];
+
+        const ingredientIndex = ingredientIncrementorNumber;
+
+        const ingredient = ingredients[ingredientIndex];
+
+        ingredient[key] = value;
+
+        this.setState({ingredients});
+    }
+
     saveRecipe = () => {
 
-        //TODO
+        //TODO - remember to filter out null values (ingredients we've removed)
 
     }
 
@@ -68,7 +90,7 @@ class Create extends React.Component {
         const numberOfResults = Object.keys(this.state.content).length === 0 ? 0 : this.state.content.totalHits;
 
         const cards = this.state.ingredients.map((ingredient) => (
-            <IngredientCard fdcId={ingredient.fdcId}/>
+            <IngredientCard ingredient={ingredient} />
 
         ));
 
