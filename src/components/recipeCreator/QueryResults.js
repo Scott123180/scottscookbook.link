@@ -50,7 +50,7 @@ class QueryResults extends React.Component {
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
                                     <TableCell component="th" scope="row" >
-                                        <AddIcon onClick={() => this.addIngredient(row.fdcId)} />&nbsp;{row.description}
+                                        <AddIcon onClick={() => this.addIngredient(row)} />&nbsp;{row.description}
                                     </TableCell>
                                     <TableCell component="th" scope="row" >
                                         &nbsp;{row.dataType}

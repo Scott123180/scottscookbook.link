@@ -40,9 +40,14 @@ class Create extends React.Component {
         this.setState({ [[key]]: value });
     }
 
-    addIngredient = (fdcId) => {
+    addIngredient = (foodInformation) => {
 
-        this.setState({ ingredients: [...this.state.ingredients, { ingredientIncrementorNumber: this.state.ingredientIncrementor++, fdcId: fdcId }] });
+        this.setState(
+            {
+                ingredients: [...this.state.ingredients,
+                { ingredientIncrementorNumber: this.state.ingredientIncrementor++, foodInformation: foodInformation, selectedFoodMeasure: '' }]
+            }
+        );
 
         //TODO
     }
@@ -65,7 +70,7 @@ class Create extends React.Component {
 
         ingredient[key] = value;
 
-        this.setState({ingredients});
+        this.setState({ ingredients });
     }
 
     saveRecipe = () => {
