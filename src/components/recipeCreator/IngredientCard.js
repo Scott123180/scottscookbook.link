@@ -13,22 +13,15 @@ class IngredientCard extends React.Component {
         this.state = {};
     }
 
-    //TODO: I think we can remove this as a component
+    render() {
 
-    menuOptions = (foodMeasures) => {
-
-        foodMeasures.map((measure, index) => {
-            console.log(measure);
+        const menuOptions = this.props.ingredient.foodInformation.foodMeasures.map((measure, index) => (
             <MenuItem value={index} key={measure.id}
             >
                 {measure.disseminationText}
             </MenuItem>
-        })
+        ));
 
-
-    }
-
-    render() {
         return (
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
@@ -41,15 +34,16 @@ class IngredientCard extends React.Component {
                             id="demo-simple-select"
                             label="Food Measure"
                             value={this.props.ingredient.selectedFoodMeasure}
-                        //TODO
-                        //onChange={handleChange}
+                            onChange={(event) =>
+                                this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'selectedFoodMeasure', event.target.value)
+                            }
                         >
-                            {() => this.menuOptions(this.props.ingredient.foodInformation.foodMeasures)}
+                            {menuOptions}
                         </Select>
 
                     </Typography>
                 </CardContent>
-            </Card>
+            </Card >
         );
     }
 }

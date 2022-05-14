@@ -23,10 +23,6 @@ class QueryResults extends React.Component {
 
         this.setState({ currentPage: value })
     };
-    
-    addIngredient = (fdcId) => {
-        this.props.addIngredientCallBack(fdcId);
-    }
 
     render() {
         if (Object.keys(this.props.data).length == 0) return <div>empty query result</div>
@@ -50,7 +46,7 @@ class QueryResults extends React.Component {
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
                                     <TableCell component="th" scope="row" >
-                                        <AddIcon onClick={() => this.addIngredient(row)} />&nbsp;{row.description}
+                                        <AddIcon onClick={() => this.props.addIngredientCallBack(row)} />&nbsp;{row.description}
                                     </TableCell>
                                     <TableCell component="th" scope="row" >
                                         &nbsp;{row.dataType}

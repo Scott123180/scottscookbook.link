@@ -11,6 +11,8 @@ import foodSearch from '../components/recipeCreator/APIQueries';
 
 import { TextField, Button } from '@mui/material'
 import QueryResults from '../components/recipeCreator/QueryResults';
+import update from 'react-addons-update'; 
+
 
 
 class Create extends React.Component {
@@ -45,7 +47,7 @@ class Create extends React.Component {
         this.setState(
             {
                 ingredients: [...this.state.ingredients,
-                { ingredientIncrementorNumber: this.state.ingredientIncrementor++, foodInformation: foodInformation, selectedFoodMeasure: '' }]
+                { ingredientIncrementorNumber: this.state.ingredientIncrementor++, foodInformation: foodInformation, selectedFoodMeasure: 0 }]
             }
         );
 
@@ -62,15 +64,23 @@ class Create extends React.Component {
     //https://stackoverflow.com/questions/29537299/react-how-to-update-state-item1-in-state-using-setstate
     updateIngredientCallBack = (ingredientIncrementorNumber, key, value) => {
 
-        const ingredients = [...this.state.ingredients];
+        console.log(ingredientIncrementorNumber);
 
-        const ingredientIndex = ingredientIncrementorNumber;
+        this.setState({
+            ingredients: update(this.state.ingredients,{[[ingredientIncrementorNumber]]: {[[key]]: {$set: value}}})
+        });
 
-        const ingredient = ingredients[ingredientIndex];
+        // const ingredients = [...this.state.ingredients];
 
-        ingredient[key] = value;
+        // console.log(this.state.ingredients);
 
-        this.setState({ ingredients });
+        // const ingredient = ingredients[ingredientIncrementorNumber];
+
+        // console.log(ingredient);
+
+        // ingredient[key] = value;
+
+        // this.setState({ ingredients });
     }
 
     saveRecipe = () => {
@@ -95,7 +105,10 @@ class Create extends React.Component {
         const numberOfResults = Object.keys(this.state.content).length === 0 ? 0 : this.state.content.totalHits;
 
         const cards = this.state.ingredients.map((ingredient) => (
-            <IngredientCard ingredient={ingredient} />
+            <IngredientCard
+                ingredient={ingredient}
+                updateIngredientCallBack={(ingredientIncrementorNumber, key, value) => this.updateIngredientCallBack(ingredientIncrementorNumber, key, value)}
+            />
 
         ));
 
@@ -121,8 +134,7 @@ class Create extends React.Component {
                     <QueryResults
                         data={this.state.content}
                         updatePageCallBack={(pageNumber) => this.search(pageNumber)}
-                        addIngredientCallBack={(fdcId) => this.addIngredient(fdcId)}
-
+                        addIngredientCallBack={(foodInformation) => this.addIngredient(foodInformation)}
                     />
 
                     <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button>
