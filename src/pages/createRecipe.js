@@ -121,7 +121,7 @@ class CreateRecipe extends React.Component {
                     <Button variant="contained" onClick={() => this.search(1)}>Search</Button>
 
 
-                    {/* <p>{this.state.apiKey}</p> */}
+                    <p>{this.state.apiKey}</p>
                     <p>Number of results: {numberOfResults}</p>
                     {cards}
 
