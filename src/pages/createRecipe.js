@@ -9,6 +9,17 @@ import QueryResults from '../components/recipeCreator/QueryResults';
 import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
 import SEO from '../components/Seo';
 
+//TODO:
+// 1. (medium) add section input for recipe so that we can select sections instead of entering them manually every time
+// 2. (medium) delete ingredient
+// 3. (low) delete ingredient undo
+// 4. (high) aggregate nutrition
+// 5. (medium) export recipe
+// 6. (high) directions section
+// 7. (low) add link to picture - we're absolutely not going to save pictures on our site - find free hosting
+// 8. (low) styling
+// 9. (very low) export recipe - auto create pull request
+
 class CreateRecipe extends React.Component {
 
     constructor(props) {
@@ -60,27 +71,11 @@ class CreateRecipe extends React.Component {
     }
 
 
-    //TODO: optimize this
-    //https://stackoverflow.com/questions/29537299/react-how-to-update-state-item1-in-state-using-setstate
     updateIngredientCallBack = (ingredientIncrementorNumber, key, value) => {
-
-        console.log(ingredientIncrementorNumber);
 
         this.setState({
             ingredients: update(this.state.ingredients, { [[ingredientIncrementorNumber]]: { [[key]]: { $set: value } } })
         });
-
-        // const ingredients = [...this.state.ingredients];
-
-        // console.log(this.state.ingredients);
-
-        // const ingredient = ingredients[ingredientIncrementorNumber];
-
-        // console.log(ingredient);
-
-        // ingredient[key] = value;
-
-        // this.setState({ ingredients });
     }
 
     saveRecipe = () => {
@@ -95,8 +90,6 @@ class CreateRecipe extends React.Component {
     }
 
     search = (pageNumber) => {
-        //TODO: remove comment - I'm a n00b so it's helpful now but will remove in the future
-        //async callback so component can update when promise is resolved
         foodSearch(this.state.apiKey, this.state.searchQuery, pageNumber, (cb) => this.updateContent(cb))
     }
 
