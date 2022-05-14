@@ -40,8 +40,14 @@ class CreateRecipe extends React.Component {
 
         this.setState(
             {
-                ingredients: [...this.state.ingredients,
-                { ingredientIncrementorNumber: this.state.ingredientIncrementor++, foodInformation: foodInformation, selectedFoodMeasure: 0 }]
+                ingredients:
+                    [...this.state.ingredients,
+                    {
+                        ingredientIncrementorNumber: this.state.ingredientIncrementor++,
+                        foodInformation: foodInformation,
+                        selectedFoodMeasure: 0,
+                        selectedIngredientUnit: 0
+                    }]
             }
         );
 
@@ -61,7 +67,7 @@ class CreateRecipe extends React.Component {
         console.log(ingredientIncrementorNumber);
 
         this.setState({
-            ingredients: update(this.state.ingredients,{[[ingredientIncrementorNumber]]: {[[key]]: {$set: value}}})
+            ingredients: update(this.state.ingredients, { [[ingredientIncrementorNumber]]: { [[key]]: { $set: value } } })
         });
 
         // const ingredients = [...this.state.ingredients];
