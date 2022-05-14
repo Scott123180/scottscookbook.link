@@ -1,14 +1,14 @@
-import * as React from 'react';
+import AddIcon from '@mui/icons-material/Add';
+import { TableHead } from '@mui/material';
+import Pagination from '@mui/material/Pagination';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { TableHead } from '@mui/material';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
-import AddIcon from '@mui/icons-material/Add';
+import * as React from 'react';
 
 class QueryResults extends React.Component {
 

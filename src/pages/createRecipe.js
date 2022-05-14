@@ -1,21 +1,15 @@
+import { Button, TextField } from '@mui/material';
 import React from 'react';
+import update from 'react-addons-update';
 import Layout from '../components/Layout';
+import foodSearch from '../components/recipeCreator/APIQueries';
+import HowTo from '../components/recipeCreator/HowToCreateRecipe';
+import IngredientCard from '../components/recipeCreator/IngredientCard';
+import QueryResults from '../components/recipeCreator/QueryResults';
+import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
 import SEO from '../components/Seo';
 
-
-import HowTo from '../components/recipeCreator/HowToCreateRecipe';
-import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
-import IngredientCard from '../components/recipeCreator/IngredientCard';
-
-import foodSearch from '../components/recipeCreator/APIQueries';
-
-import { TextField, Button } from '@mui/material'
-import QueryResults from '../components/recipeCreator/QueryResults';
-import update from 'react-addons-update'; 
-
-
-
-class Create extends React.Component {
+class CreateRecipe extends React.Component {
 
     constructor(props) {
         super(props);
@@ -127,7 +121,7 @@ class Create extends React.Component {
                     <Button variant="contained" onClick={() => this.search(1)}>Search</Button>
 
 
-                    <p>{this.state.apiKey}</p>
+                    {/* <p>{this.state.apiKey}</p> */}
                     <p>Number of results: {numberOfResults}</p>
                     {cards}
 
@@ -147,4 +141,4 @@ class Create extends React.Component {
     }
 }
 
-export default Create;
+export default CreateRecipe;

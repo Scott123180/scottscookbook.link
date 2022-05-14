@@ -1,9 +1,5 @@
+import { Card, CardContent, MenuItem, Select, TextField, Typography } from '@mui/material';
 import React from 'react';
-import { Card } from '@mui/material';
-import { Typography } from '@mui/material';
-import { CardContent } from '@mui/material';
-import { MenuItem } from '@mui/material';
-import { Select } from '@mui/material';
 
 class IngredientCard extends React.Component {
 
@@ -40,6 +36,18 @@ class IngredientCard extends React.Component {
                         >
                             {menuOptions}
                         </Select>
+
+                        <br />
+
+                        {
+                            //TODO: see what fitbit and other food entry apps do to select portions
+                        }
+                        <TextField id="standard-basic" label="Multiplier" variant="standard" />
+                        <TextField id="standard-basic" label="Grams" variant="standard" />
+
+                        <br />
+
+                        <TextField id="standard-basic" label="Preparation" variant="standard" />
 
                     </Typography>
                 </CardContent>
