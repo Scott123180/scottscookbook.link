@@ -25,7 +25,7 @@ class QueryResults extends React.Component {
     };
 
     render() {
-        if (Object.keys(this.props.data).length == 0) return <div>empty query result</div>
+        if (Object.keys(this.props.data).length == 0) return <div/>
 
 
         const foods = this.props.data.foods;

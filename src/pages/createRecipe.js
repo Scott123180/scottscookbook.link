@@ -8,6 +8,7 @@ import IngredientCard from '../components/recipeCreator/IngredientCard';
 import QueryResults from '../components/recipeCreator/QueryResults';
 import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
 import SEO from '../components/Seo';
+import aggregateNutrition from '../components/recipeCreator/AggregateNutrition';
 
 //TODO:
 // 1. (medium) add section input for recipe so that we can select sections instead of entering them manually every time
@@ -80,6 +81,10 @@ class CreateRecipe extends React.Component {
 
     saveRecipe = () => {
 
+        const nutritionInformation = aggregateNutrition(this.state.ingredients);
+        console.log("nutrition information");
+        console.log(nutritionInformation);
+
         //TODO - remember to filter out null values (ingredients we've removed)
 
     }
@@ -133,7 +138,7 @@ class CreateRecipe extends React.Component {
                     <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button>
 
 
-                    <p>{JSON.stringify(this.state.content)}</p>
+                    {/* <p>{JSON.stringify(this.state.content)}</p> */}
                 </div>
             </Layout>
         );
