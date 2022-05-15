@@ -9,6 +9,7 @@ import QueryResults from '../components/recipeCreator/QueryResults';
 import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
 import SEO from '../components/Seo';
 import aggregateNutrition from '../components/recipeCreator/AggregateNutrition';
+import RecipeDirections from '../components/recipeCreator/RecipeDirections';
 
 //TODO:
 // 1. (medium) add section input for recipe so that we can select sections instead of entering them manually every time
@@ -27,28 +28,28 @@ class CreateRecipe extends React.Component {
         super(props);
 
         this.state = {
-            "apiKey": "",
-            "searchQuery": "",
-            "content": {},
-            "ingredients": [],
-            "ingredientIncrementor": 0
+            apiKey: "",
+            searchQuery: "",
+            content: {},
+            ingredients: [],
+            ingredientIncrementor: 0,
+            recipeTitle: "",
+            preparationTime: "",
+            cookingTime: "",
+            directions: [],
+            cookingNotes: []
         }
     }
 
     updateAPIKey = (value) => {
-        this.setState({ "apiKey": value });
+        this.setState({ apiKey: value });
     }
 
     updateContent = (value) => {
-        this.setState({ "content": value });
+        this.setState({ content: value });
     }
 
-    updateState = (key, value) => {
-
-        this.setState({ [[key]]: value });
-    }
-
-    addIngredientAndClearQueryResults = (foodInformation) => {
+    addIngredientAndGetReadyForNextQuery = (foodInformation) => {
 
         this.setState(
             {
@@ -60,7 +61,8 @@ class CreateRecipe extends React.Component {
                         selectedFoodMeasure: 0,
                         selectedIngredientUnit: 0
                     }],
-                content: {}
+                content: {},
+                searchQuery: ""
             }
         );
 
@@ -94,7 +96,7 @@ class CreateRecipe extends React.Component {
         this.setState({
             "searchQuery": "",
             "content": {}
-        }); 
+        });
     }
 
     resetForm = () => {
@@ -115,7 +117,6 @@ class CreateRecipe extends React.Component {
                 ingredient={ingredient}
                 updateIngredientCallBack={(ingredientIncrementorNumber, key, value) => this.updateIngredientCallBack(ingredientIncrementorNumber, key, value)}
             />
-
         ));
 
         return (
@@ -129,21 +130,34 @@ class CreateRecipe extends React.Component {
                     <UsdaApiKey callback={(value) => this.updateAPIKey(value)} />
                     <p>{this.state.apiKey}</p>
 
+
+                    <TextField id="recipe-title-textfield" label="Recipe Title" variant="standard" value={this.state.recipeTitle} onChange={event => this.setState({recipeTitle: event.target.value})} />
                     <br />
-                    <TextField id="standard-basic" label="Food Search" variant="standard" value={this.state.searchQuery} onChange={event => this.updateState('searchQuery', event.target.value)} />
+                    <TextField id="preparation-time-textfield" label="Preparation Time (minutes)" variant="standard" type="number" value={this.state.preparationTime} onChange={event => this.setState({preparationTime: event.target.value})} />
+                    <br />
+                    <TextField id="cooking-time-textfield" label="Cooking Time (minutes)" variant="standard" type="number" value={this.state.cookingTime} onChange={event => this.setState({cookingTime: event.target.value})} />
+
+                    <br />
+                    <TextField id="standard-basic" label="Food Search" variant="standard" value={this.state.searchQuery} onChange={event => this.setState({searchQuery: event.target.value})} />
                     <Button variant="contained" onClick={() => this.search(1)}>Search</Button>
 
 
                     <QueryResults
                         data={this.state.content}
                         updatePageCallBack={(pageNumber) => this.search(pageNumber)}
-                        addIngredientCallBack={(foodInformation) => this.addIngredientAndClearQueryResults(foodInformation)}
+                        addIngredientCallBack={(foodInformation) => this.addIngredientAndGetReadyForNextQuery(foodInformation)}
                     />
 
                     {cards}
 
-                    {/* <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button> */}
-                    <Button variant="contained" onClick={() => this.resetInput()}>Clear Input</Button>
+                    <br />
+                    <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button>
+
+                    &nbsp;
+
+                    <Button variant="contained" color="secondary" onClick={() => this.resetInput()}>Clear Input</Button>
+
+                    <RecipeDirections />
 
 
                     {/* <p>{JSON.stringify(this.state.content)}</p> */}
