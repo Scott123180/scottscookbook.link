@@ -48,7 +48,7 @@ class CreateRecipe extends React.Component {
         this.setState({ [[key]]: value });
     }
 
-    addIngredient = (foodInformation) => {
+    addIngredientAndClearQueryResults = (foodInformation) => {
 
         this.setState(
             {
@@ -59,7 +59,8 @@ class CreateRecipe extends React.Component {
                         foodInformation: foodInformation,
                         selectedFoodMeasure: 0,
                         selectedIngredientUnit: 0
-                    }]
+                    }],
+                content: {}
             }
         );
 
@@ -109,7 +110,7 @@ class CreateRecipe extends React.Component {
 
         const numberOfResults = Object.keys(this.state.content).length === 0 ? 0 : this.state.content.totalHits;
 
-        const cards = this.state.ingredients.map((ingredient) => (
+        const cards = this.state.ingredients.reverse().map((ingredient) => (
             <IngredientCard
                 ingredient={ingredient}
                 updateIngredientCallBack={(ingredientIncrementorNumber, key, value) => this.updateIngredientCallBack(ingredientIncrementorNumber, key, value)}
@@ -121,25 +122,25 @@ class CreateRecipe extends React.Component {
             <Layout>
                 <div style={{ marginLeft: "5%", marginRight: "5%" }}>
                     <SEO title="Create Recipe" />
-                    <h1>Under Construction!</h1>
+                    <h2>Create Recipe</h2>
                     <HowTo />
                     <br />
 
                     <UsdaApiKey callback={(value) => this.updateAPIKey(value)} />
+                    <p>{this.state.apiKey}</p>
 
                     <br />
                     <TextField id="standard-basic" label="Food Search" variant="standard" value={this.state.searchQuery} onChange={event => this.updateState('searchQuery', event.target.value)} />
                     <Button variant="contained" onClick={() => this.search(1)}>Search</Button>
 
 
-                    <p>{this.state.apiKey}</p>
-                    {cards}
-
                     <QueryResults
                         data={this.state.content}
                         updatePageCallBack={(pageNumber) => this.search(pageNumber)}
-                        addIngredientCallBack={(foodInformation) => this.addIngredient(foodInformation)}
+                        addIngredientCallBack={(foodInformation) => this.addIngredientAndClearQueryResults(foodInformation)}
                     />
+
+                    {cards}
 
                     {/* <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button> */}
                     <Button variant="contained" onClick={() => this.resetInput()}>Clear Input</Button>
