@@ -18,76 +18,93 @@ class IngredientCard extends React.Component {
             </MenuItem>
         ));
 
+        const foodMeasureSelect = (
+            <Select
+                labelId="ingredient-food-measure-select"
+                id="food-measure-select"
+                label="Food Measure"
+                value={this.props.ingredient.selectedFoodMeasure}
+                onChange={(event) =>
+                    this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'selectedFoodMeasure', event.target.value)
+                }
+            >
+                {servingMenuOptions}
+            </Select>
+
+        );
+
+        const servingUnitTextField = (
+            <TextField
+                id="serving-unit-text-id"
+                label="Serving Unit"
+                variant="standard"
+                type="number"
+                onChange={(event) =>
+                    this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'servingUnitInput', event.target.value)
+                }
+            />
+        );
+
+        const foodUnitSelect = (
+            <Select
+                labelId="ingredient-unit-select"
+                id="food-unit-select"
+                label="Serving Unit"
+                value={this.props.ingredient.selectedIngredientUnit}
+                onChange={(event) =>
+                    this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'selectedIngredientUnit', event.target.value)
+                }
+            >
+                <MenuItem value={0} key={'servings'}>serving(s)</MenuItem>
+                <MenuItem value={1} key={'g'}>g</MenuItem>
+            </Select>
+
+        );
+
+        const preparationTextField = (
+            <TextField
+                id="preparation-text-id"
+                label="Preparation"
+                variant="standard"
+                onChange={(event) =>
+                    this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'preparationInput', event.target.value)
+                }
+            />
+        );
+
+        const sectionTextField = (
+            <TextField
+                id="section-text-id"
+                label="Section"
+                variant="standard"
+                onChange={(event) =>
+                    this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'sectionInput', event.target.value)
+                }
+
+            />
+
+        );
+
         return (
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        <p>{this.props.ingredient.ingredientIncrementorNumber}</p>
-                        <p>{this.props.ingredient.foodInformation.description}</p>
-                        <p>{this.props.ingredient.foodInformation.fdcId}</p>
-                        <p>{this.props.ingredient.servingUnitInput}</p>
-                        <p>{this.props.ingredient.preparationInput}</p>
-                        <p>{this.props.ingredient.sectionInput}</p>
+                    <Typography variant="h5" component="div">{this.props.ingredient.foodInformation.description}</Typography>
 
-                        <Select
-                            labelId="ingredient-food-measure-select"
-                            id="food-measure-select"
-                            label="Food Measure"
-                            value={this.props.ingredient.selectedFoodMeasure}
-                            onChange={(event) =>
-                                this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'selectedFoodMeasure', event.target.value)
-                            }
-                        >
-                            {servingMenuOptions}
-                        </Select>
+                    {foodMeasureSelect}
 
-                        <br />
+                    <br />
 
-                        <TextField
-                            id="serving-unit-text-id"
-                            label="Serving Unit"
-                            variant="standard"
-                            type="number"
-                            onChange={(event) =>
-                                this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'servingUnitInput', event.target.value)
-                            }
-                        />
-                        <Select
-                            labelId="ingredient-unit-select"
-                            id="food-unit-select"
-                            label="Serving Unit"
-                            value={this.props.ingredient.selectedIngredientUnit}
-                            onChange={(event) =>
-                                this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'selectedIngredientUnit', event.target.value)
-                            }
-                        >
-                            <MenuItem value={0} key={'servings'}>serving(s)</MenuItem>
-                            <MenuItem value={1} key={'g'}>g</MenuItem>
-                        </Select>
+                    {servingUnitTextField}
+                    {foodUnitSelect}
 
-                        <br />
+                    <br />
 
-                        <TextField
-                            id="preparation-text-id"
-                            label="Preparation"
-                            variant="standard"
-                            onChange={(event) =>
-                                this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'preparationInput', event.target.value)
-                            }
-                        />
-                        <br />
+                    {preparationTextField}
 
-                        <TextField
-                            id="section-text-id"
-                            label="Section"
-                            variant="standard"
-                            onChange={(event) =>
-                                this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'sectionInput', event.target.value)
-                            }
+                    <br />
 
-                        />
+                    {sectionTextField}
 
-                    </Typography>
                 </CardContent>
             </Card >
         );

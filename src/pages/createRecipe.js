@@ -89,6 +89,13 @@ class CreateRecipe extends React.Component {
 
     }
 
+    resetInput = () => {
+        this.setState({
+            "searchQuery": "",
+            "content": {}
+        }); 
+    }
+
     resetForm = () => {
 
         //TODO
@@ -121,12 +128,11 @@ class CreateRecipe extends React.Component {
                     <UsdaApiKey callback={(value) => this.updateAPIKey(value)} />
 
                     <br />
-                    <TextField id="standard-basic" label="Food Search" variant="standard" onChange={event => this.updateState('searchQuery', event.target.value)} />
+                    <TextField id="standard-basic" label="Food Search" variant="standard" value={this.state.searchQuery} onChange={event => this.updateState('searchQuery', event.target.value)} />
                     <Button variant="contained" onClick={() => this.search(1)}>Search</Button>
 
 
                     <p>{this.state.apiKey}</p>
-                    <p>Number of results: {numberOfResults}</p>
                     {cards}
 
                     <QueryResults
@@ -135,7 +141,8 @@ class CreateRecipe extends React.Component {
                         addIngredientCallBack={(foodInformation) => this.addIngredient(foodInformation)}
                     />
 
-                    <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button>
+                    {/* <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button> */}
+                    <Button variant="contained" onClick={() => this.resetInput()}>Clear Input</Button>
 
 
                     {/* <p>{JSON.stringify(this.state.content)}</p> */}

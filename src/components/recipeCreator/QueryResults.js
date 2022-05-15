@@ -31,6 +31,7 @@ class QueryResults extends React.Component {
         const foods = this.props.data.foods;
         return (
             <div>
+                <p>Number of results: {this.props.data.totalHits}</p>
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                         <TableHead>
