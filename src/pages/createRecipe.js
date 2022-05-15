@@ -110,7 +110,7 @@ class CreateRecipe extends React.Component {
 
         const numberOfResults = Object.keys(this.state.content).length === 0 ? 0 : this.state.content.totalHits;
 
-        const cards = this.state.ingredients.reverse().map((ingredient) => (
+        const cards = this.state.ingredients.map((ingredient) => (
             <IngredientCard
                 ingredient={ingredient}
                 updateIngredientCallBack={(ingredientIncrementorNumber, key, value) => this.updateIngredientCallBack(ingredientIncrementorNumber, key, value)}
