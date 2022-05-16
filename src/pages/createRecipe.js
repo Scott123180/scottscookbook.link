@@ -36,7 +36,7 @@ class CreateRecipe extends React.Component {
             recipeTitle: "",
             preparationTime: "",
             cookingTime: "",
-            directions: [],
+            directions: ['one', 'two'],
             cookingNotes: []
         }
     }
@@ -85,11 +85,8 @@ class CreateRecipe extends React.Component {
     saveRecipe = () => {
 
         const nutritionInformation = aggregateNutrition(this.state.ingredients);
-        console.log("nutrition information");
-        console.log(nutritionInformation);
 
         //TODO - remember to filter out null values (ingredients we've removed)
-
     }
 
     resetInput = () => {
@@ -157,7 +154,7 @@ class CreateRecipe extends React.Component {
 
                     <Button variant="contained" color="secondary" onClick={() => this.resetInput()}>Clear Input</Button>
 
-                    <RecipeDirections />
+                    <RecipeDirections directions={this.state.directions} />
 
 
                     {/* <p>{JSON.stringify(this.state.content)}</p> */}

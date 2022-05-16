@@ -8,22 +8,34 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { ListItemText } from '@mui/material';
 
 
-const RecipeDirections = (data) => {
+const RecipeDirections = (props) => {
+
+    const directionItems = props.directions.map((direction) => (
+            <ListItem>
+                <ListItemIcon>
+                    <DeleteIcon />
+                </ListItemIcon>
+                <ListItemText
+                    primary={direction}
+                />
+            </ListItem>
+    ));
 
     return (
         <Grid item xs={12} md={6}>
             <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                Icon with text
+                Directions
             </Typography>
-            <List dense={false}>
-                <ListItem>
+            <List>
+                {directionItems}
+                {/* <ListItem>
                     <ListItemIcon>
                         <DeleteIcon />
                     </ListItemIcon>
                     <ListItemText
                         primary="Single-line item"
                     />
-                </ListItem>,
+                </ListItem>, */}
             </List>
         </Grid>
     );
