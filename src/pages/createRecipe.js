@@ -10,6 +10,7 @@ import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
 import SEO from '../components/Seo';
 import aggregateNutrition from '../components/recipeCreator/AggregateNutrition';
 import RecipeDirections from '../components/recipeCreator/RecipeDirections';
+import HoverRating from '../components/recipeCreator/HoverRating';
 
 //TODO:
 // 1. (medium) add section input for recipe so that we can select sections instead of entering them manually every time
@@ -153,6 +154,9 @@ class CreateRecipe extends React.Component {
                     <TextField id="preparation-time-textfield" label="Preparation Time (minutes)" variant="standard" type="number" value={this.state.preparationTime} onChange={event => this.setState({ preparationTime: event.target.value })} />
                     <br />
                     <TextField id="cooking-time-textfield" label="Cooking Time (minutes)" variant="standard" type="number" value={this.state.cookingTime} onChange={event => this.setState({ cookingTime: event.target.value })} />
+
+                    {/*TODO: get the state from this component */}
+                    <HoverRating />
 
                     <br />
                     <br />
