@@ -5,18 +5,21 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon/ListItemIcon';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { ListItemText } from '@mui/material';
+import { TextField } from '@mui/material';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 
 const RecipeDirections = (props) => {
 
-    const directionItems = props.directions.map((direction) => (
+    const directionItems = props.directions.map((direction, index) => (
             <ListItem>
                 <ListItemIcon>
-                    <DeleteIcon />
+                    <DeleteIcon onClick={() => props.deleteDirectionCallBack(index)}/>
                 </ListItemIcon>
-                <ListItemText
-                    primary={direction}
+                <TextField 
+                variant="standard" 
+                value={direction} 
+                onChange={(event) => props.updateDirectionCallBack(index, event.target.value)}
                 />
             </ListItem>
     ));
@@ -28,15 +31,8 @@ const RecipeDirections = (props) => {
             </Typography>
             <List>
                 {directionItems}
-                {/* <ListItem>
-                    <ListItemIcon>
-                        <DeleteIcon />
-                    </ListItemIcon>
-                    <ListItemText
-                        primary="Single-line item"
-                    />
-                </ListItem>, */}
             </List>
+            <AddBoxIcon onClick={() => props.addDirectionCallBack()} />
         </Grid>
     );
 

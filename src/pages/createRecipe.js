@@ -36,7 +36,7 @@ class CreateRecipe extends React.Component {
             recipeTitle: "",
             preparationTime: "",
             cookingTime: "",
-            directions: ['one', 'two'],
+            directions: [''],
             cookingNotes: []
         }
     }
@@ -71,9 +71,29 @@ class CreateRecipe extends React.Component {
 
     removeIngredientCallBack = (ingredientIncrementorNumber) => {
         //TODO: we'll set the object to null - this way we can still quickly index all the other elements
-
     }
 
+    updateDirectionCallBack = (directionIndex, text) => {
+
+        const clone = [...this.state.directions];
+        clone[directionIndex] = text;
+
+        this.setState({directions : clone});
+    }
+
+    addDirectionCallBack = () => {
+        this.setState({directions : [...this.state.directions, '']})
+    }
+
+    deleteDirectionCallBack = (directionIndex) => {
+
+        const clone = [...this.state.directions];
+        clone.splice(directionIndex, 1);
+
+        this.setState({
+            directions: clone
+        });
+    }
 
     updateIngredientCallBack = (ingredientIncrementorNumber, key, value) => {
 
@@ -128,14 +148,15 @@ class CreateRecipe extends React.Component {
                     <p>{this.state.apiKey}</p>
 
 
-                    <TextField id="recipe-title-textfield" label="Recipe Title" variant="standard" value={this.state.recipeTitle} onChange={event => this.setState({recipeTitle: event.target.value})} />
+                    <TextField id="recipe-title-textfield" label="Recipe Title" variant="standard" value={this.state.recipeTitle} onChange={event => this.setState({ recipeTitle: event.target.value })} />
                     <br />
-                    <TextField id="preparation-time-textfield" label="Preparation Time (minutes)" variant="standard" type="number" value={this.state.preparationTime} onChange={event => this.setState({preparationTime: event.target.value})} />
+                    <TextField id="preparation-time-textfield" label="Preparation Time (minutes)" variant="standard" type="number" value={this.state.preparationTime} onChange={event => this.setState({ preparationTime: event.target.value })} />
                     <br />
-                    <TextField id="cooking-time-textfield" label="Cooking Time (minutes)" variant="standard" type="number" value={this.state.cookingTime} onChange={event => this.setState({cookingTime: event.target.value})} />
+                    <TextField id="cooking-time-textfield" label="Cooking Time (minutes)" variant="standard" type="number" value={this.state.cookingTime} onChange={event => this.setState({ cookingTime: event.target.value })} />
 
                     <br />
-                    <TextField id="standard-basic" label="Food Search" variant="standard" value={this.state.searchQuery} onChange={event => this.setState({searchQuery: event.target.value})} />
+                    <br />
+                    <TextField id="standard-basic" label="Food Search" variant="standard" value={this.state.searchQuery} onChange={event => this.setState({ searchQuery: event.target.value })} />
                     <Button variant="contained" onClick={() => this.search(1)}>Search</Button>
 
 
@@ -148,13 +169,21 @@ class CreateRecipe extends React.Component {
                     {cards}
 
                     <br />
+
+                    <RecipeDirections
+                        directions={this.state.directions}
+                        deleteDirectionCallBack={(directionIndex) => this.deleteDirectionCallBack(directionIndex)}
+                        updateDirectionCallBack={(directionIndex, text) => this.updateDirectionCallBack(directionIndex, text)}
+                        addDirectionCallBack={() => this.addDirectionCallBack()}
+                    />
+
+                    <br />
+
                     <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button>
 
                     &nbsp;
 
                     <Button variant="contained" color="secondary" onClick={() => this.resetInput()}>Clear Input</Button>
-
-                    <RecipeDirections directions={this.state.directions} />
 
 
                     {/* <p>{JSON.stringify(this.state.content)}</p> */}
