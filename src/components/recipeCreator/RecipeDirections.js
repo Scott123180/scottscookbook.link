@@ -5,8 +5,8 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon/ListItemIcon';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { TextField } from '@mui/material';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import { TextareaAutosize } from '@mui/material';
 
 
 const RecipeDirections = (props) => {
@@ -16,9 +16,9 @@ const RecipeDirections = (props) => {
                 <ListItemIcon>
                     <DeleteIcon onClick={() => props.deleteDirectionCallBack(index)}/>
                 </ListItemIcon>
-                <TextField 
-                variant="standard" 
+                <TextareaAutosize 
                 value={direction} 
+                style={{ width: 200 }}
                 onChange={(event) => props.updateDirectionCallBack(index, event.target.value)}
                 />
             </ListItem>
