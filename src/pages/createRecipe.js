@@ -38,7 +38,8 @@ class CreateRecipe extends React.Component {
             preparationTime: "",
             cookingTime: "",
             directions: [''],
-            cookingNotes: []
+            cookingNotes: [],
+            rating: 0
         }
     }
 
@@ -103,6 +104,10 @@ class CreateRecipe extends React.Component {
         });
     }
 
+    updateRatingCallBack = (newRating) => {
+        this.setState({rating: newRating});
+    }
+
     saveRecipe = () => {
 
         const nutritionInformation = aggregateNutrition(this.state.ingredients);
@@ -156,7 +161,7 @@ class CreateRecipe extends React.Component {
                     <TextField id="cooking-time-textfield" label="Cooking Time (minutes)" variant="standard" type="number" value={this.state.cookingTime} onChange={event => this.setState({ cookingTime: event.target.value })} />
 
                     {/*TODO: get the state from this component */}
-                    <HoverRating />
+                    <HoverRating updateRatingCallBack={(rating) => this.updateRatingCallBack(rating)}/>
 
                     <br />
                     <br />
@@ -184,10 +189,6 @@ class CreateRecipe extends React.Component {
                     <br />
 
                     <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button>
-
-                    &nbsp;
-
-                    <Button variant="contained" color="secondary" onClick={() => this.resetInput()}>Clear Input</Button>
 
 
                     {/* <p>{JSON.stringify(this.state.content)}</p> */}
