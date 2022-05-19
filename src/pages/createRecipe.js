@@ -12,6 +12,9 @@ import aggregateNutrition from '../components/recipeCreator/AggregateNutrition';
 import RecipeDirections from '../components/recipeCreator/RecipeDirections';
 import HoverRating from '../components/recipeCreator/HoverRating';
 import RecipeSections from '../components/recipeCreator/RecipeSections';
+import DatePicker from 'react-datepicker';
+
+import "react-datepicker/dist/react-datepicker.css";
 
 //TODO:
 // 1. (medium) add section input for recipe so that we can select sections instead of entering them manually every time
@@ -41,9 +44,12 @@ class CreateRecipe extends React.Component {
             directions: [''],
             cookingNotes: [],
             rating: 0,
-            sections: ['one', 'twoS']
+            sections: ['one', 'twoS'],
+            recipeDate: new Date()
         }
     }
+
+
 
     updateAPIKey = (value) => {
         this.setState({ apiKey: value });
@@ -83,11 +89,11 @@ class CreateRecipe extends React.Component {
         const clone = [...this.state.directions];
         clone[directionIndex] = text;
 
-        this.setState({directions : clone});
+        this.setState({ directions: clone });
     }
 
     addDirectionCallBack = () => {
-        this.setState({directions : [...this.state.directions, '']})
+        this.setState({ directions: [...this.state.directions, ''] })
     }
 
     deleteDirectionCallBack = (sectionIndex) => {
@@ -99,17 +105,17 @@ class CreateRecipe extends React.Component {
             sections: clone
         });
     }
-    
+
     updateSectionCallBack = (sectionIndex, text) => {
 
         const clone = [...this.state.sections];
         clone[sectionIndex] = text;
 
-        this.setState({sections : clone});
+        this.setState({ sections: clone });
     }
 
     addSectionCallBack = () => {
-        this.setState({sections : [...this.state.sections, '']})
+        this.setState({ sections: [...this.state.sections, ''] })
     }
 
     deleteSectionCallBack = (sectionIndex) => {
@@ -130,7 +136,7 @@ class CreateRecipe extends React.Component {
     }
 
     updateRatingCallBack = (newRating) => {
-        this.setState({rating: newRating});
+        this.setState({ rating: newRating });
     }
 
     saveRecipe = () => {
@@ -184,8 +190,15 @@ class CreateRecipe extends React.Component {
                     <br />
                     <TextField id="cooking-time-textfield" label="Cooking Time (minutes)" variant="standard" type="number" value={this.state.cookingTime} onChange={event => this.setState({ cookingTime: event.target.value })} />
 
+                    <br />
+                    <br />
+                    <DatePicker selected={this.state.recipeDate} onChange={(date) => this.setState({recipeDate :date})} />
+                    <br />
+                    <br />
+
+
                     {/*TODO: get the state from this component */}
-                    <HoverRating updateRatingCallBack={(rating) => this.updateRatingCallBack(rating)}/>
+                    <HoverRating updateRatingCallBack={(rating) => this.updateRatingCallBack(rating)} />
 
 
                     <RecipeSections
