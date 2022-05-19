@@ -72,17 +72,21 @@ class IngredientCard extends React.Component {
             />
         );
 
-        const sectionTextField = (
-            <TextField
-                id="section-text-id"
-                label="Section"
-                variant="standard"
+        const sectionSelection = (
+
+            <Select
+                labelId="section-select"
+                id="section-select"
+                label="Recipe Section"
+                value={this.props.ingredient.section}
                 onChange={(event) =>
-                    this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'sectionInput', event.target.value)
+                    this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'section', event.target.value)
                 }
-
-            />
-
+            >
+                {this.props.sections.map((section, index) => (
+                    <MenuItem value={index} key={section}>{section}</MenuItem>
+                ))}
+            </Select>
         );
 
         return (
@@ -90,7 +94,7 @@ class IngredientCard extends React.Component {
                 <CardContent>
                     <Typography variant="h5" component="div">{this.props.ingredient.foodInformation.description}</Typography>
 
-                    {foodMeasureSelect}
+                    Food Measure: {foodMeasureSelect}
 
                     <br />
 
@@ -103,7 +107,7 @@ class IngredientCard extends React.Component {
 
                     <br />
 
-                    {sectionTextField}
+                    Recipe Section: {sectionSelection}
 
                 </CardContent>
             </Card >

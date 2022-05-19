@@ -11,6 +11,7 @@ import SEO from '../components/Seo';
 import aggregateNutrition from '../components/recipeCreator/AggregateNutrition';
 import RecipeDirections from '../components/recipeCreator/RecipeDirections';
 import HoverRating from '../components/recipeCreator/HoverRating';
+import RecipeSections from '../components/recipeCreator/RecipeSections';
 
 //TODO:
 // 1. (medium) add section input for recipe so that we can select sections instead of entering them manually every time
@@ -39,7 +40,8 @@ class CreateRecipe extends React.Component {
             cookingTime: "",
             directions: [''],
             cookingNotes: [],
-            rating: 0
+            rating: 0,
+            sections: ['one', 'twoS']
         }
     }
 
@@ -61,7 +63,8 @@ class CreateRecipe extends React.Component {
                         ingredientIncrementorNumber: this.state.ingredientIncrementor++,
                         foodInformation: foodInformation,
                         selectedFoodMeasure: 0,
-                        selectedIngredientUnit: 0
+                        selectedIngredientUnit: 0,
+                        section: 0
                     }],
                 content: {},
                 searchQuery: ""
@@ -87,10 +90,32 @@ class CreateRecipe extends React.Component {
         this.setState({directions : [...this.state.directions, '']})
     }
 
-    deleteDirectionCallBack = (directionIndex) => {
+    deleteDirectionCallBack = (sectionIndex) => {
+
+        const clone = [...this.state.sections];
+        clone.splice(sectionIndex, 1);
+
+        this.setState({
+            sections: clone
+        });
+    }
+    
+    updateSectionCallBack = (sectionIndex, text) => {
+
+        const clone = [...this.state.sections];
+        clone[sectionIndex] = text;
+
+        this.setState({sections : clone});
+    }
+
+    addSectionCallBack = () => {
+        this.setState({sections : [...this.state.sections, '']})
+    }
+
+    deleteSectionCallBack = (sectionIndex) => {
 
         const clone = [...this.state.directions];
-        clone.splice(directionIndex, 1);
+        clone.splice(sectionIndex, 1);
 
         this.setState({
             directions: clone
@@ -133,11 +158,10 @@ class CreateRecipe extends React.Component {
 
     render() {
 
-        const numberOfResults = Object.keys(this.state.content).length === 0 ? 0 : this.state.content.totalHits;
-
         const cards = this.state.ingredients.map((ingredient) => (
             <IngredientCard
                 ingredient={ingredient}
+                sections={this.state.sections}
                 updateIngredientCallBack={(ingredientIncrementorNumber, key, value) => this.updateIngredientCallBack(ingredientIncrementorNumber, key, value)}
             />
         ));
@@ -162,6 +186,14 @@ class CreateRecipe extends React.Component {
 
                     {/*TODO: get the state from this component */}
                     <HoverRating updateRatingCallBack={(rating) => this.updateRatingCallBack(rating)}/>
+
+
+                    <RecipeSections
+                        sections={this.state.sections}
+                        deleteSectionCallBack={(sectionIndex) => this.deleteSectionCallBack(sectionIndex)}
+                        updateSectionCallBack={(sectionIndex, text) => this.updateSectionCallBack(sectionIndex, text)}
+                        addSectionCallBack={() => this.addSectionCallBack()}
+                    />
 
                     <br />
                     <br />
