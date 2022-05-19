@@ -45,7 +45,9 @@ class CreateRecipe extends React.Component {
             cookingNotes: [],
             rating: 0,
             sections: ['one', 'twoS'],
-            recipeDate: new Date()
+            recipeDate: new Date(),
+            recipeTopic: '',
+            originalLink: ''
         }
     }
 
@@ -194,6 +196,11 @@ class CreateRecipe extends React.Component {
                     <br />
                     <DatePicker selected={this.state.recipeDate} onChange={(date) => this.setState({recipeDate :date})} />
                     <br />
+                    <br />
+                    
+                    <TextField id="recipe-topic-textfield" label="Recipe Topic" variant="standard" value={this.state.recipeTopic} onChange={event => this.setState({ recipeTopic: event.target.value })} />
+                    <br />
+                    <TextField id="original-link-textfield" label="Original Link" variant="standard" value={this.state.originalLink} onChange={event => this.setState({ originalLink: event.target.value })} />
                     <br />
 
 
