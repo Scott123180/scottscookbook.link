@@ -44,7 +44,7 @@ class CreateRecipe extends React.Component {
             directions: [''],
             cookingNotes: [],
             rating: 0,
-            sections: ['one', 'twoS'],
+            sections: [''],
             recipeDate: new Date(),
             recipeTopic: '',
             originalLink: ''
