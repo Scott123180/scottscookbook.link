@@ -1,5 +1,5 @@
 import { Button, TextField } from '@mui/material';
-import React from 'react';
+import * as React from "react"
 import update from 'react-addons-update';
 import Layout from '../components/Layout';
 import foodSearch from '../components/recipeCreator/APIQueries';
