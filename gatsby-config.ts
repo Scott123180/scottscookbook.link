@@ -3,6 +3,7 @@ module.exports = {
     title: `Scott's Cookbook`,
     description: `A minimal and mobile friendly recipe website`,
     author: `Scott Hansen`,
+    siteUrl: `https://scottscookbook.link`
   },
   plugins: [
     `gatsby-transformer-remark`,
