@@ -7,7 +7,7 @@ import HowTo from '../components/recipeCreator/HowToCreateRecipe';
 import IngredientCard from '../components/recipeCreator/IngredientCard';
 import QueryResults from '../components/recipeCreator/QueryResults';
 import UsdaApiKey from '../components/recipeCreator/UsdaApiKey';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import aggregateNutrition from '../components/recipeCreator/AggregateNutrition';
 import RecipeDirections from '../components/recipeCreator/RecipeDirections';
 import HoverRating from '../components/recipeCreator/HoverRating';
@@ -63,19 +63,22 @@ class CreateRecipe extends React.Component {
 
     addIngredientAndGetReadyForNextQuery = (foodInformation) => {
 
+        const ingredientIncrementorValue = this.state.ingredientIncrementor + 1; 
+
         this.setState(
             {
                 ingredients:
                     [...this.state.ingredients,
                     {
-                        ingredientIncrementorNumber: this.state.ingredientIncrementor++,
+                        ingredientIncrementorNumber: ingredientIncrementorValue,
                         foodInformation: foodInformation,
                         selectedFoodMeasure: 0,
                         selectedIngredientUnit: 0,
                         section: 0
                     }],
                 content: {},
-                searchQuery: ""
+                searchQuery: "",
+                ingredientIncrementor: ingredientIncrementorValue 
             }
         );
 
@@ -177,7 +180,7 @@ class CreateRecipe extends React.Component {
         return (
             <Layout>
                 <div style={{ marginLeft: "5%", marginRight: "5%" }}>
-                    <SEO title="Create Recipe" />
+                    <Seo title="Create Recipe" />
                     <h2>Create Recipe</h2>
                     <HowTo />
                     <br />
