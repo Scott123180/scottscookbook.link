@@ -1,5 +1,5 @@
 import { Card, CardContent, MenuItem, Select, TextField, Typography } from '@mui/material';
-import React from 'react';
+import * as React from 'react';
 
 class IngredientCard extends React.Component {
 

@@ -1,7 +1,7 @@
-import React from "react";
+import * as React from "react";
 import PropTypes from "prop-types";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+import Nav from "./Nav";
+import Footer from "./Footer";
 import "./layout.css";
 
 const Layout = ({ children }) => {

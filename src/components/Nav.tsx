@@ -1,4 +1,4 @@
-import React from "react"
+import * asReact from "react"
 import { Link } from "gatsby"
 
 class Nav extends React.Component  {

@@ -1,5 +1,5 @@
 import { Autocomplete, FormControl, FormControlLabel, Paper, Radio, RadioGroup, Stack, Switch, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography } from '@mui/material';
-import React from 'react';
+import * as React from 'react';
 
 const imperial = "imperial";
 const metric = "metric";

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
@@ -6,20 +6,20 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon/ListItemIcon';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddBoxIcon from '@mui/icons-material/AddBox';
-import { TextareaAutosize } from '@mui/material';
+import { TextField } from '@mui/material';
 
 
-const RecipeDirections = (props) => {
+const RecipeSections = (props) => {
 
-    const directionItems = props.directions.map((direction, index) => (
-            <ListItem>
+    const sectionItems = props.sections.map((section, index) => (
+            <ListItem key={section}>
                 <ListItemIcon>
-                    <DeleteIcon onClick={() => props.deleteDirectionCallBack(index)}/>
+                    <DeleteIcon onClick={() => props.deleteSectionCallBack(index)}/>
                 </ListItemIcon>
-                <TextareaAutosize 
-                value={direction} 
+                <TextField 
+                value={section} 
                 style={{ width: 200 }}
-                onChange={(event) => props.updateDirectionCallBack(index, event.target.value)}
+                onChange={(event) => props.updateSectionCallBack(index, event.target.value)}
                 />
             </ListItem>
     ));
@@ -27,15 +27,15 @@ const RecipeDirections = (props) => {
     return (
         <Grid item xs={12} md={6}>
             <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
-                Directions
+                Recipe Sections
             </Typography>
             <List>
-                {directionItems}
+                {sectionItems}
             </List>
-            Add Direction <AddBoxIcon onClick={() => props.addDirectionCallBack()} />
+            Add section <AddBoxIcon onClick={() => props.addSectionCallBack()} />
         </Grid>
     );
 
 }
 
-export default RecipeDirections;
+export default RecipeSections;
