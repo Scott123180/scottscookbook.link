@@ -27,7 +27,26 @@ import "react-datepicker/dist/react-datepicker.css";
 // 8. (low) styling
 // 9. (very low) export recipe - auto create pull request
 
-class CreateRecipe extends React.Component {
+interface MyState {
+    apiKey : string,
+    searchQuery: string,
+    content: any,
+    ingredients: any[],
+    ingredientIncrementor: number,
+    recipeTitle: string,
+    preparationTime: string,
+    cookingTime: string,
+    directions: string[],
+    cookingNotes: string[],
+    rating: number,
+    sections: string[],
+    recipeDate: Date,
+    recipeTopic: string,
+    originalLink: string
+
+}
+
+class CreateRecipe extends React.Component<{}, MyState> {
 
     constructor(props: any) {
         super(props);
@@ -52,8 +71,7 @@ class CreateRecipe extends React.Component {
     }
 
 
-
-    updateAPIKey = (value) => {
+    updateAPIKey = (value: string) => {
         this.setState({ apiKey: value });
     }
 
@@ -197,7 +215,7 @@ class CreateRecipe extends React.Component {
 
                     <br />
                     <br />
-                    <DatePicker selected={this.state.recipeDate} onChange={(date) => this.setState({recipeDate :date})} />
+                    <DatePicker selected={this.state.recipeDate} onChange={(date: Date) => this.setState({recipeDate :date})} />
                     <br />
                     <br />
                     
@@ -226,7 +244,7 @@ class CreateRecipe extends React.Component {
 
                     <QueryResults
                         data={this.state.content}
-                        updatePageCallBack={(pageNumber) => this.search(pageNumber)}
+                        updatePageCallBack={(pageNumber: number) => this.search(pageNumber)}
                         addIngredientCallBack={(foodInformation) => this.addIngredientAndGetReadyForNextQuery(foodInformation)}
                     />
 
@@ -246,7 +264,7 @@ class CreateRecipe extends React.Component {
                     <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button>
 
 
-                    {/* <p>{JSON.stringify(this.state.content)}</p> */}
+                    <p>{JSON.stringify(this.state.content)}</p>
                 </div>
             </Layout>
         );
