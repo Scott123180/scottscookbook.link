@@ -9,9 +9,9 @@ import AddBoxIcon from '@mui/icons-material/AddBox';
 import { TextareaAutosize } from '@mui/material';
 
 
-const RecipeDirections = (props) => {
+const RecipeDirections = (props: any) => {
 
-    const directionItems = props.directions.map((direction, index) => (
+    const directionItems = props.directions.map((direction, index: number) => (
             <ListItem>
                 <ListItemIcon>
                     <DeleteIcon onClick={() => props.deleteDirectionCallBack(index)}/>

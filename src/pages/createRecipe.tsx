@@ -29,7 +29,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 class CreateRecipe extends React.Component {
 
-    constructor(props) {
+    constructor(props: any) {
         super(props);
 
         this.state = {

@@ -9,9 +9,9 @@ import AddBoxIcon from '@mui/icons-material/AddBox';
 import { TextField } from '@mui/material';
 
 
-const RecipeSections = (props) => {
+const RecipeSections = (props: any) => {
 
-    const sectionItems = props.sections.map((section, index) => (
+    const sectionItems = props.sections.map((section: string, index) => (
             <ListItem key={section}>
                 <ListItemIcon>
                     <DeleteIcon onClick={() => props.deleteSectionCallBack(index)}/>
