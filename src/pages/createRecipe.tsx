@@ -1,6 +1,6 @@
 import { Button, TextField } from '@mui/material';
-import * as React from "react"
-import update from 'react-addons-update';
+import * as React from "react";
+import update from 'immutability-helper';
 import Layout from '../components/Layout';
 import foodSearch from '../components/recipeCreator/APIQueries';
 import HowTo from '../components/recipeCreator/HowToCreateRecipe';
@@ -151,7 +151,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
         });
     }
 
-    updateIngredientCallBack = (ingredientIncrementorNumber: number, key, value) => {
+    updateIngredientCallBack = (ingredientIncrementorNumber: number, key: any, value: any) => {
 
         this.setState({
             ingredients: update(this.state.ingredients, { [[ingredientIncrementorNumber]]: { [[key]]: { $set: value } } })
@@ -181,7 +181,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
         //TODO
     }
 
-    search = (pageNumber) => {
+    search = (pageNumber: number) => {
         foodSearch(this.state.apiKey, this.state.searchQuery, pageNumber, (cb) => this.updateContent(cb))
     }
 
