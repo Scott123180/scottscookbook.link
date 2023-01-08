@@ -158,7 +158,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
         });
     }
 
-    updateRatingCallBack = (newRating) => {
+    updateRatingCallBack = (newRating: number) => {
         this.setState({ rating: newRating });
     }
 
@@ -203,7 +203,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
                     <HowTo />
                     <br />
 
-                    <UsdaApiKey callback={(value) => this.updateAPIKey(value)} />
+                    <UsdaApiKey callback={(value: string) => this.updateAPIKey(value)} />
                     <p>{this.state.apiKey}</p>
 
 
@@ -254,8 +254,8 @@ class CreateRecipe extends React.Component<{}, MyState> {
 
                     <RecipeDirections
                         directions={this.state.directions}
-                        deleteDirectionCallBack={(directionIndex) => this.deleteDirectionCallBack(directionIndex)}
-                        updateDirectionCallBack={(directionIndex, text) => this.updateDirectionCallBack(directionIndex, text)}
+                        deleteDirectionCallBack={(directionIndex: number) => this.deleteDirectionCallBack(directionIndex)}
+                        updateDirectionCallBack={(directionIndex: number, text: string) => this.updateDirectionCallBack(directionIndex, text)}
                         addDirectionCallBack={() => this.addDirectionCallBack()}
                     />
 

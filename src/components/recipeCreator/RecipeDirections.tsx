@@ -11,7 +11,7 @@ import { TextareaAutosize } from '@mui/material';
 
 const RecipeDirections = (props: any) => {
 
-    const directionItems = props.directions.map((direction, index: number) => (
+    const directionItems = props.directions.map((direction: string, index: number) => (
             <ListItem>
                 <ListItemIcon>
                     <DeleteIcon onClick={() => props.deleteDirectionCallBack(index)}/>

@@ -12,7 +12,7 @@ import { TextField } from '@mui/material';
 const RecipeSections = (props: any) => {
 
     const sectionItems = props.sections.map((section: string, index: number) => (
-            <ListItem key={section}>
+            <ListItem>
                 <ListItemIcon>
                     <DeleteIcon onClick={() => props.deleteSectionCallBack(index)}/>
                 </ListItemIcon>
