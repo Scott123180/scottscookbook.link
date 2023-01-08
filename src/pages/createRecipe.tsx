@@ -52,7 +52,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
         super(props);
 
         this.state = {
-            apiKey: "",
+            apiKey: "mnk6fopkXTbgSTqJpylXBuHnC4LPAqzqYLtSUVbs",
             searchQuery: "",
             content: {},
             ingredients: [],
@@ -107,7 +107,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
         //TODO: we'll set the object to null - this way we can still quickly index all the other elements
     }
 
-    updateDirectionCallBack = (directionIndex, text) => {
+    updateDirectionCallBack = (directionIndex: number, text) => {
 
         const clone = [...this.state.directions];
         clone[directionIndex] = text;
@@ -119,7 +119,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
         this.setState({ directions: [...this.state.directions, ''] })
     }
 
-    deleteDirectionCallBack = (sectionIndex) => {
+    deleteDirectionCallBack = (sectionIndex: number) => {
 
         const clone = [...this.state.sections];
         clone.splice(sectionIndex, 1);
@@ -129,7 +129,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
         });
     }
 
-    updateSectionCallBack = (sectionIndex, text) => {
+    updateSectionCallBack = (sectionIndex: number, text: string) => {
 
         const clone = [...this.state.sections];
         clone[sectionIndex] = text;
@@ -141,17 +141,17 @@ class CreateRecipe extends React.Component<{}, MyState> {
         this.setState({ sections: [...this.state.sections, ''] })
     }
 
-    deleteSectionCallBack = (sectionIndex) => {
+    deleteSectionCallBack = (sectionIndex: number) => {
 
-        const clone = [...this.state.directions];
+        const clone = [...this.state.sections];
         clone.splice(sectionIndex, 1);
 
         this.setState({
-            directions: clone
+            sections: clone
         });
     }
 
-    updateIngredientCallBack = (ingredientIncrementorNumber, key, value) => {
+    updateIngredientCallBack = (ingredientIncrementorNumber: number, key, value) => {
 
         this.setState({
             ingredients: update(this.state.ingredients, { [[ingredientIncrementorNumber]]: { [[key]]: { $set: value } } })
@@ -226,13 +226,13 @@ class CreateRecipe extends React.Component<{}, MyState> {
 
 
                     {/*TODO: get the state from this component */}
-                    <HoverRating updateRatingCallBack={(rating) => this.updateRatingCallBack(rating)} />
+                    <HoverRating updateRatingCallBack={(rating: number) => this.updateRatingCallBack(rating)} />
 
 
                     <RecipeSections
                         sections={this.state.sections}
-                        deleteSectionCallBack={(sectionIndex) => this.deleteSectionCallBack(sectionIndex)}
-                        updateSectionCallBack={(sectionIndex, text) => this.updateSectionCallBack(sectionIndex, text)}
+                        deleteSectionCallBack={(sectionIndex: number) => this.deleteSectionCallBack(sectionIndex)}
+                        updateSectionCallBack={(sectionIndex: number, text: string) => this.updateSectionCallBack(sectionIndex, text)}
                         addSectionCallBack={() => this.addSectionCallBack()}
                     />
 
