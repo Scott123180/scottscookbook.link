@@ -1,9 +1,15 @@
 import { Card, CardContent, MenuItem, Select, TextField, Typography } from '@mui/material';
 import * as React from 'react';
 
-class IngredientCard extends React.Component {
+interface MyProps {
+    ingredient: any,
+    updateIngredientCallBack: Function,
+    sections: string[]
+}
 
-    constructor(props) {
+class IngredientCard extends React.Component<MyProps, {}> {
+
+    constructor(props: any) {
         super(props);
 
         this.state = {};
