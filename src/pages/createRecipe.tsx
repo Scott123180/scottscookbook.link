@@ -107,7 +107,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
         //TODO: we'll set the object to null - this way we can still quickly index all the other elements
     }
 
-    updateDirectionCallBack = (directionIndex: number, text) => {
+    updateDirectionCallBack = (directionIndex: number, text: string) => {
 
         const clone = [...this.state.directions];
         clone[directionIndex] = text;
@@ -119,13 +119,13 @@ class CreateRecipe extends React.Component<{}, MyState> {
         this.setState({ directions: [...this.state.directions, ''] })
     }
 
-    deleteDirectionCallBack = (sectionIndex: number) => {
+    deleteDirectionCallBack = (directionIndex: number) => {
 
-        const clone = [...this.state.sections];
-        clone.splice(sectionIndex, 1);
+        const clone = [...this.state.directions];
+        clone.splice(directionIndex, 1);
 
         this.setState({
-            sections: clone
+            directions: clone
         });
     }
 
