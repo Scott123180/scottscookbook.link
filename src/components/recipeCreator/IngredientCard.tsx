@@ -90,7 +90,7 @@ class IngredientCard extends React.Component<MyProps, {}> {
                 }
             >
                 {this.props.sections.map((section, index) => (
-                    <MenuItem value={index} key={section}>{section}</MenuItem>
+                    <MenuItem value={index}>{section}</MenuItem>
                 ))}
             </Select>
         );

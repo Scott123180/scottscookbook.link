@@ -79,9 +79,9 @@ class CreateRecipe extends React.Component<{}, MyState> {
         this.setState({ content: value });
     }
 
-    addIngredientAndGetReadyForNextQuery = (foodInformation) => {
+    addIngredientAndGetReadyForNextQuery = (foodInformation: any) => {
 
-        const ingredientIncrementorValue = this.state.ingredientIncrementor + 1; 
+        const ingredientIncrementorValue = this.state.ingredientIncrementor;
 
         this.setState(
             {
@@ -92,11 +92,13 @@ class CreateRecipe extends React.Component<{}, MyState> {
                         foodInformation: foodInformation,
                         selectedFoodMeasure: 0,
                         selectedIngredientUnit: 0,
-                        section: 0
+                        section: 0,
+                        preparationInput: '',
+                        servingUnitInput: '',
                     }],
                 content: {},
                 searchQuery: "",
-                ingredientIncrementor: ingredientIncrementorValue 
+                ingredientIncrementor: (ingredientIncrementorValue + 1)
             }
         );
 
@@ -152,10 +154,17 @@ class CreateRecipe extends React.Component<{}, MyState> {
     }
 
     updateIngredientCallBack = (ingredientIncrementorNumber: number, key: any, value: any) => {
+        console.log(this.state.ingredients);
+        console.log(this.state.ingredientIncrementor);
 
-        this.setState({
-            ingredients: update(this.state.ingredients, { [[ingredientIncrementorNumber]]: { [[key]]: { $set: value } } })
-        });
+        this.setState((prevState) => update(prevState, {
+            ingredients: {
+                [ingredientIncrementorNumber] : {
+                    [key] : {$set : value}
+                }
+            }
+        }))
+
     }
 
     updateRatingCallBack = (newRating: number) => {
