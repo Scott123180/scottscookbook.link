@@ -17,7 +17,7 @@ class IngredientCard extends React.Component<MyProps, {}> {
 
     render() {
 
-        const servingMenuOptions = this.props.ingredient.foodInformation.foodMeasures.map((measure, index) => (
+        const servingMenuOptions = this.props.ingredient.foodInformation.foodMeasures.map((measure: any, index: number) => (
             <MenuItem value={index} key={measure.id}
             >
                 {measure.disseminationText} ({measure.gramWeight}g)

@@ -33,10 +33,12 @@ interface MyState {
     content: any,
     ingredients: any[],
     ingredientIncrementor: number,
+    sectionIncrementor: number,
+    directionIncrementor: number,
     recipeTitle: string,
     preparationTime: string,
     cookingTime: string,
-    directions: string[],
+    directions: any[],
     cookingNotes: string[],
     rating: number,
     sections: string[],
@@ -57,10 +59,12 @@ class CreateRecipe extends React.Component<{}, MyState> {
             content: {},
             ingredients: [],
             ingredientIncrementor: 0,
+            sectionIncrementor: 0,
+            directionIncrementor: 1,
             recipeTitle: "",
             preparationTime: "",
             cookingTime: "",
-            directions: [''],
+            directions: [{directionIncrementor: 0, directionText: ""}],
             cookingNotes: [],
             rating: 0,
             sections: [''],
@@ -101,8 +105,6 @@ class CreateRecipe extends React.Component<{}, MyState> {
                 ingredientIncrementor: (ingredientIncrementorValue + 1)
             }
         );
-
-        //TODO
     }
 
     removeIngredientCallBack = (ingredientIncrementorNumber) => {
@@ -112,13 +114,28 @@ class CreateRecipe extends React.Component<{}, MyState> {
     updateDirectionCallBack = (directionIndex: number, text: string) => {
 
         const clone = [...this.state.directions];
-        clone[directionIndex] = text;
+        clone[directionIndex].directionText = text;
 
         this.setState({ directions: clone });
     }
 
     addDirectionCallBack = () => {
-        this.setState({ directions: [...this.state.directions, ''] })
+        //this.setState({ directions: [...this.state.directions, ''] })
+
+
+        const directionIncrementorValue = this.state.directionIncrementor;
+
+        this.setState(
+            {
+                directions:
+                    [...this.state.directions,
+                    {
+                        directionIncrementor: directionIncrementorValue,
+                        directionText: ""
+                    }],
+                directionIncrementor: (directionIncrementorValue + 1)
+            }
+        );
     }
 
     deleteDirectionCallBack = (directionIndex: number) => {

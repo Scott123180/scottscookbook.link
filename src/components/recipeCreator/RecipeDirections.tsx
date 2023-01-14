@@ -11,13 +11,13 @@ import { TextareaAutosize } from '@mui/material';
 
 const RecipeDirections = (props: any) => {
 
-    const directionItems = props.directions.map((direction: string, index: number) => (
-            <ListItem>
+    const directionItems = props.directions.map((direction: any, index: number) => (
+            <ListItem key={direction.directionIncrementor}>
                 <ListItemIcon>
                     <DeleteIcon onClick={() => props.deleteDirectionCallBack(index)}/>
                 </ListItemIcon>
                 <TextareaAutosize 
-                value={direction} 
+                value={direction.directionText} 
                 style={{ width: 200 }}
                 onChange={(event) => props.updateDirectionCallBack(index, event.target.value)}
                 />
