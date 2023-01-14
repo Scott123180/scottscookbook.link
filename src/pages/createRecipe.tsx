@@ -75,7 +75,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
         this.setState({ apiKey: value });
     }
 
-    updateContent = (value) => {
+    updateContent = (value: any) => {
         this.setState({ content: value });
     }
 
@@ -154,8 +154,6 @@ class CreateRecipe extends React.Component<{}, MyState> {
     }
 
     updateIngredientCallBack = (ingredientIncrementorNumber: number, key: any, value: any) => {
-        console.log(this.state.ingredients);
-        console.log(this.state.ingredientIncrementor);
 
         this.setState((prevState) => update(prevState, {
             ingredients: {
@@ -191,7 +189,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
     }
 
     search = (pageNumber: number) => {
-        foodSearch(this.state.apiKey, this.state.searchQuery, pageNumber, (cb) => this.updateContent(cb))
+        foodSearch(this.state.apiKey, this.state.searchQuery, pageNumber, (cb: any) => this.updateContent(cb))
     }
 
     render() {
