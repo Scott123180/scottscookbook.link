@@ -67,7 +67,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
             directions: [{directionIncrementor: 0, directionText: ""}],
             cookingNotes: [],
             rating: 0,
-            sections: [{sectionInrementor: 0, sectionText: ""}],
+            sections: [{sectionIncrementor: 0, sectionText: ""}],
             recipeDate: new Date(),
             recipeTopic: '',
             originalLink: ''
@@ -107,8 +107,12 @@ class CreateRecipe extends React.Component<{}, MyState> {
         );
     }
 
-    removeIngredientCallBack = (ingredientIncrementorNumber) => {
+    removeIngredientCallBack = (ingredientIncrementorNumber: number) => {
         //TODO: we'll set the object to null - this way we can still quickly index all the other elements
+        const clone = [...this.state.ingredients]
+        .filter(e => e.ingredientIncrementorNumber !== ingredientIncrementorNumber);
+
+        this.setState({ingredients: clone});
     }
 
     updateDirectionCallBack = (directionIndex: number, text: string) => {
@@ -226,7 +230,8 @@ class CreateRecipe extends React.Component<{}, MyState> {
             <IngredientCard
                 ingredient={ingredient}
                 sections={this.state.sections}
-                updateIngredientCallBack={(ingredientIncrementorNumber, key, value) => this.updateIngredientCallBack(ingredientIncrementorNumber, key, value)}
+                updateIngredientCallBack={(ingredientIncrementorNumber: number, key: string, value: any) => this.updateIngredientCallBack(ingredientIncrementorNumber, key, value)}
+                removeIngredientCallBack={(ingredientIncrementorNumber: number) => this.removeIngredientCallBack(ingredientIncrementorNumber)}
             />
         ));
 

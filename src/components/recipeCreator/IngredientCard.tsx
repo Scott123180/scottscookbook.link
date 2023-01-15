@@ -1,9 +1,12 @@
 import { Card, CardContent, MenuItem, Select, TextField, Typography } from '@mui/material';
+import ListItemIcon from '@mui/material/ListItemIcon/ListItemIcon';
+import DeleteIcon from '@mui/icons-material/Delete';
 import * as React from 'react';
 
 interface MyProps {
     ingredient: any,
     updateIngredientCallBack: Function,
+    removeIngredientCallBack: Function,
     sections: string[]
 }
 
@@ -18,8 +21,7 @@ class IngredientCard extends React.Component<MyProps, {}> {
     render() {
 
         const servingMenuOptions = this.props.ingredient.foodInformation.foodMeasures.map((measure: any, index: number) => (
-            <MenuItem value={index} key={measure.id}
-            >
+            <MenuItem value={index} key={measure.id}>
                 {measure.disseminationText} ({measure.gramWeight}g)
             </MenuItem>
         ));
@@ -89,10 +91,16 @@ class IngredientCard extends React.Component<MyProps, {}> {
                     this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'section', event.target.value)
                 }
             >
-                {this.props.sections.map((section, index) => (
-                    <MenuItem value={index}>{section}</MenuItem>
+                {this.props.sections.map((section: any, index: number) => (
+                    <MenuItem value={index}>{section.sectionText}</MenuItem>
                 ))}
             </Select>
+        );
+
+        const removeIngredient = (
+                <ListItemIcon>
+                    <DeleteIcon onClick={() => this.props.removeIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber)}/>
+                </ListItemIcon>
         );
 
         return (
@@ -114,6 +122,7 @@ class IngredientCard extends React.Component<MyProps, {}> {
                     <br />
 
                     Recipe Section: {sectionSelection}
+                    {removeIngredient}
 
                 </CardContent>
             </Card >
