@@ -41,7 +41,7 @@ interface MyState {
     directions: any[],
     cookingNotes: string[],
     rating: number,
-    sections: string[],
+    sections: any[],
     recipeDate: Date,
     recipeTopic: string,
     originalLink: string
@@ -59,7 +59,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
             content: {},
             ingredients: [],
             ingredientIncrementor: 0,
-            sectionIncrementor: 0,
+            sectionIncrementor: 1,
             directionIncrementor: 1,
             recipeTitle: "",
             preparationTime: "",
@@ -67,7 +67,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
             directions: [{directionIncrementor: 0, directionText: ""}],
             cookingNotes: [],
             rating: 0,
-            sections: [''],
+            sections: [{sectionInrementor: 0, sectionText: ""}],
             recipeDate: new Date(),
             recipeTopic: '',
             originalLink: ''
@@ -120,8 +120,6 @@ class CreateRecipe extends React.Component<{}, MyState> {
     }
 
     addDirectionCallBack = () => {
-        //this.setState({ directions: [...this.state.directions, ''] })
-
 
         const directionIncrementorValue = this.state.directionIncrementor;
 
@@ -151,13 +149,26 @@ class CreateRecipe extends React.Component<{}, MyState> {
     updateSectionCallBack = (sectionIndex: number, text: string) => {
 
         const clone = [...this.state.sections];
-        clone[sectionIndex] = text;
+        clone[sectionIndex].sectionText = text;
 
         this.setState({ sections: clone });
     }
 
     addSectionCallBack = () => {
-        this.setState({ sections: [...this.state.sections, ''] })
+
+        const sectionIncrementorValue = this.state.sectionIncrementor;
+
+        this.setState(
+            {
+                sections:
+                    [...this.state.sections,
+                    {
+                        sectionIncrementor: sectionIncrementorValue,
+                        sectionText: ""
+                    }],
+                sectionIncrementor: (sectionIncrementorValue + 1)
+            }
+        );
     }
 
     deleteSectionCallBack = (sectionIndex: number) => {

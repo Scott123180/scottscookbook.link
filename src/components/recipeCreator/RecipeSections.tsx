@@ -11,13 +11,13 @@ import { TextField } from '@mui/material';
 
 const RecipeSections = (props: any) => {
 
-    const sectionItems = props.sections.map((section: string, index: number) => (
-            <ListItem>
+    const sectionItems = props.sections.map((section: any, index: number) => (
+            <ListItem key={section.sectionIncrementor}>
                 <ListItemIcon>
                     <DeleteIcon onClick={() => props.deleteSectionCallBack(index)}/>
                 </ListItemIcon>
                 <TextField 
-                value={section} 
+                value={section.sectionText} 
                 style={{ width: 200 }}
                 onChange={(event) => props.updateSectionCallBack(index, event.target.value)}
                 />
