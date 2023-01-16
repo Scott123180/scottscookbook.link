@@ -205,7 +205,6 @@ class CreateRecipe extends React.Component<{}, MyState> {
 
         const nutritionInformation = aggregateNutrition(this.state.ingredients);
 
-        //TODO - remember to filter out null values (ingredients we've removed)
     }
 
     resetInput = () => {
@@ -285,7 +284,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
                     <QueryResults
                         data={this.state.foodApiContent}
                         updatePageCallBack={(pageNumber: number) => this.search(pageNumber)}
-                        addIngredientCallBack={(foodInformation) => this.addIngredientAndGetReadyForNextQuery(foodInformation)}
+                        addIngredientCallBack={(foodInformation: any) => this.addIngredientAndGetReadyForNextQuery(foodInformation)}
                     />
 
                     {cards}
