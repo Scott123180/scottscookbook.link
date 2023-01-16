@@ -21,7 +21,7 @@ const beanMap = new Map([
 
 const beanOptions = Array.from(beanMap, ([key, value]) => ({label: value.name, id: key}))
 
-const BeanSelector = (callbackUpdate) => {
+const BeanSelector = (callbackUpdate: any) => {
 
     return (
         <Autocomplete
@@ -36,7 +36,7 @@ const BeanSelector = (callbackUpdate) => {
     );
 };
 
-const BeanStyle = (callbackUpdate) => {
+const BeanStyle = (callbackUpdate: any) => {
 
     return (
         <div>
@@ -55,7 +55,7 @@ const BeanStyle = (callbackUpdate) => {
     );
 };
 
-const BeanQuantity = (callbackUpdate) => {
+const BeanQuantity = (callbackUpdate: any) => {
 
     return (
         <div>
@@ -71,7 +71,7 @@ const BeanQuantity = (callbackUpdate) => {
 };
 
 
-const metricOptions = (pulseStyle) => {
+const metricOptions = (pulseStyle: string) => {
 
     const volumeOptionMl = pulseStyle !== "canned" ? <FormControlLabel value="ml" control={<Radio />} label="ml" /> : "";
 
@@ -83,7 +83,7 @@ const metricOptions = (pulseStyle) => {
     );
 
 }
-const imperialOptions = (pulseStyle) => {
+const imperialOptions = (pulseStyle: string) => {
 
     const volumeOptionCup = pulseStyle !== "canned" ? <FormControlLabel value="cups" control={<Radio />} label="Cups" /> : "";
     const volumeOptionFl = pulseStyle !== "canned" ? <FormControlLabel value="fluidOunce" control={<Radio />} label="Fluid Ounce" /> : "";
@@ -99,7 +99,7 @@ const imperialOptions = (pulseStyle) => {
 }
 
 //generate the options based off of the bean style
-const MeasurementUnit = (callBackUpdate, measurementUnit, systemOfUnits, pulseStyle) => {
+const MeasurementUnit = (callBackUpdate: any, measurementUnit: string, systemOfUnits: string, pulseStyle: string) => {
 
     const formOptions = systemOfUnits === imperial ? imperialOptions(pulseStyle) : metricOptions(pulseStyle);
 
@@ -122,13 +122,13 @@ const MeasurementUnit = (callBackUpdate, measurementUnit, systemOfUnits, pulseSt
     );
 };
 
-function isValidInput(input){
+function isValidInput(input: any){
     return input !== undefined 
         && input !== null
         && input !== "";
 }
 
-function inputIsComplete(input){
+function inputIsComplete(input: any){
 
     return input !== undefined
         && input !== null
@@ -139,14 +139,14 @@ function inputIsComplete(input){
         && isValidInput(input.measurementUnit);
 }
 
-function fromCups(cups){return cups * 236.588;}
-function toCups(ml){return ml / 236.588;}
-function fromFlOz(floz){return fromCups(floz) / 8;}
-function toFlOz(ml){return toCups(ml) * 8;}
-function fromOz(oz){return oz * 28.3495;}
-function toOz(g){return g / 28.3495;}
+function fromCups(cups: number){return cups * 236.588;}
+function toCups(ml: number){return ml / 236.588;}
+function fromFlOz(floz: number){return fromCups(floz) / 8;}
+function toFlOz(ml: number){return toCups(ml) * 8;}
+function fromOz(oz: number){return oz * 28.3495;}
+function toOz(g: number){return g / 28.3495;}
 
-function convertInput(input){
+function convertInput(input: any){
 
     const pulseType = input.pulseType;
     const mapEntry = beanMap.get(pulseType);
@@ -162,7 +162,7 @@ function convertInput(input){
     return convertDriedBeansToAll(mapEntry, driedWeight);
 }
 
-function convertDriedBeansToAll(mapEntry, qty){
+function convertDriedBeansToAll(mapEntry: any, qty: number){
 
     //cooked
     const cookedG = (mapEntry.cookedG/mapEntry.dryG) * qty;
@@ -199,7 +199,7 @@ function convertDriedBeansToAll(mapEntry, qty){
 
 }
 
-function convertToDriedBeansG(mapEntry, qty, style, measurementUnit){
+function convertToDriedBeansG(mapEntry: any, qty: number, style: string, measurementUnit: string){
     let fluidRatio;
     let weightRatio;
 
@@ -233,13 +233,13 @@ function convertToDriedBeansG(mapEntry, qty, style, measurementUnit){
 }
 
 
-const ResultTable = (input) => {
+const ResultTable = (input: any) => {
 
     if(!inputIsComplete(input)) {
         return <div></div>;
     }
     
-    const output = convertInput(input);
+    const output: any = convertInput(input);
 
     return (
 
@@ -267,8 +267,8 @@ const ResultTable = (input) => {
 
 class BeanConverter extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props: any) {
+        super(props);
         
         this.state = {
             systemOfUnits: imperial,
@@ -279,11 +279,11 @@ class BeanConverter extends React.Component {
         }
     }
 
-    updateState = (key,value) => {
-        this.setState({[[key]]: value});
+    updateState = (key:any,value: any) => {
+        this.setState({[key]: value});
     }
 
-    updateMetricState = (value) => {
+    updateMetricState = (value: boolean) => {
         if(value === false){
             this.setState(
                 {"systemOfUnits": imperial,
@@ -297,7 +297,7 @@ class BeanConverter extends React.Component {
         }
     }
 
-    updateStyleState = (value) => {
+    updateStyleState = (value: string) => {
         if(value === "canned"){
             this.setState({
                 "measurementUnit":  "",

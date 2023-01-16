@@ -30,7 +30,7 @@ import "react-datepicker/dist/react-datepicker.css";
 interface MyState {
     apiKey : string,
     searchQuery: string,
-    content: any,
+    foodApiContent: any,
     ingredients: any[],
     ingredientIncrementor: number,
     sectionIncrementor: number,
@@ -56,7 +56,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
         this.state = {
             apiKey: "mnk6fopkXTbgSTqJpylXBuHnC4LPAqzqYLtSUVbs",
             searchQuery: "",
-            content: {},
+            foodApiContent: {},
             ingredients: [],
             ingredientIncrementor: 0,
             sectionIncrementor: 1,
@@ -80,7 +80,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
     }
 
     updateContent = (value: any) => {
-        this.setState({ content: value });
+        this.setState({ foodApiContent: value });
     }
 
     addIngredientAndGetReadyForNextQuery = (foodInformation: any) => {
@@ -100,7 +100,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
                         preparationInput: '',
                         servingUnitInput: '',
                     }],
-                content: {},
+                foodApiContent: {},
                 searchQuery: "",
                 ingredientIncrementor: (ingredientIncrementorValue + 1)
             }
@@ -211,7 +211,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
     resetInput = () => {
         this.setState({
             "searchQuery": "",
-            "content": {}
+            "foodApiContent": {}
         });
     }
 
@@ -283,7 +283,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
 
 
                     <QueryResults
-                        data={this.state.content}
+                        data={this.state.foodApiContent}
                         updatePageCallBack={(pageNumber: number) => this.search(pageNumber)}
                         addIngredientCallBack={(foodInformation) => this.addIngredientAndGetReadyForNextQuery(foodInformation)}
                     />
@@ -304,7 +304,7 @@ class CreateRecipe extends React.Component<{}, MyState> {
                     <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button>
 
 
-                    <p>{JSON.stringify(this.state.content)}</p>
+                    <p>{JSON.stringify(this.state.foodApiContent)}</p>
                 </div>
             </Layout>
         );
