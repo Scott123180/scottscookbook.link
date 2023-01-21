@@ -1,5 +1,6 @@
 import { Button, TextField } from '@mui/material';
 import * as React from "react";
+import json2md from "json2md";
 import update from 'immutability-helper';
 import Layout from '../components/Layout';
 import foodSearch from '../components/recipeCreator/APIQueries';
@@ -44,7 +45,8 @@ interface MyState {
     sections: any[],
     recipeDate: Date,
     recipeTopic: string,
-    originalLink: string
+    originalLink: string,
+    recipeMarkdown: string
 
 }
 
@@ -70,7 +72,8 @@ class CreateRecipe extends React.Component<{}, MyState> {
             sections: [{sectionIncrementor: 0, sectionText: ""}],
             recipeDate: new Date(),
             recipeTopic: '',
-            originalLink: ''
+            originalLink: '',
+            recipeMarkdown: ''
         }
     }
 
@@ -202,9 +205,31 @@ class CreateRecipe extends React.Component<{}, MyState> {
     }
 
     saveRecipe = () => {
+        //TODO: validate input
 
-        const nutritionInformation = aggregateNutrition(this.state.ingredients);
+        const nutritionInformation: any = aggregateNutrition(this.state.ingredients);
+        
+        const recipeMarkdown: string = 
+        `
+            title : ${this.state.recipeTitle},
+            date : ${this.state.recipeDate},
+            prepTime : ${this.state.preparationTime},
+            cookingTime: ${this.state.cookingTime},
+            totalTime : ${this.state.preparationTime + this.state.cookingTime},
+            originalLink : ${this.state.originalLink},
+            scottRating: ${this.state.rating},
+            ingredients: ${JSON.stringify(this.state.ingredients)},
+            directions: ${JSON.stringify(this.state.directions)},
+            cookingNotes: ${this.state.cookingNotes},
+            nutritionInformation: ${JSON.stringify(nutritionInformation)}
+        `
 
+        /*
+        simplify ingredients to name, amount, unit, preparation, section
+        */
+        console.log("-----------------------")
+        console.log(recipeMarkdown);
+        this.setState({recipeMarkdown: recipeMarkdown});
     }
 
     resetInput = () => {
@@ -303,7 +328,8 @@ class CreateRecipe extends React.Component<{}, MyState> {
                     <Button variant="contained" onClick={() => this.saveRecipe()}>Save Recipe</Button>
 
 
-                    <p>{JSON.stringify(this.state.foodApiContent)}</p>
+                    {/* <p>{JSON.stringify(this.state.foodApiContent)}</p> */}
+                    {<div>{this.state.recipeMarkdown}</div>}
                 </div>
             </Layout>
         );
