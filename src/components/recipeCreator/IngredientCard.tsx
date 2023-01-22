@@ -14,8 +14,6 @@ class IngredientCard extends React.Component<MyProps, {}> {
 
     constructor(props: any) {
         super(props);
-
-        this.state = {};
     }
 
     render() {
@@ -25,12 +23,6 @@ class IngredientCard extends React.Component<MyProps, {}> {
                 {measure.disseminationText} ({measure.gramWeight}g)
             </MenuItem>
         ));
-
-        servingMenuOptions.push(
-            <MenuItem value={servingMenuOptions.length} key={-1}>
-                Grams (g)
-            </MenuItem>
-        );
 
         const foodMeasureSelect = (
             <Select
@@ -97,12 +89,16 @@ class IngredientCard extends React.Component<MyProps, {}> {
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
                     <Typography variant="h5" component="div">{this.props.ingredient.foodInformation.description}</Typography>
+                    <Typography variant="body2" component="div"><em>Additional descriptions:</em> {this.props.ingredient.foodInformation.additionalDescriptions}</Typography>
+                    <Typography variant="body2" component="div"><em>Food Category:</em> {this.props.ingredient.foodInformation.foodCategory}</Typography>
+                    
 
                     Food Measure: {foodMeasureSelect}
 
                     <br />
 
                     {servingUnitTextField}
+                    {this.props.ingredient.servingUnitInput * this.props.ingredient.foodInformation.foodMeasures[this.props.ingredient.selectedFoodMeasure].gramWeight}
 
                     <br />
 

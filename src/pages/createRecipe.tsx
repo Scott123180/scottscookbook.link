@@ -89,7 +89,14 @@ class CreateRecipe extends React.Component<{}, MyState> {
             const newMeasures: any = food.foodMeasures.filter((foodMeasure: any) => 
                 foodMeasure.disseminationText !== UNSPECIFIED_QUANTITY
             ) 
-            food.foodMeasures = newMeasures; 
+
+            newMeasures.push({
+                disseminationText : "grams",
+                gramWeight: 1,
+                id: -1
+            });
+
+            food.foodMeasures = newMeasures;
 
             return food;
         });
