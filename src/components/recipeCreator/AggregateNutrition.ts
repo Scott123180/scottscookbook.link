@@ -1,4 +1,4 @@
-/*TODO: aggregate the nutrition information
+/*
 
 input: ingredients
 output: object {
@@ -6,9 +6,10 @@ output: object {
     totalWeight: 
 }
 */
-const MEASURE_BY_SERVING = 0;
 
-const GRAM_WEIGHT_OF_NUTRITION_READINGS = 100;
+const MEASURE_BY_SERVING: number = 0;
+
+const GRAM_WEIGHT_OF_NUTRITION_READINGS: number = 100;
 
 function getGramWeightOfServingMeasurement(ingredient: any) {
 
@@ -22,7 +23,7 @@ function aggregateNutrition(ingredients: any) {
         gramWeight: 0
     };
 
-    ingredients.forEach((ingredient) => {
+    ingredients.forEach((ingredient: any) => {
 
 
         //confirm with 1 more ingredient that nutrient information is based off of 100g...
@@ -52,8 +53,6 @@ function aggregateNutrition(ingredients: any) {
         });
 
     });
-
-    console.log(aggregate);
 
     return 0;
 }

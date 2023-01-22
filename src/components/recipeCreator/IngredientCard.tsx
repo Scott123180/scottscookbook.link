@@ -20,11 +20,17 @@ class IngredientCard extends React.Component<MyProps, {}> {
 
     render() {
 
-        const servingMenuOptions = this.props.ingredient.foodInformation.foodMeasures.map((measure: any, index: number) => (
+        const servingMenuOptions: any[] = this.props.ingredient.foodInformation.foodMeasures.map((measure: any, index: number) => (
             <MenuItem value={index} key={measure.id}>
                 {measure.disseminationText} ({measure.gramWeight}g)
             </MenuItem>
         ));
+
+        servingMenuOptions.push(
+            <MenuItem value={servingMenuOptions.length} key={-1}>
+                Grams (g)
+            </MenuItem>
+        );
 
         const foodMeasureSelect = (
             <Select
@@ -44,29 +50,13 @@ class IngredientCard extends React.Component<MyProps, {}> {
         const servingUnitTextField = (
             <TextField
                 id="serving-unit-text-id"
-                label="Serving Unit"
+                label="Number of Servings"
                 variant="standard"
                 type="number"
                 onChange={(event) =>
                     this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'servingUnitInput', event.target.value)
                 }
             />
-        );
-
-        const foodUnitSelect = (
-            <Select
-                labelId="ingredient-unit-select"
-                id="food-unit-select"
-                label="Serving Unit"
-                value={this.props.ingredient.selectedIngredientUnit}
-                onChange={(event) =>
-                    this.props.updateIngredientCallBack(this.props.ingredient.ingredientIncrementorNumber, 'selectedIngredientUnit', event.target.value)
-                }
-            >
-                <MenuItem value={0} key={'servings'}>serving(s)</MenuItem>
-                <MenuItem value={1} key={'g'}>g</MenuItem>
-            </Select>
-
         );
 
         const preparationTextField = (
@@ -113,7 +103,6 @@ class IngredientCard extends React.Component<MyProps, {}> {
                     <br />
 
                     {servingUnitTextField}
-                    {foodUnitSelect}
 
                     <br />
 
