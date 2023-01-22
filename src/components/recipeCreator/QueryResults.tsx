@@ -10,15 +10,26 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import * as React from 'react';
 
-class QueryResults extends React.Component {
+interface MyProps {
+    props: any,
+    data: any,
+    updatePageCallBack: Function,
+    addIngredientCallBack: Function
+}
 
-    constructor(props) {
+interface MyState {
+    currentPage: number
+}
+
+class QueryResults extends React.Component<MyProps, MyState> {
+
+    constructor(props: any) {
         super(props);
 
         this.state = { currentPage: 1 };
     }
 
-    handleChange = (event, value) => {
+    handleChange = (event: any, value: any) => {
         this.props.updatePageCallBack(value);
 
         this.setState({ currentPage: value })
@@ -41,7 +52,7 @@ class QueryResults extends React.Component {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {foods.map((row) => (
+                            {foods.map((row: any) => (
                                 <TableRow
                                     key={row.fdcId}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
