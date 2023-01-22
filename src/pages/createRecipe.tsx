@@ -1,6 +1,5 @@
 import { Button, TextField } from '@mui/material';
 import * as React from "react";
-import json2md from "json2md";
 import update from 'immutability-helper';
 import Layout from '../components/Layout';
 import foodSearch from '../components/recipeCreator/APIQueries';
@@ -206,29 +205,39 @@ class CreateRecipe extends React.Component<{}, MyState> {
 
     saveRecipe = () => {
         //TODO: validate input
-
-        const nutritionInformation: any = aggregateNutrition(this.state.ingredients);
-        
-        const recipeMarkdown: string = 
-        `
-            title : ${this.state.recipeTitle},
-            date : ${this.state.recipeDate},
-            prepTime : ${this.state.preparationTime},
-            cookingTime: ${this.state.cookingTime},
-            totalTime : ${this.state.preparationTime + this.state.cookingTime},
-            originalLink : ${this.state.originalLink},
-            scottRating: ${this.state.rating},
-            ingredients: ${JSON.stringify(this.state.ingredients)},
-            directions: ${JSON.stringify(this.state.directions)},
-            cookingNotes: ${this.state.cookingNotes},
-            nutritionInformation: ${JSON.stringify(nutritionInformation)}
-        `
-
         /*
         simplify ingredients to name, amount, unit, preparation, section
         */
-        console.log("-----------------------")
-        console.log(recipeMarkdown);
+
+        const nutritionInformation: any = aggregateNutrition(this.state.ingredients);
+
+        const simplifiedIngredients: any = this.state.ingredients.map(ingredient => ({
+           'name': ingredient.foodInformation.description,
+           'amount': ingredient.servingUnitInput,
+           'unit': ingredient.foodInformation.foodMeasures[ingredient.selectedIngredientUnit].disseminationText,
+           'preparation': ingredient.preparationInput,
+           'section': this.state.sections[ingredient.section].sectionText
+        }));
+
+        const directionText: string[] = this.state.directions.map(d => d.directionText);
+        
+        const recipeMarkdown: string = 
+        `
+            ---
+            title : ${this.state.recipeTitle},
+            date : ${this.state.recipeDate},
+            prepTime : ${this.state.preparationTime} min,
+            cookingTime: ${this.state.cookingTime} min,
+            totalTime : ${this.state.preparationTime + this.state.cookingTime} min,
+            originalLink : ${this.state.originalLink},
+            scottRating: ${this.state.rating},
+            ingredients: ${JSON.stringify(simplifiedIngredients)},
+            directions: ${JSON.stringify(directionText)},
+            nutritionInformation: ${JSON.stringify(nutritionInformation)}
+            ---
+            ${this.state.cookingNotes}
+        `
+
         this.setState({recipeMarkdown: recipeMarkdown});
     }
 

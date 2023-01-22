@@ -10,13 +10,13 @@ const MEASURE_BY_SERVING = 0;
 
 const GRAM_WEIGHT_OF_NUTRITION_READINGS = 100;
 
-function getGramWeightOfServingMeasurement(ingredient) {
+function getGramWeightOfServingMeasurement(ingredient: any) {
 
     return Number(ingredient.servingUnitInput) * ingredient.foodInformation.foodMeasures[ingredient.selectedFoodMeasure].gramWeight;
 
 }
 
-function aggregateNutrition(ingredients) {
+function aggregateNutrition(ingredients: any) {
 
     let aggregate = {
         gramWeight: 0
