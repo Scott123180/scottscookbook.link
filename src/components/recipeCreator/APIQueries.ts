@@ -1,4 +1,4 @@
-const foodSearch = (apiKey, query, pageNumber, callback) => {
+const foodSearch = (apiKey: string, query: string, pageNumber: number, callback: Function) => {
 
     if(query === "" || apiKey === "") return {};
 

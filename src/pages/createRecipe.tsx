@@ -49,6 +49,8 @@ interface MyState {
 
 }
 
+const UNSPECIFIED_QUANTITY: string = "Quantity not specified";
+
 class CreateRecipe extends React.Component<{}, MyState> {
 
     constructor(props: any) {
@@ -81,8 +83,28 @@ class CreateRecipe extends React.Component<{}, MyState> {
         this.setState({ apiKey: value });
     }
 
-    updateContent = (value: any) => {
-        this.setState({ foodApiContent: value });
+    filterContentAndUpdateResponse = (foodApiResponse: any) => {
+
+        const updatedFoods = foodApiResponse.foods.map((food: any) => {
+            const newMeasures: any = food.foodMeasures.filter((foodMeasure: any) => 
+                foodMeasure.disseminationText !== UNSPECIFIED_QUANTITY
+            ) 
+            food.foodMeasures = newMeasures; 
+
+            return food;
+        });
+
+        foodApiResponse.foods = updatedFoods;
+
+        return foodApiResponse;
+    }
+
+    updateContent = (foodApiResponse: any) => {
+        const filteredContent = this.filterContentAndUpdateResponse(foodApiResponse);
+
+        console.log(filteredContent);
+
+        this.setState({ foodApiContent: filteredContent });
     }
 
     addIngredientAndGetReadyForNextQuery = (foodInformation: any) => {
