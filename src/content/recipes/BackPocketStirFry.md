@@ -7,6 +7,7 @@ totalTime: "40 min"
 topic: "Stir fry"
 originalLink: "https://pinchofyum.com/back-pocket-stir-fry#tasty-recipes-39401-jump-target"
 scottRating: 5
+image: "../images/default.png"
 ingredients: [
   {
     name: Brown Rice Noodles,

@@ -7,6 +7,7 @@ totalTime: "130 min"
 topic: "dinner"
 originalLink: "https://www.ambitiouskitchen.com/the-best-healthy-turkey-lasagna-youll-ever-eat/"
 scottRating: 4
+image: "../images/default.png"
 ingredients: [
   {
     name: Olive Oil,

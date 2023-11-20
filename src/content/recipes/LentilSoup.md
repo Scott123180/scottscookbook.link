@@ -5,9 +5,9 @@ prepTime: "15 min"
 cookingTime: "45 min"
 totalTime: "60 min"
 topic: ""
-image: "../../images/default.png"
 originalLink: "https://cookieandkate.com/best-lentil-soup-recipe/"
 scottRating: 5
+image: "../images/default.png"
 ingredients: [
   {
     name: Extra Virgin Olive Oil,

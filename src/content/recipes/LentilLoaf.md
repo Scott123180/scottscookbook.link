@@ -5,9 +5,9 @@ prepTime: "35 min"
 cookingTime: "45 min"
 totalTime: "80 min"
 topic: "Dinner"
-image: "../../images/default.png"
 originalLink: "https://books.google.com/books/about/Taste_of_Home_Mediterranean_Made_Easy.html?id=kPKfDwAAQBAJ"
 scottRating: 5
+image: "../images/default.png"
 ingredients: [
   {
     name: "Brown Lentils",

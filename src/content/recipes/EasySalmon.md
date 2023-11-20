@@ -7,6 +7,7 @@ totalTime: "20 min"
 topic: "Seafood"
 originalLink: 
 scottRating: 4
+image: "../images/default.png"
 ingredients: [
   {
     name: Salmon,

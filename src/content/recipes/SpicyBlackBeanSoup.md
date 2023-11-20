@@ -7,6 +7,7 @@ totalTime: "60 min"
 topic: "Soup"
 originalLink: "https://cookieandkate.com/spicy-vegan-black-bean-soup/"
 scottRating: 3.5
+image: "../images/default.png"
 ingredients: [
   {
     name: Extra Virgin Olive Oil,

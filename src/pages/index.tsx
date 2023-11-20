@@ -50,6 +50,11 @@ export const query = graphql`
           date
           totalTime
           topic
+          image {
+            childImageSharp{
+              gatsbyImageData(width: 200)
+            }
+          }
         }
       }
     }

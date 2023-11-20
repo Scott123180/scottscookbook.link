@@ -7,6 +7,7 @@ totalTime: "10 min"
 topic: "Snack"
 originalLink: "https://www.allrecipes.com/recipe/14231/guacamole/"
 scottRating: 4
+image: "../images/default.png"
 ingredients: [
   {
     name: "avacados",

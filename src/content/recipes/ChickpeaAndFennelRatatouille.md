@@ -7,6 +7,7 @@ totalTime: "90 min"
 topic: "Dinner"
 originalLink: https://cooking.nytimes.com/recipes/1015123-chickpea-and-fennel-ratatouille
 scottRating: 4
+image: "../images/default.png"
 ingredients: [
   {
     name: "Eggplant",

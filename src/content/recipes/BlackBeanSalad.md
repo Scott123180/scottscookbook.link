@@ -7,6 +7,7 @@ totalTime: "20 min"
 topic: "Salad"
 originalLink: "https://cookieandkate.com/black-bean-salad-recipe/"
 scottRating: 5
+image: "../images/default.png"
 ingredients: [
   {
     name: Black Beans,

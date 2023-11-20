@@ -4,6 +4,7 @@ import IngredientTable from '../components/IngredientTable';
 import Grid from '@mui/material/Grid';
 import Layout from '../components/Layout';
 import { FormGroup, Typography, Switch, Stack, Select, MenuItem} from '@mui/material';
+import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
 const RecipeLinkElement = ({link}) => {
 
@@ -106,6 +107,8 @@ class Recipe extends React.Component{
       </ol>
     );
 
+    const image = getImage(post.frontmatter.image);
+
     return (
       <Layout>
         <div className="post-page-container">
@@ -124,6 +127,8 @@ class Recipe extends React.Component{
                     /> 
                 </Stack>
               </FormGroup>
+
+              <GatsbyImage image={image} alt="Your Alt Text" />
 
               <h4>Ingredients</h4>
               {ingredients}

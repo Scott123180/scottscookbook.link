@@ -7,6 +7,7 @@ totalTime: "9 hours 20 min"
 topic: "grains"
 originalLink: "https://www.google.com/search?q=fix+it+and+forget+it+mediterranean+diet+cookbook&oq=fix+it+and+forget+it+medi"
 scottRating: 5
+image: "../images/default.png"
 ingredients: [
   {
     name: Olive Oil,

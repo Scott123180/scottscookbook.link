@@ -7,6 +7,7 @@ totalTime: "15 min"
 topic: "Salad"
 originalLink: "https://www.themediterraneandish.com/3-ingredient-mediterranean-salad/"
 scottRating: 5
+image: "../images/default.png"
 ingredients: [
   {
     name: Roma tomatoes,
