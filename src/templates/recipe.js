@@ -36,11 +36,8 @@ const ShoppingProvider = ({shoppingProvider, enabled, handleChange}) => {
 
 class Recipe extends React.Component{
 
-  constructor(props) {
-    super(props);
-
-    console.log(props)
-
+  constructor() {
+    super();
 
     this.state = {
       shoppingModeToggled: false,
@@ -110,7 +107,6 @@ class Recipe extends React.Component{
       </ol>
     );
 
-    console.log(post.frontmatter.image)
     const imageData = getImage(post.frontmatter.image);
 
     return (
@@ -120,6 +116,19 @@ class Recipe extends React.Component{
             <div className="post-content-container">
               <h1>{post.frontmatter.title}</h1>
               <h4 style={{color: 'rgb(165, 164, 164)', fontSize: '0.8em'}}>Published: {post.frontmatter.date} | Total Time: {post.frontmatter.totalTime}</h4>
+
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center', // Center horizontally
+                  alignItems: 'center', // Center vertically
+                  marginLeft: '10%',
+                  marginRight: '10%'
+                }}
+              >
+                <GatsbyImage image={imageData} alt="Your Alt Text" />
+              </div>
+              <br/>
               
               <FormGroup>
                 <Stack direction="row" spacing={1} alignItems="center">
@@ -131,8 +140,6 @@ class Recipe extends React.Component{
                     /> 
                 </Stack>
               </FormGroup>
-
-              <GatsbyImage image={imageData} alt="Your Alt Text" />
 
               <h4>Ingredients</h4>
               {ingredients}
@@ -175,7 +182,10 @@ export const query = graphql`query PostQuery($slug: String!) {
       directions
       image {
         childImageSharp {
-          gatsbyImageData(width: 200)
+          gatsbyImageData(
+            width: 1000
+            layout: CONSTRAINED
+          )
         }
       }
     }
