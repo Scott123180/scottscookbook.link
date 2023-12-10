@@ -7,7 +7,7 @@ totalTime: "80 min"
 topic: "Dinner"
 originalLink: "https://books.google.com/books/about/Taste_of_Home_Mediterranean_Made_Easy.html?id=kPKfDwAAQBAJ"
 scottRating: 5
-image: "../../images/default.png"
+image: "../../images/recipe/LentilLoaf.png"
 ingredients: [
   {
     name: "Brown Lentils",

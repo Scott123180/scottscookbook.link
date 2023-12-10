@@ -126,8 +126,9 @@ class Recipe extends React.Component{
                   marginRight: '10%'
                 }}
               >
-                <GatsbyImage image={imageData} alt="Your Alt Text" />
+                <GatsbyImage image={imageData} alt="Generated Recipe" />
               </div>
+              <p>* recipe image may have been created by generative AI</p>
               <br/>
               
               <FormGroup>

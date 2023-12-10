@@ -7,7 +7,7 @@ totalTime: "30 min"
 topic: "Breakfast"
 originalLink: "https://cookieandkate.com/whole-wheat-pancakes-recipe/"
 scottRating: 5
-image: "../../images/default.png"
+image: "../../images/recipe/WholeWheatPancakes.png"
 ingredients: [
   {
     name: Skim Milk,
