@@ -34,9 +34,9 @@ export default IndexPage;
 export const query = graphql`
 {
   blog: allMarkdownRemark(
-    sort: {fields: [frontmatter___date], order: ASC} 
-    filter: { fileAbsolutePath: { regex: "/recipes/"}}
-    ) {
+    sort: {frontmatter: {date: ASC}}
+    filter: {fileAbsolutePath: {regex: "/recipes/"}}
+  ) {
     edges {
       node {
         fields {
@@ -51,7 +51,7 @@ export const query = graphql`
           totalTime
           topic
           image {
-            childImageSharp{
+            childImageSharp {
               gatsbyImageData(width: 200)
             }
           }

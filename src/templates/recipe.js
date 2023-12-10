@@ -36,8 +36,11 @@ const ShoppingProvider = ({shoppingProvider, enabled, handleChange}) => {
 
 class Recipe extends React.Component{
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    console.log(props)
+
 
     this.state = {
       shoppingModeToggled: false,
@@ -107,7 +110,8 @@ class Recipe extends React.Component{
       </ol>
     );
 
-    const image = getImage(post.frontmatter.image);
+    console.log(post.frontmatter.image)
+    const imageData = getImage(post.frontmatter.image);
 
     return (
       <Layout>
@@ -128,7 +132,7 @@ class Recipe extends React.Component{
                 </Stack>
               </FormGroup>
 
-              <GatsbyImage image={image} alt="Your Alt Text" />
+              <GatsbyImage image={imageData} alt="Your Alt Text" />
 
               <h4>Ingredients</h4>
               {ingredients}

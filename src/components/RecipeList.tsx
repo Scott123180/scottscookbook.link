@@ -13,7 +13,7 @@ import { TextField } from '@mui/material';
 
 class RecipeList extends React.Component {
 
-  constructor(props) {
+  constructor(props: any) {
       super(props);
 
       this.state = {
@@ -74,7 +74,6 @@ class RecipeList extends React.Component {
                       <Rating value={node.frontmatter.scottRating} precision={0.5} readOnly/>
                     </TableCell>
                   </TableRow>
-
                 );
             })}
           </TableBody>
