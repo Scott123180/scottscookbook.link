@@ -173,6 +173,11 @@ export const query = graphql`query PostQuery($slug: String!) {
         section
       }
       directions
+      image {
+        childImageSharp {
+          gatsbyImageData(width: 200)
+        }
+      }
     }
   }
 }`;
