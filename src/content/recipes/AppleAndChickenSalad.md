@@ -7,7 +7,7 @@ totalTime: "10 min"
 topic: "Salad"
 originalLink: "https://www.myplate.gov/recipes/myplate-cnpp/apple-chicken-salad"
 scottRating: 2
-image: "../../images/default.png"
+image: "../../images/recipe/AppleChickenSalad.png"
 ingredients: [
   {
     name: Red Apple,
