@@ -7,7 +7,7 @@ totalTime: "20 min"
 topic: "Sauce"
 originalLink: "https://www.allrecipes.com/recipe/20938/simple-beef-flavored-gravy/"
 scottRating: 5
-image: "../images/default.png"
+image: "../../images/default.png"
 ingredients: [
   {
     name: Olive Oil,

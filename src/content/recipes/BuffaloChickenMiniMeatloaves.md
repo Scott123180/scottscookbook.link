@@ -7,7 +7,7 @@ totalTime: "60 min"
 topic: "Dinner"
 originalLink: "https://www.eatingwell.com/recipe/7923492/buffalo-chicken-mini-meatloaves/"
 scottRating: 4.0
-image: "../images/default.png"
+image: "../../images/default.png"
 ingredients: [
   {
     name: Extra Virgin Olive Oil,

@@ -7,7 +7,7 @@ totalTime: "75 min"
 topic: "Mexican"
 originalLink: "https://cooking.nytimes.com/recipes/10447-chicken-enchiladas"
 scottRating: 5
-image: "../images/default.png"
+image: "../../images/default.png"
 ingredients: [
   {
     name: chicken breast,

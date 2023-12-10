@@ -7,7 +7,7 @@ totalTime: "30 min"
 topic: "One-Pot"
 originalLink: "https://www.eatingwell.com/recipe/262451/one-pot-pasta-with-tuna/"
 scottRating: 4
-image: "../images/default.png"
+image: "../../images/default.png"
 ingredients: [
   {
     name: Whole Wheat Spaghetti,

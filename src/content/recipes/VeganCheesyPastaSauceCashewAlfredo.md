@@ -7,7 +7,7 @@ totalTime: "25 min"
 topic: "Pasta"
 originalLink: "https://thepeskyvegan.com/recipes/easy-cheesy-pasta-sauce/"
 scottRating: 5
-image: "../images/VeganCheesyPastaSauceCashewAlfredo.png"
+image: "../../images/VeganCheesyPastaSauceCashewAlfredo.png"
 ingredients: 
   [
     {

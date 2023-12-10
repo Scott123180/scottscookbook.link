@@ -7,7 +7,7 @@ totalTime: "40 min"
 topic: "One-Pot"
 originalLink: "https://www.eatingwell.com/recipe/261902/mexican-skillet-lasagna/"
 scottRating: 3
-image: "../images/default.png"
+image: "../../images/default.png"
 ingredients: [
   {
     name: Whole Wheat Flour Tortillas,
