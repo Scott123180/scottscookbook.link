@@ -7,7 +7,7 @@ totalTime: "15 min"
 topic: "dips"
 originalLink: "https://cooking.nytimes.com/recipes/1020433-cowboy-caviar"
 scottRating: 5
-image: "../../images/default.png"
+image: "../../images/recipe/CowboyCaviar.png"
 ingredients: [
   {
     name: Extra Virgin Olive Oil,

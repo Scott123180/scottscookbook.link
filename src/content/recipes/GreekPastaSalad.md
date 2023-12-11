@@ -7,7 +7,7 @@ totalTime: "25 min"
 topic: "Mediterranean"
 originalLink: "https://www.allrecipes.com/recipe/176650/greek-pasta-salad/"
 scottRating: 5
-image: "../../images/default.png"
+image: "../../images/recipe/GreekPastaSalad.png"
 ingredients: [
   {
     name: Whole Wheat Penne Pasta,

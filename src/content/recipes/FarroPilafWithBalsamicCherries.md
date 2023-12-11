@@ -7,7 +7,7 @@ totalTime: "30 min"
 topic: "sides"
 originalLink: "https://cooking.nytimes.com/recipes/1014834-farro-pilaf-with-balsamic-cherries"
 scottRating: 3.5
-image: "../../images/default.png"
+image: "../../images/recipe/FarroPilafWithCherries.png"
 ingredients: [
   {
     name: cherries,

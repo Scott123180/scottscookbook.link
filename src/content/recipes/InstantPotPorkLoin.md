@@ -7,7 +7,7 @@ totalTime: "50 min"
 topic: "Dinner"
 originalLink: "https://diethood.com/instant-pot-pork-loin/"
 scottRating: 5
-image: "../../images/default.png"
+image: "../../images/recipe/InstantPotPorkLoin.png"
 ingredients: [
   {
     name: Pork Loin,

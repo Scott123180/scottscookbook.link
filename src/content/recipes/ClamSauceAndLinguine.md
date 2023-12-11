@@ -7,7 +7,7 @@ totalTime: "40 min"
 topic: "Sauce"
 originalLink: "https://www.allrecipes.com/recipe/18148/the-best-clam-sauce/"
 scottRating: 4
-image: "../../images/default.png"
+image: "../../images/recipe/ClamSauceLinguine.png"
 ingredients: [
   {
     name: Whole Wheat Linguine,
