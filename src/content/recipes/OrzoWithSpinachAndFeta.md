@@ -7,7 +7,7 @@ totalTime: "30 min"
 topic: "One Pot"
 originalLink: "https://cooking.nytimes.com/recipes/1021485-one-pan-orzo-with-spinach-and-feta"
 scottRating: 4
-image: "../../images/default.png"
+image: "../../images/recipe/OrzoWithSpinachFeta.png"
 ingredients: [
   {
     name: Butter Substitute,

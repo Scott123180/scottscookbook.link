@@ -7,7 +7,7 @@ totalTime: "60 min"
 topic: "Soup"
 originalLink: "https://www.eatingwell.com/recipe/7923697/white-bean-soup-with-pasta/"
 scottRating: 4
-image: "../../images/default.png"
+image: "../../images/recipe/PastaAndWhiteBeanSoup.png"
 ingredients: [
   {
     name: Whole Wheat Elbows,
