@@ -14,28 +14,28 @@ ingredients: [
     name: "kidney beans",
     preparation: ", rinsed and drained",
     amount: 14.5,
-    unit: ounces
+    unit: oz
     },
     {
     section: "Salad",
     name: "garbanzo beans (or chickpeas)",
     preparation: ", rinsed and drained",
     amount: 14.5,
-    unit: ounces
+    unit: oz
     },
     {
     section: "Salad",
     name: "cut green beans",
     preparation: ", drained",
     amount: 14.5,
-    unit: ounces
+    unit: oz
     },
     {
     section: "Salad",
     name: "cut wax beans",
     preparation: ", drained",
     amount: 14.5,
-    unit: ounces
+    unit: oz
     },
     {
     section: "Salad",

@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => (
          <Grid container>
             <Grid item xs={0} md={1} lg={2}/>
             <Grid item xs={12} md={10} lg={8}>
-              <StaticImage src="../images/default.png" 
+              <StaticImage src="../images/WebsiteBanner.png" 
                           placeholder="blurred" 
                           alt="" 
                           loading="eager"

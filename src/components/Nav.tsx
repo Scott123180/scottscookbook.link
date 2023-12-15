@@ -51,7 +51,9 @@ class Nav extends React.Component  {
     const { tools_classname: tools_classname, about_classname, post_nav_container } = this.state; 
     return(
       <div className={post_nav_container} id="nav-bar" style={{marginLeft: "5%", marginRight: "5%"}} >
-        <Link to="/" className="nav-brand"><strong>S</strong>cott's<strong> C</strong>ookbook</Link>
+        <Link to="/" className="nav-brand">
+          <strong>S</strong>cott's<strong> C</strong>ookbook
+        </Link>
         <ul className="nav-item-container">
           <li className={tools_classname} id="tools">
             <Link to="/tools">Cooking Tools</Link>
