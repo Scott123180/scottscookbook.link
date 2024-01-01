@@ -104,8 +104,9 @@ unit: cup
 },
 ]
 directions: [
-"Pulse the cashews in a blender until they reach a fine powder, similar to flour. Be cautious not to overmix to avoid creating cashew butter. Set the cashew powder aside.",
-"In the same blender, combine almond milk, garlic, salt, lemon juice, and mustard. Blend until smooth.",
+"Pulse the cashews in a blender until they reach a fine powder, similar to flour. Be cautious not to overmix to avoid creating cashew butter.",
+ "Set the cashew powder aside.",
+"After removing the cashew powder, in the same blender, combine almond milk, garlic, salt, lemon juice, and mustard. Blend until smooth.",
 "Pour this mixture into a 6-quart electric pressure cooker. Add the spinach, artichoke hearts, water chestnuts, and chicken. If using water (see note below), add it now. Stir to combine.",
 "Secure the lid of the Instant Pot, select the manual setting, and set it to high pressure for 15 minutes. The pot may take 25-35+ minutes to come to pressure before the cooking time begins.",
 "Once the cooking time is complete, perform a quick release of the pressure.",
@@ -115,7 +116,7 @@ directions: [
 ]
 ---
 Notes:
-
+- Don't mix the cashews in with the sauce ingredients until the very end! It will become too viscous and burn in the instant pot.
 - Nutritional yeast adds a cheesy flavor without dairy. It's available in natural food stores or the baking section of grocery stores. Omit if unavailable.
 - Avocado mayonnaise, made with avocado oil, is recommended over regular mayo for its healthier profile. Veganaise, an egg-free vegan mayo, is also a good alternative for a completely plant-based dish.
 - Some pressure cookers have sensitive burn sensors that might be triggered by this recipe. If you know your pressure cooker is sensitive, consider adding 1 cup of water to prevent burning. This will make the sauce thinner but helps in cooking without burning.
