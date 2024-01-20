@@ -37,6 +37,12 @@ ingredients: [
     section: Soup
   },
   {
+    name: Garlic Cloves (large),
+    amount: 6,
+    unit: count,
+    section: Soup
+  },
+  {
     name: Ground Cumin,
     amount: 4.5,
     unit: tsp,
