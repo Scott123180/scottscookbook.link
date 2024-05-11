@@ -25,8 +25,8 @@ module.exports = {
             {
               resolve: `gatsby-plugin-manifest`,
               options: {
-                name: `gatsby-starter-default`,
-                short_name: `starter`,
+                name: `scotts-cookbook-website`,
+                short_name: `scotts-cookbook`,
                 start_url: `/`,
                 background_color: `#663399`,
                 theme_color: `#663399`,

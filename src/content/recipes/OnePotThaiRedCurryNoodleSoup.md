@@ -4,7 +4,7 @@ date: "January 1, 2024"
 totalTime: "25 min"
 topic: "Soup"
 originalLink: "https://www.aheadofthyme.com/thai-red-curry-noodle-soup/"
-scottRating: 0
+scottRating: 4
 image: "../../images/recipe/OnePotThaiRedCurryNoodleSoup.png"
 ingredients: [
 {

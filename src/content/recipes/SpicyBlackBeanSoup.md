@@ -6,7 +6,7 @@ cookingTime: "45 min"
 totalTime: "60 min"
 topic: "Soup"
 originalLink: "https://cookieandkate.com/spicy-vegan-black-bean-soup/"
-scottRating: 3.5
+scottRating: 4
 image: "../../images/recipe/SpicyBlackBeanSoup.png"
 ingredients: [
   {
@@ -87,6 +87,12 @@ ingredients: [
     section: Soup
   },
   {
+    name: Lemon Juice,
+    amount: .33,
+    unit: cup,
+    section: Soup
+  },
+  {
     name: Miso Paste,
     amount: 1,
     unit: tbsp,
@@ -131,6 +137,7 @@ directions: [
   "Add garlic, cumin and red papper flakes and cook until fragrant.",
   "Pour in the beans, broth, and optional miso paste, and simmer gently for about 30 minutes.",
   "Use an immersion blender to lightly blend a portion of the soup",
+  "Add in the lemon juice and to taste", 
   "Add the remaining ingredients and serve"
 ]
 
