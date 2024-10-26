@@ -42,9 +42,10 @@ directions: [
 ]
 ---
 ## Tips
-### Slow cooker
+### Slow cooker & technique
 - Ceramic slow cookers should be used. Instant pot or other similar pressure cookers need lots of water to regulate the temperature. Because of this, you may find your apples don't cook well in the instant pot.
 - Adjust high and low output based on your slow cooker. I have 2 6qt slow cookers and one of them, the low output is similar to the high output when uncovered.
+- Use an apple corer if you have one, this makes the prep so much faster and you also yield more as you waste less.
 
 ### Desired thickness
 - Experiment with this, you can really cook out a lot of water. Sugar is a preservative and the more water you cook out, the longer it will last in the fridge.
