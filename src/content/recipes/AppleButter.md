@@ -18,17 +18,17 @@ ingredients: [
   {
     name: Cinnamon,
     amount: 1,
-    unit: tsp
+    unit: rounded tsp
   },
   {
     name: Ginger,
     amount: 0.5,
-    unit: tsp
+    unit: rounded tsp
   },
   {
     name: Ground Clove,
     amount: 0.25,
-    unit: tsp
+    unit: rounded tsp
   },
 ]
 directions: [

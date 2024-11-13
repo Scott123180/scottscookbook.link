@@ -13,7 +13,6 @@ ingredients: [
     name: Red Apple,
     ndbNo: 09003,
     amount: 2,
-    metric: 350g,
     unit: qty
   },
   {
@@ -26,7 +25,6 @@ ingredients: [
   {
     name: Chicken Breast,
     amount: 2,
-    metric: 350g,
     unit: qty
   },
   {
@@ -38,7 +36,6 @@ ingredients: [
   {
     name: Black Pepper,
     amount: .125,
-    metric: 4g,
     unit: tsp,
   },
   {
