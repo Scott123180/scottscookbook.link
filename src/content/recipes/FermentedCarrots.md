@@ -1,6 +1,6 @@
 ---
 title: "Fermented Carrots"
-date: "January 1, 2024"
+date: "Jun 20, 2025"
 prepTime: "15 min"
 fermentTime: "5–10 days"
 totalTime: "5–10 days 15 min"
