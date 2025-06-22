@@ -4,7 +4,6 @@ date: "April 27, 2025"
 prepTime: "1 min"
 cookTime: "20 min"
 totalTime: "21 min"
-servings: 2
 topic: "Side Dish"
 originalLink: "https://www.pressurecookrecipes.com/instant-pot-brown-rice/"
 scottRating: 5
