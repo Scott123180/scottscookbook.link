@@ -5,6 +5,7 @@ prepTime: "20 min"
 cookingTime: "0 min"
 totalTime: "14 days"
 topic: "Fermentation"
+originalLink: "https://www.joshuaweissman.com/post/sauerkraut"
 scottRating: 5
 image: "../../images/recipe/Sauerkraut.png"
 ingredients: [
