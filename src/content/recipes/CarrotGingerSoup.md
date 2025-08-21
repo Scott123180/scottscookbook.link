@@ -18,6 +18,7 @@ ingredients: [
     },
     {
         name: Carrots,
+        preparation: ", peeled",
         amount: 1.5,
         unit: lbs,
         section: soup
@@ -85,6 +86,7 @@ directions: [
 
 
 ---
-Tips
+**Tips**
 - Double the amount of ginger... if you dare!
 - I've only made this without the orange because I didn't want to zest and it's come out really good.
+- You can opt to not peal the carrots, but it makes the soup a bit gritier
