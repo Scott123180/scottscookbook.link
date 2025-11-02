@@ -32,7 +32,7 @@ ingredients: [
     metric: "45g"
   },
   {
-    name: Olive oil,
+    name: Extra Virgin Olive oil,
     amount: 0.5,
     unit: cups,
     metric: "110g"
