@@ -23,6 +23,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import TimerIcon from "@mui/icons-material/Timer";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import SearchIcon from "@mui/icons-material/Search";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 /** ---------- helpers ---------- */
 const normalize = (s: any) => (s ?? "").toString().trim().toLowerCase();
@@ -56,7 +57,6 @@ function getTopics(edges: any[]) {
 export default function RecipeList({ data }: { data: { edges: any[] } }) {
   const rawEdges = data?.edges ?? [];
 
-  // filter to safe nodes so we don't crash in sort/render
   const edges = React.useMemo(
     () => rawEdges.filter((e) => e?.node?.frontmatter && getFMFromEdge(e).title),
     [rawEdges]
@@ -78,7 +78,7 @@ export default function RecipeList({ data }: { data: { edges: any[] } }) {
         const matchesTopic = activeTopic === "all" || fm.topic === activeTopic;
         return matchesQuery && matchesTopic;
       })
-      .slice() // sort a fresh copy
+      .slice()
       .sort(SORTS[sortBy] || SORTS.rating);
   }, [edges, query, sortBy, activeTopic]);
 
@@ -148,10 +148,38 @@ export default function RecipeList({ data }: { data: { edges: any[] } }) {
           const title = fm.title ?? "Untitled recipe";
           const ratingValue = num(fm.scottRating);
 
+          const imgData = getImage(fm.image?.childImageSharp?.gatsbyImageData);
+
           return (
             <Grid item xs={12} sm={6} md={4} lg={3} key={key}>
-              <Card variant="outlined" sx={{ height: "100%" }}>
+              <Card variant="outlined" sx={{ height: "100%", overflow: "hidden" }}>
                 <CardActionArea component={Link as any} to={slug} sx={{ height: "100%" }}>
+                  {/* Thumbnail */}
+                  {imgData ? (
+                    <Box sx={{ aspectRatio: "1 / 1", overflow: "hidden" }}>
+                      <GatsbyImage
+                        image={imgData}
+                        alt={title}
+                        style={{ width: "100%", height: "100%" }}
+                        imgStyle={{ objectFit: "cover" }}
+                      />
+                    </Box>
+                  ) : (
+                    <Box
+                      sx={{
+                        aspectRatio: "1 / 1",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        bgcolor: "grey.100",
+                      }}
+                    >
+                      <Typography variant="h3" component="span" role="img" aria-label="frying pan">
+                        🍳
+                      </Typography>
+                    </Box>
+                  )}
+
                   <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                     <Typography variant="h6" sx={{ fontWeight: 600, lineHeight: 1.2 }}>
                       {title}

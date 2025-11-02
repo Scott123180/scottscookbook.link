@@ -39,9 +39,7 @@ export const query = graphql`
   ) {
     edges {
       node {
-        fields {
-          slug
-        }
+        fields { slug }
         id
         frontmatter {
           title
@@ -50,6 +48,16 @@ export const query = graphql`
           date
           totalTime
           topic
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                width: 600
+                height: 600
+                layout: CONSTRAINED
+                placeholder: BLURRED
+              )
+            }
+          }
         }
       }
     }
