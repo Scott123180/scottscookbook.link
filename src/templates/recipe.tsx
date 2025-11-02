@@ -3,7 +3,6 @@ import { graphql, PageProps } from "gatsby";
 
 import Grid from "@mui/material/Grid";
 import { FormGroup, Typography, Switch, Stack, Select, MenuItem, Container, Box, Card, CardContent, Divider, Paper} from "@mui/material";
-import {  } from "@mui/material";
 import { getImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
@@ -131,22 +130,25 @@ const Recipe: React.FC<PageProps<RecipeQueryData>> = ({ data }) => {
 
   // Build section grids (Map.forEach gives (value, key))
   const ingredients = (
-    <div>
-      {Array.from(sections.entries()).map(([sectionName, items]) => (
-        <Grid container spacing={2} className="ingredients" key={`sec-${sectionName}`}>
-          <Grid item xs={1} md={2} />
-          <Grid item xs={10} md={8}>
-            <IngredientTable
-              data={items}
-              shoppingModeToggled={shoppingModeToggled}
-              shoppingProvider={shoppingProvider}
-            />
-          </Grid>
-          <Grid item xs={1} md={2} />
-        </Grid>
-      ))}
-    </div>
-  );
+  <Box>
+    {Array.from(sections.entries()).map(([sectionName, items]) => (
+      <Box key={`sec-${sectionName}`} sx={{ mb: 2 }}>
+        <Typography variant="subtitle2" sx={{ color: "text.secondary", px: 2, pt: 2, pb: 1 }}>
+          {sectionName}
+        </Typography>
+        <Divider />
+        <IngredientTable
+          data={items}
+          shoppingModeToggled={shoppingModeToggled}
+          shoppingProvider={shoppingProvider}
+          showHeader={false}   // 👈 turn off inner header
+        />
+      </Box>
+    ))}
+  </Box>
+);
+
+
 
   const directions = (
     <ol>
@@ -189,53 +191,60 @@ const Recipe: React.FC<PageProps<RecipeQueryData>> = ({ data }) => {
 
         </Box>
       </Box>
-
       <Grid container spacing={3}>
-        {/* Left column: Ingredients & Directions */}
-        <Grid item xs={12} md={8}>
-          <Card variant="outlined" sx={{ mb: 3 }}>
-            <CardContent>
-              <Typography variant="h5" sx={{ fontWeight: 600, mb: 1.5 }}>
-                Ingredients
-              </Typography>
-              <Divider sx={{ mb: 2 }} />
-              {/* your grouped ingredients UI */}
-              {ingredients}
-            </CardContent>
-          </Card>
+  {/* Ingredients (left on desktop, full-width on mobile) */}
+  <Grid item xs={12} md={6}>
+    <Card variant="outlined" sx={{ height: "100%" }}>
+      <CardContent sx={{ p: 0 }}>
+        <Box sx={{ px: 2, pt: 2 }}>
+          <Typography variant="h5" sx={{ fontWeight: 600, mb: 1.5 }}>
+            Ingredients
+          </Typography>
+          <Divider />
+        </Box>
+        {/* flat, no extra padding so list aligns with card edge */}
+        {ingredients}
+      </CardContent>
+    </Card>
+  </Grid>
 
-          <Card variant="outlined">
-            <CardContent>
-              <Typography variant="h5" sx={{ fontWeight: 600, mb: 1.5 }}>
-                Directions
-              </Typography>
-              <Divider sx={{ mb: 2 }} />
-              {directions}
-            </CardContent>
-          </Card>
+  {/* Directions (right on desktop, stacks under on mobile) */}
+  <Grid item xs={12} md={6}>
+    <Card variant="outlined" sx={{ height: "100%" }}>
+      <CardContent>
+        <Typography variant="h5" sx={{ fontWeight: 600, mb: 1.5 }}>
+          Directions
+        </Typography>
+        <Divider sx={{ mb: 2 }} />
+        <Box
+          component="ol"
+          sx={{
+            pl: 3,
+            m: 0,
+            "& li": { marginBottom: 1.0, lineHeight: 1.6 },
+          }}
+        >
+          {fm.directions.map((step, idx) => (
+            <li className="direction" key={`dir-${idx}`}>
+              {step}
+            </li>
+          ))}
+        </Box>
+      </CardContent>
+    </Card>
+  </Grid>
 
-          {/* Optional: original HTML content block */}
-          {post.html && (
-            <Paper variant="outlined" sx={{ mt: 3, p: { xs: 2, md: 3 } }}>
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            </Paper>
-          )}
-        </Grid>
+  {/* Optional: original HTML content spans full width below */}
+  {post.html && (
+    <Grid item xs={12}>
+      <Paper variant="outlined" sx={{ p: { xs: 2, md: 3 } }}>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </Paper>
+    </Grid>
+  )}
+</Grid>
 
-        {/* Right column: sticky utilities */}
-        <Grid item xs={12} md={4}>
-          <Box
-            sx={{
-              position: { md: "sticky" },
-              top: { md: 24 },
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-            }}
-          >
-          </Box>
-        </Grid>
-      </Grid>
+
     </Container>
   </Layout>
 );
