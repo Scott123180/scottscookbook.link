@@ -10,7 +10,13 @@ import Layout from "../components/Layout";
 import RecipeImage from "../components/RecipeImage";
 import IngredientTable from "../components/IngredientTable";
 import RecipeMetaChips from "../components/RecipeMetaChips";
+import { setCookie, getCookie } from "../utils/cookies";
 
+const COOKIE_ENABLED = "sc_shopping_enabled";
+const COOKIE_PROVIDER = "sc_shopping_provider";
+
+type Provider = "AMAZON_FRESH" | "INSTACART" | "WALMART_GROCERY" | "WHOLE_FOODS";
+const PROVIDERS: Provider[] = ["AMAZON_FRESH","INSTACART","WALMART_GROCERY","WHOLE_FOODS"];
 
 // ---------- Types that match your GraphQL shape ----------
 type Ingredient = {
@@ -59,8 +65,6 @@ const RecipeLinkElement: React.FC<{ link?: string | null }> = ({ link }) => {
   return <div />;
 };
 
-type Provider = "AMAZON_FRESH" | "INSTACART" | "WALMART_GROCERY" | "WHOLE_FOODS";
-
 const ShoppingProvider: React.FC<{
   shoppingProvider: Provider;
   enabled: boolean;
@@ -90,6 +94,28 @@ const Recipe: React.FC<PageProps<RecipeQueryData>> = ({ data }) => {
   // Local UI state
   const [shoppingModeToggled, setShoppingModeToggled] = React.useState<boolean>(false);
   const [shoppingProvider, setShoppingProvider] = React.useState<Provider>("AMAZON_FRESH");
+
+
+  React.useEffect(() => {
+    // enabled
+    const enabled = getCookie(COOKIE_ENABLED);
+    if (enabled === "1" || enabled === "0") {
+      setShoppingModeToggled(enabled === "1");
+    }
+    // provider (validate)
+    const savedProvider = getCookie(COOKIE_PROVIDER) as Provider | null;
+    if (savedProvider && (PROVIDERS as string[]).includes(savedProvider)) {
+      setShoppingProvider(savedProvider as Provider);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    setCookie(COOKIE_ENABLED, shoppingModeToggled ? "1" : "0");
+  }, [shoppingModeToggled]);
+
+  React.useEffect(() => {
+    setCookie(COOKIE_PROVIDER, shoppingProvider);
+  }, [shoppingProvider]);
 
   // Group ingredients by section
   const sections = React.useMemo(() => {
@@ -147,12 +173,20 @@ const Recipe: React.FC<PageProps<RecipeQueryData>> = ({ data }) => {
         </Typography>
         <RecipeImage imageData={imageData!} title={fm.title} />
         <Box sx={{ mt: 2 }}>
-          <RecipeMetaChips
-            totalTime={fm.totalTime}
-            prepTime={fm.prepTime}
-            cookingTime={fm.cookingTime}
-            originalLink={fm.originalLink}
-          />
+        <RecipeMetaChips
+          totalTime={fm.totalTime}
+          prepTime={fm.prepTime}
+          cookingTime={fm.cookingTime}
+          originalLink={fm.originalLink}
+          shopping={{
+            enabled: shoppingModeToggled,
+            provider: shoppingProvider,
+            onToggle: setShoppingModeToggled,
+            onProviderChange: setShoppingProvider,
+          }}
+        />
+
+
         </Box>
       </Box>
 
@@ -199,33 +233,6 @@ const Recipe: React.FC<PageProps<RecipeQueryData>> = ({ data }) => {
               gap: 2,
             }}
           >
-            <Card variant="outlined">
-              <CardContent>
-                <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
-                  Shopping
-                </Typography>
-                <Divider sx={{ mb: 2 }} />
-                {/* Your existing controls */}
-                <FormGroup>
-                  <Stack direction="row" spacing={1} alignItems="center">
-                    <Typography>Shopping Mode</Typography>
-                    <Switch
-                      inputProps={{ "aria-label": "Shopping Mode" }}
-                      onChange={(_, value) => setShoppingModeToggled(value)}
-                      checked={shoppingModeToggled}
-                    />
-                    <ShoppingProvider
-                      shoppingProvider={shoppingProvider}
-                      enabled={shoppingModeToggled}
-                      handleChange={(value) => setShoppingProvider(value)}
-                    />
-                  </Stack>
-                </FormGroup>
-              </CardContent>
-            </Card>
-
-            {/* Optional: notes card or nutrition card placeholder */}
-            {/* <Card variant="outlined"><CardContent>...</CardContent></Card> */}
           </Box>
         </Grid>
       </Grid>
