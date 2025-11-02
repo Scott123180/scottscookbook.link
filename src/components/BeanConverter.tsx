@@ -1,342 +1,489 @@
-import { Autocomplete, FormControl, FormControlLabel, Paper, Radio, RadioGroup, Stack, Switch, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography } from '@mui/material';
-import * as React from 'react';
+import * as React from "react";
+import {
+  Autocomplete,
+  Box,
+  Card,
+  CardContent,
+  Container,
+  Divider,
+  Grid,
+  InputAdornment,
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+  TextField,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
+  Alert,
+  Stack,
+  Chip,
+} from "@mui/material";
+import RestaurantIcon from "@mui/icons-material/Restaurant";
 
-const imperial = "imperial";
-const metric = "metric";
+// ===== Constants =====
+const IMPERIAL = "imperial" as const;
+const METRIC = "metric" as const;
+type System = typeof IMPERIAL | typeof METRIC;
 
-//units in metrics
-//measurements below start with dry weight and then we figure out the rest
-//formula for cooked to canned g (assuming same density across all beans) --- cannedWeight = cookedWeight * 1 2/3
-//formula for cooked to canned ml (assuming same amount of bean juice across all cans --- 
-
-//source will either be serious eats or it will be my own observation
-const beanMap = new Map([
-    [1,{name: 'Black', cookedG: 1048.93, cannedG: 1748.22, dryG: 454.0, cookedMl: 1656.12, dryMl: 610.29, source: "seriousEats"}],
-    [2,{name: 'ChickPeas / Garbanzo', dryG:  454.0, cookedG:  1474.175, cannedG:  2456.96324725, cookedMl:  1656.12, dryMl:  767.221864, source: "seriousEats"}],
-    [3,{name: 'Pinto', dryG:  454.0, cookedG:  1048.93236, cannedG:  1748.2240964412001, cookedMl: 1537.82, dryMl:  767.221864, source: "seriousEats"}],
-    [4,{name: 'Kidney', dryG:  454.0, cookedG:  1105.6314, cannedG:  1842.722685438, cookedMl:  1537.82, dryMl:  639.3515533333334, source: "seriousEats"}],
-    [5,{name: 'Cannellini', dryG:  454.0, cookedG:  1133.98, cannedG:  1889.9704466, cookedMl:  1537.82, dryMl: 706.6517168421052, source: "seriousEats"}],
-    [6,{name: 'Black-Eyed Peas', dryG:  454.0, cookedG:  1275.72854, cannedG:  2126.2184857618004, cookedMl:  1537.82, dryMl:  767.2218640000001, source: "seriousEats"}]
-])
-
-const beanOptions = Array.from(beanMap, ([key, value]) => ({label: value.name, id: key}))
-
-const BeanSelector = (callbackUpdate: any) => {
-
-    return (
-        <Autocomplete
-        disablePortal
-        id="bean-combo-box"
-        options={beanOptions}
-        sx={{ width: 300 }}
-        onChange={(event, value) => callbackUpdate(value !== null ? value.id : undefined)}
-        renderInput={(params) => 
-            <TextField {...params} label="Bean / Legume Type" />}
-        />
-    );
+type BeanRow = {
+  name: string;
+  cookedG: number;
+  cannedG: number;
+  dryG: number;
+  cookedMl: number;
+  dryMl: number;
+  source: "seriousEats" | "mine" | string;
 };
 
-const BeanStyle = (callbackUpdate: any) => {
+const beanMap = new Map<number, BeanRow>([
+  [
+    1,
+    {
+      name: "Black",
+      dryG: 454.0,
+      cookedG: 1048.93,
+      cannedG: 1748.22,
+      cookedMl: 1656.12,
+      dryMl: 610.29,
+      source: "seriousEats",
+    },
+  ],
+  [
+    2,
+    {
+      name: "Chickpeas / Garbanzo",
+      dryG: 454.0,
+      cookedG: 1474.175,
+      cannedG: 2456.96324725,
+      cookedMl: 1656.12,
+      dryMl: 767.221864,
+      source: "seriousEats",
+    },
+  ],
+  [
+    3,
+    {
+      name: "Pinto",
+      dryG: 454.0,
+      cookedG: 1048.93236,
+      cannedG: 1748.2240964412001,
+      cookedMl: 1537.82,
+      dryMl: 767.221864,
+      source: "seriousEats",
+    },
+  ],
+  [
+    4,
+    {
+      name: "Kidney",
+      dryG: 454.0,
+      cookedG: 1105.6314,
+      cannedG: 1842.722685438,
+      cookedMl: 1537.82,
+      dryMl: 639.3515533333334,
+      source: "seriousEats",
+    },
+  ],
+  [
+    5,
+    {
+      name: "Cannellini",
+      dryG: 454.0,
+      cookedG: 1133.98,
+      cannedG: 1889.9704466,
+      cookedMl: 1537.82,
+      dryMl: 706.6517168421052,
+      source: "seriousEats",
+    },
+  ],
+  [
+    6,
+    {
+      name: "Black-Eyed Peas",
+      dryG: 454.0,
+      cookedG: 1275.72854,
+      cannedG: 2126.2184857618004,
+      cookedMl: 1537.82,
+      dryMl: 767.221864,
+      source: "seriousEats",
+    },
+  ],
+]);
 
-    return (
-        <div>
-            <p>Bean Style</p>
-            <RadioGroup
-                aria-labelledby="demo-radio-buttons-group-label"
-                name="radio-buttons-group"
-                onChange={(event, value) => callbackUpdate(value)}
-                row
-            >
-                <FormControlLabel value="dried" control={<Radio />} label="Dried" />
-                <FormControlLabel value="canned" control={<Radio />} label="Canned" />
-                <FormControlLabel value="cooked" control={<Radio />} label="Cooked" />
-            </RadioGroup>
-        </div>
-    );
-};
+const beanOptions = Array.from(beanMap, ([id, v]) => ({ id, label: v.name }));
 
-const BeanQuantity = (callbackUpdate: any) => {
+type Style = "dried" | "canned" | "cooked";
+type Unit = "grams" | "ml" | "cups" | "fluidOunce" | "ounce";
 
-    return (
-        <div>
-            <TextField 
-            id="standard-basic" 
-            label="Quantity" 
-            variant="standard" 
-            type="number"
-            onChange={(event) => callbackUpdate(event.target.value)} />
-        </div>
-    );
+// ===== Conversions (your originals, organized) =====
+const fromCups = (cups: number) => cups * 236.588;
+const toCups = (ml: number) => ml / 236.588;
+const fromFlOz = (floz: number) => fromCups(floz) / 8;
+const toFlOz = (ml: number) => toCups(ml) * 8;
+const fromOz = (oz: number) => oz * 28.3495;
+const toOz = (g: number) => g / 28.3495;
 
-};
+function convertToDriedBeansG(
+  mapEntry: BeanRow,
+  qty: number,
+  style: Style,
+  unit: Unit
+) {
+  let fluidRatio: number | null;
+  let weightRatio: number;
 
+  if (style === "dried") {
+    fluidRatio = mapEntry.dryG / mapEntry.dryMl;
+    weightRatio = 1;
+  } else if (style === "cooked") {
+    fluidRatio = mapEntry.dryG / mapEntry.cookedMl;
+    weightRatio = mapEntry.dryG / mapEntry.cookedG;
+  } else {
+    // canned
+    fluidRatio = null;
+    weightRatio = mapEntry.dryG / mapEntry.cannedG;
+  }
 
-const metricOptions = (pulseStyle: string) => {
-
-    const volumeOptionMl = pulseStyle !== "canned" ? <FormControlLabel value="ml" control={<Radio />} label="ml" /> : "";
-
-    return (
-        <div>
-            <FormControlLabel value="grams" control={<Radio />} label="grams" />
-            {volumeOptionMl}
-        </div>
-    );
-
-}
-const imperialOptions = (pulseStyle: string) => {
-
-    const volumeOptionCup = pulseStyle !== "canned" ? <FormControlLabel value="cups" control={<Radio />} label="Cups" /> : "";
-    const volumeOptionFl = pulseStyle !== "canned" ? <FormControlLabel value="fluidOunce" control={<Radio />} label="Fluid Ounce" /> : "";
-
-    return (
-        <div>
-            <FormControlLabel value="ounce" control={<Radio />} label="Ounce" />
-            {volumeOptionCup}
-            {volumeOptionFl}
-        </div>
-    );
-
-}
-
-//generate the options based off of the bean style
-const MeasurementUnit = (callBackUpdate: any, measurementUnit: string, systemOfUnits: string, pulseStyle: string) => {
-
-    const formOptions = systemOfUnits === imperial ? imperialOptions(pulseStyle) : metricOptions(pulseStyle);
-
-    return (
-        <div>
-            <p></p>
-            <p>Unit</p>
-            <RadioGroup
-                aria-labelledby="demo-radio-buttons-group-label"
-                name="radio-buttons-group"
-                onChange={(event, value) => callBackUpdate(value)}
-                value={measurementUnit}
-                defaultChecked
-                row
-            >
-                {formOptions}
-            </RadioGroup>
-        </div>
-
-    );
-};
-
-function isValidInput(input: any){
-    return input !== undefined 
-        && input !== null
-        && input !== "";
-}
-
-function inputIsComplete(input: any){
-
-    return input !== undefined
-        && input !== null
-        && isValidInput(input.systemOfUnits)
-        && isValidInput(input.pulseType)
-        && isValidInput(input.pulseStyle)
-        && isValidInput(input.quantity)
-        && isValidInput(input.measurementUnit);
-}
-
-function fromCups(cups: number){return cups * 236.588;}
-function toCups(ml: number){return ml / 236.588;}
-function fromFlOz(floz: number){return fromCups(floz) / 8;}
-function toFlOz(ml: number){return toCups(ml) * 8;}
-function fromOz(oz: number){return oz * 28.3495;}
-function toOz(g: number){return g / 28.3495;}
-
-function convertInput(input: any){
-
-    const pulseType = input.pulseType;
-    const mapEntry = beanMap.get(pulseType);
-
-    const qty = input.quantity;
-    const pulseStyle = input.pulseStyle;
-    const measurementUnit = input.measurementUnit;
-
-    //convert to dried g
-    const driedWeight = convertToDriedBeansG(mapEntry, qty, pulseStyle, measurementUnit);
-
-    //convert to other units
-    return convertDriedBeansToAll(mapEntry, driedWeight);
+  switch (unit) {
+    case "cups":
+      return fromCups(qty) * (fluidRatio ?? 0);
+    case "fluidOunce":
+      return fromFlOz(qty) * (fluidRatio ?? 0);
+    case "ml":
+      return qty * (fluidRatio ?? 0);
+    case "ounce":
+      return fromOz(qty) * weightRatio;
+    case "grams":
+    default:
+      return qty * weightRatio;
+  }
 }
 
-function convertDriedBeansToAll(mapEntry: any, qty: number){
+function convertDriedBeansToAll(mapEntry: BeanRow, driedG: number) {
+  // cooked
+  const cookedG = (mapEntry.cookedG / mapEntry.dryG) * driedG;
+  const cookedMl = (mapEntry.cookedMl / mapEntry.dryG) * driedG;
+  const cooked = {
+    g: Math.round(cookedG),
+    ml: Math.round(cookedMl),
+    cups: toCups(cookedMl).toFixed(3),
+    oz: toOz(cookedG).toFixed(3),
+    fl: toFlOz(cookedMl).toFixed(3),
+  };
 
-    //cooked
-    const cookedG = (mapEntry.cookedG/mapEntry.dryG) * qty;
-    const cookedMl = (mapEntry.cookedMl/mapEntry.dryG) * qty;
-    const cookedCups = toCups(cookedMl);
-    const cookedOz = toOz(cookedG);
-    const cookedFlOz = toFlOz(cookedMl);
+  // dried
+  const driedMl = (mapEntry.dryMl / mapEntry.dryG) * driedG;
+  const dried = {
+    g: Math.round(driedG),
+    ml: Math.round(driedMl),
+    cups: toCups(driedMl).toFixed(3),
+    oz: toOz(driedG).toFixed(3),
+    fl: toFlOz(driedMl).toFixed(3),
+  };
 
-    //dried
-    const driedG = qty;
-    const driedMl = (mapEntry.dryMl/mapEntry.dryG) * qty; 
-    const driedCups = toCups(driedMl);
-    const driedOz = toOz(driedG);
-    const driedFlOz = toFlOz(driedG);
+  // canned
+  const cannedG = (mapEntry.cannedG / mapEntry.dryG) * driedG;
+  const canned = { g: Math.round(cannedG), oz: toOz(cannedG).toFixed(3) };
 
-    //canned
-    const cannedG = (mapEntry.cannedG/mapEntry.dryG) * qty; 
-    const cannedOz = toOz(cannedG);
-
-    return {
-        "cooked (g)": Math.round(cookedG),
-        "cooked (ml)": Math.round(cookedMl),
-        "cooked (cups)": cookedCups.toFixed(3),
-        "cooked (oz)": cookedOz.toFixed(3),
-        "cooked (fl)": cookedFlOz.toFixed(3),
-        "dried (g)": Math.round(driedG),
-        "dried (ml)": Math.round(driedMl),
-        "dried (cups)": driedCups.toFixed(3),
-        "dried (oz)": driedOz.toFixed(3),
-        "dried (fl)": driedFlOz.toFixed(3),
-        "canned (g)": Math.round(cannedG),
-        "canned (oz)": cannedOz.toFixed(3),
-    }
-
+  return { cooked, dried, canned };
 }
 
-function convertToDriedBeansG(mapEntry: any, qty: number, style: string, measurementUnit: string){
-    let fluidRatio;
-    let weightRatio;
+// ===== UI =====
+export default function BeanConverter() {
+  const [system, setSystem] = React.useState<System>(IMPERIAL);
+  const [style, setStyle] = React.useState<Style | null>(null);
+  const [bean, setBean] = React.useState<{ id: number; label: string } | null>(
+    null
+  );
+  const [qty, setQty] = React.useState<string>("");
+  const [unit, setUnit] = React.useState<Unit | "">("");
 
-    if(style === "dried"){
-        fluidRatio = mapEntry.dryG / mapEntry.dryMl;
-        weightRatio = 1;
+  const mapEntry = bean ? beanMap.get(bean.id)! : undefined;
 
-    } else if (style === "cooked"){
-        fluidRatio = mapEntry.dryG / mapEntry.cookedMl;
-        weightRatio = mapEntry.dryG / mapEntry.cookedG;
+  const canUseVolume = style !== "canned"; // canned has no fluid conversions in your model
+  const metricUnits: Unit[] = canUseVolume ? ["grams", "ml"] : ["grams"];
+  const imperialUnits: Unit[] = canUseVolume
+    ? ["ounce", "cups", "fluidOunce"]
+    : ["ounce"];
 
-    } else { //canned
-        fluidRatio = null;
-        weightRatio = mapEntry.dryG / mapEntry.cannedG;
+  // 1) Memoize unit choices so they're stable and easy to validate
+  const unitChoices = React.useMemo<Unit[]>(() => {
+    const metricUnits: Unit[] = canUseVolume ? ["grams", "ml"] : ["grams"];
+    const imperialUnits: Unit[] = canUseVolume
+      ? ["ounce", "cups", "fluidOunce"]
+      : ["ounce"];
+    return system === IMPERIAL ? imperialUnits : metricUnits;
+  }, [system, canUseVolume]);
+
+  // 2) Ensure a valid unit is always selected
+  React.useEffect(() => {
+    if (!unit || !unitChoices.includes(unit as Unit)) {
+      setUnit(unitChoices[0] ?? ""); // pick first available, or "" if none
     }
+  }, [unitChoices, unit]);
 
-    if(measurementUnit === "cups"){
-        const qtyMl = fromCups(qty);
-        return qtyMl * fluidRatio;
-    } else if (measurementUnit === "ounce"){
-        const qtyG = fromOz(qty);
-        return qtyG * weightRatio;
-    } else if (measurementUnit === "fluidOunce"){
-        const qtyMl = fromFlOz(qty);
-        return qtyMl * fluidRatio;
-    } else if (measurementUnit === "ml"){
-        return qty * fluidRatio;
-    } else { //grams
-        return weightRatio * qty;
-    }
+  const quantityAsNumber = qty === "" ? NaN : Number(qty);
+  const inputValid =
+    !!mapEntry &&
+    !!style &&
+    !!unit &&
+    Number.isFinite(quantityAsNumber) &&
+    quantityAsNumber >= 0;
+
+  const result =
+    inputValid && mapEntry && style && unit
+      ? convertDriedBeansToAll(
+          mapEntry,
+          convertToDriedBeansG(mapEntry, quantityAsNumber, style, unit as Unit)
+        )
+      : null;
+
+  return (
+    <Container maxWidth="md" sx={{ py: { xs: 3, md: 5 } }}>
+      <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 2 }}>
+        <RestaurantIcon />
+        <Typography variant="h4" sx={{ fontWeight: 700 }}>
+          Bean Converter
+        </Typography>
+      </Stack>
+      <Typography variant="body2" sx={{ color: "text.secondary", mb: 3 }}>
+        Convert between dried, cooked, and canned amounts. Pick a bean, style,
+        and measurement—get all equivalents instantly.
+      </Typography>
+
+      <Grid container spacing={3}>
+        {/* Inputs */}
+        <Grid item xs={12} md={6}>
+          <Card variant="outlined" sx={{ height: "100%" }}>
+            <CardContent>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                Inputs
+              </Typography>
+              <Divider sx={{ mb: 2 }} />
+
+              <Stack spacing={2}>
+                {/* System */}
+                <Box>
+                  <Typography variant="overline">System</Typography>
+                  <ToggleButtonGroup
+                    value={system}
+                    exclusive
+                    onChange={(_, v) => v && setSystem(v)}
+                    size="small"
+                    sx={{ mt: 0.5 }}
+                  >
+                    <ToggleButton value={IMPERIAL}>Imperial</ToggleButton>
+                    <ToggleButton value={METRIC}>Metric</ToggleButton>
+                  </ToggleButtonGroup>
+                </Box>
+
+                {/* Bean */}
+                <Autocomplete
+                  disablePortal
+                  id="bean-combo-box"
+                  options={beanOptions}
+                  value={bean}
+                  onChange={(_, v) => setBean(v)}
+                  renderInput={(params) => (
+                    <TextField {...params} label="Bean / Legume Type" />
+                  )}
+                />
+
+                {/* Style */}
+                <Box>
+                  <Typography variant="overline">Bean Style</Typography>
+                  <ToggleButtonGroup
+                    value={style}
+                    exclusive
+                    onChange={(_, v) => setStyle(v)}
+                    size="small"
+                    sx={{ mt: 0.5, flexWrap: "wrap" }}
+                  >
+                    <ToggleButton value="dried">Dried</ToggleButton>
+                    <ToggleButton value="canned">Canned</ToggleButton>
+                    <ToggleButton value="cooked">Cooked</ToggleButton>
+                  </ToggleButtonGroup>
+                  {style === "canned" && (
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        display: "block",
+                        color: "text.secondary",
+                        mt: 0.5,
+                      }}
+                    >
+                      Canned conversions are weight-based only (no volume).
+                    </Typography>
+                  )}
+                </Box>
+
+                {/* Quantity */}
+                <TextField
+                  label="Quantity"
+                  type="number"
+                  value={qty}
+                  onChange={(e) => setQty(e.target.value)}
+                  InputProps={{
+                    inputProps: { min: 0, step: "any" },
+                    endAdornment: unit ? (
+                      <InputAdornment position="end">
+                        {prettyUnit(unit)}
+                      </InputAdornment>
+                    ) : null,
+                  }}
+                />
+
+                {/* Unit */}
+                <Box>
+                  <Typography variant="overline">Unit</Typography>
+                  <ToggleButtonGroup
+                    value={unit}
+                    exclusive
+                    onChange={(_, v) => setUnit(v)}
+                    size="small"
+                    sx={{ mt: 0.5, flexWrap: "wrap" }}
+                  >
+                    {unitChoices.map((u) => (
+                      <ToggleButton key={u} value={u}>
+                        {prettyUnit(u)}
+                      </ToggleButton>
+                    ))}
+                  </ToggleButtonGroup>
+                </Box>
+              </Stack>
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* Results */}
+        <Grid item xs={12} md={6}>
+          <Card variant="outlined" sx={{ height: "100%" }}>
+            <CardContent>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                Results
+              </Typography>
+              <Divider sx={{ mb: 2 }} />
+
+              {!inputValid ? (
+                <Alert severity="info">
+                  Select a bean, choose style, enter a quantity, and pick a unit
+                  to see conversions.
+                </Alert>
+              ) : (
+                <Stack spacing={2}>
+                  {/* Quick highlight chips */}
+                  <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                    <Chip
+                      label={`Cooked: ${result!.cooked.g} g (${
+                        result!.cooked.cups
+                      } cups)`}
+                      size="small"
+                    />
+                    <Chip
+                      label={`Canned: ${result!.canned.g} g (${
+                        result!.canned.oz
+                      } oz)`}
+                      size="small"
+                    />
+                    <Chip
+                      label={`Dried: ${result!.dried.g} g (${
+                        result!.dried.cups
+                      } cups)`}
+                      size="small"
+                    />
+                  </Stack>
+
+                  <TableContainer
+                    component={Paper}
+                    sx={{ borderRadius: 2, overflow: "hidden" }}
+                  >
+                    <Table size="small" aria-label="bean conversions">
+                      <TableBody>
+                        {renderRow("Cooked (g)", result!.cooked.g, true)}
+                        {renderRow("Cooked (ml)", result!.cooked.ml)}
+                        {renderRow("Cooked (cups)", result!.cooked.cups)}
+                        {renderRow("Cooked (oz)", result!.cooked.oz)}
+                        {renderRow("Cooked (fl oz)", result!.cooked.fl)}
+                        <RowDivider />
+                        {renderRow("Dried (g)", result!.dried.g, true)}
+                        {renderRow("Dried (ml)", result!.dried.ml)}
+                        {renderRow("Dried (cups)", result!.dried.cups)}
+                        {renderRow("Dried (oz)", result!.dried.oz)}
+                        {renderRow("Dried (fl oz)", result!.dried.fl)}
+                        <RowDivider />
+                        {renderRow("Canned (g)", result!.canned.g, true)}
+                        {renderRow("Canned (oz)", result!.canned.oz)}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+
+                  {mapEntry?.source && (
+                    <Typography
+                      variant="caption"
+                      sx={{ color: "text.secondary" }}
+                    >
+                      Source:{" "}
+                      {mapEntry.source === "seriousEats"
+                        ? "Serious Eats"
+                        : mapEntry.source}
+                    </Typography>
+                  )}
+                </Stack>
+              )}
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+    </Container>
+  );
 }
 
-
-const ResultTable = (input: any) => {
-
-    if(!inputIsComplete(input)) {
-        return <div></div>;
-    }
-    
-    const output: any = convertInput(input);
-
-    return (
-
-        <TableContainer component={Paper}>
-          <Table aria-label="simple table">
-            <TableBody>
-                {
-                    Object.keys(output).map((key, objectIndex) => {
-
-                        return (
-                            <TableRow key={objectIndex}>
-                                <TableCell variant="head">{key}</TableCell>
-                                <TableCell variant="head">{output[key]}</TableCell>
-                            </TableRow>
-                        )
-                    })
-                }
-            </TableBody>
-          </Table>
-        </TableContainer>
-      );
-    
-
+// ===== Small presentational helpers =====
+function prettyUnit(u: Unit | "") {
+  switch (u) {
+    case "grams":
+      return "g";
+    case "ml":
+      return "mL";
+    case "cups":
+      return "cups";
+    case "fluidOunce":
+      return "fl oz";
+    case "ounce":
+      return "oz";
+    default:
+      return "";
+  }
 }
 
-class BeanConverter extends React.Component {
-
-    constructor(props: any) {
-        super(props);
-        
-        this.state = {
-            systemOfUnits: imperial,
-            pulseType: undefined,
-            pulseStyle: undefined,
-            quantity: undefined,
-            measurementUnit: ""
-        }
-    }
-
-    updateState = (key:any,value: any) => {
-        this.setState({[key]: value});
-    }
-
-    updateMetricState = (value: boolean) => {
-        if(value === false){
-            this.setState(
-                {"systemOfUnits": imperial,
-                "measurementUnit": ""
-            });
-        } else {
-            this.setState(
-                {"systemOfUnits": metric, 
-                "measurementUnit": ""
-            });
-        }
-    }
-
-    updateStyleState = (value: string) => {
-        if(value === "canned"){
-            this.setState({
-                "measurementUnit":  "",
-                "pulseStyle": value
-            })
-        } else {
-            this.updateState("pulseStyle", value);
-        }
-
-    }
-
-    render() {
-
-        return (
-            <div>
-                <p></p>
-                <h1>Bean Converter</h1>
-
-                <FormControl>
-                    <Stack direction="row" spacing={1} alignItems="center">
-                        <Typography>Imperial</Typography>
-                            <Switch onChange={(event, value) => this.updateMetricState(value)} />
-                        <Typography>Metric</Typography>
-                    </Stack>
-
-                    <p>Recipe Calls for</p>
-
-                    {BeanSelector((type) => this.updateState("pulseType", type))}
-                    {BeanStyle((style) => this.updateStyleState(style))}
-                    {BeanQuantity((quantity) => this.updateState("quantity", quantity))}
-                    {MeasurementUnit((unit) => this.updateState("measurementUnit", unit),this.state.measurementUnit,this.state.systemOfUnits,this.state.pulseStyle)}
-
-                </FormControl>
-
-                {ResultTable(this.state)}
-
-            </div>
-        );
-    }
+function renderRow(label: string, value: string | number, bold = false) {
+  return (
+    <TableRow
+      sx={{ "&:nth-of-type(odd)": { backgroundColor: "action.hover" } }}
+    >
+      <TableCell sx={{ fontWeight: bold ? 600 : 400 }}>{label}</TableCell>
+      <TableCell
+        sx={{
+          fontFamily:
+            "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+        }}
+      >
+        {value}
+      </TableCell>
+    </TableRow>
+  );
 }
 
-export default BeanConverter;
+function RowDivider() {
+  return (
+    <TableRow>
+      <TableCell colSpan={2}>
+        <Divider />
+      </TableCell>
+    </TableRow>
+  );
+}
