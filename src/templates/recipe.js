@@ -25,7 +25,6 @@ const ShoppingProvider = ({shoppingProvider, enabled, handleChange}) => {
       onChange={(event) => handleChange(event.target.value)}
     >
       <MenuItem value={'AMAZON_FRESH'}>Amazon Fresh</MenuItem>
-      <MenuItem value={'AVO'}>Avo</MenuItem>
       <MenuItem value={'INSTACART'}>Instacart</MenuItem>
       <MenuItem value={'WALMART_GROCERY'}>Walmart Grocery</MenuItem>
       <MenuItem value={'WHOLE_FOODS'}>Whole Foods</MenuItem>

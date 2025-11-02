@@ -18,9 +18,6 @@ const LinkedShoppingCart = ({itemName, enabled, provider}) => {
     case "AMAZON_FRESH":
       url = "https://www.amazon.com/s?k=" + formQueryString(itemName) + "&i=amazonfresh";
       break;
-    case "AVO":
-      url = "https://www.avonow.com/search?q=" + itemName;
-      break;
     case "INSTACART":
       url = "https://www.instacart.com/store/search/" + itemName; 
       break;
