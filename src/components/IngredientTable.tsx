@@ -1,78 +1,137 @@
-import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import * as React from "react";
+import {
+  Box,
+  Divider,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from "@mui/material";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-const formQueryString = (s) => {
-  return s.replace(/\s/g, "+");
-}
+type Provider = "AMAZON_FRESH" | "INSTACART" | "WALMART_GROCERY" | "WHOLE_FOODS";
 
-const LinkedShoppingCart = ({itemName, enabled, provider}) => {
-  let url;
+type Ingredient = {
+  name: string;
+  preparation?: string | null;
+  amount?: string | number | null;
+  unit?: string | null;
+  section: string;
+  metric?: string | null;
+};
 
-  switch(provider){
+type Props = {
+  data: Ingredient[];
+  shoppingModeToggled: boolean;
+  shoppingProvider: Provider;
+};
+
+const formQueryString = (s: string) => s.replace(/\s/g, "+");
+
+const shoppingUrl = (itemName: string, provider: Provider): string | undefined => {
+  switch (provider) {
     case "AMAZON_FRESH":
-      url = "https://www.amazon.com/s?k=" + formQueryString(itemName) + "&i=amazonfresh";
-      break;
+      return "https://www.amazon.com/s?k=" + formQueryString(itemName) + "&i=amazonfresh";
     case "INSTACART":
-      url = "https://www.instacart.com/store/search/" + itemName; 
-      break;
+      return "https://www.instacart.com/store/search/" + itemName;
     case "WALMART_GROCERY":
-      url = "https://www.walmart.com/search?q=" + itemName;
-      break;
+      return "https://www.walmart.com/search?q=" + itemName;
     case "WHOLE_FOODS":
-      url = "https://www.amazon.com/s?k=" + formQueryString(itemName) +"&i=wholefoods";
-      break;
+      return "https://www.amazon.com/s?k=" + formQueryString(itemName) + "&i=wholefoods";
     default:
-      break;
+      return undefined;
   }
+};
 
-  if(!enabled){
-    return <div></div>;
-  }
+const IngredientTable: React.FC<Props> = ({
+  data,
+  shoppingModeToggled,
+  shoppingProvider,
+}) => {
+  if (!data || data.length === 0) return null;
+
+  const section = data[0]?.section ?? "Ingredients";
 
   return (
-    <TableCell style={{width: "20px"}}>
-        <a href={url} target="_blank" rel='noreferrer'>
-          <AddShoppingCartIcon />
-        </a>
-    </TableCell>
+    <Box>
+      {/* Section header (replaces table caption) */}
+      <Typography
+        variant="subtitle2"
+        sx={{ color: "text.secondary", px: 2, pt: 2, pb: 1 }}
+      >
+        {section}
+      </Typography>
+      <Divider />
+
+      {/* Flat list with subtle row borders; no extra Paper/padding */}
+      <List disablePadding>
+        {data.map((ingredient, idx) => {
+          const href =
+            shoppingModeToggled && ingredient.name
+              ? shoppingUrl(ingredient.name, shoppingProvider)
+              : undefined;
+
+          return (
+            <ListItem
+              key={`${section}.${ingredient.name}.${idx}`}
+              sx={{
+                px: 2,
+                py: { xs: 1.0, md: 0.9 },
+                borderBottom:
+                  idx === data.length - 1 ? "none" : "1px solid",
+                borderColor: "divider",
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+              }}
+            >
+              {/* Left “icon” column with fixed width so layout doesn’t jump when toggled */}
+              <Box
+                sx={{
+                  width: 36,
+                  display: "flex",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}
+              >
+                {href && (
+                  <IconButton
+                    size="small"
+                    component="a"
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Shop for ${ingredient.name}`}
+                  >
+                    <AddShoppingCartIcon fontSize="small" />
+                  </IconButton>
+                )}
+              </Box>
+
+              {/* Main text */}
+              <ListItemText
+                disableTypography
+                primary={
+                  <Typography variant="body1">
+                    <strong>{ingredient.amount}</strong>{" "}
+                    {ingredient.unit}{" "}
+                    {ingredient.metric && (
+                      <>
+                        (<em>{ingredient.metric}</em>){" "}
+                      </>
+                    )}
+                    {ingredient.name}
+                    {ingredient.preparation && <> {ingredient.preparation}</>}
+                  </Typography>
+                }
+              />
+            </ListItem>
+          );
+        })}
+      </List>
+    </Box>
   );
-}
-
-const IngredientTable = ({data, shoppingModeToggled, shoppingProvider}) => {
-
-    const section = data[0].section;
-
-    return (
-        <TableContainer component={Paper}>
-        <Table  aria-label="caption table">
-          <caption style={{textAlign: 'center'}}>{section}</caption>
-          <TableBody>
-            {data.map((ingredient) => (
-              <TableRow key={section + "." + ingredient.name}>
-                <LinkedShoppingCart itemName={ingredient.name} enabled={shoppingModeToggled} provider={shoppingProvider} />
-                <TableCell align="left" style={{ paddingLeft: "5%", paddingRight: "5%" }}>
-                  <strong>{ingredient.amount}</strong>{" "}
-                  {ingredient.unit}
-                  {ingredient.metric && (
-                    <> (<em>{ingredient.metric}</em>) </>
-                  )}
-                  {" "}
-                  {ingredient.name}
-                  {ingredient.preparation}
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer> 
-
-    );
-}
+};
 
 export default IngredientTable;

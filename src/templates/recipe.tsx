@@ -1,10 +1,16 @@
 import * as React from "react";
 import { graphql, PageProps } from "gatsby";
+
 import Grid from "@mui/material/Grid";
+import { FormGroup, Typography, Switch, Stack, Select, MenuItem, Container, Box, Card, CardContent, Divider, Paper} from "@mui/material";
+import {  } from "@mui/material";
+import { getImage, IGatsbyImageData } from "gatsby-plugin-image";
+
 import Layout from "../components/Layout";
-import { FormGroup, Typography, Switch, Stack, Select, MenuItem } from "@mui/material";
-import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
+import RecipeImage from "../components/RecipeImage";
 import IngredientTable from "../components/IngredientTable";
+import RecipeMetaChips from "../components/RecipeMetaChips";
+
 
 // ---------- Types that match your GraphQL shape ----------
 type Ingredient = {
@@ -129,58 +135,103 @@ const Recipe: React.FC<PageProps<RecipeQueryData>> = ({ data }) => {
   const imageData = getImage(fm.image?.childImageSharp?.gatsbyImageData as IGatsbyImageData | undefined);
 
   return (
-    <Layout>
-      <div className="post-page-container">
-        <div className="post-page-flex-container">
-          <div className="post-content-container">
-            <h1>{fm.title}</h1>
-            <h4 style={{ color: "rgb(165, 164, 164)", fontSize: "0.8em" }}>
-              Published: {fm.date ?? "—"} | Total Time: {fm.totalTime ?? "—"}
-            </h4>
+  <Layout>
+    <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
+      {/* Hero */}
+      <Box sx={{ mb: 3 }}>
+        <Typography variant="h3" component="h1" sx={{ fontWeight: 700, lineHeight: 1.2, mb: 1 }}>
+          {fm.title}
+        </Typography>
+        <Typography variant="body2" sx={{ color: "text.secondary", mb: 2 }}>
+          Published: {fm.date ?? "—"}
+        </Typography>
+        <RecipeImage imageData={imageData!} title={fm.title} />
+        <Box sx={{ mt: 2 }}>
+          <RecipeMetaChips
+            totalTime={fm.totalTime}
+            prepTime={fm.prepTime}
+            cookingTime={fm.cookingTime}
+            originalLink={fm.originalLink}
+          />
+        </Box>
+      </Box>
 
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                marginLeft: "10%",
-                marginRight: "10%",
-              }}
-            >
-              {imageData && <GatsbyImage image={imageData} alt={fm.title || "Recipe image"} />}
-            </div>
-            <p>* recipe image may have been created by generative AI</p>
-            <br />
+      <Grid container spacing={3}>
+        {/* Left column: Ingredients & Directions */}
+        <Grid item xs={12} md={8}>
+          <Card variant="outlined" sx={{ mb: 3 }}>
+            <CardContent>
+              <Typography variant="h5" sx={{ fontWeight: 600, mb: 1.5 }}>
+                Ingredients
+              </Typography>
+              <Divider sx={{ mb: 2 }} />
+              {/* your grouped ingredients UI */}
+              {ingredients}
+            </CardContent>
+          </Card>
 
-            <FormGroup>
-              <Stack direction="row" spacing={1} alignItems="center">
-                <Typography>Shopping Mode</Typography>
-                <Switch
-                  inputProps={{ "aria-label": "Shopping Mode" }}
-                  onChange={(_, value) => setShoppingModeToggled(value)}
-                  checked={shoppingModeToggled}
-                />
-                <ShoppingProvider
-                  shoppingProvider={shoppingProvider}
-                  enabled={shoppingModeToggled}
-                  handleChange={(value) => setShoppingProvider(value)}
-                />
-              </Stack>
-            </FormGroup>
+          <Card variant="outlined">
+            <CardContent>
+              <Typography variant="h5" sx={{ fontWeight: 600, mb: 1.5 }}>
+                Directions
+              </Typography>
+              <Divider sx={{ mb: 2 }} />
+              {directions}
+            </CardContent>
+          </Card>
 
-            <h4>Ingredients</h4>
-            {ingredients}
+          {/* Optional: original HTML content block */}
+          {post.html && (
+            <Paper variant="outlined" sx={{ mt: 3, p: { xs: 2, md: 3 } }}>
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            </Paper>
+          )}
+        </Grid>
 
-            <h4>Directions</h4>
-            {directions}
+        {/* Right column: sticky utilities */}
+        <Grid item xs={12} md={4}>
+          <Box
+            sx={{
+              position: { md: "sticky" },
+              top: { md: 24 },
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+            }}
+          >
+            <Card variant="outlined">
+              <CardContent>
+                <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
+                  Shopping
+                </Typography>
+                <Divider sx={{ mb: 2 }} />
+                {/* Your existing controls */}
+                <FormGroup>
+                  <Stack direction="row" spacing={1} alignItems="center">
+                    <Typography>Shopping Mode</Typography>
+                    <Switch
+                      inputProps={{ "aria-label": "Shopping Mode" }}
+                      onChange={(_, value) => setShoppingModeToggled(value)}
+                      checked={shoppingModeToggled}
+                    />
+                    <ShoppingProvider
+                      shoppingProvider={shoppingProvider}
+                      enabled={shoppingModeToggled}
+                      handleChange={(value) => setShoppingProvider(value)}
+                    />
+                  </Stack>
+                </FormGroup>
+              </CardContent>
+            </Card>
 
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <RecipeLinkElement link={fm.originalLink} />
-          </div>
-        </div>
-      </div>
-    </Layout>
-  );
+            {/* Optional: notes card or nutrition card placeholder */}
+            {/* <Card variant="outlined"><CardContent>...</CardContent></Card> */}
+          </Box>
+        </Grid>
+      </Grid>
+    </Container>
+  </Layout>
+);
 };
 
 export default Recipe;
