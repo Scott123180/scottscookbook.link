@@ -53,3 +53,33 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     devtool: 'eval-source-map',
   })
 }
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  createTypes(`
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+
+    type MarkdownRemarkFrontmatter {
+      title: String
+      date: Date @dateformat
+      prepTime: String
+      cookingTime: String
+      totalTime: String
+      originalLink: String
+      ingredients: [MarkdownRemarkFrontmatterIngredients]
+      directions: [String]
+      image: File @fileByRelativePath
+    }
+
+    type MarkdownRemarkFrontmatterIngredients {
+      name: String
+      preparation: String
+      amount: String
+      unit: String
+      section: String
+      metric: String
+    }
+  `)
+}

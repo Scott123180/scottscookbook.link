@@ -59,10 +59,13 @@ const IngredientTable = ({data, shoppingModeToggled, shoppingProvider}) => {
             {data.map((ingredient) => (
               <TableRow key={section + "." + ingredient.name}>
                 <LinkedShoppingCart itemName={ingredient.name} enabled={shoppingModeToggled} provider={shoppingProvider} />
-                <TableCell align="left"
-                style={{paddingLeft: "5%", paddingRight: "5%"}}>
-                  <strong>{ingredient.amount}</strong> &nbsp; 
-                  {ingredient.unit}&nbsp;
+                <TableCell align="left" style={{ paddingLeft: "5%", paddingRight: "5%" }}>
+                  <strong>{ingredient.amount}</strong>{" "}
+                  {ingredient.unit}
+                  {ingredient.metric && (
+                    <> (<em>{ingredient.metric}</em>) </>
+                  )}
+                  {" "}
                   {ingredient.name}
                   {ingredient.preparation}
                 </TableCell>

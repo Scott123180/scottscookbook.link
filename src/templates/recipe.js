@@ -179,6 +179,7 @@ export const query = graphql`query PostQuery($slug: String!) {
         amount
         unit
         section
+        metric
       }
       directions
       image {
