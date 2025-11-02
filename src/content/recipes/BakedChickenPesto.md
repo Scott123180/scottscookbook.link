@@ -44,6 +44,5 @@ directions: [
   "Spread pesto evenly over the top of each breast.",
   "Bake uncovered for 20–25 minutes, or until internal temperature reaches 165°F (74°C).",
   "Let rest for 5 minutes before serving.",
-  "Optional: Garnish with extra pesto or fresh herbs."
 ]
 ---
