@@ -15,6 +15,8 @@ import HourglassBottomIcon from "@mui/icons-material/HourglassBottom";
 import LaunchIcon from "@mui/icons-material/Launch";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
+import { useWakeLock } from "../hooks/useWakeLock";
 
 type Provider =
   | "AMAZON_FRESH"
@@ -48,8 +50,6 @@ const providerLabel = (p: Provider) => {
   }
 };
 
-// ...imports stay the same
-
 const RecipeMetaChips: React.FC<Props> = ({
   totalTime,
   prepTime,
@@ -64,8 +64,35 @@ const RecipeMetaChips: React.FC<Props> = ({
     setAnchorEl(e.currentTarget);
   const closeProviderMenu = () => setAnchorEl(null);
 
+  // ✅ Cooking Mode (wake lock)
+  const { isActive: cookingMode, enable, disable } = useWakeLock();
+
+  const toggleCookingMode = async () => {
+    if (cookingMode) await disable();
+    else await enable();
+  };
+  // Remember state for wake lock
+  React.useEffect(() => {
+    const last = localStorage.getItem("sc_cooking_mode");
+    if (last === "1") enable().catch(() => {});
+  }, [enable]);
+
+  React.useEffect(() => {
+    localStorage.setItem("sc_cooking_mode", cookingMode ? "1" : "0");
+  }, [cookingMode]);
+
   return (
-    <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+    <Stack
+      direction="row"
+      spacing={1}
+      flexWrap="wrap"
+      useFlexGap
+      sx={{
+        gap: 1, // adds both row and column spacing (unlike spacing={1}, which only affects one axis)
+        rowGap: 1.5, // a bit extra vertical breathing room when wrapping
+        alignItems: "center",
+      }}
+    >
       {totalTime && (
         <Chip
           icon={<AccessTimeIcon />}
@@ -106,33 +133,30 @@ const RecipeMetaChips: React.FC<Props> = ({
         />
       )}
 
+      {/* Shopping Chip */}
       {shopping && (
         <>
           <Tooltip
             title={
               shopping.enabled
-                ? "Shopping is ON (click to turn OFF). Click ▾ to change provider."
-                : "Shopping is OFF (click to turn ON). Click ▾ to pick a provider and turn ON."
+                ? "Shopping mode is ON (click to turn OFF)"
+                : "Shopping mode is OFF (click to turn ON)"
             }
             arrow
           >
             <Chip
               icon={<AddShoppingCartIcon />}
-              label={
-                shopping.enabled
-                  ? `Shopping: ${providerLabel(shopping.provider)}`
-                  : "Shopping: Disabled"
-              }
+              label={`Shopping: ${
+                shopping.enabled ? providerLabel(shopping.provider) : "Disabled"
+              }`}
               variant={shopping.enabled ? "filled" : "outlined"}
               color={shopping.enabled ? "primary" : "default"}
-              onClick={() => shopping.onToggle(!shopping.enabled)} // toggle ON/OFF
-              onDelete={openProviderMenu} // open provider menu
+              onClick={() => shopping.onToggle(!shopping.enabled)}
+              onDelete={openProviderMenu}
               deleteIcon={<ExpandMoreIcon />}
               aria-label={`Shopping mode (${
                 shopping.enabled ? "on" : "off"
-              }). Provider: ${
-                shopping.enabled ? providerLabel(shopping.provider) : "Disabled"
-              }.`}
+              }). Provider: ${providerLabel(shopping.provider)}.`}
             />
           </Tooltip>
 
@@ -153,8 +177,6 @@ const RecipeMetaChips: React.FC<Props> = ({
                 key={p}
                 selected={shopping.provider === p}
                 onClick={() => {
-                  // If currently OFF, enable first
-                  if (!shopping.enabled) shopping.onToggle(true);
                   shopping.onProviderChange(p);
                   closeProviderMenu();
                 }}
@@ -168,6 +190,24 @@ const RecipeMetaChips: React.FC<Props> = ({
           </Menu>
         </>
       )}
+
+      {/* ✅ Cooking Mode Chip */}
+      <Tooltip
+        title={
+          cookingMode
+            ? "Cooking Mode ON — screen will stay awake"
+            : "Cooking Mode OFF — may auto-lock"
+        }
+        arrow
+      >
+        <Chip
+          icon={<PowerSettingsNewIcon />}
+          label={cookingMode ? "Cooking Mode: On" : "Cooking Mode: Off"}
+          color={cookingMode ? "success" : "default"}
+          variant={cookingMode ? "filled" : "outlined"}
+          onClick={toggleCookingMode}
+        />
+      </Tooltip>
     </Stack>
   );
 };

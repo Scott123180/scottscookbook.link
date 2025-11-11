@@ -10,6 +10,7 @@ import RecipeImage from "../components/RecipeImage";
 import IngredientTable from "../components/IngredientTable";
 import RecipeMetaChips from "../components/RecipeMetaChips";
 import { setCookie, getCookie } from "../utils/cookies";
+import CookingModeToggle from "../components/CookingToggle";
 
 const COOKIE_ENABLED = "sc_shopping_enabled";
 const COOKIE_PROVIDER = "sc_shopping_provider";
@@ -187,7 +188,6 @@ const Recipe: React.FC<PageProps<RecipeQueryData>> = ({ data }) => {
             onProviderChange: setShoppingProvider,
           }}
         />
-
 
         </Box>
       </Box>
