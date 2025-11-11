@@ -7,7 +7,7 @@ totalTime: "70 min"
 topic: "Salad"
 originalLink: "N/A"
 scottRating: 5
-image: "../../images/default.png"
+image: "../../images/recipe/AsianEdamameBeanSalad.png"
 ingredients: [
 {
 section: "Salad",

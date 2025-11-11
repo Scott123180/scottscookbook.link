@@ -7,7 +7,7 @@ totalTime: "55 min"
 topic: "Side Dish"
 originalLink: "https://www.allrecipes.com/recipe/228374/braised-black-lentils/"
 scottRating: 5
-image: "../../images/default.png"
+image: "../../images/recipe/BraisedLentils.png"
 ingredients: [
   {
     name: "Butter",
