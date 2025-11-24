@@ -4,7 +4,6 @@ date: "November 14, 2021"
 prepTime: "15 min" 
 cookingTime: "10 min"
 totalTime: "25 min"
-topic: "Mediterranean"
 originalLink: "https://www.allrecipes.com/recipe/176650/greek-pasta-salad/"
 scottRating: 5
 image: "../../images/recipe/GreekPastaSalad.png"

@@ -4,7 +4,7 @@ date: "Jan 16, 2022"
 prepTime: "30 min" 
 cookingTime: "30 min"
 totalTime: "60 min"
-topic: "Dinner"
+topic: "Main Dish"
 originalLink: "https://www.eatingwell.com/recipe/7923492/buffalo-chicken-mini-meatloaves/"
 scottRating: 4.0
 image: "../../images/recipe/BuffaloChickenMiniMeatloaves.png"

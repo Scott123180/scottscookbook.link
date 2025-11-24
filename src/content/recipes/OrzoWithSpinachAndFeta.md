@@ -4,7 +4,7 @@ date: "October 14, 2021"
 prepTime: "10 min" 
 cookingTime: "20 min"
 totalTime: "30 min"
-topic: "One Pot"
+topic: "One-Pot"
 originalLink: "https://cooking.nytimes.com/recipes/1021485-one-pan-orzo-with-spinach-and-feta"
 scottRating: 4
 image: "../../images/recipe/OrzoWithSpinachFeta.png"

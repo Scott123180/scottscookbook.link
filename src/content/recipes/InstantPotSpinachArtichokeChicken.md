@@ -4,7 +4,6 @@ date: "December 31, 2023"
 prepTime: "10 min"
 cookTime: "50 min"
 totalTime: "1 hr"
-topic: "Main Course"
 originalLink: "https://realfoodwholelife.com/recipes/instant-pot-spinach-artichoke-chicken/"
 scottRating: 4.5
 image: "../../images/recipe/InstantPotSpinachArtichokeChicken.png"

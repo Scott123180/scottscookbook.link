@@ -4,7 +4,6 @@ date: "Nov 11, 2025"
 prepTime: "20 min"
 cookingTime: "3 hr 30 min"
 totalTime: "3 hr 50 min"
-topic: "Main Course"
 originalLink: "https://tastesbetterfromscratch.com/easy-no-fuss-thanksgiving-turkey/"
 scottRating: 
 image: "../../images/recipe/ThanksgivingTurkey.png"

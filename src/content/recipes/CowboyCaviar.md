@@ -4,7 +4,7 @@ date: "June 8, 2021"
 prepTime: "15 min" 
 cookingTime: "0 min"
 totalTime: "15 min"
-topic: "dips"
+topic: "snack"
 originalLink: "https://cooking.nytimes.com/recipes/1020433-cowboy-caviar"
 scottRating: 5
 image: "../../images/recipe/CowboyCaviar.png"

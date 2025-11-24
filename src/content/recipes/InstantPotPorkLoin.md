@@ -4,7 +4,7 @@ date: "June 28, 2021"
 prepTime: "15 min" 
 cookingTime: "35 min"
 totalTime: "50 min"
-topic: "Dinner"
+topic: "Main Dish"
 originalLink: "https://diethood.com/instant-pot-pork-loin/"
 scottRating: 5
 image: "../../images/recipe/InstantPotPorkLoin.png"

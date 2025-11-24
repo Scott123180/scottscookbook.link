@@ -4,7 +4,7 @@ date: "June 27, 2021"
 prepTime: "30 min" 
 cookingTime: "60 min"
 totalTime: "90 min"
-topic: "Dinner"
+topic: "Main Dish"
 originalLink: https://cooking.nytimes.com/recipes/1015123-chickpea-and-fennel-ratatouille
 scottRating: 4
 image: "../../images/recipe/ChickpeaAndFennelRatatouille.png"

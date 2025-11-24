@@ -4,7 +4,6 @@ date: "Oct 26, 2024"
 prepTime: "20 min" 
 cookingTime: "8 hours"
 totalTime: "8 hours 20 minutes"
-topic: "Spreads"
 originalLink: "https://www.allrecipes.com/recipe/268029/chef-johns-apple-butter/"
 scottRating: 5
 image: "../../images/recipe/AppleButter.png"

@@ -4,7 +4,6 @@ date: "Nov 11, 2023"
 prepTime: "10 min"
 cookingTime: "15 min"
 totalTime: "25 min"
-topic: "Pasta"
 originalLink: "https://thepeskyvegan.com/recipes/easy-cheesy-pasta-sauce/"
 scottRating: 5
 image: "../../images/recipe/VeganCheesyPastaSauceCashewAlfredo.png"

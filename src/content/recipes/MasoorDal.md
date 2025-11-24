@@ -5,7 +5,6 @@ prepTime: "10 min"
 cookTime: "35 min"
 totalTime: "45 min"
 servings: 4 to 6
-topic: "Main Course"
 originalLink: "https://cooking.nytimes.com/recipes/7517-masoor-dal-spiced-red-lentils"
 scottRating: 5
 image: "../../images/recipe/MasoorDal.png"

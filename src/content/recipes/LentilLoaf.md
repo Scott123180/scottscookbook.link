@@ -4,7 +4,7 @@ date: "Feb 11, 2022"
 prepTime: "35 min" 
 cookingTime: "45 min"
 totalTime: "80 min"
-topic: "Dinner"
+topic: "Main Dish"
 originalLink: "https://books.google.com/books/about/Taste_of_Home_Mediterranean_Made_Easy.html?id=kPKfDwAAQBAJ"
 scottRating: 5
 image: "../../images/recipe/LentilLoaf.png"

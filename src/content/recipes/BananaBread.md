@@ -6,7 +6,6 @@ cookTime: "1 hr"
 totalTime: "1 hr 15 min"
 yield: "1 (9x5-inch) loaf"
 servings: 12
-topic: "Bread"
 originalLink: "https://www.allrecipes.com/recipe/20144/banana-banana-bread/"
 scottRating: 4
 image: "../../images/recipe/BananaBread.png"

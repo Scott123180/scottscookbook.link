@@ -4,7 +4,6 @@ date: "May 28, 2021"
 prepTime: "15 min" 
 cookingTime: "30 min"
 totalTime: "45 min"
-topic: "Tacos"
 originalLink: "https://www.eatingwell.com/recipe/7891013/chipotle-tofu-tacos/"
 scottRating: 5
 image: "../../images/recipe/TofuTacos.png"
