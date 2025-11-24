@@ -4,7 +4,7 @@ date: "January 1, 2024"
 prepTime: "15 min"
 totalTime: "7 days 15 min"
 servings: 8
-topic: "Ferment"
+topic: "Fermentation"
 originalLink: "https://www.growforagecookferment.com/lacto-fermented-dilly-beans/"
 scottRating: 5
 image: "../../images/recipe/FermentedDillyBeans.png"

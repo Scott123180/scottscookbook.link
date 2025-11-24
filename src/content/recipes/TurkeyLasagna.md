@@ -4,7 +4,7 @@ date: "October 22, 2021"
 prepTime: "30 min" 
 cookingTime: "60 min"
 totalTime: "130 min"
-topic: "dinner"
+topic: "Main Dish"
 originalLink: "https://www.ambitiouskitchen.com/the-best-healthy-turkey-lasagna-youll-ever-eat/"
 scottRating: 4
 image: "../../images/recipe/TurkeyLasagna.png"

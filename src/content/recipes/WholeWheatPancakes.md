@@ -4,7 +4,6 @@ date: "May 28, 2021"
 prepTime: "10 min" 
 cookingTime: "20 min"
 totalTime: "30 min"
-topic: "Breakfast"
 originalLink: "https://cookieandkate.com/whole-wheat-pancakes-recipe/"
 scottRating: 5
 image: "../../images/recipe/WholeWheatPancakes.png"

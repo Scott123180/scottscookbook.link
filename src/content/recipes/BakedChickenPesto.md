@@ -4,7 +4,7 @@ date: "Nov 2, 2025"
 prepTime: "5 min"
 cookingTime: "25 min"
 totalTime: "30 min"
-topic: "Main"
+topic: "Main Dish"
 scottRating: 5
 image: "../../images/recipe/BakedChickenPesto.png"
 ingredients: [

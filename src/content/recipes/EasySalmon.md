@@ -4,7 +4,6 @@ date: "Jan 16, 2022"
 prepTime: "5 min" 
 cookingTime: "15 min"
 totalTime: "20 min"
-topic: "Seafood"
 originalLink: 
 scottRating: 4
 image: "../../images/recipe/EasySalmon.png"

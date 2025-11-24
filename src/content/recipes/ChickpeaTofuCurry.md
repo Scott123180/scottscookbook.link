@@ -4,7 +4,7 @@ date: "January 1, 2024"
 prepTime: "10 min"
 cookTime: "25 min"
 totalTime: "35 min"
-topic: "Dinner"
+topic: "Main Dish"
 originalLink: "https://veganbell.com/chickpea-tofu-curry-vegan-recipe/"
 scottRating: 4
 image: "../../images/recipe/ChickpeaTofuCurry.png"

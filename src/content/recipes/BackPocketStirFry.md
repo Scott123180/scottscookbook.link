@@ -4,7 +4,6 @@ date: "October 24, 2021"
 prepTime: "15 min" 
 cookingTime: "25 min"
 totalTime: "40 min"
-topic: "Stir fry"
 originalLink: "https://pinchofyum.com/back-pocket-stir-fry#tasty-recipes-39401-jump-target"
 scottRating: 5
 image: "../../images/recipe/BackPocketStirFry.png"

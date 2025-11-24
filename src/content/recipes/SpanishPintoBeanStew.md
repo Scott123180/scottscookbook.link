@@ -5,7 +5,6 @@ prepTime: "10 min"
 cookTime: "35 min"
 totalTime: "45 min"
 servings: 2
-topic: "Main Course"
 originalLink: "https://spainonafork.com/spanish-pinto-bean-stew-recipe/"
 scottRating: 5
 image: "../../images/recipe/SpanishPintoBeanStew.png"

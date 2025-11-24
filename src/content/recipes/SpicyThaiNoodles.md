@@ -4,7 +4,6 @@ date: "December 31, 2023"
 prepTime: "5 min"
 cookingTime: "10 min"
 totalTime: "15 min"
-topic: "Lunch, Main"
 originalLink: "https://www.sprinklesandsprouts.com/spicy-thai-noodles-2/"
 scottRating: 5
 image: "../../images/recipe/SpicyThaiNoodles.png"

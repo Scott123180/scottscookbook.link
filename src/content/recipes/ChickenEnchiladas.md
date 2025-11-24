@@ -4,7 +4,6 @@ date: "June 29, 2021"
 prepTime: "50 min" 
 cookingTime: "25 min"
 totalTime: "75 min"
-topic: "Mexican"
 originalLink: "https://cooking.nytimes.com/recipes/10447-chicken-enchiladas"
 scottRating: 5
 image: "../../images/recipe/ChickenEnchiladas.png"
