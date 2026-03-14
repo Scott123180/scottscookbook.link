@@ -5,7 +5,7 @@ prepTime: "20 min"
 cookTime: "60 min"
 totalTime: "80 min"
 topic: "Soup"
-originalLink: "https://www.justonecookbook.com/homemade-chashu-miso-ramen/"
+originalLink: "https://lifebymikeg.com/blogs/all/make-restaurant-ramen-noodles-with-7-common-ingredients"
 scottRating: 5
 image: "../../images/recipe/ChickenMisoRamen.png"
 ingredients: [
