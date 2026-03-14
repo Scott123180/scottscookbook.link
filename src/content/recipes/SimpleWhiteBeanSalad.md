@@ -43,9 +43,9 @@ ingredients: [
   },
   {
     name: "Small white beans",
-    preparation: "drained and rinsed",
+    preparation: ", drained and rinsed",
     amount: 30,
-    unit: oz (two 15-oz cans),
+    unit: oz,
     section: "Main"
   },
   {
@@ -59,7 +59,7 @@ ingredients: [
     name: "Zucchini",
     preparation: ", finely diced",
     amount: 1,
-    unit: small (yields 2 cups),
+    unit: small,
     section: "Main"
   },
   {
@@ -73,7 +73,7 @@ ingredients: [
     name: "Scallions",
     preparation: ", thinly sliced",
     amount: 1,
-    unit: cup (3 to 4 scallions),
+    unit: cup,
     section: "Main"
   },
   {
@@ -87,7 +87,7 @@ ingredients: [
     name: "Fresh basil or parsley",
     preparation: ", finely chopped",
     amount: 0.5,
-    unit: to 1 cup,
+    unit: cup,
     section: "Main"
   }
 ]

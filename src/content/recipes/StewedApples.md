@@ -2,7 +2,7 @@
 title: "Stewed Apples"
 date: "January 1, 2024"
 prepTime: "20 min"
-cookTime: "2-4 hours"
+cookingTime: "2-4 hours"
 totalTime: "2-4 hours"
 topic: "Dessert"
 originalLink: "https://www.allrecipes.com/recipe/268029/chef-johns-apple-butter/"
