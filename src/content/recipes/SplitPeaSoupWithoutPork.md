@@ -7,6 +7,7 @@ totalTime: "2 hrs 15 min"
 topic: "Soup"
 originalLink: "https://www.allrecipes.com/recipe/13321/split-pea-soup-without-pork/"
 scottRating: 5
+image: "../../images/recipe/SplitPeaSoup.png"
 ingredients: [
   {
     name: Dried Split Peas,
