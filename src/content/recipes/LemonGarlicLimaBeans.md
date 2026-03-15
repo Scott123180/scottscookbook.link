@@ -25,7 +25,7 @@ unit: count
 section: "Main",
 name: "extra virgin olive oil",
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Main",
@@ -52,32 +52,32 @@ unit: cup
 section: "Main",
 name: "lemon juice",
 amount: 2,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Main",
 name: "fresh oregano",
 preparation: ", chopped",
 amount: 1,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Main",
 name: "grated lemon zest",
 amount: 2,
-unit: teaspoons
+unit: tsp
 },
 {
 section: "Main",
 name: "salt",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Main",
 name: "pepper",
 amount: 0.25,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Garnish",
@@ -93,5 +93,4 @@ directions: [
 "In a large skillet, heat 1 tablespoon of olive oil over medium heat. Add the chopped onion and cook, stirring, until tender, about 3-4 minutes. Add the sliced garlic and cook for an additional minute.",
 "To the skillet, add the chopped parsley, lemon juice, chopped oregano, grated lemon zest, salt, and pepper. Stir in the drained beans and the remaining 2 tablespoons of olive oil. Toss everything together to combine.",
 "Serve the lima beans sprinkled with additional chopped fresh parsley."
-]
----
+]---

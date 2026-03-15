@@ -86,7 +86,6 @@ const RecipeMetaChips: React.FC<Props> = ({
       direction="row"
       spacing={1}
       flexWrap="wrap"
-      useFlexGap
       sx={{
         gap: 1, // adds both row and column spacing (unlike spacing={1}, which only affects one axis)
         rowGap: 1.5, // a bit extra vertical breathing room when wrapping

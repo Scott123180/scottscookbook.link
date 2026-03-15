@@ -18,7 +18,7 @@ ingredients: [
   },
   {
     name: Broth,
-    preparation: "(chicken or vegetable)", 
+    preparation: ", (chicken or vegetable)"
     amount: 14.5,
     unit: oz,
     section: Loaf
@@ -74,14 +74,14 @@ ingredients: [
   {
     name: Egg,
     amount: 1,
-    unit: Large,
+    unit: large,
     section: Loaf
   },
   {
     name: Egg ,
-    preparation: " White", 
+    preparation: ", White"
     amount: 1,
-    unit: Large,
+    unit: large,
     section: Loaf
   },
   {
@@ -110,7 +110,7 @@ ingredients: [
   },
   {
     name: Water,
-    preparation: " (if using tomato paste)", 
+    preparation: ", (if using tomato paste)"
     amount: 2,
     unit: tbsp,
     section: Glaze
@@ -126,7 +126,6 @@ directions: [
   "Add in the cheese, rice, egg, egg white, seasonings, and lentils.",
   "Put it in a pan and mix glaze and spread atop. Bake for about 50 minutes or until the internal firm and internal temperature is around 170."
 ]
-
 ---
 
 Just like regular meatloaf, don't be afraid to add extra ingredients you have lying around. Just make sure to add extra egg to hold everything together.

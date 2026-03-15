@@ -6,7 +6,7 @@ cookingTime: "10 min"
 totalTime: "20 min"
 topic: "Side Dish"
 originalLink: "https://tastesbetterfromscratch.com/turkey-gravy/"
-scottRating: 
+scottRating: 0
 image: "../../images/recipe/TurkeyGravy.png"
 ingredients: [
   {
@@ -18,13 +18,13 @@ ingredients: [
   {
     name: "All-purpose flour",
     amount: 0.5,
-    unit: "cup",
+    unit: cup,
     section: "Roux"
   },
   {
     name: "Low-sodium chicken broth (or turkey or vegetable broth)",
     amount: 4,
-    unit: "cups",
+    unit: cups,
     section: "Liquid"
   },
   {
@@ -43,7 +43,7 @@ ingredients: [
     name: "Turkey giblets and neck",
     preparation: ", optional",
     amount: 1,
-    unit: "set",
+    unit: set,
     section: "Optional Giblet Addition"
   }
 ]
@@ -58,8 +58,7 @@ directions: [
   "Simmer for 5–8 minutes, whisking, until thickened. Stir in diced giblets if using.",
   "Adjust consistency: add giblet broth or drippings if too thick, or simmer longer if too thin. For extra thickening, mix 1 tbsp cornstarch with 1 tbsp water and whisk into the gravy.",
   "Season with salt and pepper to taste, then serve warm over turkey, mashed potatoes, or stuffing."
-]
----
+]---
 - **Make-Ahead Tip:** Prepare the gravy up to 2 days in advance. Reheat gently with a few tablespoons of broth or water to loosen as needed.  
 - **Storage:** Store leftover gravy covered in the refrigerator for up to 3 days.  
 - **Flavor Note:** Skipping the liver prevents a strong metallic flavor.  

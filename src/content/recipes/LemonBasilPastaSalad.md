@@ -2,7 +2,7 @@
 title: "Lemon Basil Pasta Salad"
 date: "January 1, 2024"
 prepTime: "5 min"
-cookTime: "12 min"
+cookingTime: "12 min"
 chillTime: "2 hrs"
 totalTime: "2 hrs 17 min"
 topic: "Side Dish"
@@ -13,7 +13,7 @@ ingredients: [
 {
 section: "Salad",
 name: "pasta",
-preparation: "(such as campanelle, bow tie, cavatappi, fusilli, or penne)",
+preparation: ", (such as campanelle, bow tie, cavatappi, fusilli, or penne)"
 amount: 1,
 unit: pound
 },
@@ -26,16 +26,16 @@ unit: cup
 {
 section: "Dressing",
 name: "olive oil",
-preparation: "(extra virgin preferred, or canola oil as a substitute)",
+preparation: ", (extra virgin preferred, or canola oil as a substitute)"
 amount: 0.25,
 unit: cup
 },
 {
 section: "Dressing",
 name: "lemon juice",
-preparation: "(freshly squeezed or 100% from produce section)",
+preparation: ", (freshly squeezed or 100% from produce section)"
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Salad",
@@ -47,7 +47,7 @@ unit: cracks
 {
 section: "Salad",
 name: "pine nuts",
-preparation: "(or substitute with walnuts or almonds)",
+preparation: ", (or substitute with walnuts or almonds)"
 amount: 0.33,
 unit: cup
 },
@@ -70,8 +70,7 @@ directions: [
 "In a jar, combine white wine vinegar, olive oil, and lemon juice. Shake well to mix.",
 "In a large bowl, toss the pasta with the dressing and pine nuts. Add fresh cracked pepper, basil, and parmesan shavings.",
 "Refrigerate the salad for at least 2 hours before serving."
-]
----
+]---
 Notes:
 - Pasta: Choose your favorite type, such as campanelle, bow tie, cavatappi, fusilli, or penne.
 - Lemon Juice: Opt for freshly squeezed lemon juice or 100% lemon juice from the produce section.

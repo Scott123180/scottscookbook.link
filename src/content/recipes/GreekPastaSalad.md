@@ -6,6 +6,7 @@ cookingTime: "10 min"
 totalTime: "25 min"
 originalLink: "https://www.allrecipes.com/recipe/176650/greek-pasta-salad/"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/GreekPastaSalad.png"
 ingredients: [
   {
@@ -32,7 +33,7 @@ ingredients: [
   {
     name: Dried Oregano,
     amount: 6,
-    unit: teaspoons
+    unit: tsp
   },
   {
     name: Extra Virgin Olive Oil,
@@ -96,7 +97,6 @@ directions: [
   "Cook pasta to al dente instructions, drain and rinse with cold water until the pasta is no longer hot",
   "Mix all the ingredients in the very large bowl"
 ]
-
 ---
 
 I modified the recipe a bit from the original. The original uses ridiculous proportions. This does a really good job of immitating the BJ's mediterannean salad.

@@ -2,7 +2,7 @@
 title: "Pinto Bean Salad"
 date: "January 1, 2024"
 prepTime: "15 min"
-cookTime: "35 min"
+cookingTime: "35 min"
 totalTime: "50 min"
 topic: "Salad"
 originalLink: "https://chefalli.com/pinto-bean-salad-with-feta-and-walnuts/#recipe"
@@ -46,7 +46,7 @@ unit: cup
 {
 section: "Salad",
 name: "feta crumbles",
-preparation: "(may substitute goat cheese crumbles)",
+preparation: ", (may substitute goat cheese crumbles)"
 amount: 0.33,
 unit: cup
 },

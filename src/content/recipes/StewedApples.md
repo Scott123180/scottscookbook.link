@@ -12,7 +12,7 @@ ingredients: [
   {
     name: "Apples",
     amount: 5,
-    unit: "lb",
+    unit: lb,
     section: "Main Ingredients"
   },
   {
@@ -45,7 +45,6 @@ directions: [
 
   "Once cooked, serve warm or let cool, then transfer to jars or containers and refrigerate or freeze."
 ]
-
 ---
 NOTES
 - For tips and tricks cooking the apples, see my apple butter recipe

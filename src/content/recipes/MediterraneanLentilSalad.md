@@ -2,7 +2,7 @@
 title: "Mediterranean Lentil Salad"
 date: "September 19, 2023"
 prepTime: "15 min"
-cookTime: "20 min"
+cookingTime: "20 min"
 totalTime: "35 min"
 topic: "Salad"
 originalLink: "https://www.eatingwell.com/recipe/7899362/lentil-salad-with-feta-tomatoes-cucumbers-olives/"
@@ -12,7 +12,7 @@ ingredients: [
 {
 section: "Salad",
 name: "cooked brown lentils",
-preparation: "see Tip for cooking instructions",
+preparation: ", see Tip for cooking instructions"
 amount: 3,
 unit: cups
 },
@@ -54,37 +54,37 @@ unit: cup
 section: "Salad",
 name: "salt",
 amount: 0.25,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Salad",
 name: "ground pepper",
 amount: 0.25,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Dressing",
 name: "red-wine vinegar",
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Dressing",
 name: "finely chopped shallot",
 amount: 1,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Dressing",
 name: "minced garlic",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Dressing",
 name: "honey",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Dressing",
@@ -97,8 +97,7 @@ directions: [
 "In a large bowl, combine the cooked brown lentils, halved cherry tomatoes, chopped cucumber, chopped Kalamata olives, thinly sliced red onion, crumbled feta cheese, and 1/4 teaspoon each of salt and pepper. Set aside.",
 "In a small bowl, whisk together the red-wine vinegar, finely chopped shallot, minced garlic, honey, and the remaining 1/4 teaspoon each of salt and pepper. Gradually whisk in the olive oil until the dressing is well combined.",
 "Gently stir the dressing into the lentil mixture. Serve immediately or cover and refrigerate."
-]
----
+]---
 Tip for Cooking Lentils:
 
 Rinse 1 cup of dry brown lentils. Place them in a medium saucepan with 4 cups of water. Bring to a boil over high heat, stirring occasionally. Reduce heat to medium-low and simmer until tender, about 20 to 25 minutes. Drain well and spread on a rimmed baking sheet. Refrigerate until cool, about 25 minutes.

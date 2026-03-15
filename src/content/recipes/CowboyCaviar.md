@@ -4,7 +4,7 @@ date: "June 8, 2021"
 prepTime: "15 min" 
 cookingTime: "0 min"
 totalTime: "15 min"
-topic: "snack"
+topic: "Snack"
 originalLink: "https://cooking.nytimes.com/recipes/1020433-cowboy-caviar"
 scottRating: 5
 image: "../../images/recipe/CowboyCaviar.png"
@@ -93,5 +93,4 @@ directions: [
   "Mix together and cover in fridge for 2 hours before serving. Or don't wait if you are really hungry",
   "Serve with tortilla chips and sprinkle with scallions"
 ]
-
 ---

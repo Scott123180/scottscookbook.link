@@ -2,7 +2,7 @@
 title: "Braised Lentils"
 date: "September 7, 2024"
 prepTime: "10 min"
-cookTime: "45 min"
+cookingTime: "45 min"
 totalTime: "55 min"
 topic: "Side Dish"
 originalLink: "https://www.allrecipes.com/recipe/228374/braised-black-lentils/"
@@ -101,6 +101,5 @@ directions: [
   "Remove from heat, discard the thyme stems, and stir in the chopped parsley and Champagne vinegar.",
 
   "Adjust seasoning with additional salt and pepper if needed before serving."
-]
----
+]---
 I've adjusted this recipe to fit into a 6 qt pot comfortably, as well as to accomodate exactly 2 qts of stock from the store. Adjust higher or lower as needed.

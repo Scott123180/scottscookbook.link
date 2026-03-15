@@ -18,7 +18,7 @@ ingredients: [
   {
     name: "Zucchini",
     preparation: ", cut into large chunks",
-    amount: .75,
+    amount: 0.75,
     unit: lb
   },
   {
@@ -58,7 +58,7 @@ ingredients: [
   },
   {
     name: olive oil,
-    amount: .25,
+    amount: 0.25,
     unit: cup
   },
   {
@@ -69,11 +69,11 @@ ingredients: [
   {
     name: "fresh thyme or rosemary",
     amount: 1,
-    unit: tablespoon
+    unit: tbsp
   },
   {
     name: "chopped fresh basil or parsley",
-    preparation: " (if not using fresh thyme or rosemary), chopped",
+    preparation: ", (if not using fresh thyme or rosemary), chopped"
     amount: 0.5,
     unit: cup
   },
@@ -83,5 +83,4 @@ directions: [
   "Roast until vegetables are lightly browned and tender and enough water has been release from the tomatoes in order to create a sauce (30 to 40 minutes)",
   "Add chickpeas and return to oven for 5 to 10 minutes to bring them to heat. Serve it hot, warm or room temperature. You can also play around with the seasonings."
 ]
-
 ---

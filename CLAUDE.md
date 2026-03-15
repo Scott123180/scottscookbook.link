@@ -9,9 +9,25 @@ npm run develop    # Start dev server at http://localhost:8000 (GraphQL IDE at /
 npm run build      # Production build
 npm run serve      # Serve production build locally
 npm run format     # Prettier format all JS/JSX/JSON/MD files
+npm run test:e2e   # Run Playwright E2E tests (auto-starts gatsby develop if not already running)
 ```
 
-There are no tests configured.
+## Testing
+
+After making any code changes, run the Playwright E2E test suite:
+
+```bash
+npm run test:e2e
+```
+
+The test runner will automatically start the dev server if one isn't already running. Wait for it to complete and verify all tests pass before considering a task done.
+
+When adding a new feature or modifying existing behavior, update the relevant spec file in `e2e/` to cover the change. When adding entirely new pages or components, create a new spec file in `e2e/`. Tests live alongside the features they cover:
+
+- `e2e/home.spec.ts` — home page, RecipeList, search, filter, sort
+- `e2e/recipe.spec.ts` — recipe detail page, ingredients, cooking mode, shopping mode
+- `e2e/tools.spec.ts` — Bean Converter
+- `e2e/navigation.spec.ts` — nav bar, static pages, 404, mobile layout
 
 ## Architecture
 
@@ -26,34 +42,7 @@ There are no tests configured.
 
 ### Recipe Markdown Format
 
-Recipes in `src/content/recipes/` use YAML frontmatter with these key fields:
-- `title`, `date`, `prepTime`, `cookingTime`, `totalTime`, `topic`, `scottRating`
-- `image`: relative path to `src/images/recipe/`
-- `originalLink`: source URL
-- `ingredients`: array of objects with `name`, `amount`, `unit`, `preparation` (optional), `section` (optional)
-- `directions`: array of strings (ordered steps)
-
-Units in ingredients are unquoted YAML scalars (e.g., `unit: cups`, `unit: count`, `unit: tbsp`).
-
-### Adapting a Recipe to This Format
-
-**Filename:** PascalCase, no spaces (e.g., `SplitPeaSoupWithoutPork.md`).
-
-**`cookingTime`:** Note the field is `cookingTime`, not `cookTime`.
-
-**`scottRating`:** Use `0` when the recipe hasn't been rated yet.
-
-**`topic`:** Use one of the established values: `"Soup"`, `"Salad"`, `"Main Dish"`, `"Side Dish"`, `"One-Pot"`, `"Sauce"`, `"Snack"`, `"Dessert"`, `"Fermentation"`. Leave as `""` if none fit.
-
-**Ingredients:**
-- `name` can be unquoted unless it contains special characters; quote it when it does
-- `preparation` holds prep notes that follow the ingredient name (e.g., `preparation: ", diced"`) — include the leading comma and space
-- `amount` is a number; use decimals for fractions (e.g., `0.5`, `0.25`)
-- For "to taste" items, use `amount: 1, unit: to taste`
-- Combine equivalent quantities when a recipe lists the same ingredient multiple times (e.g., two 14.5 oz cans → `amount: 29, unit: oz`)
-- `unit` is an unquoted scalar; common values: `cups`, `tbsp`, `tsp`, `oz`, `lb`, `count`, `medium`, `large`, `cloves`, `pinch`, `to taste`, `stalk`
-
-**Directions:** Split into discrete steps. Each step is a quoted string in the array.
+See [`reference/recipe-spec.md`](reference/recipe-spec.md) for the full field-by-field specification, allowed `topic` values, ingredient object schema, common `unit` values, a minimal example, and common mistakes to avoid.
 
 ### Key Source Files
 

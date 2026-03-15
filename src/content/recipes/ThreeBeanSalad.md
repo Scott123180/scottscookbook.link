@@ -14,21 +14,21 @@ ingredients: [
     name: "cannellini beans",
     preparation: ", rinsed and drained",
     amount: 15,
-    unit: ounces
+    unit: oz
     },
     {
     section: "Salad",
     name: "kidney beans",
     preparation: ", rinsed and drained",
     amount: 15,
-    unit: ounces
+    unit: oz
     },
     {
     section: "Salad",
     name: "garbanzo beans",
     preparation: ", rinsed and drained",
     amount: 15,
-    unit: ounces
+    unit: oz
     },
     {
     section: "Salad",
@@ -86,5 +86,4 @@ ingredients: [
 directions: [
 "In a large salad bowl, mix together all the ingredients",
 "Serve immediately or refrigerate to allow flavors to meld together."
-]
----
+]---

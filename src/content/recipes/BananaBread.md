@@ -2,12 +2,13 @@
 title: "Banana Bread"
 date: "November 12, 2024"
 prepTime: "15 min"
-cookTime: "1 hr"
+cookingTime: "1 hr"
 totalTime: "1 hr 15 min"
 yield: "1 (9x5-inch) loaf"
 servings: 12
 originalLink: "https://www.allrecipes.com/recipe/20144/banana-banana-bread/"
 scottRating: 4
+topic: ""
 image: "../../images/recipe/BananaBread.png"
 ingredients: [
   {
@@ -70,7 +71,6 @@ directions: [
   "Bake in the preheated oven for about 60 minutes, or until a toothpick inserted into the center of the loaf comes out clean.",
 
   "Allow the bread to cool in the pan for 10 minutes before transferring it to a wire rack to cool completely."
-]
----
+]---
 NOTES
 - The original recipe called for more sugar - 3/4 cup, but I've reduced it since I've found it doesn't need it

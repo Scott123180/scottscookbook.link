@@ -2,11 +2,12 @@
 title: "Masoor Dal (Spiced Red Lentils)"
 date: "January 1, 2024"
 prepTime: "10 min"
-cookTime: "35 min"
+cookingTime: "35 min"
 totalTime: "45 min"
 servings: 4 to 6
 originalLink: "https://cooking.nytimes.com/recipes/7517-masoor-dal-spiced-red-lentils"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/MasoorDal.png"
 ingredients: [
   {
@@ -131,5 +132,4 @@ directions: [
 
   "To serve, transfer the dal into a serving bowl and sprinkle with chopped cilantro. If using, top with thin shavings of fresh coconut. Serve hot."
 ]
-
 ---

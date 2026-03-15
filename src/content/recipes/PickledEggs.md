@@ -2,7 +2,7 @@
 title: "Pickled Eggs"
 date: "January 1, 2024"
 prepTime: "10 min"
-cookTime: "5 min"
+cookingTime: "5 min"
 chillTime: "3 days"
 totalTime: "3 days 15 min"
 topic: "Snack"
@@ -20,14 +20,14 @@ unit: count
 {
 section: "Main",
 name: "fresh dill",
-preparation: "sprigs",
+preparation: ", sprigs"
 amount: 2,
 unit: count
 },
 {
 section: "Main",
 name: "garlic",
-preparation: "clove",
+preparation: ", clove"
 amount: 1,
 unit: count
 },
@@ -60,7 +60,7 @@ unit: cup
 section: "Brine",
 name: "coarse salt",
 amount: 1,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Brine",
@@ -72,7 +72,7 @@ unit: count
 section: "Brine",
 name: "pickling spices",
 amount: 4,
-unit: teaspoons
+unit: tsp
 },
 ]
 directions: [
@@ -82,8 +82,7 @@ directions: [
 "Pour the pickling liquid over the eggs in the jar.",
 "Seal the jar and refrigerate for at least 3-4 days before eating. For best results, wait 1 week.",
 "Enjoy the pickled eggs and use the onions in salads or sandwiches."
-]
----
+]---
 Notes:
 - Boiling your eggs is difficult, steam them instead! See the "hard cooked eggs" recipe on the website.
 - With a 0.5 gallon mason jar, you can put 14 eggs in it it, no problem. Can fit more in it, you just have to reduce the amount of brine you use.

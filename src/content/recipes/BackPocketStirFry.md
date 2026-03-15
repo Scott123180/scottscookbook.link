@@ -6,6 +6,7 @@ cookingTime: "25 min"
 totalTime: "40 min"
 originalLink: "https://pinchofyum.com/back-pocket-stir-fry#tasty-recipes-39401-jump-target"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/BackPocketStirFry.png"
 ingredients: [
   {
@@ -28,7 +29,7 @@ ingredients: [
   },
   {
     name: Chopped Stir Fry Vegetables,
-    preparation: " (easiest is frozen stir fry mix)",
+    preparation: ", (easiest is frozen stir fry mix)"
     amount: 4,
     unit: cups,
     section: Stir Fry
@@ -49,7 +50,7 @@ ingredients: [
   {
     name: Cilantro,
     amount: 1,
-    unit: Sprig,
+    unit: sprig,
     section: Garnish 
   },
   {
@@ -73,7 +74,7 @@ ingredients: [
   {
     name: Water,
     amount: 0.25,
-    unit: Cups,
+    unit: cups,
     section: Sauce
   },
   {
@@ -99,7 +100,6 @@ directions: [
   "Drain the noodles and add to the pan with the veggies. Mix and add remaining sauce. Cook until absorbed. Add back tofu.",
   "Serve with the peanuts, lime, and cilantro garnish and enjoy"
 ]
-
 ---
 
 If you like it spicier, add more chili paste.

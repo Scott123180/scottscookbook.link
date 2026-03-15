@@ -68,31 +68,31 @@ unit: count
 section: "Dressing",
 name: "olive oil",
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Dressing",
 name: "lemon juice",
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Dressing",
 name: "white vinegar",
 amount: 1.5,
-unit: teaspoons
+unit: tsp
 },
 {
 section: "Dressing",
 name: "salt",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Dressing",
 name: "pepper",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 ]
 directions: [
@@ -102,8 +102,7 @@ directions: [
 "Prepare the dressing by combining olive oil, lemon juice, white vinegar, salt, and pepper in a small dish. Stir well to combine.",
 "In a large bowl, combine the cooled quinoa with the roasted tomatoes, diced vegetables, and chopped parsley. Pour the dressing over the salad and toss to combine.",
 "If using avocado, add it just before serving to maintain freshness. Store the salad in an airtight container in the refrigerator if not serving immediately."
-]
----
+]---
 Notes:
 - The choice of vegetables in this salad is flexible. Feel free to add any of your favorite veggies.
 - For best results, add avocado right before serving. If not consuming the entire salad at once, store the avocado separately and add when ready to serve.

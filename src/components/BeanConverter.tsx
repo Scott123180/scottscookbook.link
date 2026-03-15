@@ -376,7 +376,7 @@ export default function BeanConverter() {
               ) : (
                 <Stack spacing={2}>
                   {/* Quick highlight chips */}
-                  <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                  <Stack direction="row" spacing={1} flexWrap="wrap">
                     <Chip
                       label={`Cooked: ${result!.cooked.g} g (${
                         result!.cooked.cups

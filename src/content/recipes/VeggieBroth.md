@@ -2,16 +2,17 @@
 title: "Vegetable Broth"
 date: "November 4, 2024"
 prepTime: "10 min"
-cookTime: "1 hr"
+cookingTime: "1 hr"
 totalTime: "1 hr 10 min"
 yield: "10 cups"
 originalLink: "https://minimalistbaker.com/easy-1-pot-vegetable-broth/"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/VeggieBroth.png"
 ingredients: [
   {
     name: "Avocado or Coconut Oil",
-    preparation: "(or sub water if avoiding oil)",
+    preparation: ", (or sub water if avoiding oil)"
     amount: 1,
     unit: tbsp,
     section: "Main"
@@ -89,7 +90,6 @@ directions: [
 
   "Allow the broth to cool completely before sealing. Store in the refrigerator for up to 1 week or deep freeze indefinitely"
 ]
-
 ---
 - Lots of different things can be added to this broth to add flavor and depth. Adjust as desired!
 - You can cook this for longer! Try simmering for a few hours and add water back as needed to build up flavor. You also don't have to worry about chopping the veggies smaller if simmering for longer as it'll cook thoroughly. 

@@ -6,12 +6,13 @@ cookingTime: "10 min"
 totalTime: "15 min"
 originalLink: "https://www.sprinklesandsprouts.com/spicy-thai-noodles-2/"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/SpicyThaiNoodles.png"
 ingredients: [
 {
 section: "Main",
 name: "whole wheat linguine",
-preparation: "see note 1",
+preparation: ", see note 1"
 amount: 0.5,
 unit: lb
 },
@@ -19,43 +20,43 @@ unit: lb
 section: "Main",
 name: "salt",
 amount: 1,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Main",
 name: "baking soda",
 amount: 2,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Main",
 name: "red pepper flakes",
 amount: 0.5,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Main",
 name: "toasted sesame oil",
 amount: 6,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Main",
 name: "soy sauce",
 amount: 3,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Main",
 name: "honey",
 amount: 3,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Main",
 name: "fish sauce",
 amount: 2,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Main",
@@ -73,7 +74,7 @@ unit: cup
 section: "Garnish",
 name: "sesame seeds",
 amount: 2,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Garnish",
@@ -97,8 +98,7 @@ directions: [
 "Drain the pasta and toss it in the skillet with the sauce, stirring for 1-2 minutes until well coated and fully cooked.",
 "Add the coleslaw mix to the skillet and toss with the pasta.",
 "Serve the noodles garnished with roasted peanuts, sesame seeds, lime wedges, and cilantro or Thai basil. Can be served hot or as a cold salad."
-]
---- 
+]--- 
 Notes:
 - Any long pasta like spaghetti, fettuccine, or angel hair can be used in this recipe.
 - Choose any coleslaw mix you prefer, or shred your own vegetables.

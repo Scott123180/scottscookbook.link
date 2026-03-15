@@ -2,7 +2,7 @@
 title: "Chickpea Tofu Curry"
 date: "January 1, 2024"
 prepTime: "10 min"
-cookTime: "25 min"
+cookingTime: "25 min"
 totalTime: "35 min"
 topic: "Main Dish"
 originalLink: "https://veganbell.com/chickpea-tofu-curry-vegan-recipe/"
@@ -13,37 +13,37 @@ ingredients: [
 section: "Tofu (Stir-Fry)",
 name: "tofu",
 amount: 9,
-unit: ounces
+unit: oz
 },
 {
 section: "Tofu (Stir-Fry)",
 name: "rice flour",
 amount: 1.5,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Tofu (Stir-Fry)",
 name: "salt",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Tofu (Stir-Fry)",
 name: "pepper",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Tofu (Stir-Fry)",
 name: "olive oil",
 amount: 1,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Masala (Sauce Mixture)",
 name: "olive oil",
 amount: 1,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Masala (Sauce Mixture)",
@@ -83,19 +83,19 @@ unit: cup
 section: "Masala (Sauce Mixture)",
 name: "turmeric powder",
 amount: 0.25,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Masala (Sauce Mixture)",
 name: "cumin powder",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Masala (Sauce Mixture)",
 name: "coriander powder",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Masala (Sauce Mixture)",
@@ -136,5 +136,4 @@ directions: [
 "Add cooked chickpeas and water. Stir, cover with a lid, and cook for 5 minutes over low-medium heat.",
 "Open the lid, add the fried tofu, coconut cream, and freshly chopped cilantro. Mix gently.",
 "Your chickpea tofu curry is now ready! Serve over rice or with flatbreads."
-]
----
+]---

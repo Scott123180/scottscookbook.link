@@ -2,7 +2,7 @@
 title: "Classic Chicken Salad"
 date: "December 31, 2023"
 prepTime: "15 min"
-cookTime: "0 min"
+cookingTime: "0 min"
 totalTime: "15 min"
 topic: "Salad"
 originalLink: "https://www.spendwithpennies.com/classic-chicken-salad-recipe/"
@@ -40,13 +40,13 @@ unit: count
 section: "Salad",
 name: "dijon mustard",
 amount: 1,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Salad",
 name: "seasoned salt",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Salad",
@@ -59,12 +59,11 @@ section: "Salad",
 name: "fresh dill",
 preparation: ", optional",
 amount: 1,
-unit: teaspoon
+unit: tsp
 },
 ]
 directions: [
 "In a small bowl, combine the chopped cooked chicken, mayonnaise, chopped celery, diced green onion (or chives/red onion), dijon mustard, seasoned salt, and pepper. Mix well until all ingredients are evenly incorporated.",
 "Adjust the seasoning with additional salt and pepper according to your taste preferences.",
 "Serve the chicken salad as a filling for sandwiches, wraps, or over a bed of salad greens."
-]
----
+]---

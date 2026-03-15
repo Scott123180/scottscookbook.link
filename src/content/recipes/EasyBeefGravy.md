@@ -31,7 +31,7 @@ ingredients: [
   {
     name: Water,
     amount: 1.5,
-    unit: Cups,
+    unit: cups,
     section: Gravy
   },
   {
@@ -47,7 +47,6 @@ directions: [
   "Add flour in and mix, gradually add water in. Add more water if you don't want it as thick.",
   "Add in beef bouillon. And heat for a few minutes."
 ]
-
 ---
 
 Do not add water directly to hot oil, Add the flour first! You don't want a fire or to get splattered by oil.

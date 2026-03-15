@@ -38,30 +38,30 @@ section: "Soup",
 name: "ginger",
 preparation: ", grated",
 amount: 1,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Soup",
 name: "fish sauce",
 amount: 1,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Soup",
 name: "brown sugar",
 amount: 2,
-unit: teaspoons
+unit: tsp
 },
 {
 section: "Soup",
 name: "red curry paste",
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Soup",
 name: "coconut milk",
-preparation: "(400 ml can)",
+preparation: ", (400 ml can)"
 amount: 1,
 unit: can
 },
@@ -70,14 +70,14 @@ section: "Soup",
 name: "lime juice",
 preparation: ", freshly squeezed",
 amount: 1,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Soup",
 name: "ground black pepper",
 preparation: ", optional",
 amount: 1,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Soup",
@@ -112,8 +112,7 @@ directions: [
 "Stir in the vermicelli rice noodles and cook until they are tender, about 3 minutes. Remove the pot from heat.",
 "To assemble the soup, first scoop out the noodles into a medium-sized soup bowl using a noodle strainer. Add bean sprouts, baby bok choy, and chopped cilantro. Pour the curry soup base into the bowl, including the cooked shrimp and mushrooms.",
 "Serve immediately, adding an additional tablespoon of lime juice if desired."
-]
----
+]---
 
 Notes:
 - Be cautious not to overcook the noodles as they can break apart and disintegrate. Add them to the pot at the very end of the cooking process.

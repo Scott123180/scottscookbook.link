@@ -6,6 +6,7 @@ cookingTime: "30 min"
 totalTime: "45 min"
 originalLink: "https://www.eatingwell.com/recipe/7891013/chipotle-tofu-tacos/"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/TofuTacos.png"
 ingredients: [
   {
@@ -16,7 +17,7 @@ ingredients: [
   },
   {
     name: Cornstarch,
-    amount: .25,
+    amount: 0.25,
     metric: 30g,
     unit: cup
   },
@@ -66,13 +67,13 @@ ingredients: [
   },
   {
     name: Light sour cream,
-    amount: .5,
+    amount: 0.5,
     metric: 120g,
     unit: cups
   },
   {
     name: Fresh Cilantro, 
-    amount: .25,
+    amount: 0.25,
     metric: 10g,
     unit: cups,
   },
@@ -96,5 +97,4 @@ directions: [
   "Toss cabbage, cilantro, and remaining lime juice in a medium bowl",
   "Serve in warmed tortillas"
 ]
-
 ---

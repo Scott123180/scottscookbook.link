@@ -6,6 +6,7 @@ cookingTime: "8 hours"
 totalTime: "8 hours 20 minutes"
 originalLink: "https://www.allrecipes.com/recipe/268029/chef-johns-apple-butter/"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/AppleButter.png"
 ingredients: [
   {
@@ -38,8 +39,7 @@ directions: [
   "Uncover, blend with an immersion blender until smooth consistency",  
   "Cover with a mesh screen, cook on low for 4-8 hours, until enough water evaporates and you reach desired thickness.",
   "Transfer to jars or similar containers and refrigerate or freeze. It will last for months in the fridge (the acidity of the apples and the high sugar to water ratio acts as a preservative)"
-]
----
+]---
 ## Tips
 ### Slow cooker & technique
 - Ceramic slow cookers should be used. Instant pot or other similar pressure cookers need lots of water to regulate the temperature. Because of this, you may find your apples don't cook well in the instant pot.

@@ -2,7 +2,7 @@
 title: "Restaurant-Style Miso Ramen"
 date: "March 11, 2025"
 prepTime: "20 min"
-cookTime: "60 min"
+cookingTime: "60 min"
 totalTime: "80 min"
 topic: "Soup"
 originalLink: "https://lifebymikeg.com/blogs/all/make-restaurant-ramen-noodles-with-7-common-ingredients"
@@ -78,5 +78,4 @@ directions: [
   "Slice scallion greens on a bias. Boil bok choy in the same water for 1½ minutes until just tender. Remove and set aside.",
   "Cook ramen noodles in the boiling water for 1–2 minutes until just tender.",
   "To assemble, ladle hot broth into bowls. Add noodles, sliced chicken, halved eggs, bok choy, scallions, and caramelized ginger. Serve immediately."
-]
----
+]---

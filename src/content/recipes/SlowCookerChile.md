@@ -2,7 +2,7 @@
 title: "Slow Cooker Chili"
 date: "October 26, 2024"
 prepTime: "15 min"
-cookTime: "4-6 hours (slow cooker)"
+cookingTime: "4-6 hours (slow cooker)"
 totalTime: "4 hours 15 min - 6 hours 15 min"
 yield: "6 to 8 servings"
 topic: "Main Dish"
@@ -190,5 +190,4 @@ directions: [
   "If the chili is too thick, add a bit of water to reach the desired consistency. Adjust seasoning with salt as needed.",
 
   "Serve the chili in bowls with optional toppings like hot sauce, grated Cheddar, scallions, sour cream, and crushed tortilla chips."
-]
----
+]---

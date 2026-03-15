@@ -2,7 +2,7 @@
 title: "White Bean, Rice, and Dill Soup"
 date: "January 24, 2023"
 prepTime: "10 min"
-cookTime: "35 min"
+cookingTime: "35 min"
 totalTime: "45 min"
 topic: "Soup"
 originalLink: "https://www.nytimes.com/2023/01/24/dining/white-bean-rice-dill-soup.html"
@@ -84,7 +84,7 @@ ingredients: [
   },
   {
     name: "Dill",
-    preparation: " (dried or fresh)",
+    preparation: ", (dried or fresh)"
     amount: 1,
     unit: tbsp,
     section: "Soup"
@@ -113,5 +113,4 @@ directions: [
   "Once boiling, cover completely, reduce heat to low, and simmer, stirring occasionally, for about 30 minutes, until the rice is very soft and the soup has thickened slightly.",
   "Taste and adjust seasoning as needed while simmering.",
   "Serve warm with lemon wedges on the side, if desired."
-]
----
+]---

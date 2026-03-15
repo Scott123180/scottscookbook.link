@@ -2,7 +2,7 @@
 title: "Asian Edamame Bean Salad"
 date: "March 9, 2024"
 prepTime: "60 min"
-cookTime: "10 min"
+cookingTime: "10 min"
 totalTime: "70 min"
 topic: "Salad"
 originalLink: "N/A"

@@ -6,6 +6,7 @@ cookingTime: "25 min"
 totalTime: "75 min"
 originalLink: "https://cooking.nytimes.com/recipes/10447-chicken-enchiladas"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/ChickenEnchiladas.png"
 ingredients: [
   {
@@ -49,7 +50,7 @@ ingredients: [
   },
   {
     name: queso anejo or cotija,
-    preparation: crumbled,
+    preparation: ", crumbled"
     amount: 8,
     unit: oz
   },
@@ -73,5 +74,4 @@ directions: [
   "Cover dish with aluminum foil and bake until heated through (roughly 15 minutes).",
   "Remove the foil and bake about 10 minutes longer, or until the queso anejo is melted. Dollop with crema and garnish with onion rings. Serve with aditional crema."
 ]
-
 ---
