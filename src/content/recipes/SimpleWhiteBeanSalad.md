@@ -43,9 +43,9 @@ ingredients: [
   },
   {
     name: "Small white beans",
-    preparation: "drained and rinsed",
+    preparation: ", drained and rinsed",
     amount: 30,
-    unit: oz (two 15-oz cans),
+    unit: oz,
     section: "Main"
   },
   {
@@ -59,7 +59,7 @@ ingredients: [
     name: "Zucchini",
     preparation: ", finely diced",
     amount: 1,
-    unit: small (yields 2 cups),
+    unit: small,
     section: "Main"
   },
   {
@@ -73,7 +73,7 @@ ingredients: [
     name: "Scallions",
     preparation: ", thinly sliced",
     amount: 1,
-    unit: cup (3 to 4 scallions),
+    unit: cup,
     section: "Main"
   },
   {
@@ -87,7 +87,7 @@ ingredients: [
     name: "Fresh basil or parsley",
     preparation: ", finely chopped",
     amount: 0.5,
-    unit: to 1 cup,
+    unit: cup,
     section: "Main"
   }
 ]
@@ -106,7 +106,6 @@ directions: [
 
   "Add the fresh herbs, give it one final toss, and serve immediately. Alternatively, pack into storage containers and refrigerate for up to 1 week."
 ]
-
 ---
 - Beans: Small white beans labeled as habichuelas blancas are ideal. They are smaller than Great Northern or Cannellini beans. Drain and rinse if using canned beans.
 - Cheese Option: If desired, add 1/2 to 1 cup of small-diced Manchego or other cheese, though the salad is equally delicious without it.

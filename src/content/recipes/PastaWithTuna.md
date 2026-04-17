@@ -23,7 +23,7 @@ ingredients: [
   },
   {
     name: Lemon,
-    preparation: " Zest", 
+    preparation: ", Zest",
     amount: 2,
     unit: tsp
   },
@@ -59,5 +59,4 @@ directions: [
   "Reserve one cup of water while draining.",
   "Add all incredients to pan and continue cooking for a few minutes until the pasta water thickens and forms a sauce. Make sure not to overcook whole wheat pasta!"
 ]
-
 ---

@@ -28,7 +28,7 @@ ingredients: [
   },
   {
     name: black pepper,
-    amount: .5,
+    amount: 0.5,
     unit: tsp
   },
   {
@@ -38,13 +38,13 @@ ingredients: [
   },
   {
     name: Lemon,
-    preparation: " Juice, squeezed from lemon",
+    preparation: ", Juice, squeezed from lemon",
     amount: 2,
     unit: tsp
   },
   {
     name: Lemon,
-    preparation: "Zest", 
+    preparation: ", Zest",
     amount: 1,
     unit: tsp
   },
@@ -52,5 +52,4 @@ ingredients: [
 directions: [
   "Put all the ingredients in a large salad bowl and toss. Wait 10 minutes before serving. Refrigerate leftovers"
 ]
-
 ---

@@ -34,10 +34,22 @@
     "ts-loader": "^9.4.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.0",
+    "@babel/preset-react": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "@playwright/test": "^1.58.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "@types/react-datepicker": "^4.8.0",
     "@types/react-dom": "^18.0.10",
+    "babel-jest": "^30.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
     "prettier": "^2.6.2",
     "typescript": "^4.9.4"
   },
@@ -51,7 +63,10 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "test": "jest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report"
   },
   "repository": {
     "type": "git",

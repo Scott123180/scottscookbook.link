@@ -2,7 +2,7 @@
 title: "Braised Lentils"
 date: "September 7, 2024"
 prepTime: "10 min"
-cookTime: "45 min"
+cookingTime: "45 min"
 totalTime: "55 min"
 topic: "Side Dish"
 originalLink: "https://www.allrecipes.com/recipe/228374/braised-black-lentils/"

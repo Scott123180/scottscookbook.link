@@ -6,6 +6,7 @@ cookingTime: "15 min"
 totalTime: "20 min"
 originalLink: 
 scottRating: 4
+topic: ""
 image: "../../images/recipe/EasySalmon.png"
 ingredients: [
   {
@@ -34,7 +35,6 @@ directions: [
   "Cover with italian seasoning. then divide the fake butter up and put into smaller scoops on the fish. It'll melt and coat it more evenly.",
   "Bake for 10-15 minutes on the top rack. Use a thermometer to measure until it reaches 145F"
 ]
-
 ---
 
 Healthy for you and highly convenient. Taste is good but not great, but this gets higher stars for convenience.

@@ -2,7 +2,7 @@
 title: "Instant Pot Quinoa"
 date: "November 26, 2024"
 prepTime: "4 min"
-cookTime: "21 min"
+cookingTime: "21 min"
 totalTime: "25 min"
 topic: "Side Dish"
 originalLink: "https://minimalistbaker.com/instant-pot-quinoa-fluffy-perfect-no-soaking/"
@@ -12,14 +12,14 @@ ingredients: [
   {
     name: "Quinoa",
     amount: 470,
-    unit: "grams",
+    unit: grams,
     section: "Main"
   },
   {
     name: "Vegetable Broth",
-    preparation: "(or water for a milder flavor)",
+    preparation: ", (or water for a milder flavor)",
     amount: 1,
-    unit: "quart",
+    unit: quart,
     section: "Main"
   }
 ]

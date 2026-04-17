@@ -24,13 +24,13 @@ ingredients: [
   {
     name: "red onion",
     preparation: ", diced",
-    amount: .5,
+    amount: 0.5,
     unit: cup
   },
   {
     name: cilantro,
     amount: 3,
-    unit: tablespoons
+    unit: tbsp
   },
   {
     name: "roma tomatoes",
@@ -56,5 +56,4 @@ directions: [
   "Stir in the rest of the ingredients.",
   "Serve immidietely or refrigerate for one hour to let flavors combine."
 ]
-
 ---

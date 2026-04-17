@@ -2,11 +2,12 @@
 title: "Spanish Pinto Bean Stew | Potaje de Alubias Pintas"
 date: "March 8, 2025"
 prepTime: "10 min"
-cookTime: "35 min"
+cookingTime: "35 min"
 totalTime: "45 min"
 servings: 2
 originalLink: "https://spainonafork.com/spanish-pinto-bean-stew-recipe/"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/SpanishPintoBeanStew.png"
 ingredients: [
   {
@@ -124,7 +125,6 @@ directions: [
   
   "Remove from heat, transfer to shallow bowls, and serve warm. Enjoy!"
 ]
-
 ---
 Tips:
 1. 5x this recipe yields about 10 large servings

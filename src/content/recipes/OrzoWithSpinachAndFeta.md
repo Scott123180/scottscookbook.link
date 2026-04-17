@@ -55,7 +55,7 @@ ingredients: [
   },
   {
     name: "Chopped Fresh Dill",
-    preparation: " (Parsley or Cilantro as a substitute)",
+    preparation: ", (Parsley or Cilantro as a substitute)",
     amount: 2,
     unit: cups
   },
@@ -65,5 +65,4 @@ directions: [
   "In another large pan, add the water and reduce a bit. Slowly add leafy greens to reduce size and make room in the pot. Add the rest of the ingredients.",
   "Serve and use more cheese and scalions as garnish"
 ]
-
 ---

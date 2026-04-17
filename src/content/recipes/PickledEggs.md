@@ -2,7 +2,7 @@
 title: "Pickled Eggs"
 date: "January 1, 2024"
 prepTime: "10 min"
-cookTime: "5 min"
+cookingTime: "5 min"
 chillTime: "3 days"
 totalTime: "3 days 15 min"
 topic: "Snack"
@@ -20,14 +20,14 @@ unit: count
 {
 section: "Main",
 name: "fresh dill",
-preparation: "sprigs",
+preparation: ", sprigs"
 amount: 2,
 unit: count
 },
 {
 section: "Main",
 name: "garlic",
-preparation: "clove",
+preparation: ", clove"
 amount: 1,
 unit: count
 },
@@ -60,7 +60,7 @@ unit: cup
 section: "Brine",
 name: "coarse salt",
 amount: 1,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Brine",
@@ -72,7 +72,7 @@ unit: count
 section: "Brine",
 name: "pickling spices",
 amount: 4,
-unit: teaspoons
+unit: tsp
 },
 ]
 directions: [

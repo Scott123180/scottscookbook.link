@@ -6,7 +6,7 @@ cookingTime: "10 min"
 totalTime: "20 min"
 topic: "Side Dish"
 originalLink: "https://tastesbetterfromscratch.com/turkey-gravy/"
-scottRating: 
+scottRating: 0
 image: "../../images/recipe/TurkeyGravy.png"
 ingredients: [
   {
@@ -18,13 +18,13 @@ ingredients: [
   {
     name: "All-purpose flour",
     amount: 0.5,
-    unit: "cup",
+    unit: cup,
     section: "Roux"
   },
   {
     name: "Low-sodium chicken broth (or turkey or vegetable broth)",
     amount: 4,
-    unit: "cups",
+    unit: cups,
     section: "Liquid"
   },
   {
@@ -43,7 +43,7 @@ ingredients: [
     name: "Turkey giblets and neck",
     preparation: ", optional",
     amount: 1,
-    unit: "set",
+    unit: set,
     section: "Optional Giblet Addition"
   }
 ]

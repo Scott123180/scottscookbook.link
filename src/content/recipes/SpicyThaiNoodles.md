@@ -6,12 +6,13 @@ cookingTime: "10 min"
 totalTime: "15 min"
 originalLink: "https://www.sprinklesandsprouts.com/spicy-thai-noodles-2/"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/SpicyThaiNoodles.png"
 ingredients: [
 {
 section: "Main",
 name: "whole wheat linguine",
-preparation: "see note 1",
+preparation: ", see note 1"
 amount: 0.5,
 unit: lb
 },
@@ -19,43 +20,43 @@ unit: lb
 section: "Main",
 name: "salt",
 amount: 1,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Main",
 name: "baking soda",
 amount: 2,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Main",
 name: "red pepper flakes",
 amount: 0.5,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Main",
 name: "toasted sesame oil",
 amount: 6,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Main",
 name: "soy sauce",
 amount: 3,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Main",
 name: "honey",
 amount: 3,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Main",
 name: "fish sauce",
 amount: 2,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Main",
@@ -73,7 +74,7 @@ unit: cup
 section: "Garnish",
 name: "sesame seeds",
 amount: 2,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Garnish",

@@ -17,16 +17,16 @@ ingredients: [
   },
   {
     name: Yellow Onion,
-    preparation: chopped,
+    preparation: ", chopped",
     amount: 1,
-    unit: Medium,
+    unit: medium,
     section: Sauce
   },
   {
     name: Garlic Cloves,
-    preparation: chopped,
+    preparation: ", chopped",
     amount: 6,
-    unit: Count,
+    unit: count,
     section: Sauce
   },
   {
@@ -68,5 +68,4 @@ directions: [
   "Optionally add a cup or two of starchy pasta water to pan.",
   "Reduce to sauce like thickness. If you added pasta water you may have to increase heat and stir to have everything done quickly"
 ]
-
 ---

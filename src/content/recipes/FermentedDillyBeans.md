@@ -24,7 +24,7 @@ ingredients: [
   },
   {
     name: "Dill Flower Heads",
-    preparation: "(or 2 sprigs fresh dill and 1 tbsp dill seeds)",
+    preparation: ", (or 2 sprigs fresh dill and 1 tbsp dill seeds)",
     amount: 2,
     unit: count,
     section: "Flavoring"
@@ -83,7 +83,6 @@ directions: [
 
   "Once the beans have reached the desired texture and flavor, cap the jar with a lid and store in the refrigerator."
 ]
-
 ---
 Tips:
 - If this is your first time fermenting, I would recommend watching a video such as this one to become aquainted with the process [The Process of Fermentation](https://youtu.be/dKW7mLnSxU4?si=H_J-lnWjUFTvCPsI)

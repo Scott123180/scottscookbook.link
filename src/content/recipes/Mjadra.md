@@ -6,6 +6,7 @@ cookingTime: "8 hours"
 totalTime: "9 hours 20 min"
 originalLink: "https://www.google.com/search?q=fix+it+and+forget+it+mediterranean+diet+cookbook&oq=fix+it+and+forget+it+medi"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/Mjadra.png"
 ingredients: [
   {
@@ -15,19 +16,19 @@ ingredients: [
   },
   {
     name: Sweet Onions,
-    preparation: chopped, 
+    preparation: ", chopped",
     amount: 2,
     unit: large
   },
   {
     name: "Lentils",
-    preparation: " Dried, any color",
+    preparation: ", Dried, any color",
     amount: 1,
     unit: cup
   },
   {
     name: Brown Rice,
-    preparation: " Dried", 
+    preparation: ", Dried",
     amount: 1,
     unit: cup
   },
@@ -59,7 +60,6 @@ directions: [
   "Cover the slow cooker and cook for 8 hours on low.",
   "profit"
 ]
-
 ---
 
 Slow cooker size: 3qt

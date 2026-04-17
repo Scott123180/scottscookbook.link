@@ -2,7 +2,7 @@
 title: "Stewed Apples"
 date: "January 1, 2024"
 prepTime: "20 min"
-cookTime: "2-4 hours"
+cookingTime: "2-4 hours"
 totalTime: "2-4 hours"
 topic: "Dessert"
 originalLink: "https://www.allrecipes.com/recipe/268029/chef-johns-apple-butter/"
@@ -12,7 +12,7 @@ ingredients: [
   {
     name: "Apples",
     amount: 5,
-    unit: "lb",
+    unit: lb,
     section: "Main Ingredients"
   },
   {
@@ -45,7 +45,6 @@ directions: [
 
   "Once cooked, serve warm or let cool, then transfer to jars or containers and refrigerate or freeze."
 ]
-
 ---
 NOTES
 - For tips and tricks cooking the apples, see my apple butter recipe

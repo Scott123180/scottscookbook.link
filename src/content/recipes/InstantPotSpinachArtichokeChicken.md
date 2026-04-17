@@ -2,10 +2,11 @@
 title: "Instant Pot Spinach Artichoke Chicken"
 date: "December 31, 2023"
 prepTime: "10 min"
-cookTime: "50 min"
+cookingTime: "50 min"
 totalTime: "1 hr"
 originalLink: "https://realfoodwholelife.com/recipes/instant-pot-spinach-artichoke-chicken/"
 scottRating: 4.5
+topic: ""
 image: "../../images/recipe/InstantPotSpinachArtichokeChicken.png"
 ingredients: [
 {
@@ -17,7 +18,7 @@ unit: cup
 {
 section: "Main",
 name: "plain unsweetened almond milk",
-preparation: "(or any non-dairy milk)",
+preparation: ", (or any non-dairy milk)"
 amount: 1,
 unit: cups
 },
@@ -32,40 +33,40 @@ unit: count
 section: "Main",
 name: "kosher salt",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Main",
 name: "fresh lemon juice",
 amount: 2,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Main",
 name: "Dijon mustard",
 amount: 2,
-unit: teaspoons
+unit: tsp
 },
 {
 section: "Main",
 name: "frozen spinach",
 preparation: ", defrosted and squeezed very dry",
 amount: 10,
-unit: ounces
+unit: oz
 },
 {
 section: "Main",
 name: "artichoke hearts",
 preparation: ", drained, rinsed, and roughly chopped",
 amount: 14,
-unit: ounces
+unit: oz
 },
 {
 section: "Main",
 name: "diced water chestnuts",
 preparation: ", drained and rinsed",
 amount: 8,
-unit: ounces
+unit: oz
 },
 {
 section: "Main",
@@ -78,14 +79,14 @@ section: "Main",
 name: "nutritional yeast",
 preparation: "",
 amount: 2,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Main",
 name: "avocado mayonnaise or veganaise",
 preparation: "",
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Main",

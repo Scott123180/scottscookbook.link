@@ -107,5 +107,4 @@ directions: [
   "Remove the pot from heat and add lemon juice.",
   "Taste and season with salt/pepper"
 ]
-
 ---

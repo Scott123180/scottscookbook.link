@@ -62,7 +62,7 @@ ingredients: [
   },
   {
     name: Broth,
-    preparation: " (vegetable or chicken)",
+    preparation: ", (vegetable or chicken)",
     amount: 4,
     unit: cups,
     section: Soup
@@ -88,7 +88,7 @@ ingredients: [
   },
   {
     name: Lemon Juice,
-    amount: .33,
+    amount: 0.33,
     unit: cup,
     section: Soup
   },
@@ -140,5 +140,4 @@ directions: [
   "Add in the lemon juice and to taste", 
   "Add the remaining ingredients and serve"
 ]
-
 ---

@@ -185,7 +185,7 @@ export default function RecipeList({ data }: { data: { edges: any[] } }) {
                       {title}
                     </Typography>
 
-                    <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                    <Stack direction="row" spacing={1} flexWrap="wrap">
                       {fm.totalTime && (
                         <Chip size="small" icon={<AccessTimeIcon />} label={fm.totalTime} variant="outlined" />
                       )}

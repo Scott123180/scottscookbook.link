@@ -4,7 +4,7 @@ date: "June 26, 2021"
 prepTime: "15 min" 
 cookingTime: "15 min"
 totalTime: "30 min"
-topic: "sides"
+topic: "Side Dish"
 originalLink: "https://cooking.nytimes.com/recipes/1014834-farro-pilaf-with-balsamic-cherries"
 scottRating: 3.5
 image: "../../images/recipe/FarroPilafWithCherries.png"
@@ -36,9 +36,9 @@ ingredients: [
   },
   {
     name: fresh thyme,
-    preparation: " leaves",
+    preparation: ", leaves",
     amount: 2,
-    unit: teaspoons
+    unit: tsp
   },
   {
     name: pepper,
@@ -54,5 +54,4 @@ directions: [
   "Add water and farro to instant pot. Cook on high pressure for 10 minutes. Let naturally release for 5 minutes before manually releasing the pressure",
   "Mix the balsamic cherries and the pepper and thyme."
 ]
-
 ---

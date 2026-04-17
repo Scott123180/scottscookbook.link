@@ -2,7 +2,7 @@
 title: "Mediterranean Lentil Salad"
 date: "September 19, 2023"
 prepTime: "15 min"
-cookTime: "20 min"
+cookingTime: "20 min"
 totalTime: "35 min"
 topic: "Salad"
 originalLink: "https://www.eatingwell.com/recipe/7899362/lentil-salad-with-feta-tomatoes-cucumbers-olives/"
@@ -12,7 +12,7 @@ ingredients: [
 {
 section: "Salad",
 name: "cooked brown lentils",
-preparation: "see Tip for cooking instructions",
+preparation: ", see Tip for cooking instructions"
 amount: 3,
 unit: cups
 },
@@ -54,37 +54,37 @@ unit: cup
 section: "Salad",
 name: "salt",
 amount: 0.25,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Salad",
 name: "ground pepper",
 amount: 0.25,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Dressing",
 name: "red-wine vinegar",
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Dressing",
 name: "finely chopped shallot",
 amount: 1,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Dressing",
 name: "minced garlic",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Dressing",
 name: "honey",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Dressing",

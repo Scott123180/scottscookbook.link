@@ -5,7 +5,8 @@ prepTime: "20 min"
 cookingTime: "3 hr 30 min"
 totalTime: "3 hr 50 min"
 originalLink: "https://tastesbetterfromscratch.com/easy-no-fuss-thanksgiving-turkey/"
-scottRating: 
+scottRating: 0
+topic: ""
 image: "../../images/recipe/ThanksgivingTurkey.png"
 ingredients: [
   {
@@ -17,70 +18,70 @@ ingredients: [
   {
     name: "Onion",
     amount: 1,
-    preparation: "peeled and quartered",
-    unit: "count",
+    preparation: ", peeled and quartered",
+    unit: count,
     section: "Cavity Filling"
   },
   {
     name: "Lemon",
     amount: 1,
-    preparation: "quartered",
-    unit: "count",
+    preparation: ", quartered",
+    unit: count,
     section: "Cavity Filling"
   },
   {
     name: "Apple",
     amount: 1,
-    preparation: "quartered",
-    unit: "count",
+    preparation: ", quartered",
+    unit: count,
     section: "Cavity Filling"
   },
   {
     name: "Fresh rosemary",
     amount: 0.75,
-    unit: "oz",
+    unit: oz,
     section: "Cavity Filling"
   },
   {
     name: "Fresh thyme",
     amount: 0.75,
-    unit: "oz",
+    unit: oz,
     section: "Cavity Filling"
   },
   {
     name: "Fresh sage",
     amount: 0.75,
-    unit: "oz",
+    unit: oz,
     section: "Cavity Filling"
   },
   {
     name: "Unsalted butter",
     amount: 1,
-    unit: "cup",
+    unit: cup,
     section: "Herb Butter"
   },
   {
     name: "Salt",
     amount: 1,
-    unit: "tsp",
+    unit: tsp,
     section: "Herb Butter"
   },
   {
     name: "Black pepper",
     amount: 0.5,
-    unit: "tsp",
+    unit: tsp,
     section: "Herb Butter"
   },
   {
     name: "Garlic cloves, minced",
     amount: 6,
-    unit: "count",
+    unit: count,
     section: "Herb Butter"
   },
   {
     name: "Fresh herbs, chopped",
     amount: 2.5,
-    unit: "tbsp",
+    unit: tbsp,
     section: "Herb Butter"
   }
 ]

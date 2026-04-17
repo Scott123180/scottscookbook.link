@@ -2,7 +2,7 @@
 title: "Restaurant-Style Miso Ramen"
 date: "March 11, 2025"
 prepTime: "20 min"
-cookTime: "60 min"
+cookingTime: "60 min"
 totalTime: "80 min"
 topic: "Soup"
 originalLink: "https://lifebymikeg.com/blogs/all/make-restaurant-ramen-noodles-with-7-common-ingredients"

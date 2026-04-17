@@ -2,12 +2,13 @@
 title: "Banana Bread"
 date: "November 12, 2024"
 prepTime: "15 min"
-cookTime: "1 hr"
+cookingTime: "1 hr"
 totalTime: "1 hr 15 min"
 yield: "1 (9x5-inch) loaf"
 servings: 12
 originalLink: "https://www.allrecipes.com/recipe/20144/banana-banana-bread/"
 scottRating: 4
+topic: ""
 image: "../../images/recipe/BananaBread.png"
 ingredients: [
   {

@@ -38,30 +38,30 @@ section: "Soup",
 name: "ginger",
 preparation: ", grated",
 amount: 1,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Soup",
 name: "fish sauce",
 amount: 1,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Soup",
 name: "brown sugar",
 amount: 2,
-unit: teaspoons
+unit: tsp
 },
 {
 section: "Soup",
 name: "red curry paste",
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Soup",
 name: "coconut milk",
-preparation: "(400 ml can)",
+preparation: ", (400 ml can)"
 amount: 1,
 unit: can
 },
@@ -70,14 +70,14 @@ section: "Soup",
 name: "lime juice",
 preparation: ", freshly squeezed",
 amount: 1,
-unit: tablespoon
+unit: tbsp
 },
 {
 section: "Soup",
 name: "ground black pepper",
 preparation: ", optional",
 amount: 1,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Soup",

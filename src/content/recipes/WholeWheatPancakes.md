@@ -6,6 +6,7 @@ cookingTime: "20 min"
 totalTime: "30 min"
 originalLink: "https://cookieandkate.com/whole-wheat-pancakes-recipe/"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/WholeWheatPancakes.png"
 ingredients: [
   {
@@ -58,5 +59,4 @@ directions: [
   "Combine the rest of the ingredients in one bowl and mix until thouroughly blended.",
   "Cook pancakes"
 ]
-
 ---

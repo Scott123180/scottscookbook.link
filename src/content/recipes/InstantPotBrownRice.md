@@ -2,7 +2,7 @@
 title: "Instant Pot Brown Rice"
 date: "April 27, 2025"
 prepTime: "1 min"
-cookTime: "20 min"
+cookingTime: "20 min"
 totalTime: "21 min"
 topic: "Side Dish"
 originalLink: "https://www.pressurecookrecipes.com/instant-pot-brown-rice/"
@@ -35,7 +35,6 @@ directions: [
 
   "If the rice appears slightly wet, let it rest uncovered for a few minutes to allow excess moisture to evaporate before serving."
 ]
-
 ---
 - Rinsing Rice: If you rinse the rice before cooking, make sure to drain it well. To maintain the proper water-to-rice ratio, reduce about 3 tablespoons of water from the original 1 cup measurement.
 - Leftovers: Allow rice to cool completely before storing it in an airtight container in the refrigerator.

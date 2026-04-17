@@ -16,8 +16,8 @@ ingredients: [
   },
   {
     name: black pepper,
-    amount: .5,
-    unit: teaspoon 
+    amount: 0.5,
+    unit: tsp 
   },
   {
     name: butter substitute,
@@ -41,8 +41,8 @@ ingredients: [
   },
   {
     name: lemon zest,
-    amount: .75,
-    unit: teaspoon
+    amount: 0.75,
+    unit: tsp
   },
   {
     name: parsley,
@@ -78,5 +78,4 @@ directions: [
   "While waiting, remove the trivet and enable saute and reduce the sauce by half, stirring occasionally",
   "The pan juices have a lot of flavor but also a lot of fat. Filter our the fat for a healthier sauce."
 ]
-
 ---

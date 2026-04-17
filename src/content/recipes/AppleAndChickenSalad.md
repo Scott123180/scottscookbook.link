@@ -29,13 +29,13 @@ ingredients: [
   },
   {
     name: Plain Non-Fat Greek Yogurt,
-    amount: .25,
+    amount: 0.25,
     metric: 70g,
     unit: cup,
   },
   {
     name: Black Pepper,
-    amount: .125,
+    amount: 0.125,
     unit: tsp,
   },
   {
@@ -50,5 +50,4 @@ directions: [
   "Mix all the ingredients together in a bowl (except for the lettuce).",
   "Wrap in lettuce."
 ]
-
 ---

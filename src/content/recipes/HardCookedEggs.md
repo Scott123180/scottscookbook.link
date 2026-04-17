@@ -2,10 +2,11 @@
 title: "Hard Cooked (Steamed) Eggs"
 date: "January 1, 2024"
 prepTime: "5 min"
-cookTime: "13 min + 15 minutes chilling"
+cookingTime: "13 min + 15 minutes chilling"
 totalTime: "33 min"
 originalLink: "https://www.youtube.com/watch?v=RV9nz1qlY64"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/HardCookedEggs.png"
 ingredients: [
 {

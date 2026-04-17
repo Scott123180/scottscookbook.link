@@ -6,6 +6,7 @@ cookingTime: "8 hours"
 totalTime: "8 hours 20 minutes"
 originalLink: "https://www.allrecipes.com/recipe/268029/chef-johns-apple-butter/"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/AppleButter.png"
 ingredients: [
   {

@@ -6,6 +6,7 @@ cookingTime: "15 min"
 totalTime: "25 min"
 originalLink: "https://thepeskyvegan.com/recipes/easy-cheesy-pasta-sauce/"
 scottRating: 5
+topic: ""
 image: "../../images/recipe/VeganCheesyPastaSauceCashewAlfredo.png"
 ingredients: 
   [
@@ -42,7 +43,7 @@ ingredients:
     {
       name: Salt and Pepper,
       amount: 1,
-      unit: To Taste,
+      unit: to taste,
       section: Sauce
     },
     {
@@ -77,7 +78,6 @@ directions:
     "Taste and tweak the sauce according to your preference. It might taste a bit strong alone, but it will balance out when mixed with pasta.",
     "For the final half-minute of the pasta's cooking, introduce the spinach into the boiling water. Drain the pasta and spinach, then return them to the pan. Incorporate the halved tomatoes and the creamy sauce. Serve topped with fresh parsley and optional vegan parmesan."
   ]
-
 ---
 A few notes: Remember to adjust the thickness of the sauce to your preference. You can also experiment with different types of plant-based milk for varied flavors. Store any leftover sauce separately for freshness.
 

@@ -74,7 +74,7 @@ ingredients: [
   },
   {
     name: Scallions,
-    preparation: " (Optional)",
+    preparation: ", (Optional)",
     amount: 2,
     unit: count
   },
@@ -96,5 +96,4 @@ directions: [
   "Let the lasagna rest for about 10 minutes before eating",
   "Optional: top with scallions"
 ]
-
 ---

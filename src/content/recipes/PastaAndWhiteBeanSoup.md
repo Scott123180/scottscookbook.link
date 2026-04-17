@@ -74,7 +74,7 @@ ingredients: [
     name: Parmesan Cheese,
     preparation: ", Grated", 
     amount: 1,
-    unit: To Taste,
+    unit: to taste,
     section: Garnish
   },
 ]
@@ -88,7 +88,6 @@ directions: [
   "Add the frozen leaf spinach. Once that has fully heated up, take it off the heat",
   "Serve, putting the soup in the bowl, pasta in the soup, and then garnishing with parmesean cheese."
 ]
-
 ---
 
 A few notes, use a very large pot or halve the recipe if you don't have one.

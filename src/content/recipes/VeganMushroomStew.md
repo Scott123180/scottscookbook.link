@@ -13,7 +13,7 @@ ingredients: [
 section: "Stew",
 name: "olive oil",
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Stew",
@@ -41,7 +41,7 @@ section: "Stew",
 name: "baby Bella mushrooms",
 preparation: ", halved",
 amount: 16,
-unit: ounces
+unit: oz
 },
 {
 section: "Stew",
@@ -54,25 +54,25 @@ unit: cloves
 section: "Stew",
 name: "dried thyme",
 amount: 2,
-unit: teaspoons
+unit: tsp
 },
 {
 section: "Stew",
 name: "dried oregano",
 amount: 1,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Stew",
 name: "dried sage",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Stew",
 name: "flour",
 amount: 2,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Stew",
@@ -84,14 +84,14 @@ unit: cup
 section: "Stew",
 name: "soy sauce",
 amount: 2,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Stew",
 name: "baby yellow potatoes",
 preparation: ", halved",
 amount: 16,
-unit: ounces
+unit: oz
 },
 {
 section: "Stew",
@@ -103,7 +103,7 @@ unit: cup
 section: "Stew",
 name: "tomato sauce",
 amount: 14.5,
-unit: ounces
+unit: oz
 },
 {
 section: "Stew",

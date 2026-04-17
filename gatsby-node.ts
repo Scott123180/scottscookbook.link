@@ -68,12 +68,13 @@ exports.createSchemaCustomization = ({ actions }) => {
       cookingTime: String
       totalTime: String
       originalLink: String
+      servings: String
       ingredients: [MarkdownRemarkFrontmatterIngredients]
       directions: [String]
       image: File @fileByRelativePath
     }
 
-    type MarkdownRemarkFrontmatterIngredients {
+    type MarkdownRemarkFrontmatterIngredients @dontInfer {
       name: String
       preparation: String
       amount: String

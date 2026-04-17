@@ -1,44 +1,27 @@
-<h1 align="center">
-  Scott's Cookbook - All my favorite recipes
-</h1>
+# Scott's Cookbook
 
-## 🛠 Installation & Set Up
+A minimal, mobile-friendly recipe website built with Gatsby and React. Browse, filter, and cook from a personal collection of recipes with features like grocery shopping integration and a cooking mode that keeps your screen on.
 
-1. Install the Gatsby CLI  
-```npm install -g gatsby-cli```
+**Live site:** [scottscookbook.link](https://scottscookbook.link)
 
-2. Clone Amelie repository  
-```https://github.com/Scott123180/eatwell.link.git```
+## Local Development
 
-3. Navigate into the site directory and install dependencies 
-```
-cd eatwell.link
+```bash
 npm install
+npm run develop
 ```
 
-## 🚀 Running for Development
+Site runs at `http://localhost:8000`. GraphQL explorer at `http://localhost:8000/___graphql`.
 
-1.  **Start developing.**
-    ```
-    gatsby develop
-    ```
+## Adding a Recipe
 
-1.  **Open the source code and start editing!**
+1. Create `src/content/recipes/RecipeName.md` with YAML frontmatter (see any existing recipe for the format)
+2. Add a recipe image to `src/images/recipe/RecipeName.png`
+3. Run `npm run develop` to preview
 
-    Your site is now running at `http://localhost:8000`!
+## Build
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## Documetation and other links
-
-USDA Raw foods nutritional references:
-https://www.ars.usda.gov/northeast-area/beltsville-md-bhnrc/beltsville-human-nutrition-research-center/methods-and-application-of-food-composition-laboratory/mafcl-site-pages/sr11-sr28/
-
-Fruit serving sizes:
-https://www.myplate.gov/eat-healthy/fruits
-
-
-## Site analytics
-https://search.google.com/search-console/not-verified
+```bash
+npm run build   # production build
+npm run serve   # serve the production build locally
+```

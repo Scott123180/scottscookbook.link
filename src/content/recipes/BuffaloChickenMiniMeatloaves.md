@@ -38,13 +38,13 @@ ingredients: [
   {
     name: Carrot,
     amount: 1,
-    unit: Large,
+    unit: large,
     section: Meatloaf
   },
   {
     name: Eggs,
     amount: 2,
-    unit: Large,
+    unit: large,
     section: Meatloaf
   },
   {
@@ -117,7 +117,6 @@ directions: [
   "Mix the glaze incredients.",
   "In the last few minutes of cooking, put the glaze on top so it cooks a bit."
 ]
-
 ---
 
 The great thing about meatloaf is you don't have to be super strict about the ingredients. Add and remove ingredients as you have them. Heck, if some food is about to go bad, put it in the meatloaf to give it new life. It'll stay good for a few more days and you won't have wasted it. Just make sure that your meatloaf is adequetely moist.

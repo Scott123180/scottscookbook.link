@@ -6,7 +6,7 @@ cookingTime: "55 min"
 totalTime: "1 hr 10 min"
 topic: "Side Dish"
 originalLink: "https://hellolittlehome.com/sourdough-stuffing/"
-scottRating: 
+scottRating: 0
 image: "../../images/recipe/SourdoughStuffing.png"
 ingredients: [
   {
@@ -19,61 +19,61 @@ ingredients: [
     name: "Sourdough bread",
     preparation: ", cubed",
     amount: 22,
-    unit: "oz",
+    unit: oz,
     section: "Stuffing Base"
   },
   {
     name: "Butter",
     amount: 4,
-    unit: "tbsp",
+    unit: tbsp,
     section: "Vegetable Mixture"
   },
   {
     name: "Celery",
     preparation: ", diced (about 6 stalks)",
     amount: 3,
-    unit: "cups",
+    unit: cups,
     section: "Vegetable Mixture"
   },
   {
     name: "Onion",
     preparation: ", diced (about 1 large)",
     amount: 2,
-    unit: "cups",
+    unit: cups,
     section: "Vegetable Mixture"
   },
   {
     name: "Mushrooms",
     preparation: ", chopped (about 3 cups)",
     amount: 8,
-    unit: "oz",
+    unit: oz,
     section: "Vegetable Mixture"
   },
   {
     name: "Flat-leaf parsley",
     preparation: ", chopped",
     amount: 0.5,
-    unit: "cup",
+    unit: cup,
     section: "Seasoning"
   },
   {
     name: "Fresh sage",
     preparation: ", chopped",
     amount: 2,
-    unit: "tbsp",
+    unit: tbsp,
     section: "Seasoning"
   },
   {
     name: "Fresh thyme leaves",
     amount: 1,
-    unit: "tbsp",
+    unit: tbsp,
     section: "Seasoning"
   },
   {
     name: "Large egg",
     preparation: ", lightly beaten",
     amount: 1,
-    unit: "count",
+    unit: count,
     section: "Binding"
   },
   {

@@ -68,31 +68,31 @@ unit: count
 section: "Dressing",
 name: "olive oil",
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Dressing",
 name: "lemon juice",
 amount: 3,
-unit: tablespoons
+unit: tbsp
 },
 {
 section: "Dressing",
 name: "white vinegar",
 amount: 1.5,
-unit: teaspoons
+unit: tsp
 },
 {
 section: "Dressing",
 name: "salt",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 {
 section: "Dressing",
 name: "pepper",
 amount: 0.5,
-unit: teaspoon
+unit: tsp
 },
 ]
 directions: [
