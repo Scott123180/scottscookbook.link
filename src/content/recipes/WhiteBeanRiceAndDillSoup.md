@@ -84,7 +84,7 @@ ingredients: [
   },
   {
     name: "Dill",
-    preparation: ", (dried or fresh)"
+    preparation: ", (dried or fresh)",
     amount: 1,
     unit: tbsp,
     section: "Soup"
@@ -113,4 +113,5 @@ directions: [
   "Once boiling, cover completely, reduce heat to low, and simmer, stirring occasionally, for about 30 minutes, until the rice is very soft and the soup has thickened slightly.",
   "Taste and adjust seasoning as needed while simmering.",
   "Serve warm with lemon wedges on the side, if desired."
-]---
+]
+---

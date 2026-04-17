@@ -136,4 +136,5 @@ directions: [
 "Add cooked chickpeas and water. Stir, cover with a lid, and cook for 5 minutes over low-medium heat.",
 "Open the lid, add the fried tofu, coconut cream, and freshly chopped cilantro. Mix gently.",
 "Your chickpea tofu curry is now ready! Serve over rice or with flatbreads."
-]---
+]
+---

@@ -29,7 +29,7 @@ ingredients: [
   },
   {
     name: Chopped Stir Fry Vegetables,
-    preparation: ", (easiest is frozen stir fry mix)"
+    preparation: ", (easiest is frozen stir fry mix)",
     amount: 4,
     unit: cups,
     section: Stir Fry

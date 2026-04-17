@@ -36,7 +36,7 @@ ingredients: [
   },
   {
     name: fresh thyme,
-    preparation: ", leaves"
+    preparation: ", leaves",
     amount: 2,
     unit: tsp
   },

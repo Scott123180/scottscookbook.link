@@ -106,7 +106,8 @@ directions: [
   "Gradually pour in vegetable broth, stirring after each addition until the mixture is evenly moistened but not soggy.",
   "Transfer to the prepared baking dish and bake for 35–40 minutes, or until hot and golden brown on top.",
   "Serve warm and enjoy!"
-]---
+]
+---
 - **Temperature Adjustment:** If baking alongside other dishes, you can adjust the oven temperature slightly up or down. Just keep an eye on the color and texture, adjusting bake time as needed.  
 - **Make-Ahead Tip:** Toast bread and cook vegetables ahead of time. Store separately, then combine with egg and broth just before baking.  
 - **Variation Ideas:** Try adding cooked sausage, diced apples, or cranberries for extra flavor.

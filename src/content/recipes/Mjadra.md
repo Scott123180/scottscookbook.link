@@ -16,19 +16,19 @@ ingredients: [
   },
   {
     name: Sweet Onions,
-    preparation: ", chopped"
+    preparation: ", chopped",
     amount: 2,
     unit: large
   },
   {
     name: "Lentils",
-    preparation: ", Dried, any color"
+    preparation: ", Dried, any color",
     amount: 1,
     unit: cup
   },
   {
     name: Brown Rice,
-    preparation: ", Dried"
+    preparation: ", Dried",
     amount: 1,
     unit: cup
   },

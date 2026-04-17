@@ -18,21 +18,21 @@ ingredients: [
   {
     name: "Onion",
     amount: 1,
-    preparation: ", peeled and quartered"
+    preparation: ", peeled and quartered",
     unit: count,
     section: "Cavity Filling"
   },
   {
     name: "Lemon",
     amount: 1,
-    preparation: ", quartered"
+    preparation: ", quartered",
     unit: count,
     section: "Cavity Filling"
   },
   {
     name: "Apple",
     amount: 1,
-    preparation: ", quartered"
+    preparation: ", quartered",
     unit: count,
     section: "Cavity Filling"
   },
@@ -99,7 +99,8 @@ directions: [
   "About halfway through cooking, tent the turkey loosely with foil once the skin turns golden brown to prevent over-browning.",
   "When done, let the turkey rest for 20–30 minutes before carving to retain juices.",
   "Save any drippings in the pan to make turkey gravy."
-]---
+]
+---
 - **Turkey Size:** For smaller groups, consider roasting just the turkey breast.
 - **Herb Substitutes:** If using dried herbs, use 1 teaspoon dried per 1 tablespoon fresh.
 - **Foil Tip:** Begin roasting uncovered; tent loosely once skin is golden.

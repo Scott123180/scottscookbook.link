@@ -112,7 +112,8 @@ directions: [
 "Stir in the vermicelli rice noodles and cook until they are tender, about 3 minutes. Remove the pot from heat.",
 "To assemble the soup, first scoop out the noodles into a medium-sized soup bowl using a noodle strainer. Add bean sprouts, baby bok choy, and chopped cilantro. Pour the curry soup base into the bowl, including the cooked shrimp and mushrooms.",
 "Serve immediately, adding an additional tablespoon of lime juice if desired."
-]---
+]
+---
 
 Notes:
 - Be cautious not to overcook the noodles as they can break apart and disintegrate. Add them to the pot at the very end of the cooking process.

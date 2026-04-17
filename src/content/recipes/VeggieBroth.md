@@ -12,7 +12,7 @@ image: "../../images/recipe/VeggieBroth.png"
 ingredients: [
   {
     name: "Avocado or Coconut Oil",
-    preparation: ", (or sub water if avoiding oil)"
+    preparation: ", (or sub water if avoiding oil)",
     amount: 1,
     unit: tbsp,
     section: "Main"

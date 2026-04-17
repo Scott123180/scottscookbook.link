@@ -165,5 +165,4 @@ directions: [
   "Assemble the lasagna: spread 1.5 cups of the turkey meat sauce over the botom of the baking dish. Place a layer of noodles on top (should be around 5). Spread half of the ricotta cheese mixture, 2 tablespoons of diced basil and 0.33 of the mozzarella slices. Addd 1.5 cups of meat sauce on top, sprinkle with 0.25 cups of parmesan cheese. REpeat layers again. Top with remaining mozzarella sauce.",
   "Cover with foil and bake for 25 minutes and then remove the foil and bake for another 20 minutes. You can also broil as a last step for extra crispyness if your cookware supports it. Garnish with 0.25 cups of parmesan and extra basil. Let it cool for 15 to 20 minutes before serving."
 ]
-
 ---

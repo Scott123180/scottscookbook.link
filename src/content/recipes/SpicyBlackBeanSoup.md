@@ -62,7 +62,7 @@ ingredients: [
   },
   {
     name: Broth,
-    preparation: ", (vegetable or chicken)"
+    preparation: ", (vegetable or chicken)",
     amount: 4,
     unit: cups,
     section: Soup

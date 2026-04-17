@@ -97,7 +97,8 @@ directions: [
 "In a large bowl, combine the cooked brown lentils, halved cherry tomatoes, chopped cucumber, chopped Kalamata olives, thinly sliced red onion, crumbled feta cheese, and 1/4 teaspoon each of salt and pepper. Set aside.",
 "In a small bowl, whisk together the red-wine vinegar, finely chopped shallot, minced garlic, honey, and the remaining 1/4 teaspoon each of salt and pepper. Gradually whisk in the olive oil until the dressing is well combined.",
 "Gently stir the dressing into the lentil mixture. Serve immediately or cover and refrigerate."
-]---
+]
+---
 Tip for Cooking Lentils:
 
 Rinse 1 cup of dry brown lentils. Place them in a medium saucepan with 4 cups of water. Bring to a boil over high heat, stirring occasionally. Reduce heat to medium-low and simmer until tender, about 20 to 25 minutes. Drain well and spread on a rimmed baking sheet. Refrigerate until cool, about 25 minutes.

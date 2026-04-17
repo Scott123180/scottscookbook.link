@@ -57,7 +57,6 @@ directions: [
 
   "Once fermented to your liking, cap the jar with a lid and refrigerate. The carrots will keep in the fridge for several months."
 ]
-
 ---
 - For extra flavor, try adding garlic, peppercorns, or herbs like dill to the jar.
 - If your kitchen is cool, fermentation may take longer. Taste regularly to check progress.

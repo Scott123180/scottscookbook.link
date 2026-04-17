@@ -82,7 +82,8 @@ directions: [
 "Pour the pickling liquid over the eggs in the jar.",
 "Seal the jar and refrigerate for at least 3-4 days before eating. For best results, wait 1 week.",
 "Enjoy the pickled eggs and use the onions in salads or sandwiches."
-]---
+]
+---
 Notes:
 - Boiling your eggs is difficult, steam them instead! See the "hard cooked eggs" recipe on the website.
 - With a 0.5 gallon mason jar, you can put 14 eggs in it it, no problem. Can fit more in it, you just have to reduce the amount of brine you use.

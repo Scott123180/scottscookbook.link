@@ -71,6 +71,7 @@ directions: [
   "Bake in the preheated oven for about 60 minutes, or until a toothpick inserted into the center of the loaf comes out clean.",
 
   "Allow the bread to cool in the pan for 10 minutes before transferring it to a wire rack to cool completely."
-]---
+]
+---
 NOTES
 - The original recipe called for more sugar - 3/4 cup, but I've reduced it since I've found it doesn't need it

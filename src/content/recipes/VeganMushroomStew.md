@@ -138,7 +138,8 @@ directions: [
 "Add the halved baby yellow potatoes, red lentils, tomato sauce, vegetable broth, and bay leaves. Season with additional salt and pepper. Bring the mixture to a simmer over medium-high heat, stirring occasionally to prevent the lentils from sticking.",
 "Reduce heat to low and let the stew simmer gently for 10-15 minutes, or until the potatoes are fork-tender. Adjust seasoning with salt and pepper to taste.",
 "Serve the stew garnished with fresh parsley and accompanied by mashed potatoes, if desired."
-]---
+]
+---
 Cooking Tips:
 - Salt plays a crucial role in this recipe, especially in helping the potatoes cook properly in the acidic base of tomato sauce, balsamic vinegar, and soy sauce. Make sure to season the stew moderately to liberally with salt throughout the cooking process.
 - Feel free to customize the stew with your favorite vegetables, like frozen peas, green beans, or canned chickpeas. Just keep the proportions similar for the best result.

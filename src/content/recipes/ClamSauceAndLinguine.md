@@ -17,14 +17,14 @@ ingredients: [
   },
   {
     name: Yellow Onion,
-    preparation: ", chopped"
+    preparation: ", chopped",
     amount: 1,
     unit: medium,
     section: Sauce
   },
   {
     name: Garlic Cloves,
-    preparation: ", chopped"
+    preparation: ", chopped",
     amount: 6,
     unit: count,
     section: Sauce

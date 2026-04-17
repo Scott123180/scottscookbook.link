@@ -113,7 +113,8 @@ directions: [
 "Remove the chicken to a cutting board. Chop it into bite-sized pieces, shred it, or leave it whole, as preferred.",
 "Add the cashew powder, nutritional yeast, and mayonnaise to the Instant Pot. If the sauce is too dry, add a splash more almond milk. Adjust the seasoning with additional salt and freshly ground pepper.",
 "Return the chicken to the pot and stir to combine with the sauce. Serve the chicken topped with the sauce."
-]---
+]
+---
 Notes:
 - Don't mix the cashews in with the sauce ingredients until the very end! It will become too viscous and burn in the instant pot.
 - Nutritional yeast adds a cheesy flavor without dairy. It's available in natural food stores or the baking section of grocery stores. Omit if unavailable.

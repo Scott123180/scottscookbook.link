@@ -11,42 +11,42 @@ image: "../../images/recipe/BlackBeanSalad.png"
 ingredients: [
   {
     name: Black Beans,
-    preparation: ", cooked, rinsed, and drained"
+    preparation: ", cooked, rinsed, and drained",
     amount: 4.5,
     unit: cups,
     section: Salad
   },
   {
     name: Corn,
-    preparation: ", canned (drained) or defrosted"
+    preparation: ", canned (drained) or defrosted",
     amount: 1,
     unit: cup,
     section: Salad
   },
   {
     name: Bell Pepper,
-    preparation: ", orange, red, or yellow"
+    preparation: ", orange, red, or yellow",
     amount: 1,
     unit: large,
     section: Salad
   },
   {
     name: Cherry Tomatoes,
-    preparation: ", Quartered"
+    preparation: ", Quartered",
     amount: 1,
     unit: cup,
     section: Salad
   },
   {
     name: Red onion,
-    preparation: ", chopped"
+    preparation: ", chopped",
     amount: 1,
     unit: small,
     section: Salad
   },
   {
     name: Jalapeno,
-    preparation: ", finely chopped"
+    preparation: ", finely chopped",
     amount: 1,
     unit: medium,
     section: Salad
@@ -83,14 +83,14 @@ ingredients: [
   },  
   {
     name: Feta,
-    preparation: ", Crumbled"
+    preparation: ", Crumbled",
     amount: 1,
     unit: to taste,
     section: Optional Garnishes 
   },
   {
     name: Lime,
-    preparation: ", wedged"
+    preparation: ", wedged",
     amount: 1,
     unit: to taste,
     section: Optional Garnishes

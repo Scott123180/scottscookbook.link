@@ -86,4 +86,5 @@ ingredients: [
 directions: [
 "In a large salad bowl, mix together all the ingredients",
 "Serve immediately or refrigerate to allow flavors to meld together."
-]---
+]
+---

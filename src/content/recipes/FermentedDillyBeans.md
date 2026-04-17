@@ -24,7 +24,7 @@ ingredients: [
   },
   {
     name: "Dill Flower Heads",
-    preparation: ", (or 2 sprigs fresh dill and 1 tbsp dill seeds)"
+    preparation: ", (or 2 sprigs fresh dill and 1 tbsp dill seeds)",
     amount: 2,
     unit: count,
     section: "Flavoring"

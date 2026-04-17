@@ -53,5 +53,4 @@ directions: [
   "Bring to a boil, then reduce heat, cover, and simmer until peas have fallen apart, 1 to 2 hours.",
   "Season with salt and pepper before serving."
 ]
-
 ---

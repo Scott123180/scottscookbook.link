@@ -32,7 +32,7 @@ ingredients: [
     {
         name: Kosher Salt,
         amount: 1,
-        preparation: ", to taste"
+        preparation: ", to taste",
         section: soup
     },
     {
@@ -83,7 +83,6 @@ directions: [
   "Serve hot, or let it cool and refrigerate for a couple of hours to enjoy chilled.",
   "Top with a dollop of yogurt or a sprinkle of herbs like basil or scallions, if you like."
 ]
-
 ---
 **Tips**
 - Double the amount of ginger... if you dare!

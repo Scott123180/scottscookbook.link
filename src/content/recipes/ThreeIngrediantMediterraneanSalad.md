@@ -38,13 +38,13 @@ ingredients: [
   },
   {
     name: Lemon,
-    preparation: ", Juice, squeezed from lemon"
+    preparation: ", Juice, squeezed from lemon",
     amount: 2,
     unit: tsp
   },
   {
     name: Lemon,
-    preparation: ", Zest"
+    preparation: ", Zest",
     amount: 1,
     unit: tsp
   },

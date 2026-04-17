@@ -50,7 +50,7 @@ ingredients: [
   },
   {
     name: queso anejo or cotija,
-    preparation: ", crumbled"
+    preparation: ", crumbled",
     amount: 8,
     unit: oz
   },

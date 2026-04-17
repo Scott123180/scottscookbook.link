@@ -70,7 +70,8 @@ directions: [
 "In a jar, combine white wine vinegar, olive oil, and lemon juice. Shake well to mix.",
 "In a large bowl, toss the pasta with the dressing and pine nuts. Add fresh cracked pepper, basil, and parmesan shavings.",
 "Refrigerate the salad for at least 2 hours before serving."
-]---
+]
+---
 Notes:
 - Pasta: Choose your favorite type, such as campanelle, bow tie, cavatappi, fusilli, or penne.
 - Lemon Juice: Opt for freshly squeezed lemon juice or 100% lemon juice from the produce section.

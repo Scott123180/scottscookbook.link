@@ -23,7 +23,7 @@ ingredients: [
   },
   {
     name: Lemon,
-    preparation: ", Zest"
+    preparation: ", Zest",
     amount: 2,
     unit: tsp
   },

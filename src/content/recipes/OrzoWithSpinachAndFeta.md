@@ -55,7 +55,7 @@ ingredients: [
   },
   {
     name: "Chopped Fresh Dill",
-    preparation: ", (Parsley or Cilantro as a substitute)"
+    preparation: ", (Parsley or Cilantro as a substitute)",
     amount: 2,
     unit: cups
   },

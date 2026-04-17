@@ -190,4 +190,5 @@ directions: [
   "If the chili is too thick, add a bit of water to reach the desired consistency. Adjust seasoning with salt as needed.",
 
   "Serve the chili in bowls with optional toppings like hot sauce, grated Cheddar, scallions, sour cream, and crushed tortilla chips."
-]---
+]
+---

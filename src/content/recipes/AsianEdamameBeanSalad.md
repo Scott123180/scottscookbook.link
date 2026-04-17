@@ -89,3 +89,4 @@ directions: [
 "Pour the dressing over the salad and toss until everything is evenly coated.",
 "Serve the salad chilled or at room temperature."
 ]
+---

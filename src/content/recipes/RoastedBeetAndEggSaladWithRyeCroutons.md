@@ -82,6 +82,5 @@ directions: [
 "Peel the cooled beets and cut each into quarters. Arrange the beets, eggs, croutons, and pickled shallots over the greens on each plate.",
 "For the dressing, mix the sour cream, dill, chives, horseradish, and the remaining 1/4 cup vinegar. Season with black pepper. Drizzle the dressing over the salads and, if desired, sprinkle with additional dill and chopped chives.",
 ]
-
 ---
 "Kitchen Tip: If there aren't enough beet greens to make 6 cups, supplement with spring mix."

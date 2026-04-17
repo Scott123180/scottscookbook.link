@@ -74,7 +74,7 @@ ingredients: [
   },
   {
     name: Scallions,
-    preparation: ", (Optional)"
+    preparation: ", (Optional)",
     amount: 2,
     unit: count
   },

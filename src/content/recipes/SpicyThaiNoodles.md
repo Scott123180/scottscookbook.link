@@ -98,7 +98,8 @@ directions: [
 "Drain the pasta and toss it in the skillet with the sauce, stirring for 1-2 minutes until well coated and fully cooked.",
 "Add the coleslaw mix to the skillet and toss with the pasta.",
 "Serve the noodles garnished with roasted peanuts, sesame seeds, lime wedges, and cilantro or Thai basil. Can be served hot or as a cold salad."
-]--- 
+]
+--- 
 Notes:
 - Any long pasta like spaghetti, fettuccine, or angel hair can be used in this recipe.
 - Choose any coleslaw mix you prefer, or shred your own vegetables.

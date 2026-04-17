@@ -17,7 +17,7 @@ ingredients: [
   },
   {
     name: "Vegetable Broth",
-    preparation: ", (or water for a milder flavor)"
+    preparation: ", (or water for a milder flavor)",
     amount: 1,
     unit: quart,
     section: "Main"
@@ -31,4 +31,5 @@ directions: [
   "When the timer goes off, allow the pressure to naturally release for 10 minutes. Afterward, release any remaining pressure manually.",
 
   "Carefully remove the Instant Pot lid once the steam has fully escaped. Fluff the quinoa with a fork."
-]---
+]
+---

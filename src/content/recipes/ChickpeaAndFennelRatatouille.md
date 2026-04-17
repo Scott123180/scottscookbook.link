@@ -73,7 +73,7 @@ ingredients: [
   },
   {
     name: "chopped fresh basil or parsley",
-    preparation: ", (if not using fresh thyme or rosemary), chopped"
+    preparation: ", (if not using fresh thyme or rosemary), chopped",
     amount: 0.5,
     unit: cup
   },

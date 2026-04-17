@@ -18,7 +18,7 @@ ingredients: [
   },
   {
     name: Broth,
-    preparation: ", (chicken or vegetable)"
+    preparation: ", (chicken or vegetable)",
     amount: 14.5,
     unit: oz,
     section: Loaf
@@ -79,7 +79,7 @@ ingredients: [
   },
   {
     name: Egg ,
-    preparation: ", White"
+    preparation: ", White",
     amount: 1,
     unit: large,
     section: Loaf
@@ -110,7 +110,7 @@ ingredients: [
   },
   {
     name: Water,
-    preparation: ", (if using tomato paste)"
+    preparation: ", (if using tomato paste)",
     amount: 2,
     unit: tbsp,
     section: Glaze

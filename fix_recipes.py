@@ -60,25 +60,32 @@ UNIT_MAP = {
 
 # ── frontmatter parsing ────────────────────────────────────────────────────────
 
-def split_frontmatter(text):
-    """Return (frontmatter, body) or (None, text) if no frontmatter found.
+def pre_fix_text(text):
+    """Fix raw-text issues that would prevent frontmatter from being parsed.
 
-    Handles two cases:
-    - Normal: opening --- ... closing --- ... body
-    - Missing closing ---: treat everything after the opening --- as frontmatter
+    ]--- (closing delimiter touching previous content) must be split onto its
+    own line before split_frontmatter can locate it.
     """
+    # Any non-newline character immediately followed by --- → insert newline
+    return re.sub(r'([^\n])(---)', r'\1\n\2', text)
+
+
+def split_frontmatter(text):
+    """Return (frontmatter, body) or (None, text) if no frontmatter found."""
     if not text.startswith("---"):
         return None, text
     end = text.find("\n---", 3)
     if end == -1:
-        # No closing --- found: whole file is frontmatter, no body
         return text[3:], None
     return text[3:end], text[end + 4:]
 
 
 def rejoin(fm, body):
+    # Ensure the closing --- is always on its own line
+    if not fm.endswith('\n'):
+        fm += '\n'
     if body is None:
-        return f"---{fm}"
+        return f"---{fm}---"
     return f"---{fm}---{body}"
 
 
@@ -188,6 +195,27 @@ def fix_preparation(fm):
     return '\n'.join(result)
 
 
+def fix_preparation_trailing_comma(fm):
+    """Add missing trailing comma to preparation lines followed by another field.
+
+    In flow-style YAML ingredient objects every field except the last must be
+    followed by a comma.  preparation is never the last field, so if its line
+    lacks a trailing comma the YAML parser chokes on the next field.
+    """
+    lines = fm.split('\n')
+    result = []
+    for i, line in enumerate(lines):
+        # Match a preparation line that ends without a trailing comma
+        if re.match(r'\s*preparation:\s*"[^"]*"\s*$', line):
+            # Look ahead: if the next non-empty line is another field, add comma
+            next_line = next((lines[j] for j in range(i + 1, len(lines)) if lines[j].strip()), '')
+            if re.match(r'\s+\w[\w\s]*:', next_line):
+                result.append(line.rstrip() + ',')
+                continue
+        result.append(line)
+    return '\n'.join(result)
+
+
 # ── manual-review detection ────────────────────────────────────────────────────
 
 def get_manual_review_items(fm):
@@ -236,13 +264,15 @@ def show_diff(original, updated):
 # ── per-file processor ─────────────────────────────────────────────────────────
 
 def process_file(path):
-    text = path.read_text(encoding='utf-8')
+    raw  = path.read_text(encoding='utf-8')
+    text = pre_fix_text(raw)
     fm, body = split_frontmatter(text)
 
     if fm is None:
         print(f'SKIP  {path.name}  (no frontmatter)')
         return False, False
 
+    original_text = raw
     original = fm
     fm = fix_cook_time(fm)
     fm = fix_scott_rating(fm)
@@ -250,16 +280,18 @@ def process_file(path):
     fm = fix_amounts(fm)
     fm = fix_units(fm)
     fm = fix_preparation(fm)
+    fm = fix_preparation_trailing_comma(fm)
 
     manual = get_manual_review_items(fm)
-    changed = fm != original
+    new_text = rejoin(fm, body)
+    changed = new_text != original_text
 
     if changed:
         label = '[DRY RUN] ' if DRY_RUN else ''
         print(f'\n{label}FIXED  {path.name}')
-        show_diff(original, fm)
+        show_diff(original_text, new_text)
         if not DRY_RUN:
-            path.write_text(rejoin(fm, body), encoding='utf-8')
+            path.write_text(new_text, encoding='utf-8')
 
     if manual:
         print(f'\nMANUAL  {path.name}')

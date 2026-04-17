@@ -66,4 +66,5 @@ directions: [
 "In a small bowl, combine the chopped cooked chicken, mayonnaise, chopped celery, diced green onion (or chives/red onion), dijon mustard, seasoned salt, and pepper. Mix well until all ingredients are evenly incorporated.",
 "Adjust the seasoning with additional salt and pepper according to your taste preferences.",
 "Serve the chicken salad as a filling for sandwiches, wraps, or over a bed of salad greens."
-]---
+]
+---
