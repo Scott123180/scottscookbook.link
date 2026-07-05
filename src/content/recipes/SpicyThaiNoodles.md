@@ -12,7 +12,7 @@ ingredients: [
 {
 section: "Main",
 name: "whole wheat linguine",
-preparation: ", see note 1"
+preparation: ", see note 1",
 amount: 0.5,
 unit: lb
 },

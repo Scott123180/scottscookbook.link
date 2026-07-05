@@ -48,6 +48,10 @@ export const query = graphql`
           date
           totalTime
           topic
+          ingredients {
+            name
+          }
+          directions
           image {
             childImageSharp {
               gatsbyImageData(

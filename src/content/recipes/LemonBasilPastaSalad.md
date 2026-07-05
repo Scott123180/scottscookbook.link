@@ -13,7 +13,7 @@ ingredients: [
 {
 section: "Salad",
 name: "pasta",
-preparation: ", (such as campanelle, bow tie, cavatappi, fusilli, or penne)"
+preparation: ", (such as campanelle, bow tie, cavatappi, fusilli, or penne)",
 amount: 1,
 unit: pound
 },
@@ -26,14 +26,14 @@ unit: cup
 {
 section: "Dressing",
 name: "olive oil",
-preparation: ", (extra virgin preferred, or canola oil as a substitute)"
+preparation: ", (extra virgin preferred, or canola oil as a substitute)",
 amount: 0.25,
 unit: cup
 },
 {
 section: "Dressing",
 name: "lemon juice",
-preparation: ", (freshly squeezed or 100% from produce section)"
+preparation: ", (freshly squeezed or 100% from produce section)",
 amount: 3,
 unit: tbsp
 },
@@ -47,7 +47,7 @@ unit: cracks
 {
 section: "Salad",
 name: "pine nuts",
-preparation: ", (or substitute with walnuts or almonds)"
+preparation: ", (or substitute with walnuts or almonds)",
 amount: 0.33,
 unit: cup
 },

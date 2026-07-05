@@ -18,7 +18,7 @@ unit: cup
 {
 section: "Main",
 name: "plain unsweetened almond milk",
-preparation: ", (or any non-dairy milk)"
+preparation: ", (or any non-dairy milk)",
 amount: 1,
 unit: cups
 },

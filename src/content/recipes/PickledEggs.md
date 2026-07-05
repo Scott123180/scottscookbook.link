@@ -20,14 +20,14 @@ unit: count
 {
 section: "Main",
 name: "fresh dill",
-preparation: ", sprigs"
+preparation: ", sprigs",
 amount: 2,
 unit: count
 },
 {
 section: "Main",
 name: "garlic",
-preparation: ", clove"
+preparation: ", clove",
 amount: 1,
 unit: count
 },

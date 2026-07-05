@@ -46,7 +46,7 @@ unit: cup
 {
 section: "Salad",
 name: "feta crumbles",
-preparation: ", (may substitute goat cheese crumbles)"
+preparation: ", (may substitute goat cheese crumbles)",
 amount: 0.33,
 unit: cup
 },

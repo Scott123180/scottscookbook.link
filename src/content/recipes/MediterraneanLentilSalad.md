@@ -12,7 +12,7 @@ ingredients: [
 {
 section: "Salad",
 name: "cooked brown lentils",
-preparation: ", see Tip for cooking instructions"
+preparation: ", see Tip for cooking instructions",
 amount: 3,
 unit: cups
 },

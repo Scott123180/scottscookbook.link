@@ -68,7 +68,7 @@ test.describe("Home page", () => {
   // ── Search ────────────────────────────────────────────────────────────────
 
   test("search box is visible and accepts input", async ({ page }) => {
-    const search = page.getByPlaceholder("Search recipes…");
+    const search = page.getByPlaceholder("Search title, ingredient, or step…");
     await expect(search).toBeVisible();
     await search.fill("lentil");
     await expect(search).toHaveValue("lentil");
@@ -77,19 +77,31 @@ test.describe("Home page", () => {
   test("search filters recipes by title (case-insensitive)", async ({
     page,
   }) => {
-    const search = page.getByPlaceholder("Search recipes…");
-    await search.fill("lentil");
+    const search = page.getByPlaceholder("Search title, ingredient, or step…");
+    await search.fill("Mjadra");
 
     const cards = page.locator('[class*="MuiCard-root"]');
     const count = await cards.count();
     for (let i = 0; i < count; i++) {
       const text = await cards.nth(i).innerText();
-      expect(text.toLowerCase()).toContain("lentil");
+      expect(text.toLowerCase()).toContain("mjadra");
     }
   });
 
+  test("search matches recipes by ingredient name even when the ingredient isn't in the title", async ({
+    page,
+  }) => {
+    const search = page.getByPlaceholder("Search title, ingredient, or step…");
+    await search.fill("lentil");
+
+    const cards = page.locator('[class*="MuiCard-root"]');
+    await expect(cards.first()).toBeVisible();
+    const titles = await page.locator('[class*="MuiCard-root"] h6').allInnerTexts();
+    expect(titles.some((t) => !t.toLowerCase().includes("lentil"))).toBe(true);
+  });
+
   test("search by topic keyword shows matching cards", async ({ page }) => {
-    const search = page.getByPlaceholder("Search recipes…");
+    const search = page.getByPlaceholder("Search title, ingredient, or step…");
     await search.fill("Soup");
 
     const cards = page.locator('[class*="MuiCard-root"]');
@@ -99,7 +111,7 @@ test.describe("Home page", () => {
   test("empty state message appears when search has no matches", async ({
     page,
   }) => {
-    const search = page.getByPlaceholder("Search recipes…");
+    const search = page.getByPlaceholder("Search title, ingredient, or step…");
     await search.fill("xyzzy_no_recipe_matches_this");
 
     await expect(page.getByText("No recipes found")).toBeVisible();
@@ -111,7 +123,7 @@ test.describe("Home page", () => {
   test("clearing the search restores the full recipe list", async ({
     page,
   }) => {
-    const search = page.getByPlaceholder("Search recipes…");
+    const search = page.getByPlaceholder("Search title, ingredient, or step…");
     const cardsBefore = await page
       .locator('[class*="MuiCard-root"]')
       .count();
