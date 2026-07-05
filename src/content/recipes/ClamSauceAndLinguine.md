@@ -56,7 +56,7 @@ ingredients: [
   {
     name: Fresh Parsley,
     amount: 1,
-    metric: Count,
+    unit: count,
     section: Garnish
   },
 ]

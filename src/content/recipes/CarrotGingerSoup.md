@@ -6,6 +6,7 @@ prepTime: "10 minutes"
 cookingTime: "30 minutes"
 totalTime: "40 minutes"
 topic: "Soup"
+originalLink: "https://www.bowlofdelicious.com/carrot-ginger-soup-chilled-or-hot/"
 scottRating: 5
 image: "../../images/recipe/CarrotGingerSoup.png"
 
@@ -32,7 +33,7 @@ ingredients: [
     {
         name: Kosher Salt,
         amount: 1,
-        preparation: ", to taste",
+        unit: "to taste",
         section: soup
     },
     {
@@ -56,19 +57,19 @@ ingredients: [
     {
         name: Plain Yogurt,
         amount: 1,
-        unit: " to taste",
+        unit: "to taste",
         section: optional garnish
     },
     {
         name: Fresh Basil,
         amount: 1,
-        unit: " to taste",
+        unit: "to taste",
         section: optional garnish
     },
     {
         name: Green Onions,
         amount: 1,
-        unit: " to taste",
+        unit: "to taste",
         section: optional garnish
     }
 ]

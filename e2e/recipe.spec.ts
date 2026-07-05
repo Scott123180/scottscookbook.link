@@ -6,11 +6,11 @@ import { test, expect, Page } from "@playwright/test";
  * Uses "Lentil Soup" as the primary fixture recipe because it has an image,
  * an originalLink, a scottRating, and all time fields filled in.
  *
- * Slug derivation: gatsby-source-filesystem root is src/content/,
- * so LentilSoup.md → /recipes/lentil-soup/
+ * Slug derivation: createFilePath() uses the filename as-is (no case
+ * transform), so LentilSoup.md → /recipes/LentilSoup/
  */
 
-const LENTIL_SOUP_URL = "/recipes/lentil-soup/";
+const LENTIL_SOUP_URL = "/recipes/LentilSoup/";
 
 // Helper: navigate to Lentil Soup and wait for the heading
 async function goToLentilSoup(page: Page) {

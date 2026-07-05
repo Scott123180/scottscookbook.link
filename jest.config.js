@@ -12,6 +12,7 @@ module.exports = {
     "\\.(jpg|jpeg|png|gif|svg|webp)$": "<rootDir>/__mocks__/fileMock.js",
   },
   setupFilesAfterEnv: ["@testing-library/jest-dom"],
+  testPathIgnorePatterns: ["/node_modules/", "<rootDir>/e2e/"],
   testMatch: [
     "**/__tests__/**/*.[jt]s?(x)",
     "**/?(*.)+(spec|test).[jt]s?(x)",

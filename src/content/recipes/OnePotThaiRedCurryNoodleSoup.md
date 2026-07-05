@@ -61,7 +61,7 @@ unit: tbsp
 {
 section: "Soup",
 name: "coconut milk",
-preparation: ", (400 ml can)"
+preparation: ", (400 ml can)",
 amount: 1,
 unit: can
 },

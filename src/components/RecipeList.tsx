@@ -24,6 +24,7 @@ import TimerIcon from "@mui/icons-material/Timer";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import SearchIcon from "@mui/icons-material/Search";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { matchSorter, matchSorterWithRankInfo } from "match-sorter";
 
 /** ---------- helpers ---------- */
 const normalize = (s: any) => (s ?? "").toString().trim().toLowerCase();
@@ -69,17 +70,55 @@ export default function RecipeList({ data }: { data: { edges: any[] } }) {
   const topics = React.useMemo(() => ["all", ...getTopics(edges)], [edges]);
 
   const filtered = React.useMemo(() => {
-    const q = normalize(query);
-    return edges
-      .filter((e) => {
-        const fm = getFMFromEdge(e);
-        const matchesQuery =
-          !q || normalize(fm.title).includes(q) || normalize(fm.topic).includes(q);
-        const matchesTopic = activeTopic === "all" || fm.topic === activeTopic;
-        return matchesQuery && matchesTopic;
-      })
-      .slice()
-      .sort(SORTS[sortBy] || SORTS.rating);
+    const byTopic = edges.filter((e) => {
+      const fm = getFMFromEdge(e);
+      return activeTopic === "all" || fm.topic === activeTopic;
+    });
+
+    const q = query.trim();
+    const sortFn = SORTS[sortBy] || SORTS.rating;
+
+    if (!q) return byTopic.slice().sort(sortFn);
+
+    // Rank each field independently so field priority (title > topic > ingredients >
+    // directions) always wins, regardless of match quality within a field. A single
+    // matchSorter call across all keys can't guarantee this: it flattens array keys
+    // (one entry per ingredient/direction) and ranks purely by string-match quality, so
+    // e.g. an ingredient named exactly "Lemon" (an EQUAL match) would outrank a title
+    // like "Lemon-Garlic Lima Beans" (only a STARTS_WITH match) — backwards from what a
+    // user searching "lemon" would expect.
+    //
+    // Require a real substring match (not match-sorter's fuzzy "characters in order"
+    // MATCHES ranking) on every field. Fuzzy matching sounds helpful for typos, but in
+    // practice it matches scattered letters across an entire string — e.g. searching
+    // "lemon" fuzzy-matches "Re[st]aurant-[st]y[l]e Miso Ram[en]" purely because
+    // l-e-m-o-n appears somewhere in order. That produces exactly the "why are all these
+    // unrelated recipes showing up" confusion a search box should avoid.
+    const fields: { key: (e: any) => string | string[]; threshold: number }[] = [
+      { key: (e) => getFMFromEdge(e).title, threshold: matchSorter.rankings.CONTAINS },
+      { key: (e) => getFMFromEdge(e).topic, threshold: matchSorter.rankings.CONTAINS },
+      {
+        key: (e) => (getFMFromEdge(e).ingredients ?? []).map((i: any) => i?.name),
+        threshold: matchSorter.rankings.CONTAINS,
+      },
+      {
+        key: (e) => getFMFromEdge(e).directions ?? [],
+        threshold: matchSorter.rankings.CONTAINS,
+      },
+    ];
+
+    const bestByItem = new Map<any, { fieldIndex: number; rank: number }>();
+    fields.forEach((field, fieldIndex) => {
+      matchSorterWithRankInfo(byTopic, q, { keys: [field] }).forEach(({ item, rank }) => {
+        if (!bestByItem.has(item)) bestByItem.set(item, { fieldIndex, rank });
+      });
+    });
+
+    return Array.from(bestByItem.entries())
+      .sort(([itemA, a], [itemB, b]) =>
+        a.fieldIndex - b.fieldIndex || b.rank - a.rank || sortFn(itemA, itemB)
+      )
+      .map(([item]) => item);
   }, [edges, query, sortBy, activeTopic]);
 
   const handleSortChange = (e: SelectChangeEvent<string>) => setSortBy(e.target.value as string);
@@ -95,7 +134,7 @@ export default function RecipeList({ data }: { data: { edges: any[] } }) {
         sx={{ mb: 2 }}
       >
         <TextField
-          placeholder="Search recipes…"
+          placeholder="Search title, ingredient, or step…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           size="small"
