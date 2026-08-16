@@ -255,8 +255,11 @@ test.describe("Recipe detail page – ingredient table", () => {
   });
 
   test("ingredient names are displayed", async ({ page }) => {
-    // "Olive Oil" should appear somewhere on the page
-    await expect(page.getByText(/Olive Oil/i)).toBeVisible();
+    // "Olive Oil" should appear somewhere on the page. Case-sensitive: the
+    // ingredient list renders Title Case ("Olive Oil"), while the directions
+    // prose also mentions "olive oil" in lowercase — matching case-insensitively
+    // would resolve to both and violate Playwright's strict-locator mode.
+    await expect(page.getByText(/Olive Oil/)).toBeVisible();
   });
 });
 
@@ -277,7 +280,7 @@ test.describe("Recipe pages – general navigation", () => {
     page,
   }) => {
     await goToLentilSoup(page);
-    const homeLink = page.getByRole("link", { name: /Scott'?s Cookbook|Home/i }).first();
+    const homeLink = page.getByRole("link", { name: /Scott['’]?s Cookbook|Home/i }).first();
     await homeLink.click();
     await expect(page).toHaveURL("/");
   });

@@ -7,16 +7,17 @@ const AboutPage = () => (
   <Layout>
     <SEO title="About" />
     <div className = "bio-container">
-      <StaticImage 
+      <StaticImage
         src="../images/about_page_photo.jpg"
         placeholder="blurred"
         className="bio-image"
         loading="lazy"
-        
+
       />
+      <div className="bio-scrim" />
       <div className="containy">
-        <h1 className="name">Scott's Cookbook</h1> 
-        <h1 className="short-bio">A Healthy Eating Website</h1> 
+        <h1 className="name">Scott's Cookbook</h1>
+        <h1 className="short-bio">A Healthy Eating Website</h1>
       </div>
     </div>
     

@@ -20,8 +20,6 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import TimerIcon from "@mui/icons-material/Timer";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import SearchIcon from "@mui/icons-material/Search";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { matchSorter, matchSorterWithRankInfo } from "match-sorter";
@@ -138,7 +136,15 @@ export default function RecipeList({ data }: { data: { edges: any[] } }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           size="small"
-          sx={{ minWidth: 260 }}
+          sx={{
+            minWidth: 260,
+            "& .MuiOutlinedInput-root": {
+              borderRadius: "8px",
+              bgcolor: "#fff",
+              "& fieldset": { borderColor: "#ddd3bf" },
+              "&:hover fieldset": { borderColor: "#c9bda0" },
+            },
+          }}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -149,10 +155,21 @@ export default function RecipeList({ data }: { data: { edges: any[] } }) {
         />
 
         <Stack direction="row" spacing={2} alignItems="center">
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          <Typography variant="body2" sx={{ color: "#5a5348", fontFamily: "'Public Sans', sans-serif" }}>
             Sort:
           </Typography>
-          <Select size="small" value={sortBy} onChange={handleSortChange}>
+          <Select
+            size="small"
+            value={sortBy}
+            onChange={handleSortChange}
+            sx={{
+              borderRadius: "8px",
+              bgcolor: "#fff",
+              fontWeight: 600,
+              "& .MuiOutlinedInput-notchedOutline": { borderColor: "#ddd3bf" },
+              "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "#c9bda0" },
+            }}
+          >
             <MenuItem value="rating">Rating (high → low)</MenuItem>
             <MenuItem value="dateNew">Date (newest)</MenuItem>
             <MenuItem value="dateOld">Date (oldest)</MenuItem>
@@ -168,7 +185,30 @@ export default function RecipeList({ data }: { data: { edges: any[] } }) {
           value={activeTopic}
           onChange={(_, v) => v && setActiveTopic(v)}
           size="small"
-          sx={{ mb: 3, flexWrap: "wrap" }}
+          sx={{
+            mb: 3,
+            flexWrap: "wrap",
+            gap: 1,
+            "& .MuiToggleButtonGroup-grouped": {
+              border: "1px solid #ddd3bf !important",
+              borderRadius: "999px !important",
+              margin: 0,
+              textTransform: "none",
+              fontWeight: 600,
+              fontFamily: "'Public Sans', sans-serif",
+              color: "#5a5348",
+              paddingLeft: "16px",
+              paddingRight: "16px",
+              "&.Mui-selected": {
+                bgcolor: "#4a7c3f",
+                color: "#fff",
+                borderColor: "#4a7c3f",
+              },
+              "&.Mui-selected:hover": {
+                bgcolor: "#3f6b35",
+              },
+            },
+          }}
         >
           {topics.map((t) => (
             <ToggleButton key={t} value={t}>
@@ -191,60 +231,89 @@ export default function RecipeList({ data }: { data: { edges: any[] } }) {
 
           return (
             <Grid item xs={12} sm={6} md={4} lg={3} key={key}>
-              <Card variant="outlined" sx={{ height: "100%", overflow: "hidden" }}>
+              <Card
+                sx={{
+                  height: "100%",
+                  overflow: "hidden",
+                  borderRadius: 3,
+                  boxShadow: "0 1px 2px rgba(0,0,0,0.06)",
+                  transition: "box-shadow 0.2s",
+                  "&:hover": { boxShadow: "0 4px 16px rgba(0,0,0,0.1)" },
+                }}
+              >
                 <CardActionArea component={Link as any} to={slug} sx={{ height: "100%" }}>
                   {/* Thumbnail */}
-                  {imgData ? (
-                    <Box sx={{ aspectRatio: "1 / 1", overflow: "hidden" }}>
+                  <Box sx={{ aspectRatio: "4 / 3", overflow: "hidden", position: "relative" }}>
+                    {imgData ? (
                       <GatsbyImage
                         image={imgData}
                         alt={title}
                         style={{ width: "100%", height: "100%" }}
                         imgStyle={{ objectFit: "cover" }}
                       />
-                    </Box>
-                  ) : (
-                    <Box
-                      sx={{
-                        aspectRatio: "1 / 1",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        bgcolor: "grey.100",
-                      }}
-                    >
-                      <Typography variant="h3" component="span" role="img" aria-label="frying pan">
-                        🍳
-                      </Typography>
-                    </Box>
-                  )}
+                    ) : (
+                      <Box
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          bgcolor: "grey.100",
+                        }}
+                      >
+                        <Typography variant="h3" component="span" role="img" aria-label="frying pan">
+                          🍳
+                        </Typography>
+                      </Box>
+                    )}
+                    {fm.topic && (
+                      <Chip
+                        size="small"
+                        label={fm.topic}
+                        sx={{
+                          position: "absolute",
+                          top: 10,
+                          left: 10,
+                          bgcolor: "rgba(255,253,249,0.92)",
+                          color: "#1f2a1f",
+                          fontWeight: 700,
+                          fontSize: 11,
+                          fontFamily: "'Public Sans', sans-serif",
+                        }}
+                      />
+                    )}
+                  </Box>
 
                   <CardContent sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                    <Typography variant="h6" sx={{ fontWeight: 600, lineHeight: 1.2 }}>
+                    <Typography variant="h6" sx={{ lineHeight: 1.25 }}>
                       {title}
                     </Typography>
 
-                    <Stack direction="row" spacing={1} flexWrap="wrap">
+                    <Stack direction="row" spacing={1} flexWrap="wrap" alignItems="center" justifyContent="space-between">
                       {fm.totalTime && (
-                        <Chip size="small" icon={<AccessTimeIcon />} label={fm.totalTime} variant="outlined" />
-                      )}
-                      {fm.prepTime && (
-                        <Chip size="small" icon={<TimerIcon />} label={`Prep ${fm.prepTime}`} variant="outlined" />
-                      )}
-                      {fm.date && (
                         <Chip
                           size="small"
-                          icon={<CalendarMonthIcon />}
-                          label={new Date(fm.date).toLocaleDateString()}
+                          icon={<AccessTimeIcon sx={{ fontSize: 14 }} />}
+                          label={fm.totalTime}
                           variant="outlined"
+                          sx={{
+                            border: "none",
+                            bgcolor: "transparent",
+                            color: "#8a8375",
+                            fontFamily: "'Public Sans', sans-serif",
+                            "& .MuiChip-label": { px: 0.5 },
+                          }}
                         />
                       )}
-                      {fm.topic && <Chip size="small" label={fm.topic} />}
+                      <Rating
+                        value={ratingValue}
+                        precision={0.5}
+                        readOnly
+                        size="small"
+                        sx={{ color: "#b8552f", ml: "auto" }}
+                      />
                     </Stack>
-
-                    <Box sx={{ mt: "auto", pt: 1 }}>
-                      <Rating value={ratingValue} precision={0.5} readOnly size="small" />
-                    </Box>
                   </CardContent>
                 </CardActionArea>
               </Card>

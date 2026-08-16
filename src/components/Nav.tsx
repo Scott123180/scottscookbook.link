@@ -25,7 +25,7 @@ const Nav: React.FC = () => {
     <header className="site-nav" role="banner">
       <nav className="site-nav__inner" role="navigation" aria-label="Primary">
         <Link to="/" className="nav-brand fancy-brand">
-          <span className="brand-icon">🥄</span>
+          <span className="brand-icon" aria-hidden="true">S</span>
           <span className="brand-text">
             Scott’s <span className="highlight">Cookbook</span>
           </span>

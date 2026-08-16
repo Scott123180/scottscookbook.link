@@ -18,9 +18,10 @@ test.describe("Home page", () => {
     await expect(page).toHaveTitle(/Scott'?s Cookbook/i);
   });
 
-  test("renders the banner image", async ({ page }) => {
-    const banner = page.locator("img[src*='WebsiteBanner']").first();
-    await expect(banner).toBeVisible();
+  test("renders the hero heading", async ({ page }) => {
+    await expect(
+      page.getByRole("heading", { name: "A personal, ad-free cookbook." })
+    ).toBeVisible();
   });
 
   test("renders at least one recipe card", async ({ page }) => {
@@ -124,6 +125,9 @@ test.describe("Home page", () => {
     page,
   }) => {
     const search = page.getByPlaceholder("Search title, ingredient, or step…");
+    // Wait for the initial card render before counting, so a slow first
+    // paint (seen on Firefox) doesn't get read as "zero cards".
+    await expect(page.locator('[class*="MuiCard-root"]').first()).toBeVisible();
     const cardsBefore = await page
       .locator('[class*="MuiCard-root"]')
       .count();

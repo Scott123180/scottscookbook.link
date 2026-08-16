@@ -12,6 +12,9 @@ export default defineConfig({
     baseURL: "http://localhost:8000",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
+    // The recipe page's Cooking Mode toggle uses the Screen Wake Lock API,
+    // which browsers deny by default in automated/headless contexts.
+    permissions: ["screen-wake-lock"],
   },
 
   webServer: {

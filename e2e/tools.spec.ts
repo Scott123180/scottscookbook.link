@@ -68,18 +68,19 @@ test.describe("Tools page – Bean Converter", () => {
     const beanInput = page.getByLabel("Bean / Legume Type");
     await beanInput.click();
 
+    // "Black" is a substring of "Black-Eyed Peas", so it needs an anchored
+    // regex — otherwise both options match and Playwright's strict mode
+    // rejects the locator as ambiguous.
     const expectedBeans = [
-      "Black",
-      "Chickpeas",
-      "Pinto",
-      "Kidney",
-      "Cannellini",
-      "Black-Eyed Peas",
+      /^Black$/i,
+      /Chickpeas/i,
+      /Pinto/i,
+      /Kidney/i,
+      /Cannellini/i,
+      /Black-Eyed Peas/i,
     ];
     for (const name of expectedBeans) {
-      await expect(
-        page.getByRole("option", { name: new RegExp(name, "i") })
-      ).toBeVisible();
+      await expect(page.getByRole("option", { name })).toBeVisible();
     }
   });
 

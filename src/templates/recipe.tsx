@@ -134,7 +134,8 @@ const Recipe: React.FC<PageProps<RecipeQueryData>> = ({ data }) => {
   <Box>
     {Array.from(sections.entries()).map(([sectionName, items]) => (
       <Box key={`sec-${sectionName}`} sx={{ mb: 2 }}>
-        <Typography variant="subtitle2" sx={{ color: "text.secondary", px: 2, pt: 2, pb: 1 }}>
+        {/* component="p": subtitle2 defaults to <h6>, duplicating the "Ingredients" <h5> above */}
+        <Typography variant="subtitle2" component="p" sx={{ color: "text.secondary", px: 2, pt: 2, pb: 1 }}>
           {sectionName}
         </Typography>
         <Divider />

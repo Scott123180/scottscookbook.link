@@ -13,13 +13,13 @@ test.describe("Navigation bar", () => {
   });
 
   test("nav bar is visible on the home page", async ({ page }) => {
-    await expect(page.locator("nav, header")).toBeVisible();
+    await expect(page.locator("nav, header").first()).toBeVisible();
   });
 
   test("nav contains a link to the home / root", async ({ page }) => {
     const homeLink = page
       .locator("nav a, header a")
-      .filter({ hasText: /Scott'?s Cookbook|Home/i })
+      .filter({ hasText: /Scott['’]?s Cookbook|Home/i })
       .first();
     await expect(homeLink).toBeVisible();
   });
@@ -66,7 +66,7 @@ test.describe("Navigation bar", () => {
     await page.goto("/tools");
     const homeLink = page
       .locator("nav a, header a")
-      .filter({ hasText: /Scott'?s Cookbook|Home/i })
+      .filter({ hasText: /Scott['’]?s Cookbook|Home/i })
       .first();
     await homeLink.click();
     await expect(page).toHaveURL("/");
@@ -89,7 +89,7 @@ test.describe("About page", () => {
   test("About page renders inside the shared Layout (nav is present)", async ({
     page,
   }) => {
-    await expect(page.locator("nav, header")).toBeVisible();
+    await expect(page.locator("nav, header").first()).toBeVisible();
   });
 });
 
@@ -103,14 +103,14 @@ test.describe("Tools page", () => {
 
   test("Tools page renders inside the shared Layout", async ({ page }) => {
     await page.goto("/tools");
-    await expect(page.locator("nav, header")).toBeVisible();
+    await expect(page.locator("nav, header").first()).toBeVisible();
   });
 });
 
 test.describe("Home page", () => {
   test("home page renders inside the shared Layout", async ({ page }) => {
     await page.goto("/");
-    await expect(page.locator("nav, header")).toBeVisible();
+    await expect(page.locator("nav, header").first()).toBeVisible();
   });
 
   test("home page has a footer", async ({ page }) => {
@@ -121,19 +121,19 @@ test.describe("Home page", () => {
 
 test.describe("Recipe pages", () => {
   test("a known recipe URL loads and has a heading", async ({ page }) => {
-    await page.goto("/recipes/lentil-soup/");
+    await page.goto("/recipes/LentilSoup/");
     await expect(
       page.getByRole("heading", { name: /Lentil Soup/i })
     ).toBeVisible();
   });
 
   test("recipe page renders inside the shared Layout", async ({ page }) => {
-    await page.goto("/recipes/lentil-soup/");
-    await expect(page.locator("nav, header")).toBeVisible();
+    await page.goto("/recipes/LentilSoup/");
+    await expect(page.locator("nav, header").first()).toBeVisible();
   });
 
   test("recipe page has a footer", async ({ page }) => {
-    await page.goto("/recipes/lentil-soup/");
+    await page.goto("/recipes/LentilSoup/");
     await expect(page.locator("footer")).toBeVisible();
   });
 });
@@ -159,18 +159,18 @@ test.describe("SEO / page titles", () => {
 
   test("about page has a meaningful title", async ({ page }) => {
     await page.goto("/about");
-    const title = await page.title();
-    expect(title.length).toBeGreaterThan(0);
+    // react-helmet sets document.title after the initial render, so poll
+    // rather than reading page.title() once immediately after navigation.
+    await expect.poll(() => page.title()).not.toBe("");
   });
 
   test("tools page has a meaningful title", async ({ page }) => {
     await page.goto("/tools");
-    const title = await page.title();
-    expect(title.length).toBeGreaterThan(0);
+    await expect.poll(() => page.title()).not.toBe("");
   });
 
   test("recipe page title contains the recipe name", async ({ page }) => {
-    await page.goto("/recipes/lentil-soup/");
+    await page.goto("/recipes/LentilSoup/");
     await expect(page).toHaveTitle(/Lentil Soup/i);
   });
 });
@@ -196,7 +196,7 @@ test.describe("Mobile layout", () => {
   });
 
   test("recipe detail page is usable on mobile", async ({ page }) => {
-    await page.goto("/recipes/lentil-soup/");
+    await page.goto("/recipes/LentilSoup/");
     await expect(
       page.getByRole("heading", { name: /Lentil Soup/i })
     ).toBeVisible();
