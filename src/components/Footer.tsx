@@ -6,7 +6,7 @@ import GitHubSVG from "../Icons/GithubSVG";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <footer className="footer-container">
       <hr className="horizontal-line" />
       <div className="footer-content-container">
         <div className="copyright">© {(new Date().getFullYear())} &nbsp;
@@ -24,7 +24,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 

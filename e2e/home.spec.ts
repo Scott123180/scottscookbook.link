@@ -10,6 +10,8 @@ import { test, expect } from "@playwright/test";
 test.describe("Home page", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
+    // Wait for the list to render so card/button counts aren't taken too early
+    await expect(page.locator('[class*="MuiCard-root"]').first()).toBeVisible();
   });
 
   // ── Smoke ─────────────────────────────────────────────────────────────────
@@ -152,7 +154,8 @@ test.describe("Home page", () => {
     // Skip "All" (index 0) and click the first real topic
     if (count > 1) {
       const topicBtn = topicButtons.nth(1);
-      const topicName = (await topicBtn.innerText()).trim();
+      // textContent, not innerText: the toggle buttons are CSS-uppercased
+      const topicName = ((await topicBtn.textContent()) ?? "").trim();
       await topicBtn.click();
 
       // Every visible card's topic chip should match
@@ -161,7 +164,7 @@ test.describe("Home page", () => {
       );
       const chipCount = await topicChips.count();
       for (let i = 0; i < chipCount; i++) {
-        const chipText = (await topicChips.nth(i).innerText()).trim();
+        const chipText = ((await topicChips.nth(i).textContent()) ?? "").trim();
         expect(chipText).toBe(topicName);
       }
     }
