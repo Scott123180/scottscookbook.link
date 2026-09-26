@@ -41,7 +41,7 @@ test.describe("Recipe detail page – structure", () => {
 
   test("ingredients section is present", async ({ page }) => {
     await expect(
-      page.getByRole("heading", { name: /Ingredient/i })
+      page.getByRole("heading", { name: "Ingredients", level: 5 })
     ).toBeVisible();
   });
 
@@ -69,6 +69,25 @@ test.describe("Recipe detail page – structure", () => {
 
 test.describe("Recipe detail page – meta chips", () => {
   test.beforeEach(async ({ page }) => {
+    // Headless browsers deny real Screen Wake Lock requests, which leaves the
+    // chip stuck on "Off". Stub the API so these tests exercise the chip's
+    // UI state and persistence rather than the browser's power management.
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, "wakeLock", {
+        configurable: true,
+        value: {
+          request: async () => {
+            const sentinel = new EventTarget() as EventTarget & {
+              release: () => Promise<void>;
+            };
+            sentinel.release = async () => {
+              sentinel.dispatchEvent(new Event("release"));
+            };
+            return sentinel;
+          },
+        },
+      });
+    });
     await goToLentilSoup(page);
   });
 
@@ -255,8 +274,8 @@ test.describe("Recipe detail page – ingredient table", () => {
   });
 
   test("ingredient names are displayed", async ({ page }) => {
-    // "Olive Oil" should appear somewhere on the page
-    await expect(page.getByText(/Olive Oil/i)).toBeVisible();
+    // "olive oil" also appears in the directions, so match the full ingredient name
+    await expect(page.getByText("Extra Virgin Olive Oil")).toBeVisible();
   });
 });
 
@@ -267,7 +286,8 @@ test.describe("Recipe pages – general navigation", () => {
     await page.goto("/");
     const firstCard = page.locator('[class*="MuiCard-root"]').first();
     await firstCard.click();
-    // We're on a recipe page — go back
+    // Wait for the navigation to land before going back
+    await expect(page).toHaveURL(/\/recipes\//);
     await page.goBack();
     await expect(page).toHaveURL("/");
     await expect(page.locator('[class*="MuiCard-root"]').first()).toBeVisible();

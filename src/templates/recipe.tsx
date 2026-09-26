@@ -6,6 +6,7 @@ import { FormGroup, Typography, Switch, Stack, Select, MenuItem, Container, Box,
 import { getImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
+import SEO from "../components/Seo";
 import RecipeImage from "../components/RecipeImage";
 import IngredientTable from "../components/IngredientTable";
 import RecipeMetaChips from "../components/RecipeMetaChips";
@@ -165,6 +166,7 @@ const Recipe: React.FC<PageProps<RecipeQueryData>> = ({ data }) => {
 
   return (
   <Layout>
+    <SEO title={fm.title} />
     <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
       {/* Hero */}
       <Box sx={{ mb: 3 }}>

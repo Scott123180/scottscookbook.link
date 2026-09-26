@@ -70,7 +70,7 @@ test.describe("Tools page – Bean Converter", () => {
 
     const expectedBeans = [
       "Black",
-      "Chickpeas",
+      "Chickpeas / Garbanzo",
       "Pinto",
       "Kidney",
       "Cannellini",
@@ -78,7 +78,8 @@ test.describe("Tools page – Bean Converter", () => {
     ];
     for (const name of expectedBeans) {
       await expect(
-        page.getByRole("option", { name: new RegExp(name, "i") })
+        // exact: "Black" would otherwise also match "Black-Eyed Peas"
+        page.getByRole("option", { name, exact: true })
       ).toBeVisible();
     }
   });
